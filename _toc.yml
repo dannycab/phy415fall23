@@ -16,6 +16,7 @@ parts:
     chapters:
     - file: content/1_mechanics/modeling/what_is_modeling.md
     - file: content/1_mechanics/modeling/activity-what_is_a_model.md
+    - file: content/1_mechanics/sho/notes-SHO.ipynb
     #- file: content/1_mechanics/mechanics_intro.ipynb
   - caption: Appendices
     chapters:
