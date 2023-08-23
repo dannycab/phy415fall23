@@ -15,6 +15,8 @@ This is not to say that you are on your own. Here's what you can expect from us:
   * timely and detailed feedback to help you along
   * a commitment to an inclusive classroom
 
+[Statement on the use of Generative AI tools](./6_environment.html#use-of-generative-ai-tools)
+
 ## Contact Information
 
 ### Web page
