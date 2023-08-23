@@ -3,42 +3,42 @@ root: content/intro
 parts:
   - caption: 0 - Intro and Syllabus
     chapters:
-    - file: content/0_course/syllabus
+    - file: content/0_course/0_syllabus
       sections:
-      - file: content/0_course/goals
-      - file: content/0_course/design
-      - file: content/0_course/assessments
-      - file: content/0_course/rubric
-      - file: content/0_course/calendar
-      - file: content/0_course/environment
-      - file: content/0_course/resources
+      - file: content/0_course/1_goals
+      - file: content/0_course/2_design
+      - file: content/0_course/3_assessments
+      - file: content/0_course/4_rubric
+      - file: content/0_course/5_calendar
+      - file: content/0_course/6_environment
+      - file: content/0_course/7_resources
   - caption: 1 - Mechanics and ODEs
     chapters:
     - file: content/1_mechanics/mechanics_intro.ipynb
-    - file: content/1_mechanics/frames
-    - file: content/1_mechanics/lagrange_1
-    - file: content/1_mechanics/lagrange_2
-    - file: content/1_mechanics/dynamical_1
-    - file: content/1_mechanics/dynamical_2
-    - file: content/1_mechanics/CHAOS
-    - file: content/1_mechanics/ODE_games
-  - caption: 2 - E&M and PDEs
-    chapters:
-    - file: content/2_EM/EM_intro.ipynb
-    - file: content/2_EM/E_fields_graphing_184
-    - file: content/2_EM/laplace_eq
-    - file: content/2_EM/more_PDEs
-    - file: content/2_EM/relaxation
-    - file: content/2_EM/B_fields
-    - file: content/2_EM/EM_waves
-  - caption: 3 - Waves and Complex Analysis
-    chapters:
-    - file: content/3_waves/waves_intro.ipynb
-    - file: content/3_waves/normal_modes
-    - file: content/3_waves/mech_waves
-    - file: content/3_waves/wave_examples
-    - file: content/3_waves/complex
-    - file: content/3_waves/DFT_FFT
-  - caption: 4 - Random Processes and Distributions
-    chapters:
-    - file: content/4_distributions/distributions_intro.ipynb
+  #   - file: content/1_mechanics/frames
+  #   - file: content/1_mechanics/lagrange_1
+  #   - file: content/1_mechanics/lagrange_2
+  #   - file: content/1_mechanics/dynamical_1
+  #   - file: content/1_mechanics/dynamical_2
+  #   - file: content/1_mechanics/CHAOS
+  #   - file: content/1_mechanics/ODE_games
+  # - caption: 2 - E&M and PDEs
+  #   chapters:
+  #   - file: content/2_EM/EM_intro.ipynb
+  #   - file: content/2_EM/E_fields_graphing_184
+  #   - file: content/2_EM/laplace_eq
+  #   - file: content/2_EM/more_PDEs
+  #   - file: content/2_EM/relaxation
+  #   - file: content/2_EM/B_fields
+  #   - file: content/2_EM/EM_waves
+  # - caption: 3 - Waves and Complex Analysis
+  #   chapters:
+  #   - file: content/3_waves/waves_intro.ipynb
+  #   - file: content/3_waves/normal_modes
+  #   - file: content/3_waves/mech_waves
+  #   - file: content/3_waves/wave_examples
+  #   - file: content/3_waves/complex
+  #   - file: content/3_waves/DFT_FFT
+  # - caption: 4 - Random Processes and Distributions
+  #   chapters:
+  #   - file: content/4_distributions/distributions_intro.ipynb

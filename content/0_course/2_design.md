@@ -1,6 +1,6 @@
 # Course Design
 
-For most of you, 4415 is an elective course that you are taking to learn more about how we use mathematical techniques in physics. As such, this course is designed under several different principles than a standard course. Below, I provide those principles and their rationale.
+For most of you, 415 is an elective course that you are taking to learn more about how we use mathematical techniques in physics. As such, this course is designed under several different principles than a standard course. Below, I provide those principles and their rationale.
 
 * 415 should help you learn the central tenets of modeling physical systems
   * The sheer volume of mathematical and computational physics knowledge out there is immense and impossible for any one person to learn. However, the central elements of making models, how to learn about specific techniques, and how to debug your approaches are things we can learn and employ broadly as well as to specific problems.
@@ -15,12 +15,12 @@ For most of you, 4415 is an elective course that you are taking to learn more ab
 
 The core readings and work for this course will be this jupyterbook. I will find resources online, make my own, and provide as much organized free material as possible. If you want to have a textbook that helps you organize your readings, please obtain copies of:
 
-1.  Mary Boas, [*Mathematical Methods in the Physical Sciences*](https://www.amazon.com/Mathematical-Methods-Physical-Sciences-Mary/dp/04711982) (Wiley; 2005). This book is the definitive text on mathematical approaches, written by Dr. Boas originally in 1966! Any 3rd edition will be useful and I will put the section numbers from Boas in the online readings.
-2. Mark Newman, [*Computational Physics*](https://www.amazon.com/Computational-Physics-Mark-Newman/dp/1480145513) (CreateSpace Independent Publishing Platform; 2012). This book is a great introduction to a variety of computational physics techniques, written by UMich professor Mark Newman for a computational physics course. I will put section numbers from Newman in the online readings.
+1.  Mary Boas, [*Mathematical Methods in the Physical Sciences*](https://bookshop.org/p/books/mathematical-methods-in-the-physical-sciences-mary-l-boas/7483888) (Wiley; 2005). This book is the definitive text on mathematical approaches, written by Dr. Boas originally in 1966! Any 3rd edition will be useful and I will put the section numbers from Boas in the online readings.
+2. Mark Newman, [*Computational Physics*](https://bookshop.org/p/books/computational-physics-mark-newman/9385815) (CreateSpace Independent Publishing Platform; 2012). This book is a great introduction to a variety of computational physics techniques, written by UMich professor Mark Newman for a computational physics course. I will put section numbers from Newman in the online readings.
 
 ### Additional sources
 
-In addition, I will draw from the following books. I have copies of them if you want or need scans of sections. But they can found online in Google Books and other places as well. no need to purchase unless you want a copy for your personal library.
+In addition, I will draw from the following books. I have copies of them if you want or need scans of sections. But they can found online in Google Books and other places as well. No need to purchase unless you want a copy for your personal library.
 
 #### Mechanics
 
@@ -72,6 +72,7 @@ In addition, I will draw from the following books. I have copies of them if you 
 **"Reading"** is an essential part of 415! Reading the notes before class is very important. I use "reading" in quotes, because in our class this idea goes beyond just reading text and includes understanding figures and watching videos. These should help inform the basis of your understating that we will draw on in class to clarify your understanding and to help you make sense of the material. I will assume you have done the required readings in advance! It will make a huge difference if you spend the time and effort to carefully read and follow the resources posted. The calendar has the details on videos and readings that will be updated.
 
 **Weekly Questions**: To encourage and reward you for keeping up with the "readings", there will be weekly questions about the readings posted for you to respond to. These are not meant to test your knowledge, but rather to focus your "reading" towards what you understand, and what you don't yet understand. I will ask you about those things weekly and use that information to tailor in-class activities based on what I am hearing is confusing, unclear, or challenging. These questions are only graded for completion, but I do want your honest attempt.
+
 ## Class Meetings
 
 **Classroom Etiquette:** Please silence your electronic devices when entering the classroom. I don't mind you using them (in fact, see below, we will use them). But, sometimes, they can very distracting to your neighbors, so use your judgement. I appreciate that you might have questions or comments about things in class. We are going to be having short lectures combined with longer project work in class. So you will have plenty of time to catch up with social media and the news. 
@@ -80,11 +81,15 @@ If you and/or your group mates are confused, just raise your hand and ask questi
 
 **Computing Devices:** Please bring some sort of computing device to class everyday. You might be researching information online, reviewing work you have done, or actively building models of systems together. This device can be a computer, a tablet, or a phone. You can also partner up with folks because we will use them in groups. *If you need a computing device brought to class for you or your group mates to use, let me know. I will organize for some small collection of laptops if we need it.*
 
-**In-Class:** We will have some short lectures about topics or concepts; some of those will be in-the-moment as needed. The idea is that you are developing a basic understanding through readings and videos, practicing using those new ideas with me and with your classmates in class, and then applying what you are learning to new ideas. So, we will also use a variety of in-class activities that help you construct an understanding of a particular topic or concept. These will not be collected or graded, but we will discuss the solutions in class. *I will not post solutions for these activties as we have no exams or quizzes.*
+**In-Class:** We will have some short lectures about topics or concepts; some of those will be in-the-moment as needed. The idea is that you are developing a basic understanding through readings and videos, practicing using those new ideas with me and with your classmates in class, and then applying what you are learning to new ideas. So, we will also use a variety of in-class activities that help you construct an understanding of a particular topic or concept. These will not be collected or graded, but we will discuss the solutions in class. *I will not post solutions for these activities as we have no exams or quizzes.*
+
+## "Homework"
+
+**Worked Problems:** We will spend much of our time learning specific techniques and approaches to use withh many different kinds of problems and models. Your "weekly" homework will be to select a particular example where the method or model applies, and work that problem yourself. You will need to explain your approach and findings on paper or in a notebook. You will turn in seven of eight of these worked problems. *I will not post solutions for these problems as we have no exams or quizzes.*
 
 ## Projects
 
-**In-class Projects:** The class is designed to support your independent research into ideas that you are excited about. So in-class projects are meant to equip you with the knowledge and practice to learn new things for your projects. These in-class projects will be short demonstrations of models that you complete in groups. We will circulate around the room and check on you and your group's progress and understanding. At the end of the class period, we will share the results of the in-class project and discuss any sticking points. These in-class activites will not be graded, but they will be essential for your out-of-class projects.
+**In-class Projects:** The class is designed to support your independent research into ideas that you are excited about. So in-class projects are meant to equip you with the knowledge and practice to learn new things for your projects. These in-class projects will be short demonstrations of models that you complete in groups. We will circulate around the room and check on you and your group's progress and understanding. At the end of the class period, we will share the results of the in-class project and discuss any sticking points. These in-class activities will not be graded, but they will be essential for your out-of-class projects.
 
 **Out-of-class Projects:** For this class, we anticipate 6 projects to be turned in roughly every 2-3 weeks, with a weeklong turn-in window (see calendar). Except for the first project, up to 3 of these projects can be completed as partner projects. Partner projects are subject to a different grading rubric that evaluates collaborative efforts and increases the expectation for other areas compared to an individual project. A preliminary rubric appears here, but we will define these collectively after the first project. 
 

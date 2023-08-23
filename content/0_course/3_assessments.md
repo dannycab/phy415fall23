@@ -2,7 +2,7 @@
 
 ## Formative Assessment
 
-Formative assessment is often ungraded and reflective assessment. It is meant to help you make changes to your thinking, approaches, or practice. It is not evaluative, it's corrective; to help you make changes. We will make heavy use of ungraded formative feedback throughout the course. 
+Formative assessment is often ungraded and reflective assessment. It is meant to help you make changes to your thinking, approaches, or practice. It is not evaluative, it's corrective; to help you make changes. We will make heavy use of ungraded formative feedback throughout the course. Our weekly readings and your worked problems are meant to be formative; meaning most folks will receive full credit, but the important part to review the feedback and reflect on it.
 
 ## Summative Assessment
 
