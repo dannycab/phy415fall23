@@ -10,6 +10,7 @@ Students will demonstrate they can:
  - use analytical, computational, and graphical approaches to answer specific questions in those investigations
  - provide evidence of the quality of their work using a variety of sources
  - collaborate effectively and contribute to a inclusive learning environment
+```
 
 Each of these learning objectives contributes to your development as a physicist. I recognize that these are **big** ideas to think about. What I mean is that the objectives above are quite broad and you might be able to see a little about what or why they are included. But, below, I added more detail about each one along with a smaller scale list of objectives that you will engage with. Throughout our course, you will have opportunities to demonstrate these objectives in your work. *My aim is to make what you are assessed on in this course something you are interested in, so these objectives reflect that.*
 
