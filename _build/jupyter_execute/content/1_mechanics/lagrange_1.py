@@ -87,7 +87,7 @@
 # 2. Write the energy contributions in cylindrical coordinates. (This is where you put in the constraint!)
 # 3. Form the Lagrangian and find the equations of motion (there are two!)
 
-# In[7]:
+# In[1]:
 
 
 import numpy as np
@@ -122,7 +122,7 @@ plt.show()
 # 
 # Consider 3 roller coaster cars of equal mass $m$ and positions $x_1,x_2,x_3$, constrained to move on a one dimensional "track" defined by $f(x) = x^4 -2x^2 + 1$. These cars are also constrained to stay a distance $d$ apart, since they are linked. We'll only worry about that distance $d$ in the direction for now (though a fun problem would be to try this problem with a true fixed distance!)
 
-# In[23]:
+# In[2]:
 
 
 x = np.arange(-1.8,1.8,0.01)

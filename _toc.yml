@@ -12,6 +12,7 @@ parts:
       - file: content/0_course/5_calendar
       - file: content/0_course/6_environment
       - file: content/0_course/7_resources
+      - file: content/0_course/8_worked_problems
   - caption: 1 - Mechanics and ODEs
     chapters:
     - file: content/1_mechanics/modeling/what_is_modeling.md

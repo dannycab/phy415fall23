@@ -181,7 +181,7 @@ plt.show()
 # 4. What behavior do you notice here that's different than you've seen before? What is attracting the trajectories?
 # 
 
-# In[60]:
+# In[4]:
 
 
 import matplotlib.pyplot as plt
@@ -235,7 +235,7 @@ plt.show()
 # 
 # Based on the phase space diagram, what do you expect actual trajectories to look like in $x$ vs $t$ space? Use the numerically integrated trajectories to plot that.
 
-# In[61]:
+# In[5]:
 
 
 ## your code here
@@ -253,7 +253,7 @@ plt.show()
 #  - Add an $A\sin(t)$ driving force term to the differential equation and numerically integrate. What do these trajectories look like in $x$ vs $t$ and in phase space?
 #  - Examine the energetics of this system. Is energy conserved or does it have some interesting behavior? Why?
 
-# In[62]:
+# In[6]:
 
 
 # code here
