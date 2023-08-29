@@ -15,9 +15,10 @@ parts:
       - file: content/0_course/8_worked_problems
   - caption: 1 - Mechanics and ODEs
     chapters:
-    - file: content/1_mechanics/modeling/what_is_modeling.md
+    #- file: content/1_mechanics/modeling/what_is_modeling.md
     - file: content/1_mechanics/modeling/activity-what_is_a_model.md
     - file: content/1_mechanics/sho/notes-SHO.ipynb
+    - file: content/1_mechanics/modeling/notes-what_is_a_model.md
     #- file: content/1_mechanics/mechanics_intro.ipynb
   - caption: Appendices
     chapters:

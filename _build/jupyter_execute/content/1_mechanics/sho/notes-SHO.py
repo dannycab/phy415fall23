@@ -118,18 +118,11 @@
 # 
 # #### Find a particular solution
 # 
-# For an SHO that is pulled to a point $x_0$ and let go at $t=0$, let's find the particular solutions using both general forms. 
+# For an SHO ($\omega=\omega_0 = 1$) that is pulled to a point $x_0$ and let go at $t=0$, let's find the particular solutions using both general forms (they will give us this). 
 # 
-# 
-# 
-# 
-# 
-# 
-# 
-# **Compare and contrast these solutions with your neighbor.** What do you notice about them? How can they be made compatible with each other?
-# - Make a plot (in this notebook) of both solutions for an SHO with frequency of 100Hz that starts at $x_0 =$ 0.1m
-# - Adjust the starting location and frequency, what do you notice?
-# - **If you have time**, create another solution for an SHO that is put into motion with a velocity of +0.1m/s at $x_0=0$ at $t=0$.
+# $$x_1(t) = x_0\cos(\omega_0 t)$$
+# $$x_2(t) = x_0\sin(\omega_0 t + \pi/2)$$
+# $$x_2(t) = -x_0\sin(\omega_0 t + 3\pi/2)$$
 
 # In[1]:
 
@@ -142,35 +135,16 @@ import matplotlib.pyplot as plt
 #################################
 
 t = np.arange(0,10,0.1)
-x = t**2
+x0 = 1
+omega0 = 1
 
-plt.plot(t,x)
+x1 = x0*np.cos(omega0*t)
+x2a = x0*np.sin(omega0*t + np.pi/2) + 1 # to make it offset
+x2b = -x0*np.sin(omega0*t + 3*np.pi/2) - 1 # to make it offset
 
-
-# ### SHO properties
-# 
-# You have likely work with the SHO in other contexts. You have learned about a variety of aspects of the SHO. Talk with your neighbor about different things you all know about the properties of the SHO (it's motion, it's energy, etc.). 
-# 
-# **&#9989; Do this** 
-# 
-# Decide on one or two things to investigate and plot with respect to the SHO. **Be ready to explain your figure, to discuss how to improve it, and what we can claim from it.** 
-
-# 
-
-# In[2]:
-
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-#################################
-# Adjust code to fit your needs #
-#################################
-
-t = np.arange(0,10,0.1)
-x = t**2
-
-plt.plot(t,x)
+plt.plot(t,x1)
+plt.plot(t,x2a)
+plt.plot(t,x2b)
 
 
 # ## Resources
