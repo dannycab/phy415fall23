@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>01 Sept 22 - Notes: What is a Model? &#8212; PHY 415 Fall 2023</title>
+    <title>29 Sept 23 - Notes: What is a Model? &#8212; PHY 415 Fall 2023</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Works Cited" href="../../references.html" />
+    <link rel="prev" title="29 Sept 23 - Notes: Simple Harmonic Oscillator" href="../sho/notes-SHO.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -175,12 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
   1 - Mechanics and ODEs
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="what_is_modeling.html">
-   What is Mathematical Modeling?
-  </a>
- </li>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="activity-what_is_a_model.html">
    29 Sept 23 - Activity: What is a Model?
@@ -189,6 +186,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../sho/notes-SHO.html">
    29 Sept 23 - Notes: Simple Harmonic Oscillator
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   29 Sept 23 - Notes: What is a Model?
   </a>
  </li>
 </ul>
@@ -384,18 +386,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#modeling-discussion">
    Modeling Discussion
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mathematical-models-in-physics">
-     Mathematical Models in Physics
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#features-of-a-good-mathematical-model">
-     Features of a good mathematical model
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -406,7 +396,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>01 Sept 22 - Notes: What is a Model?</h1>
+                <h1>29 Sept 23 - Notes: What is a Model?</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -420,18 +410,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#modeling-discussion">
    Modeling Discussion
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mathematical-models-in-physics">
-     Mathematical Models in Physics
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#features-of-a-good-mathematical-model">
-     Features of a good mathematical model
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -443,74 +421,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="sept-22-notes-what-is-a-model">
-<h1>01 Sept 22 - Notes: What is a Model?<a class="headerlink" href="#sept-22-notes-what-is-a-model" title="Permalink to this headline">#</a></h1>
-<p>These is the summary of the PHY 415 class period on 01 Sept 22. If I missed anything, <a class="reference external" href="https://phy415fall2022.slack.com/">send me an message</a> on Slack and I will add it here. -DC</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="sept-23-notes-what-is-a-model">
+<h1>29 Sept 23 - Notes: What is a Model?<a class="headerlink" href="#sept-23-notes-what-is-a-model" title="Permalink to this headline">#</a></h1>
+<p>These is the summary of the PHY 415 class period on 29 Sept 23.</p>
 <section id="modeling-discussion">
 <h2>Modeling Discussion<a class="headerlink" href="#modeling-discussion" title="Permalink to this headline">#</a></h2>
-<p>We discussed models and modeling extensively today to start to form a functional definition of both. We talked about what the general idea of models and modeling can encompass. Some of the classes major ideas were:</p>
-<ul class="simple">
-<li><p>A model takes <strong>BIG</strong> things and makes them <em>smaller</em> things (approximations and assumptions)</p></li>
-<li><p>A model is only as good as it fits nature/reality/experiment</p></li>
-<li><p>A model is not useful unless <ins>it does something we intended it</ins></p></li>
-<li><p>The best models destroy themselves (i.e., are pushed to their limits and need to be replaced/redeveloped)</p></li>
-</ul>
-<section id="mathematical-models-in-physics">
-<h3>Mathematical Models in Physics<a class="headerlink" href="#mathematical-models-in-physics" title="Permalink to this headline">#</a></h3>
-<p>We narrows our discussion to mathematical models, the focus of this class, and talked about the variety of models the class has used. We had a couple general ideas. A <strong>mathematical model</strong> (in physics) is:</p>
-<ul class="simple">
-<li><p>an equation that has a physics idea behind it</p></li>
-<li><p>the order that you use different mathematical methods to investigate a physics problem</p></li>
-</ul>
-<p>In this discussion, the class brought up several models they had experienced in the past; many of them were from mechanics contexts. And a couple were outside of physics models.</p>
-<p><strong>Physics</strong></p>
-<ul class="simple">
-<li><p>Hooke’s Law</p></li>
-<li><p>Differential equations that describe physical systems</p>
-<ul>
-<li><p>example: the Schrodinger equation</p></li>
-</ul>
-</li>
-<li><p>Taylor expansions</p></li>
-<li><p>Newton’s Laws</p>
-<ul>
-<li><p>Kepler’s Laws</p></li>
-<li><p>Newton’s Law of Gravitation</p></li>
-</ul>
-</li>
-</ul>
-<p><strong>Outside of Physics</strong></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Zipf%27s_law">Zipf’s Law</a> (linguistics)</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Benford%27s_law">Benford’s Law</a> (random numbers)</p></li>
-</ul>
-</section>
-<section id="features-of-a-good-mathematical-model">
-<h3>Features of a good mathematical model<a class="headerlink" href="#features-of-a-good-mathematical-model" title="Permalink to this headline">#</a></h3>
-<p>We then discussed the features that make up a good model in physics. Ideas included aspects of the model and the modeling process as well as social aspects of engaging in science. The list below is from the class’s discussion, where the highlighted words are starting to form the details of our class’s project rubric.</p>
-<p><strong>A good model:</strong></p>
-<ul class="simple">
-<li><p>depends on its intent and how well it does what it we intend it to do</p>
-<ul>
-<li><p>e.g., a model of a galaxy is not useful for modeling the solar system</p></li>
-</ul>
-</li>
-<li><p>predicts or explains something about a physical system - <mark><strong>predictability</strong></mark></p></li>
-<li><p>gives everyone the same results with the same input - <mark><strong>reproducibility</strong></mark></p></li>
-<li><p>balances simplicity and applicability - <mark><strong>parsimonius</strong></mark></p></li>
-<li><p>cannot be biased towards the data (experiment, etc.)</p>
-<ul>
-<li><p>avoid manipulation of the model to fit data</p></li>
-<li><p>overfitting data</p></li>
-</ul>
-</li>
-<li><p>recognizes <mark><strong>limitations</strong></mark> and presents its <mark><strong>assumptions</strong></mark></p></li>
-<li><p>uses input from outside sources (other theories, data, experiments, etc) to confirm/evaluate - <mark><strong>validation</strong></mark></p></li>
-<li><p>can be adjusted for different conditions - <mark><strong>investigatory</strong></mark></p></li>
-<li><p>is <mark><strong>testable</strong></mark> in some way</p></li>
-<li><p>needs to have its results and processes <mark><strong>communicated clearly</strong></mark></p></li>
-</ul>
-</section>
+<p>We started class with a discussion of the modeling process. We discussed the following questions:</p>
 </section>
 </section>
 
@@ -541,6 +457,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../sho/notes-SHO.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">29 Sept 23 - Notes: Simple Harmonic Oscillator</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../references.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Works Cited</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

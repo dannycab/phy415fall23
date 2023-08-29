@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Works Cited" href="../../references.html" />
+    <link rel="next" title="29 Sept 23 - Notes: What is a Model?" href="../modeling/notes-what_is_a_model.html" />
     <link rel="prev" title="29 Sept 23 - Activity: What is a Model?" href="../modeling/activity-what_is_a_model.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -181,11 +181,6 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../modeling/what_is_modeling.html">
-   What is Mathematical Modeling?
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../modeling/activity-what_is_a_model.html">
    29 Sept 23 - Activity: What is a Model?
   </a>
@@ -193,6 +188,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    29 Sept 23 - Notes: Simple Harmonic Oscillator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modeling/notes-what_is_a_model.html">
+   29 Sept 23 - Notes: What is a Model?
   </a>
  </li>
 </ul>
@@ -450,11 +450,6 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sho-properties">
-     SHO properties
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -522,11 +517,6 @@ title="Print to PDF"
       </a>
      </li>
     </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sho-properties">
-     SHO properties
-    </a>
    </li>
   </ul>
  </li>
@@ -649,13 +639,13 @@ Hint<div class="sd-summary-down docutils">
 <p>To determine a particular solution is to solve for the <strong>trajectory</strong> of the system given a set of initial conditions. You can think about a falling object, but any physical system that is evolving in time will have a trajectory in the general sense of various changing observable quantities. We will revisit this idea later once we make the connection to <a class="reference external" href="https://en.wikipedia.org/wiki/Dynamical_system">Dynamical Systems</a>.</p>
 <section id="find-a-particular-solution">
 <h4>Find a particular solution<a class="headerlink" href="#find-a-particular-solution" title="Permalink to this headline">#</a></h4>
-<p>For an SHO that is pulled to a point <span class="math notranslate nohighlight">\(x_0\)</span> and let go at <span class="math notranslate nohighlight">\(t=0\)</span>, let’s find the particular solutions using both general forms.</p>
-<p><strong>Compare and contrast these solutions with your neighbor.</strong> What do you notice about them? How can they be made compatible with each other?</p>
-<ul class="simple">
-<li><p>Make a plot (in this notebook) of both solutions for an SHO with frequency of 100Hz that starts at <span class="math notranslate nohighlight">\(x_0 =\)</span> 0.1m</p></li>
-<li><p>Adjust the starting location and frequency, what do you notice?</p></li>
-<li><p><strong>If you have time</strong>, create another solution for an SHO that is put into motion with a velocity of +0.1m/s at <span class="math notranslate nohighlight">\(x_0=0\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span>.</p></li>
-</ul>
+<p>For an SHO (<span class="math notranslate nohighlight">\(\omega=\omega_0 = 1\)</span>) that is pulled to a point <span class="math notranslate nohighlight">\(x_0\)</span> and let go at <span class="math notranslate nohighlight">\(t=0\)</span>, let’s find the particular solutions using both general forms (they will give us this).</p>
+<div class="math notranslate nohighlight">
+\[x_1(t) = x_0\cos(\omega_0 t)\]</div>
+<div class="math notranslate nohighlight">
+\[x_2(t) = x_0\sin(\omega_0 t + \pi/2)\]</div>
+<div class="math notranslate nohighlight">
+\[x_2(t) = -x_0\sin(\omega_0 t + 3\pi/2)\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -666,49 +656,27 @@ Hint<div class="sd-summary-down docutils">
 <span class="c1">#################################</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">omega0</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">x0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega0</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">x2a</span> <span class="o">=</span> <span class="n">x0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega0</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># to make it offset</span>
+<span class="n">x2b</span> <span class="o">=</span> <span class="o">-</span><span class="n">x0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega0</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># to make it offset</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x2a</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x2b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x119389660&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x117a067d0&gt;]
 </pre></div>
 </div>
 <img alt="../../../_images/notes-SHO_7_1.png" src="../../../_images/notes-SHO_7_1.png" />
 </div>
 </div>
 </section>
-</section>
-<section id="sho-properties">
-<h3>SHO properties<a class="headerlink" href="#sho-properties" title="Permalink to this headline">#</a></h3>
-<p>You have likely work with the SHO in other contexts. You have learned about a variety of aspects of the SHO. Talk with your neighbor about different things you all know about the properties of the SHO (it’s motion, it’s energy, etc.).</p>
-<p><strong>✅ Do this</strong></p>
-<p>Decide on one or two things to investigate and plot with respect to the SHO. <strong>Be ready to explain your figure, to discuss how to improve it, and what we can claim from it.</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1">#################################</span>
-<span class="c1"># Adjust code to fit your needs #</span>
-<span class="c1">#################################</span>
-
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x119515ba0&gt;]
-</pre></div>
-</div>
-<img alt="../../../_images/notes-SHO_10_1.png" src="../../../_images/notes-SHO_10_1.png" />
-</div>
-</div>
 </section>
 </section>
 <section id="resources">
@@ -782,10 +750,10 @@ Hint<div class="sd-summary-down docutils">
             <p class="prev-next-title">29 Sept 23 - Activity: What is a Model?</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../../references.html" title="next page">
+    <a class='right-next' id="next-link" href="../modeling/notes-what_is_a_model.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Works Cited</p>
+        <p class="prev-next-title">29 Sept 23 - Notes: What is a Model?</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
