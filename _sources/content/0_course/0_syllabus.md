@@ -31,8 +31,8 @@ This is not to say that you are on your own. Here's what you can expect from us:
 
 ## Teaching Assistant/Grader
 - [Ian Neuhart](https://directory.natsci.msu.edu/directory/Profiles/Person/101905) (he/him/his)
-- Email: [neuharti@msu.edu](mailto:neuharti@msu.edu)
-- Office hrs: TBD
+- Email: [neuharti@msu.edu](mailto:neuharti@msu.edu); office: 4214 BPS
+- Office hrs: 12:30pm-2:00pm Thursdays, or by appointment
 
 ### Learning Assistant
 -   [Alia Valentine](https://valentine-alia.github.io/) (she/her/hers)
