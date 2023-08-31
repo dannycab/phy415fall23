@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# Book Reading: Any Classical Mechanics Book
+# Book Reading: 
+# - Any Classical Mechanics Book Section on Lagrangian Dynamics
+# - [[Section 2.1 and 2.2 of Shapiro's Book is online]](https://www.physics.rutgers.edu/~shapiro/507/book.pdf)
 # 
 # # 5 Sept 23 - Notes: Lagrangian Dynamics
 # 
@@ -13,7 +15,7 @@
 # 
 # In many cases, we can do this. But consider the picture below of a bead sliding inside a cone. How would you write down the contact force between the cone and the bead for all space and time?
 # 
-# ![Cone](../../assets/images/cylindrical_cone_mass.jpg)
+# ![Cone](../../assets/cylindrical_cone_mass.jpg)
 # 
 # 
 
@@ -29,12 +31,8 @@
 # 
 # Parth G. has a lovely video below in his dulcet tone about the basics of this as we talked in class.
 
-# In[1]:
-
-
-from IPython.display import YouTubeVideo
-YouTubeVideo("KpLno70oYHE", 800, 600)
-
+# [![](https://markdown-videos-api.jorgenkh.no/youtube/KpLno70oYHE)](https://inv.tux.pizza/watch?v=KpLno70oYHE)
+# 
 
 # 
 # 
@@ -62,9 +60,5 @@ YouTubeVideo("KpLno70oYHE", 800, 600)
 # 
 # If you are a feeling that you would like a little direct instruction on this, this lecture is great. Lots of examples!
 
-# In[2]:
-
-
-from IPython.display import YouTubeVideo
-YouTubeVideo("zhk9xLjrmi4", 800, 600)
-
+# [![](https://markdown-videos-api.jorgenkh.no/youtube/zhk9xLjrmi4)](https://inv.tux.pizza/watch?v=zhk9xLjrmi4)
+# 

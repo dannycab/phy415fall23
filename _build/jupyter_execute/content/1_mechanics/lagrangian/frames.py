@@ -34,26 +34,26 @@
 # 
 # **POLAR**: I tell you $r(t)$ and $\phi(t)$. (Here $r(t)$ = $|\mathbf{r}(t)|$, it's the "distance to the origin")
 # 
-# - (a) Draw a picture showing the location of the point at some arbitrary time, labeling $x, y, r, \phi$ and also showing the unit vectors $\hat{i}, \hat{j}, \hat{r},$ and $\hat{\phi}$, all at this one time.
+# - (a) Draw a picture showing the location of the point at some arbitrary time, labeling $x, y, r, \phi$ and also showing the unit vectors $\hat{x}, \hat{y}, \hat{r},$ and $\hat{\phi}$, all at this one time.
 # - (b) Using this picture, determine the formula for $\hat{r}(t)$ in terms of the Cartesian unit vectors. You answer should contain $\phi(t)$.
 # - (c) Write down the analogous expression for $\hat{\phi}(t)$.
-# - (d) We can claim the position vector in Cartesian coordinates is $\vec{r}(t) = x(t)\hat{I} + y(t)\hat{j}$. Do you agree? Is this consistent with your picture above?
+# - (d) We can claim the position vector in Cartesian coordinates is $\vec{r}(t) = x(t)\hat{x} + y(t)\hat{y}$. Do you agree? Is this consistent with your picture above?
 # - (e) We can claim the position vector in polar coordinates is just $\vec{r}(t) = r(t)\hat{r}$. Again, do you agree? Why isn't there a $+\phi(t)\hat{\phi}$ term?
 
 # ### Getting Kinetic
 # 
 # **&#9989; Do this** 
 # 
-# - (a) Now let's find the velocity, $\vec{v}(t) = d\vec{r}/dt$. In Cartesian coordinates, it's just $\vec{v}(t) = \dot{x}(t)\hat{i} + \dot{y}(t)\hat{j}$. Explain why, in polar coordinates, the velocity can be written as $d\vec{r}/dt = r(t)\:d\hat{r}/dt + dr(t)/dt\:\hat{r}$.
-# - (b) It appears we need to figure out what $d\hat{r}/dt$ is. Use the formula your determined in question 1b to get started -- first in terms of $\hat{i}$ and $\hat{j}$, and then converting to pure polar.
+# - (a) Now let's find the velocity, $\vec{v}(t) = d\vec{r}/dt$. In Cartesian coordinates, it's just $\vec{v}(t) = \dot{x}(t)\hat{x} + \dot{y}(t)\hat{y}$. Explain why, in polar coordinates, the velocity can be written as $d\vec{r}/dt = r(t)\:d\hat{r}/dt + dr(t)/dt\:\hat{r}$.
+# - (b) It appears we need to figure out what $d\hat{r}/dt$ is. Use the formula your determined in question 1b to get started -- first in terms of $\hat{x}$ and $\hat{y}$, and then converting to pure polar.
 # - (c) Write an expression for $\vec{v}(t)$ in polar coordinates.
-# - (d) Finally, determine the acceleration $\vec{a} = d\vec{v}(t)/dt$. In Cartesian coordinates, it's just $\vec{a}(t) = \ddot{x(t)}\hat{i} + \ddot{y}(t)\hat{j}$. Work it on in polar coordinates.
+# - (d) Finally, determine the acceleration $\vec{a} = d\vec{v}(t)/dt$. In Cartesian coordinates, it's just $\vec{a}(t) = \ddot{x(t)}\hat{x} + \ddot{y}(t)\hat{y}$. Work it on in polar coordinates.
 
 # ## Forces and acceleration in plane-polar coordinates
 # 
 # We can show that the acceleration in plane-polar coordinates is given by:
 # 
-# $$\mathbf{a} = a_r\hat{r} + a_{\phi}\hat{\phi} = \left(\ddot{r}-r\dot{\phi}^2\right)\hat{r} + \left(r\ddot{\phi}+2\dot{r}^2\dot{\phi}\right)\hat{\phi}$$
+# $$\mathbf{a} = a_r\hat{r} + a_{\phi}\hat{\phi} = \left(\ddot{r}-r\dot{\phi}^2\right)\hat{r} + \left(r\ddot{\phi}+2\dot{r}\dot{\phi}\right)\hat{\phi}$$
 # 
 # Because this coordinate system is orthgonal ($\hat{r}\cdot\hat{\phi} = 0$), we can write the Newton's second law in this coordinate system as:
 # 
@@ -65,7 +65,7 @@
 # 
 # and 
 # 
-# $$\mathbf{F}_{\phi} = m\left(r\ddot{\phi}+2\dot{r}^2\dot{\phi}\right)\hat{\phi}$$
+# $$\mathbf{F}_{\phi} = m\left(r\ddot{\phi}+2\dot{r}\dot{\phi}\right)\hat{\phi}$$
 
 # ### Example to Work in a Group
 # 
@@ -81,5 +81,3 @@
 # * Do not use Lagrangian dynamics to solve this problem if you know how you, please instead use Newton's Second Law.
 # 
 # **Hint: The equation of motion to small angle oscillation frequency pipeline is real.**
-
-# 

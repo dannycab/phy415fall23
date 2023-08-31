@@ -16,12 +16,7 @@
 # 
 # We can use **numerical integration** to find these trajectories. Below is a video describing 3 coupled ODEs, the [Lorenz equations](https://en.wikipedia.org/wiki/Lorenz_system), that are quite famous. You will be able to model systems like this, but for now think of it as motivation for why we want to learn numerical integration.
 
-# In[1]:
-
-
-from IPython.display import YouTubeVideo
-YouTubeVideo("aAJkLh76QnM", 800, 600)
-
+# [![](https://markdown-videos-api.jorgenkh.no/youtube/aAJkLh76QnM)](https://inv.tux.pizza/watch?v=aAJkLh76QnM)
 
 # ## Nonlinear Science
 # 
@@ -49,5 +44,3 @@ YouTubeVideo("aAJkLh76QnM", 800, 600)
 # The second one in from [Chapters 4 and 5 of Steven Strogatz's book, Nonlinear Dynamics and Chaos](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Strogatz_Integrating_Ch4-5.pdf), which is an excellent and broad book covering many science and engineering problems. It is a book that I think every student of physics should read at some point.
 # 
 # **Read This** Section 5.1. We have worked already with these ideas, but we will continue to do so. This is another way to look at what we've done, so it's worth reading another perspective. We will continue to discuss and work with these ideas. You are free to read other parts of this book, but please read 5.1 for class.
-
-# 
