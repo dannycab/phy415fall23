@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 29 Sept 23 - Notes: Simple Harmonic Oscillator
+# # 29 Aug 23 - Notes: Simple Harmonic Oscillator
 # 
 # ## A Linear Restoring Force
 # 
