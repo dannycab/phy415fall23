@@ -394,7 +394,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>Book Reading: Any Classical Mechanics Book</p>
+  <p>Book Reading:</p>
+<ul class="simple">
+<li><p>Any Classical Mechanics Book Section on Lagrangian Dynamics</p></li>
+<li><p><a class="reference external" href="https://www.physics.rutgers.edu/~shapiro/507/book.pdf">[Section 2.1 and 2.2 of Shapiro’s Book is online]</a></p></li>
+</ul>
 <div class="tex2jax_ignore mathjax_ignore section" id="sept-23-notes-lagrangian-dynamics">
 <h1>5 Sept 23 - Notes: Lagrangian Dynamics<a class="headerlink" href="#sept-23-notes-lagrangian-dynamics" title="Permalink to this headline">#</a></h1>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion">Newtonian Mechanics</a> is an incredibly useful model of the natural world. In fact, it wasn’t until the mid 1970s that we were able to truly <a class="reference external" href="https://en.wikipedia.org/wiki/Tests_of_general_relativity">test Einstein’s gravity as a true replacement</a> for Newton. That being said, for most terrestrial situations (macroscopic objects moving at low speeds), Newton’s mechanics is very good. However, the problem with Newton is that it requires a few things:</p>
@@ -404,7 +408,7 @@ document.write(`
 <li><p>We must be able to vectorially add the interactions to produce the net force <span class="math notranslate nohighlight">\(\sum_i \vec{F}_i = \vec{F}_{net}\)</span>.</p></li>
 </ol>
 <p>In many cases, we can do this. But consider the picture below of a bead sliding inside a cone. How would you write down the contact force between the cone and the bead for all space and time?</p>
-<p><img alt="Cone" src="content/assets/images/cylindrical_cone_mass.jpg" /></p>
+<p><img alt="Cone" src="../../../_images/cylindrical_cone_mass.jpg" /></p>
 <p>Enter the <a class="reference external" href="https://en.wikipedia.org/wiki/Lagrangian_mechanics">Lagrangian Mechanics</a>, an equivalent descirption of Newton’s mechanics developed through several adbances in physics and mathematics in the 17th and 18th centuries. Some of the major contributors included Newton, Gottfried Wilhelm Leibniz, Pierre Louis Moreau de Maupertuis, Guillaume de l’Hôpital, Jacques Bernoulli, Jean Bernoulli, and Jean D’Alembert. This period of the development of mechanics was foundational to the development of concepts like the <a class="reference external" href="https://en.wikipedia.org/wiki/Action_(physics)">action</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Phase_space">phase space</a> as well as approaches like <a class="reference external" href="https://en.wikipedia.org/wiki/Calculus_of_variations">variational analysis</a>, which formed the basis for <a class="reference external" href="https://en.wikipedia.org/wiki/Dynamical_system">dynamical systems</a> (phase space describes real motion), <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_mechanics">quantum mechanics</a> (quantize the action), and <a class="reference external" href="https://en.wikipedia.org/wiki/Perturbation_theory">perturbation theory</a> (approximate answers can be iteratively sought).</p>
 <p>This analysis is grounded in optimization or rather extremization. The idea is as follows:</p>
 <ol class="arabic simple">
@@ -414,25 +418,7 @@ document.write(`
 </ol>
 <p>This might seem magical! But it’s truly a deep connection to the energetics of the system, which limit the the relevant equations of motion by both the number of degrees of freedom (ways the system can move) and the constraints equation (things that influence the motion).</p>
 <p>Parth G. has a lovely video below in his dulcet tone about the basics of this as we talked in class.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;KpLno70oYHE&quot;</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-        <iframe
-            width="800"
-            height="600"
-            src="https://www.youtube.com/embed/KpLno70oYHE"
-            frameborder="0"
-            allowfullscreen
-            
-        ></iframe>
-        </div></div>
-</div>
+<p><a class="reference external" href="https://inv.tux.pizza/watch?v=KpLno70oYHE"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/KpLno70oYHE" /></a></p>
 <p>My notes go into detail on the development of the Lagrangian problem. But practice is the best approach.</p>
 <div class="section" id="book-readings">
 <h2>Book Readings<a class="headerlink" href="#book-readings" title="Permalink to this headline">#</a></h2>
@@ -454,25 +440,7 @@ document.write(`
 <div class="section" id="video-resources">
 <h2>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this headline">#</a></h2>
 <p>If you are a feeling that you would like a little direct instruction on this, this lecture is great. Lots of examples!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;zhk9xLjrmi4&quot;</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-        <iframe
-            width="800"
-            height="600"
-            src="https://www.youtube.com/embed/zhk9xLjrmi4"
-            frameborder="0"
-            allowfullscreen
-            
-        ></iframe>
-        </div></div>
-</div>
+<p><a class="reference external" href="https://inv.tux.pizza/watch?v=zhk9xLjrmi4"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/zhk9xLjrmi4" /></a></p>
 </div>
 </div>
 
@@ -485,16 +453,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "teaching"
         },
         kernelOptions: {
-            name: "python3",
+            name: "teaching",
             path: "./content/1_mechanics/lagrangian"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'teaching'</script>
 
                 </article>
               
