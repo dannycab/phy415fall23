@@ -26,6 +26,9 @@ parts:
     #- file: content/1_mechanics/lagrangian/lagrange_1
     #- file: content/1_mechanics/lagrangian/lagrange_2
     #- file: content/1_mechanics/mechanics_intro.ipynb
+  - caption: Assignments
+    chapters:
+    - file: content/9_assignments/worked-problem-1.md
   - caption: Appendices
     chapters:
     - file: content/references.ipynb
