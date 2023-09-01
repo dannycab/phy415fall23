@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/1_mechanics/lagrangian/notes-lagrangian-dynamics';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="7 Sept 23 - Notes: Numerical Integration in 1D" href="notes-numerical_integration_1d.html" />
+    <link rel="next" title="5 Sep 23 - Calculus of Varations and Lagrangian Dynamics" href="activity-lagrange_1.html" />
     <link rel="prev" title="31 Aug 23 - Activity: Frames and Coordinates" href="frames.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -178,6 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="notes_frames.html">31 Aug 23 - Notes: Frames and Coordinates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="frames.html">31 Aug 23 - Activity: Frames and Coordinates</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">5 Sept 23 - Notes: Lagrangian Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-lagrange_1.html">5 Sep 23 - Calculus of Varations and Lagrangian Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-numerical_integration_1d.html">7 Sept 23 - Notes: Numerical Integration in 1D</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
@@ -380,9 +381,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#book-readings">Book Readings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handwritten-notes">Handwritten Notes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-resources">Video Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-analysis">Variational Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-to-classical-mechanics">Applications to Classical Mechanics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-on-lagrangian-dynamics">Video on Lagrangian Dynamics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handwritten-notes">Handwritten Notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#book-readings">Book Readings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-resources">Video Resources</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -417,20 +426,57 @@ document.write(`
 <li><p>The one that minimizes the action integral over that time/space is the one the system takes</p></li>
 </ol>
 <p>This might seem magical! But it’s truly a deep connection to the energetics of the system, which limit the the relevant equations of motion by both the number of degrees of freedom (ways the system can move) and the constraints equation (things that influence the motion).</p>
-<p>Parth G. has a lovely video below about the basics of this.</p>
-<p><a class="reference external" href="https://inv.tux.pizza/watch?v=KpLno70oYHE"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/KpLno70oYHE?width=720&amp;height=405" /></a></p>
-<p>My notes go into detail on the development of the Lagrangian problem. But practice is the best approach.</p>
-<div class="section" id="book-readings">
-<h2>Book Readings<a class="headerlink" href="#book-readings" title="Permalink to this headline">#</a></h2>
-<p>This reading is useful preparation for reminding yourself of Lagrangian Dynamics.</p>
-<ul class="simple">
-<li><p>Any classical mechanics book you like! Taylor is a good one.</p></li>
-<li><p><a class="reference external" href="https://www.physics.rutgers.edu/~shapiro/507/book.pdf">Section 2.1 and 2.2 of Shapiro’s Book</a></p></li>
-<li><p><a class="reference external" href="https://www.google.com/books/edition/A_Student_s_Guide_to_Lagrangians_and_Ham/ebTCAQAAQBAJ?hl=en&amp;gbpv=1&amp;dq=lagrangian+dynamics+book&amp;printsec=frontcover">A Google Book you can review</a></p></li>
-</ul>
+<div class="section" id="variational-analysis">
+<h2>Variational Analysis<a class="headerlink" href="#variational-analysis" title="Permalink to this headline">#</a></h2>
+<p>The name of the game in calculus of variations is finding extrema (minima, maxima, or stationary points) of integrals that have the form:</p>
+<div class="math notranslate nohighlight">
+\[
+S = \int_{x_1}^{x_2} f[y(x),\dot{y}(x),x] dx
+\]</div>
+<p>While at first this might seem like a strange thing to do, it turns out that this is a very powerful way to solve problems. In fact, we are able to characterize the path of a system through phase space by finding the path that minimizes the <a class="reference external" href="https://en.wikipedia.org/wiki/Action_(physics)">action integral</a> . This is called the <a class="reference external" href="https://en.wikipedia.org/wiki/Stationary-action_principle">principle of least action</a>. This kind of analysis also tells us that a <a class="reference external" href="https://en.wikipedia.org/wiki/Great_circle">Great Circle</a> is the shortest path between two points on a sphere and that <a class="reference external" href="https://en.wikipedia.org/wiki/Snell%27s_law">Snell’s Law</a> is the shortest path (in time) light takes between two points in different media.</p>
+<p>While you are trying to find the minimize <span class="math notranslate nohighlight">\(S\)</span>, what you end up finding is the <strong>function</strong> <span class="math notranslate nohighlight">\(y(x)\)</span> that satisfies this minimization. It turns out that for <span class="math notranslate nohighlight">\(S\)</span> to have extrema, the Euler-Lagrange equation (below) must be satisfied. The handwritten notes below show how to derive this equation for a 1D system, but it can be generalized to <span class="math notranslate nohighlight">\(N\)</span> dimensions.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f}{\partial y} - \frac{d}{dx}\left(\frac{\partial f}{\partial \dot{y}} \right) = 0
+\]</div>
+<div class="section" id="applications-to-classical-mechanics">
+<h3>Applications to Classical Mechanics<a class="headerlink" href="#applications-to-classical-mechanics" title="Permalink to this headline">#</a></h3>
+<p>In practice, when approaching a variational problem, the typical workflow if something like this:</p>
+<ol class="arabic simple">
+<li><p>Write your problem down in the form of an integral like <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
+<li><p>Use the Euler-Lagrange equation to get a differential equation for the unknown function <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+<li><p>Solve the differential equation.</p></li>
+</ol>
+<p>We can extend this framework for use in classical mechanics by defining the lagrangian of a system with independent, generalized coordinates <span class="math notranslate nohighlight">\((q_1,\dot{q}_1... q_n,\dot{q}_n)\)</span> as the kinetic energy minus potential energy of a system:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} = T(q_1,\dot{q}_1... q_n,\dot{q}_n) - V(q_1,\dot{q}_1... q_n,\dot{q}_n)
+\]</div>
+<p>Here, the function <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is called the Lagrangian of the system and takes the place of <span class="math notranslate nohighlight">\(f\)</span> in the Euler-Lagrange equation. The coordinates <span class="math notranslate nohighlight">\(q_i\)</span> are called the generalized coordinates of the system and they take the place of <span class="math notranslate nohighlight">\(y\)</span> in the 1D Euler-Lagrange equation.</p>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Action_(physics)">action</a> is a scalar quantity that “tracks” how the energy changes in a physical system over time. It is the integral of the Lagrangian over a time interval, which we write as the action integral:</p>
+<div class="math notranslate nohighlight">
+\[
+S = \int_{t_1}^{t_2} \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} dt
+\]</div>
+<p>Several mathematicians contributed to this work including Leibniz, BErnoulli, Maupertuis, and Euler. Through their collective work, it turns out we can think of the path that a system takes through an abstract space of all the measurements that uniquely characterize it (a phase space). That trajectory through phase space is just as useful as a real physical trajectory in <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span> space if we understand what it is doing. And we can abstract that concept to new systems that might not have mechanical analogs (e.g., quantum mechanics).</p>
+<p>Their work showed that the path a system takes between points <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span> in these generalized coordinates is the path such that <span class="math notranslate nohighlight">\(S\)</span> is stationary (you can think of this as minimizing the action integral). This is called the principle of least action. This lets us leverage the Euler-Lagrange equation for the generalized coordinates of our system <span class="math notranslate nohighlight">\(q_n\)</span>. We can derive that result, but it is not necessary for you to do so to see the connection between the equation below and the 1D Euler-Lagrange equation.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \mathcal{L}}{\partial q_i} - \frac{d}{dt}\left(\frac{\partial \mathcal{L}}{\partial \dot{q}_i} \right) = 0
+\]</div>
+<p>Once we perform these derivatives on this function, we will obtain <span class="math notranslate nohighlight">\(n\)</span> equations of motion (EOM) for our system; one for each generalized coordinate (<span class="math notranslate nohighlight">\(q_i\)</span>). Note how we didn’t have to know anything about the forces acting on our system to arrive at equations of motion, but rather the energy.</p>
 </div>
+</div>
+<div class="section" id="video-on-lagrangian-dynamics">
+<h2>Video on Lagrangian Dynamics<a class="headerlink" href="#video-on-lagrangian-dynamics" title="Permalink to this headline">#</a></h2>
+<p>Parth G. has a lovely video below about the basics of Lagrangian Dynamics.</p>
+<p><a class="reference external" href="https://inv.tux.pizza/watch?v=KpLno70oYHE"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/KpLno70oYHE?width=720&amp;height=405" /></a></p>
+</div>
+<div class="section" id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">#</a></h2>
+<p>My notes go into detail on the development of the Lagrangian problem. But practice is the best approach.</p>
 <div class="section" id="handwritten-notes">
-<h2>Handwritten Notes<a class="headerlink" href="#handwritten-notes" title="Permalink to this headline">#</a></h2>
+<h3>Handwritten Notes<a class="headerlink" href="#handwritten-notes" title="Permalink to this headline">#</a></h3>
 <p>Here are my handwritten notes on the Calculus of Variations and Lagrangian Mechanics.</p>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../../../_downloads/02356da9006e30d949ae4f8905549fe6/Notes-Calculus_of_Variations.pdf"><span class="xref download myst">Calculus of Variations</span></a></p></li>
@@ -439,10 +485,20 @@ document.write(`
 <li><p><a class="reference download internal" download="" href="../../../_downloads/8efa84abd67acc5a791a190b9bb7fa3c/Notes-Lagrangian_Example_Gen_Force.pdf"><span class="xref download myst">Lagrangian Example with Generalized Forces and Lagrange Multipliers</span></a></p></li>
 </ul>
 </div>
+<div class="section" id="book-readings">
+<h3>Book Readings<a class="headerlink" href="#book-readings" title="Permalink to this headline">#</a></h3>
+<p>This reading is useful preparation for reminding yourself of Lagrangian Dynamics.</p>
+<ul class="simple">
+<li><p>Any classical mechanics book you like! Taylor is a good one.</p></li>
+<li><p><a class="reference external" href="https://www.physics.rutgers.edu/~shapiro/507/book.pdf">Section 2.1 and 2.2 of Shapiro’s Book</a></p></li>
+<li><p><a class="reference external" href="https://www.google.com/books/edition/A_Student_s_Guide_to_Lagrangians_and_Ham/ebTCAQAAQBAJ?hl=en&amp;gbpv=1&amp;dq=lagrangian+dynamics+book&amp;printsec=frontcover">A Google Book you can review</a></p></li>
+</ul>
+</div>
 <div class="section" id="video-resources">
-<h2>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this headline">#</a></h2>
+<h3>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this headline">#</a></h3>
 <p>If you are a feeling that you would like a little direct instruction on this, this lecture is great. Lots of examples!</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=zhk9xLjrmi4"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/zhk9xLjrmi4?width=720&amp;height=405" /></a></p>
+</div>
 </div>
 </div>
 
@@ -487,11 +543,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="notes-numerical_integration_1d.html"
+       href="activity-lagrange_1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">7 Sept 23 - Notes: Numerical Integration in 1D</p>
+        <p class="prev-next-title">5 Sep 23 - Calculus of Varations and Lagrangian Dynamics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -513,9 +569,17 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#book-readings">Book Readings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handwritten-notes">Handwritten Notes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-resources">Video Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-analysis">Variational Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-to-classical-mechanics">Applications to Classical Mechanics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-on-lagrangian-dynamics">Video on Lagrangian Dynamics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handwritten-notes">Handwritten Notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#book-readings">Book Readings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-resources">Video Resources</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

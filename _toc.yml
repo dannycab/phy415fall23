@@ -22,6 +22,7 @@ parts:
     - file: content/1_mechanics/lagrangian/notes_frames.md
     - file: content/1_mechanics/lagrangian/frames
     - file: content/1_mechanics/lagrangian/notes-lagrangian-dynamics
+    - file: content/1_mechanics/lagrangian/activity-lagrange_1
     - file: content/1_mechanics/lagrangian/notes-numerical_integration_1d
     #- file: content/1_mechanics/lagrangian/lagrange_1
     #- file: content/1_mechanics/lagrangian/lagrange_2
