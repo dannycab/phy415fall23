@@ -167,7 +167,7 @@ plt.plot(t,x2b)
 # 
 # Below, I have worked up some additional notes that describe the conceptual and procedural aspects of what we did today. Think: derivations and examples for learning from for your project. They are linked below:
 # 
-# - [The SHO](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_2_SHO.pdf)
+# - [The SHO](https://github.com/dannycab/phy415fall23/blob/main/content/assets/notes/Notes-SHO.pdf)
 
 # 
 
