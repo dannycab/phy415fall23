@@ -93,10 +93,10 @@
 # 
 # Here are my handwritten notes on the Calculus of Variations and Lagrangian Mechanics.
 # 
-# * [Calculus of Variations](../../assets/notes/Notes-Calculus_of_Variations.pdf)
-# * [Lagrangian Dynamics](../../assets/notes/Notes-Lagrangian_Dynamics.pdf)
-# * [Lagrangian Example](../../assets/notes/Notes-Lagrangian_Example.pdf)
-# * [Lagrangian Example with Generalized Forces and Lagrange Multipliers](../../assets/notes/Notes-Lagrangian_Example_Gen_Force.pdf)
+# * [Calculus of Variations](https://github.com/dannycab/phy415fall23/blob/main/content/assets/notes/Notes-Calculus_of_Variations.pdf)
+# * [Lagrangian Dynamics](https://github.com/dannycab/phy415fall23/blob/main/content/assets/notes/Notes-Lagrangian_Dynamics.pdf)
+# * [Lagrangian Example](https://github.com/dannycab/phy415fall23/blob/main/content/assets/notes/Notes-Lagrangian_Example.pdf)
+# * [Lagrangian Example with Generalized Forces and Lagrange Multipliers](https://github.com/dannycab/phy415fall23/blob/main/content/assets/notes/Notes-Lagrangian_Example_Gen_Force.pdf)
 # 
 # 
 # ### Book Readings
