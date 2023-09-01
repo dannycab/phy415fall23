@@ -10,7 +10,7 @@ An **inertial frame** is a reference frame where Newton's First Law holds, which
 
 From Physics Professor [Matt Anderson](https://www.youtube.com/user/yoprofmatt) (6min 33s)
 
-[![](https://markdown-videos-api.jorgenkh.no/youtube/WqWWM0673bk)](https://inv.tux.pizza/watch?v=WqWWM0673bk)
+[![](https://markdown-videos-api.jorgenkh.no/youtube/WqWWM0673bk?width=720&height=405)](https://inv.tux.pizza/watch?v=WqWWM0673bk)
 
 
 ## Relative Velocities in Cartesian Coordinates

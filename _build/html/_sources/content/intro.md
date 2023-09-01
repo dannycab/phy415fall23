@@ -15,7 +15,7 @@ To get a sense of the course, please read all the pages associated with our syll
  * provide evidence of the quality of work using a variety of sources, and
  * collaborate effectively and contribute to a inclusive learning environment
 
-Table of contents:
+Table of Contents:
 
 ```{tableofcontents}
 ```
