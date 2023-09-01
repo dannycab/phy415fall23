@@ -19,7 +19,7 @@
 # 
 # 
 
-# Enter the [Lagrangian Mechanics](https://en.wikipedia.org/wiki/Lagrangian_mechanics), an equivalent descirption of Newton's mechanics developed through several adbances in physics and mathematics in the 17th and 18th centuries. Some of the major contributors included Newton, Gottfried Wilhelm Leibniz, Pierre Louis Moreau de Maupertuis, Guillaume de l'Hôpital, Jacques Bernoulli, Jean Bernoulli, and Jean D'Alembert. This period of the development of mechanics was foundational to the development of concepts like the [action](https://en.wikipedia.org/wiki/Action_(physics)) and [phase space](https://en.wikipedia.org/wiki/Phase_space) as well as approaches like [variational analysis](https://en.wikipedia.org/wiki/Calculus_of_variations), which formed the basis for [dynamical systems](https://en.wikipedia.org/wiki/Dynamical_system) (phase space describes real motion), [quantum mechanics](https://en.wikipedia.org/wiki/Quantum_mechanics) (quantize the action), and [perturbation theory](https://en.wikipedia.org/wiki/Perturbation_theory) (approximate answers can be iteratively sought).
+# Enter the [Lagrangian Mechanics](https://en.wikipedia.org/wiki/Lagrangian_mechanics), an equivalent description of Newton's mechanics developed through several advances in physics and mathematics in the 17th and 18th centuries. Some of the major contributors included Newton, Gottfried Wilhelm Leibniz, Pierre Louis Moreau de Maupertuis, Guillaume de l'Hôpital, Jacques Bernoulli, Jean Bernoulli, and Jean D'Alembert. This period of the development of mechanics was foundational to the development of concepts like the [action](https://en.wikipedia.org/wiki/Action_(physics)) and [phase space](https://en.wikipedia.org/wiki/Phase_space) as well as approaches like [variational analysis](https://en.wikipedia.org/wiki/Calculus_of_variations), which formed the basis for [dynamical systems](https://en.wikipedia.org/wiki/Dynamical_system) (phase space describes real motion), [quantum mechanics](https://en.wikipedia.org/wiki/Quantum_mechanics) (quantize the action), and [perturbation theory](https://en.wikipedia.org/wiki/Perturbation_theory) (approximate answers can be iteratively sought).
 
 # This analysis is grounded in optimization or rather extremization. The idea is as follows:
 # 
@@ -28,37 +28,89 @@
 # 3. The one that minimizes the action integral over that time/space is the one the system takes
 # 
 # This might seem magical! But it's truly a deep connection to the energetics of the system, which limit the the relevant equations of motion by both the number of degrees of freedom (ways the system can move) and the constraints equation (things that influence the motion).
-# 
-# Parth G. has a lovely video below in his dulcet tone about the basics of this as we talked in class.
-
-# [![](https://markdown-videos-api.jorgenkh.no/youtube/KpLno70oYHE)](https://inv.tux.pizza/watch?v=KpLno70oYHE)
-# 
 
 # 
+# ## Variational Analysis
+# 
+# The name of the game in calculus of variations is finding extrema (minima, maxima, or stationary points) of integrals that have the form:
+# 
+# $$
+# S = \int_{x_1}^{x_2} f[y(x),\dot{y}(x),x] dx
+# $$
+#  
+# While at first this might seem like a strange thing to do, it turns out that this is a very powerful way to solve problems. In fact, we are able to characterize the path of a system through phase space by finding the path that minimizes the [action integral](https://en.wikipedia.org/wiki/Action_(physics)) . This is called the [principle of least action](https://en.wikipedia.org/wiki/Stationary-action_principle). This kind of analysis also tells us that a [Great Circle](https://en.wikipedia.org/wiki/Great_circle) is the shortest path between two points on a sphere and that [Snell's Law](https://en.wikipedia.org/wiki/Snell%27s_law) is the shortest path (in time) light takes between two points in different media.
+# 
+# While you are trying to find the minimize $S$, what you end up finding is the **function** $y(x)$ that satisfies this minimization. It turns out that for $S$ to have extrema, the Euler-Lagrange equation (below) must be satisfied. The handwritten notes below show how to derive this equation for a 1D system, but it can be generalized to $N$ dimensions.
+# 
+# $$
+# \frac{\partial f}{\partial y} - \frac{d}{dx}\left(\frac{\partial f}{\partial \dot{y}} \right) = 0
+# $$
+# 
+# ### Applications to Classical Mechanics
+# 
+# In practice, when approaching a variational problem, the typical workflow if something like this:
+# 
+# 1. Write your problem down in the form of an integral like $S$.
+# 2. Use the Euler-Lagrange equation to get a differential equation for the unknown function $y$.
+# 3. Solve the differential equation.
+# 
+# We can extend this framework for use in classical mechanics by defining the lagrangian of a system with independent, generalized coordinates $(q_1,\dot{q}_1... q_n,\dot{q}_n)$ as the kinetic energy minus potential energy of a system:
+# 
+# $$
+# \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} = T(q_1,\dot{q}_1... q_n,\dot{q}_n) - V(q_1,\dot{q}_1... q_n,\dot{q}_n)
+# $$
+# 
+# Here, the function $\mathcal{L}$ is called the Lagrangian of the system and takes the place of $f$ in the Euler-Lagrange equation. The coordinates $q_i$ are called the generalized coordinates of the system and they take the place of $y$ in the 1D Euler-Lagrange equation.
+# 
+# The [action](https://en.wikipedia.org/wiki/Action_(physics)) is a scalar quantity that "tracks" how the energy changes in a physical system over time. It is the integral of the Lagrangian over a time interval, which we write as the action integral:
+# 
+# $$
+# S = \int_{t_1}^{t_2} \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} dt
+# $$
+# 
+# Several mathematicians contributed to this work including Leibniz, BErnoulli, Maupertuis, and Euler. Through their collective work, it turns out we can think of the path that a system takes through an abstract space of all the measurements that uniquely characterize it (a phase space). That trajectory through phase space is just as useful as a real physical trajectory in $x$, $y$, $z$ space if we understand what it is doing. And we can abstract that concept to new systems that might not have mechanical analogs (e.g., quantum mechanics).
+# 
+# 
+# Their work showed that the path a system takes between points $1$ and $2$ in these generalized coordinates is the path such that $S$ is stationary (you can think of this as minimizing the action integral). This is called the principle of least action. This lets us leverage the Euler-Lagrange equation for the generalized coordinates of our system $q_n$. We can derive that result, but it is not necessary for you to do so to see the connection between the equation below and the 1D Euler-Lagrange equation.
+# 
+# $$
+# \frac{\partial \mathcal{L}}{\partial q_i} - \frac{d}{dt}\left(\frac{\partial \mathcal{L}}{\partial \dot{q}_i} \right) = 0
+# $$
+# 
+# Once we perform these derivatives on this function, we will obtain $n$ equations of motion (EOM) for our system; one for each generalized coordinate ($q_i$). Note how we didn't have to know anything about the forces acting on our system to arrive at equations of motion, but rather the energy.
+# 
+# ## Video on Lagrangian Dynamics
+# 
+# Parth G. has a lovely video below about the basics of Lagrangian Dynamics.
+# 
+# [![](https://markdown-videos-api.jorgenkh.no/youtube/KpLno70oYHE?width=720&height=405)](https://inv.tux.pizza/watch?v=KpLno70oYHE)
+
+# ## Additional Resources
 # 
 # My notes go into detail on the development of the Lagrangian problem. But practice is the best approach.
 # 
+# ### Handwritten Notes
+# 
+# Here are my handwritten notes on the Calculus of Variations and Lagrangian Mechanics.
+# 
+# * [Calculus of Variations](../../assets/notes/Notes-Calculus_of_Variations.pdf)
+# * [Lagrangian Dynamics](../../assets/notes/Notes-Lagrangian_Dynamics.pdf)
+# * [Lagrangian Example](../../assets/notes/Notes-Lagrangian_Example.pdf)
+# * [Lagrangian Example with Generalized Forces and Lagrange Multipliers](../../assets/notes/Notes-Lagrangian_Example_Gen_Force.pdf)
 # 
 # 
-# 
-# ## Book Readings
+# ### Book Readings
 # 
 # This reading is useful preparation for reminding yourself of Lagrangian Dynamics.
 # 
 # * Any classical mechanics book you like! Taylor is a good one.
+# * [Section 2.1 and 2.2 of Shapiro's Book](https://www.physics.rutgers.edu/~shapiro/507/book.pdf)
 # * [A Google Book you can review](https://www.google.com/books/edition/A_Student_s_Guide_to_Lagrangians_and_Ham/ebTCAQAAQBAJ?hl=en&gbpv=1&dq=lagrangian+dynamics+book&printsec=frontcover)
 # 
-# ## Handwritten Notes
-# 
-# Here are my handwritten notes on coupled oscillations and normal modes.
-# 
-# * [Lagrangian Dynamics](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_2_Lagrangian_Dynamics.pdf)
-# * [Lagrangian Example](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_2_Lagrangian_Example.pdf)
-# * [Lagrangian Example with Generalized Forces](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_2_Lagrangian_Example_Gen_Force.pdf)
-# 
-# ## Video Resources
+# ### Video Resources
 # 
 # If you are a feeling that you would like a little direct instruction on this, this lecture is great. Lots of examples!
+# 
+# [![](https://markdown-videos-api.jorgenkh.no/youtube/zhk9xLjrmi4?width=720&height=405)](https://inv.tux.pizza/watch?v=zhk9xLjrmi4)
 
-# [![](https://markdown-videos-api.jorgenkh.no/youtube/zhk9xLjrmi4)](https://inv.tux.pizza/watch?v=zhk9xLjrmi4)
 # 

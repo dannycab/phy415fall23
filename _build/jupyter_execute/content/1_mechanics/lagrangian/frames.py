@@ -81,3 +81,7 @@
 # * Do not use Lagrangian dynamics to solve this problem if you know how you, please instead use Newton's Second Law.
 # 
 # **Hint: The equation of motion to small angle oscillation frequency pipeline is real.**
+
+# [Notes on Newton's Second Law in Plane Polar Coordinates](../../assets/notes/Notes-Newton_2nd_Plane_polar.pdf)
+
+# 
