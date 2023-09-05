@@ -31,7 +31,7 @@
 # 
 # We need a few things to numerically integrate using `solve_ivp` in python. First, we import the relevant libraries and functions.
 
-# In[16]:
+# In[1]:
 
 
 # Import libaries
@@ -139,7 +139,7 @@ from scipy.integrate import solve_ivp
 # 
 # To access the solution directly, use `solved.y`. `solved.y[0]` is the solved for position array and `solved.y[1]` is the velocity array in this case. Now let's see a full implementation of this below, including some visualization that compares our numerical solution to the analytical solution of the SHO.
 
-# In[17]:
+# In[2]:
 
 
 # 1. Derivatives Function
@@ -218,7 +218,7 @@ plt.grid()
 # Use these equations to correct the `diffyqs` function in the cell below.
 # 
 
-# In[18]:
+# In[3]:
 
 
 # 1. Derivatives Function
@@ -260,7 +260,7 @@ solved = solve_ivp(diffyqs,(0,tmax),x0,t_eval = t, args = (g,),method="RK45")
 # 
 # 
 
-# In[19]:
+# In[4]:
 
 
 def parabaloid(x,y,alpha=1.):
