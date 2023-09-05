@@ -37,7 +37,7 @@
 # 
 # **&#9989; Do this** 
 # 
-# 1. Write down the energy equations for this system using polar coordinates. *Note: $v^2 = \dot{r}^2 + r^2$\dot{\phi}$*
+# 1. Write down the energy equations for this system using polar coordinates. *Note: $v^2 = \dot{r}^2 + r^2\dot{\phi}^2$*
 # 2. Write the Lagrangian. 
 # 3. Derive the $r$ equation of motion. What do you notice about it's terms? Can you rewrite it in a Netwonian form?
 # 4. Derive the $\phi$ equation of motion. What do you notice about it's time derivative? Does that tell you something about a quantity of the motion (i.e. a conserved quantity)? If so, what is it? 
