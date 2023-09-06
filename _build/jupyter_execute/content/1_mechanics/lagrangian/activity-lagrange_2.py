@@ -46,19 +46,19 @@ from scipy.integrate import solve_ivp
 # 
 # #### 1. Derivatives Function  
 # 
-# First, we need to set up a derivatives function that calculates and returns a list of the values of the first order derivatives given an imput list of current values. These current values represent a location in **phase space**. Phase Space is a space that contains all the information about the state of an ODE. The simple harmonic oscillator has a 2D phase space since its state is totally defined by its position and velocity. 
+# First, we need to set up a derivatives function that calculates and returns a list of the values of the first order derivatives given an input list of current values. These current values represent a location in **phase space**. As we will learn, [phase space](https://en.wikipedia.org/wiki/Phase_space) is a space that contains all the information about the state of an ODE. The simple harmonic oscillator has a 2D phase space since its state is totally defined by its position and velocity. 
 # 
 # Here's what our derivatives function looks like for a SHO:
 # 
 # ```python
-# def diffyqs(t,curr_vals, omega2):
+# def diffyqs(t, curr_vals, omega2):
 #     # 2 first-order differential equations for a SHO
 #     # first 2 arguments are always t and curr_vals, which are followed by any parameters of your ODEs
 #     x, v = curr_vals   # unpack current values
 #     
 #     vdot = -omega2 * x # calculate derivative
 # 
-#     return v,vdot # return derivatives
+#     return v, vdot # return derivatives
 # ```
 # 
 # We will pass this function to our solver, which will give us back integrated solutions of our list of derivatives. So since $v = \dot{x}$, our solution will return $x$ first, and $v$.
@@ -70,8 +70,8 @@ from scipy.integrate import solve_ivp
 # ```python
 # tmax = 15
 # dt = 0.1
-# tspan = (0,tmax)         # time span
-# t = np.arange(0,tmax,dt) # specific times to return solutions for
+# tspan = (0, tmax)         # time span
+# t = np.arange(0, tmax, dt) # specific times to return solutions for
 # ```
 # 
 # 
@@ -86,91 +86,45 @@ from scipy.integrate import solve_ivp
 # 
 # #### 4. Call Integrator
 # 
-# Now all we have left to do is to actually use `solve_ivp` to do the integration. The syntax for how to do this is shown below. We also get the oppourtunity to tell `solve_ivp` exactly what numerical integration method we'd like it to use. For now we can think of the integrator as a magic box and choose `RK45`, or a Runge-Kutta 4th order method. 
+# Now all we have left to do is to actually use `solve_ivp` to do the integration. The syntax for how to do this is shown below. We also get the opportunity to tell `solve_ivp` exactly what numerical integration method we'd like it to use. For now we can think of the integrator as a magic box and choose `RK45`, or a Runge-Kutta 4th order method. 
 # 
 # ```python
-# solved = solve_ivp(diffyqs,tspan,initial_condition,t_eval = t, args = (omega2,),method="RK45")
+# solved = solve_ivp(diffyqs, tspan, initial_condition, t_eval = t, args = (omega2, ), method="RK45")
 # ```
 # 
-# To access the solution directly, use `solved.y`. `solved.y[0]` is the solved for position array and `solved.y[1]` is the velocity array in this case. Now let's see a full implementation of this below, including some visualization that compares our numerical solution to the analytical solution of the SHO.
-
-# 
-# ```python
-# def diffyqs(t,curr_vals, omega2):
-#     # 2 first-order differential equations for a SHO
-#     # first 2 arguments are always t and curr_vals, which are followed by any parameters of your ODEs
-#     x, v = curr_vals   # unpack current values
-#     
-#     vdot = -omega2 * x # calculate derivative
-# 
-#     return v,vdot # return derivatives
-# ```
-# 
-# We will pass this function to our solver, which will give us back integrated solutions of our list of derivatives. So since $v = \dot{x}$, our solution will return $x$ first, and $v$.
-# 
-# #### 2. Time Setup
-# 
-# We need to define the time span to solve the ODE for AND the specific times we'd like solution points for. Here it is also convienient to choose a time step $dt$. Here's one way we could do this in python:
-# 
-# ```python
-# tmax = 15
-# dt = 0.1
-# tspan = (0,tmax)         # time span
-# t = np.arange(0,tmax,dt) # specific times to return solutions for
-# ```
-# 
-# 
-# #### 3. Parameters and Initial Conditions
-# 
-# Since we're dealing with ODEs, we need to supply an initial condition to be able to solve. The SHO has 2D phase space so we need 2 values for our initial condition. We'll also define parameter value(s) in this step.
-# 
-# ```python
-# omega2 = 2
-# initial_condition = [1, 0] # pull back 1m, no initial velocity
-# ```
-# 
-# #### 4. Call Integrator
-# 
-# Now all we have left to do is to actually use `solve_ivp` to do the integration. The syntax for how to do this is shown below. We also get the oppourtunity to tell `solve_ivp` exactly what numerical integration method we'd like it to use. For now we can think of the integrator as a magic box and choose `RK45`, or a Runge-Kutta 4th order method. 
-# 
-# ```python
-# solved = solve_ivp(diffyqs,tspan,initial_condition,t_eval = t, args = (omega2,),method="RK45")
-# ```
-# 
-# To access the solution directly, use `solved.y`. `solved.y[0]` is the solved for position array and `solved.y[1]` is the velocity array in this case. Now let's see a full implementation of this below, including some visualization that compares our numerical solution to the analytical solution of the SHO.
+# To access the solution directly, use `solved.y`. The variable `solved.y[0]` is the solved for position array and `solved.y[1]` is the velocity array in this case. Now let's see a full implementation of this below, including some visualization that compares our numerical solution to the analytical solution of the SHO.
 
 # In[2]:
 
 
 # 1. Derivatives Function
-def diffyqs(t,curr_vals, omega2):
+def diffyqs(t, curr_vals, omega2):
     x, v = curr_vals 
     vdot = -omega2 * x
-    return v,vdot
+    return v, vdot
 
 # 2. Time Setup
 tmax = 50
 dt = 0.1
-tspan = (0,tmax)
-t = np.arange(0,tmax,dt)
+tspan = (0, tmax)
+t = np.arange(0, tmax, dt)
 
 # 3. Parameters and Initial Conditions
 omega2 = 2
 initial_condition = [1, 0] 
 
 # 4. Call Integrator (note we can swamp them out, RK45 is the default)
-RK23solved = solve_ivp(diffyqs,tspan,initial_condition,t_eval = t, args = (omega2,),method="RK23")
-RK45solved = solve_ivp(diffyqs,tspan,initial_condition,t_eval = t, args = (omega2,),method="RK45")
+RK23solved = solve_ivp(diffyqs, tspan, initial_condition, t_eval = t, args = (omega2,), method="RK23")
+RK45solved = solve_ivp(diffyqs, tspan, initial_condition, t_eval = t, args = (omega2,), method="RK45")
 
 # 5. Visualization and Comparison to analytical solution
-def analytic_sol(t,omega0,initial_condition):
-    x0,v0 = initial_condition
+def analytic_sol(t, omega0, initial_condition):
+    x0, v0 = initial_condition
     return (v0/omega0)*np.sin(omega0*t) + x0 * np.cos(omega0*t)
 
-plt.figure(figsize=(16,4))
-plt.plot(t,analytic_sol(t,omega2**0.5,initial_condition),label = "Analytic Solution",linewidth = 3)
-plt.plot(t,RK23solved.y[0],label = "Numerical Solution (RK23)", marker='*')
-#plt.plot(t,RK45solved.y[0],label = "Numerical Solution (RK45)", marker='o')
+plt.figure(figsize=(16, 4))
+plt.plot(t, analytic_sol(t, omega2**0.5,initial_condition), label = "Analytic Solution", linewidth = 3)
+plt.plot(t, RK23solved.y[0], label = "Numerical Solution (RK23)", marker='*')
 plt.title("Long term SHO motion with RK23 solution")
 plt.xlabel("t")
 plt.ylabel("x")
@@ -178,8 +132,8 @@ plt.legend()
 plt.grid()
 
 plt.figure(figsize=(16,4))
-plt.plot(t,analytic_sol(t,omega2**0.5,initial_condition),label = "Analytic Solution",linewidth = 3)
-plt.plot(t,RK45solved.y[0],label = "Numerical Solution (RK45", marker='s')
+plt.plot(t,analytic_sol(t, omega2**0.5,initial_condition), label = "Analytic Solution", linewidth = 3)
+plt.plot(t,RK45solved.y[0], label = "Numerical Solution (RK45", marker='s')
 plt.title("Long term SHO motion with RK45 solution")
 plt.xlabel("t")
 plt.ylabel("x")
@@ -197,20 +151,19 @@ plt.grid()
 # $$\ddot{\rho} = \dfrac{\rho\dot{\phi}^2 - 4c^2\rho\dot{\rho}^2 -2cg\rho}{1 + 4c^2\rho^2}$$
 # $$\ddot{\phi} = -2\frac{\dot{\rho}\dot{\phi}}{\rho} $$
 # 
-# It was unclear if those ODEs had solutions at all. Now That we've seen numerical integration, we can tackle the problem. 
 # 
 # **&#9989; Do this** 
 # 
-# Introduce variables $v$ and $\omega$ to use our trick for reducing $>1$ order differential equations to first order equations to write the equations of motion for this problem as a system of four first order differential equations (shown below). **You may set c=1**
+# Introduce variables $v$ and $\omega$ to use our trick for reducing $>1$ order differential equations to first order equations to write the equations of motion for this problem as a system of four first order differential equations (shown below). **You may set c=1, but keep it as a variable.**
 # 
 # 
-# $$\dot{r} = ?? $$
+# $$\dot{\rho} = ?? $$
 # 
 # $$\dot{v} = ??$$ 
 # 
 #  <!-- \frac{1}{1 + 4r^2}(- 8rv^2 + r\omega^2 + 4rv^2 -2gr) -->
 #  <!-- (1/(1 + 4*r**2)) * (-4*v**2*r + r*omega**2 -2*g*r) -->
-# $$\dot{\theta} = ?? $$
+# $$\dot{\phi} = ?? $$
 # 
 # 
 # 
@@ -228,7 +181,7 @@ plt.grid()
 
 
 # 1. Derivatives Function
-def diffyqs(t,curr_vals, g):
+def diffyqs(t, curr_vals, g, c):
 
     r, v, theta, omega = curr_vals
     
@@ -241,14 +194,15 @@ def diffyqs(t,curr_vals, g):
 # 2. Time Setup
 tmax = 40
 dt = 0.01 # unneccecarily small dt to make plot super smooth
-t = np.arange(0,tmax,dt)
+t = np.arange(0, tmax, dt)
 
 # 3. Parameters and Initial Conditions
+c = 1
 g = 9.81
 x0 = [2.6,0,0,2] 
 
 # 4. Call Integrator
-solved = solve_ivp(diffyqs,(0,tmax),x0,t_eval = t, args = (g,),method="RK45")
+solved = solve_ivp(diffyqs, (0, tmax), x0, t_eval = t, args = (g, c, ), method="RK45")
 
 
 # **&#9989; Do this** 
@@ -269,17 +223,17 @@ solved = solve_ivp(diffyqs,(0,tmax),x0,t_eval = t, args = (g,),method="RK45")
 # In[4]:
 
 
-def parabaloid(x,y,alpha=1.):
+def parabaloid(x, y, alpha=1.):
     # function of a paraboloid in Cartesian coordinates
     return alpha * (x**2 + y**2)
 
-def cylindrical_to_cartesian(r, th):
+def cylindrical_to_cartesian(r, th, alpha=1.):
     # convert back to cartesian coordinates for ease of plotting
     r = np.array(r)
     th = np.array(th)
     x = r*np.cos(th)
     y = r*np.sin(th)
-    return x,y,parabaloid(x, y)
+    return x,y,parabaloid(x, y, alpha)
 
 def plot_solution(solved):
     # Function to plot the trajectory 
@@ -287,13 +241,13 @@ def plot_solution(solved):
     # points of the surface to plot
     x = np.linspace(-2.8, 2.8, 50)
     y = np.linspace(-2.8, 2.8, 50)
-    alpha = 1
+    alpha = c
     # construct meshgrid for plotting
     X, Y = np.meshgrid(x, y)
-    Z = parabaloid(X, Y,alpha)
+    Z = parabaloid(X, Y, alpha)
 
     # get trajectory in cartesian coords
-    xtraj, ytraj, ztraj = cylindrical_to_cartesian(solved.y[0], solved.y[2])
+    xtraj, ytraj, ztraj = cylindrical_to_cartesian(solved.y[0], solved.y[2], alpha)
 
     # plot plot plot
     fig = plt.figure(figsize = (10,10))
@@ -308,4 +262,10 @@ def plot_solution(solved):
     plt.show()
 
 plot_solution(solved)
+
+
+# In[ ]:
+
+
+
 
