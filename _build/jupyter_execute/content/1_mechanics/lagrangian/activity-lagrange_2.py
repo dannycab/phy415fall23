@@ -191,11 +191,17 @@ plt.grid()
 # 
 # ### Back to Paraboloid Paradise
 # 
-# Let's consider the problem where a particle was constrained to move on the surface $z = r^2$. The EOM we arrived at are complex ($\ddot{r} = \frac{1}{1 + 4r^2}(- 4rv^2 + r\omega^2 -2gr)$ and $\ddot{\theta} = -2\frac{v\omega}{r} $)and it was unclear if those ODEs had solutions at all. Now That we're armed with numerical integration, we can tackle the problem. 
+# [Analytical Solution (Finding ODEs for Paraboloid)](https://github.com/dannycab/phy415fall23/blob/main/content/assets/notes/Notes-Bead_in_a_Paraboloid.pdf)
+# 
+# Let's consider the problem where a particle was constrained to move on the surface $z = c\rho^2$. The EOM we arrived at are complex
+# $$\ddot{\rho} = \dfrac{\rho\dot{\phi}^2 - 4c^2\rho\dot{\rho}^2 -2cg\rho}{1 + 4c^2\rho^2}$$
+# $$\ddot{\phi} = -2\frac{\dot{\rho}\dot{\phi}}{\rho} $$
+# 
+# It was unclear if those ODEs had solutions at all. Now That we've seen numerical integration, we can tackle the problem. 
 # 
 # **&#9989; Do this** 
 # 
-# Introduce variables $v$ and $\omega$ to use our trick for reducing $>1$ order differential equations to first order equations to write the equations of motion for this problem as a system of four first order differential equations (shown below).
+# Introduce variables $v$ and $\omega$ to use our trick for reducing $>1$ order differential equations to first order equations to write the equations of motion for this problem as a system of four first order differential equations (shown below). **You may set c=1**
 # 
 # 
 # $$\dot{r} = ?? $$

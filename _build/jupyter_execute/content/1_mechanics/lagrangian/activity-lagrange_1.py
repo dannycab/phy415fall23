@@ -51,7 +51,7 @@
 # The Lagrangian framework also excels at dealing with constrained motion, where it is usually not obvious what the constraint forces are. This is because you can write your generalized coordinates for your system in such a way that it contains the information
 # 
 # 
-# Consider a particle of mass $m$ constrained to move on the surface of a paraboloid $z =  r^2$ subject to a gravitational force downward, so that the paraboloid and gravity are aligned.
+# Consider a particle of mass $m$ constrained to move on the surface of a paraboloid $z =  c\rho^2$ subject to a gravitational force downward, so that the paraboloid and gravity are aligned.
 # 
 # **&#9989; Try this** 
 # 

@@ -780,9 +780,13 @@ v = \dot{x}
 <h2>Group Activity<a class="headerlink" href="#group-activity" title="Permalink to this headline">#</a></h2>
 <section id="back-to-paraboloid-paradise">
 <h3>Back to Paraboloid Paradise<a class="headerlink" href="#back-to-paraboloid-paradise" title="Permalink to this headline">#</a></h3>
-<p>Let’s consider the problem where a particle was constrained to move on the surface <span class="math notranslate nohighlight">\(z = r^2\)</span>. The EOM we arrived at are complex (<span class="math notranslate nohighlight">\(\ddot{r} = \frac{1}{1 + 4r^2}(- 4rv^2 + r\omega^2 -2gr)\)</span> and <span class="math notranslate nohighlight">\(\ddot{\theta} = -2\frac{v\omega}{r} \)</span>)and it was unclear if those ODEs had solutions at all. Now That we’re armed with numerical integration, we can tackle the problem.</p>
+<p><a class="reference external" href="https://github.com/dannycab/phy415fall23/blob/main/content/assets/notes/Notes-Bead_in_a_Paraboloid.pdf">Analytical Solution (Finding ODEs for Paraboloid)</a></p>
+<p>Let’s consider the problem where a particle was constrained to move on the surface <span class="math notranslate nohighlight">\(z = c\rho^2\)</span>. The EOM we arrived at are complex
+$<span class="math notranslate nohighlight">\(\ddot{\rho} = \dfrac{\rho\dot{\phi}^2 - 4c^2\rho\dot{\rho}^2 -2cg\rho}{1 + 4c^2\rho^2}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\ddot{\phi} = -2\frac{\dot{\rho}\dot{\phi}}{\rho} \)</span>$</p>
+<p>It was unclear if those ODEs had solutions at all. Now That we’ve seen numerical integration, we can tackle the problem.</p>
 <p><strong>✅ Do this</strong></p>
-<p>Introduce variables <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> to use our trick for reducing <span class="math notranslate nohighlight">\(&gt;1\)</span> order differential equations to first order equations to write the equations of motion for this problem as a system of four first order differential equations (shown below).</p>
+<p>Introduce variables <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> to use our trick for reducing <span class="math notranslate nohighlight">\(&gt;1\)</span> order differential equations to first order equations to write the equations of motion for this problem as a system of four first order differential equations (shown below). <strong>You may set c=1</strong></p>
 <div class="math notranslate nohighlight">
 \[\dot{r} = ?? \]</div>
 <div class="math notranslate nohighlight">
