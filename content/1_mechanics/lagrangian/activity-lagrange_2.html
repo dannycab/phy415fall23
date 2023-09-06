@@ -485,21 +485,6 @@ title="Print to PDF"
        4. Call Integrator
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       2. Time Setup
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       3. Parameters and Initial Conditions
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       4. Call Integrator
-      </a>
-     </li>
     </ul>
    </li>
   </ul>
@@ -562,21 +547,6 @@ title="Print to PDF"
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#call-integrator">
-       4. Call Integrator
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       2. Time Setup
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       3. Parameters and Initial Conditions
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
        4. Call Integrator
       </a>
      </li>
@@ -644,16 +614,16 @@ v = \dot{x}
 <p>*<em>Note: The code in this block is not meant to be run directly, it is just a reference for the steps we need to take. Working code that is put together appears in the next cell.</em></p>
 <section id="derivatives-function">
 <h4>1. Derivatives Function<a class="headerlink" href="#derivatives-function" title="Permalink to this headline">#</a></h4>
-<p>First, we need to set up a derivatives function that calculates and returns a list of the values of the first order derivatives given an imput list of current values. These current values represent a location in <strong>phase space</strong>. Phase Space is a space that contains all the information about the state of an ODE. The simple harmonic oscillator has a 2D phase space since its state is totally defined by its position and velocity.</p>
+<p>First, we need to set up a derivatives function that calculates and returns a list of the values of the first order derivatives given an input list of current values. These current values represent a location in <strong>phase space</strong>. As we will learn, <a class="reference external" href="https://en.wikipedia.org/wiki/Phase_space">phase space</a> is a space that contains all the information about the state of an ODE. The simple harmonic oscillator has a 2D phase space since its state is totally defined by its position and velocity.</p>
 <p>Here’s what our derivatives function looks like for a SHO:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">diffyqs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">curr_vals</span><span class="p">,</span> <span class="n">omega2</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">diffyqs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">curr_vals</span><span class="p">,</span> <span class="n">omega2</span><span class="p">):</span>
     <span class="c1"># 2 first-order differential equations for a SHO</span>
     <span class="c1"># first 2 arguments are always t and curr_vals, which are followed by any parameters of your ODEs</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">curr_vals</span>   <span class="c1"># unpack current values</span>
     
     <span class="n">vdot</span> <span class="o">=</span> <span class="o">-</span><span class="n">omega2</span> <span class="o">*</span> <span class="n">x</span> <span class="c1"># calculate derivative</span>
 
-    <span class="k">return</span> <span class="n">v</span><span class="p">,</span><span class="n">vdot</span> <span class="c1"># return derivatives</span>
+    <span class="k">return</span> <span class="n">v</span><span class="p">,</span> <span class="n">vdot</span> <span class="c1"># return derivatives</span>
 </pre></div>
 </div>
 <p>We will pass this function to our solver, which will give us back integrated solutions of our list of derivatives. So since <span class="math notranslate nohighlight">\(v = \dot{x}\)</span>, our solution will return <span class="math notranslate nohighlight">\(x\)</span> first, and <span class="math notranslate nohighlight">\(v\)</span>.</p>
@@ -663,8 +633,8 @@ v = \dot{x}
 <p>We need to define the time span to solve the ODE for AND the specific times we’d like solution points for. Here it is also convienient to choose a time step <span class="math notranslate nohighlight">\(dt\)</span>. Here’s one way we could do this in python:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tmax</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">tspan</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tmax</span><span class="p">)</span>         <span class="c1"># time span</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tmax</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span> <span class="c1"># specific times to return solutions for</span>
+<span class="n">tspan</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tmax</span><span class="p">)</span>         <span class="c1"># time span</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tmax</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span> <span class="c1"># specific times to return solutions for</span>
 </pre></div>
 </div>
 </section>
@@ -678,79 +648,41 @@ v = \dot{x}
 </section>
 <section id="call-integrator">
 <h4>4. Call Integrator<a class="headerlink" href="#call-integrator" title="Permalink to this headline">#</a></h4>
-<p>Now all we have left to do is to actually use <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> to do the integration. The syntax for how to do this is shown below. We also get the oppourtunity to tell <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> exactly what numerical integration method we’d like it to use. For now we can think of the integrator as a magic box and choose <code class="docutils literal notranslate"><span class="pre">RK45</span></code>, or a Runge-Kutta 4th order method.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">solved</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">diffyqs</span><span class="p">,</span><span class="n">tspan</span><span class="p">,</span><span class="n">initial_condition</span><span class="p">,</span><span class="n">t_eval</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">omega2</span><span class="p">,),</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;RK45&quot;</span><span class="p">)</span>
+<p>Now all we have left to do is to actually use <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> to do the integration. The syntax for how to do this is shown below. We also get the opportunity to tell <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> exactly what numerical integration method we’d like it to use. For now we can think of the integrator as a magic box and choose <code class="docutils literal notranslate"><span class="pre">RK45</span></code>, or a Runge-Kutta 4th order method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">solved</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">diffyqs</span><span class="p">,</span> <span class="n">tspan</span><span class="p">,</span> <span class="n">initial_condition</span><span class="p">,</span> <span class="n">t_eval</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">omega2</span><span class="p">,</span> <span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;RK45&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>To access the solution directly, use <code class="docutils literal notranslate"><span class="pre">solved.y</span></code>. <code class="docutils literal notranslate"><span class="pre">solved.y[0]</span></code> is the solved for position array and <code class="docutils literal notranslate"><span class="pre">solved.y[1]</span></code> is the velocity array in this case. Now let’s see a full implementation of this below, including some visualization that compares our numerical solution to the analytical solution of the SHO.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">diffyqs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">curr_vals</span><span class="p">,</span> <span class="n">omega2</span><span class="p">):</span>
-    <span class="c1"># 2 first-order differential equations for a SHO</span>
-    <span class="c1"># first 2 arguments are always t and curr_vals, which are followed by any parameters of your ODEs</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">curr_vals</span>   <span class="c1"># unpack current values</span>
-    
-    <span class="n">vdot</span> <span class="o">=</span> <span class="o">-</span><span class="n">omega2</span> <span class="o">*</span> <span class="n">x</span> <span class="c1"># calculate derivative</span>
-
-    <span class="k">return</span> <span class="n">v</span><span class="p">,</span><span class="n">vdot</span> <span class="c1"># return derivatives</span>
-</pre></div>
-</div>
-<p>We will pass this function to our solver, which will give us back integrated solutions of our list of derivatives. So since <span class="math notranslate nohighlight">\(v = \dot{x}\)</span>, our solution will return <span class="math notranslate nohighlight">\(x\)</span> first, and <span class="math notranslate nohighlight">\(v\)</span>.</p>
-</section>
-<section id="id1">
-<h4>2. Time Setup<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
-<p>We need to define the time span to solve the ODE for AND the specific times we’d like solution points for. Here it is also convienient to choose a time step <span class="math notranslate nohighlight">\(dt\)</span>. Here’s one way we could do this in python:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tmax</span> <span class="o">=</span> <span class="mi">15</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">tspan</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tmax</span><span class="p">)</span>         <span class="c1"># time span</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tmax</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span> <span class="c1"># specific times to return solutions for</span>
-</pre></div>
-</div>
-</section>
-<section id="id2">
-<h4>3. Parameters and Initial Conditions<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
-<p>Since we’re dealing with ODEs, we need to supply an initial condition to be able to solve. The SHO has 2D phase space so we need 2 values for our initial condition. We’ll also define parameter value(s) in this step.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">omega2</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">initial_condition</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># pull back 1m, no initial velocity</span>
-</pre></div>
-</div>
-</section>
-<section id="id3">
-<h4>4. Call Integrator<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
-<p>Now all we have left to do is to actually use <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> to do the integration. The syntax for how to do this is shown below. We also get the oppourtunity to tell <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> exactly what numerical integration method we’d like it to use. For now we can think of the integrator as a magic box and choose <code class="docutils literal notranslate"><span class="pre">RK45</span></code>, or a Runge-Kutta 4th order method.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">solved</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">diffyqs</span><span class="p">,</span><span class="n">tspan</span><span class="p">,</span><span class="n">initial_condition</span><span class="p">,</span><span class="n">t_eval</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">omega2</span><span class="p">,),</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;RK45&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>To access the solution directly, use <code class="docutils literal notranslate"><span class="pre">solved.y</span></code>. <code class="docutils literal notranslate"><span class="pre">solved.y[0]</span></code> is the solved for position array and <code class="docutils literal notranslate"><span class="pre">solved.y[1]</span></code> is the velocity array in this case. Now let’s see a full implementation of this below, including some visualization that compares our numerical solution to the analytical solution of the SHO.</p>
+<p>To access the solution directly, use <code class="docutils literal notranslate"><span class="pre">solved.y</span></code>. The variable <code class="docutils literal notranslate"><span class="pre">solved.y[0]</span></code> is the solved for position array and <code class="docutils literal notranslate"><span class="pre">solved.y[1]</span></code> is the velocity array in this case. Now let’s see a full implementation of this below, including some visualization that compares our numerical solution to the analytical solution of the SHO.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Derivatives Function</span>
-<span class="k">def</span> <span class="nf">diffyqs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">curr_vals</span><span class="p">,</span> <span class="n">omega2</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">diffyqs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">curr_vals</span><span class="p">,</span> <span class="n">omega2</span><span class="p">):</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">curr_vals</span> 
     <span class="n">vdot</span> <span class="o">=</span> <span class="o">-</span><span class="n">omega2</span> <span class="o">*</span> <span class="n">x</span>
-    <span class="k">return</span> <span class="n">v</span><span class="p">,</span><span class="n">vdot</span>
+    <span class="k">return</span> <span class="n">v</span><span class="p">,</span> <span class="n">vdot</span>
 
 <span class="c1"># 2. Time Setup</span>
 <span class="n">tmax</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">tspan</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tmax</span><span class="p">)</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tmax</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">tspan</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tmax</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tmax</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
 
 <span class="c1"># 3. Parameters and Initial Conditions</span>
 <span class="n">omega2</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">initial_condition</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> 
 
 <span class="c1"># 4. Call Integrator (note we can swamp them out, RK45 is the default)</span>
-<span class="n">RK23solved</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">diffyqs</span><span class="p">,</span><span class="n">tspan</span><span class="p">,</span><span class="n">initial_condition</span><span class="p">,</span><span class="n">t_eval</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">omega2</span><span class="p">,),</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;RK23&quot;</span><span class="p">)</span>
-<span class="n">RK45solved</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">diffyqs</span><span class="p">,</span><span class="n">tspan</span><span class="p">,</span><span class="n">initial_condition</span><span class="p">,</span><span class="n">t_eval</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">omega2</span><span class="p">,),</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;RK45&quot;</span><span class="p">)</span>
+<span class="n">RK23solved</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">diffyqs</span><span class="p">,</span> <span class="n">tspan</span><span class="p">,</span> <span class="n">initial_condition</span><span class="p">,</span> <span class="n">t_eval</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">omega2</span><span class="p">,),</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;RK23&quot;</span><span class="p">)</span>
+<span class="n">RK45solved</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">diffyqs</span><span class="p">,</span> <span class="n">tspan</span><span class="p">,</span> <span class="n">initial_condition</span><span class="p">,</span> <span class="n">t_eval</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">omega2</span><span class="p">,),</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;RK45&quot;</span><span class="p">)</span>
 
 <span class="c1"># 5. Visualization and Comparison to analytical solution</span>
-<span class="k">def</span> <span class="nf">analytic_sol</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">omega0</span><span class="p">,</span><span class="n">initial_condition</span><span class="p">):</span>
-    <span class="n">x0</span><span class="p">,</span><span class="n">v0</span> <span class="o">=</span> <span class="n">initial_condition</span>
+<span class="k">def</span> <span class="nf">analytic_sol</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">omega0</span><span class="p">,</span> <span class="n">initial_condition</span><span class="p">):</span>
+    <span class="n">x0</span><span class="p">,</span> <span class="n">v0</span> <span class="o">=</span> <span class="n">initial_condition</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">v0</span><span class="o">/</span><span class="n">omega0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega0</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">x0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega0</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">analytic_sol</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">omega2</span><span class="o">**</span><span class="mf">0.5</span><span class="p">,</span><span class="n">initial_condition</span><span class="p">),</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Analytic Solution&quot;</span><span class="p">,</span><span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">RK23solved</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Numerical Solution (RK23)&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
-<span class="c1">#plt.plot(t,RK45solved.y[0],label = &quot;Numerical Solution (RK45)&quot;, marker=&#39;o&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">analytic_sol</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">omega2</span><span class="o">**</span><span class="mf">0.5</span><span class="p">,</span><span class="n">initial_condition</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Analytic Solution&quot;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">RK23solved</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Numerical Solution (RK23)&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Long term SHO motion with RK23 solution&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
@@ -758,8 +690,8 @@ v = \dot{x}
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">analytic_sol</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">omega2</span><span class="o">**</span><span class="mf">0.5</span><span class="p">,</span><span class="n">initial_condition</span><span class="p">),</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Analytic Solution&quot;</span><span class="p">,</span><span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">RK45solved</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Numerical Solution (RK45&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">analytic_sol</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">omega2</span><span class="o">**</span><span class="mf">0.5</span><span class="p">,</span><span class="n">initial_condition</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Analytic Solution&quot;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">RK45solved</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Numerical Solution (RK45&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Long term SHO motion with RK45 solution&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
@@ -769,8 +701,8 @@ v = \dot{x}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/activity-lagrange_2_5_0.png" src="../../../_images/activity-lagrange_2_5_0.png" />
-<img alt="../../../_images/activity-lagrange_2_5_1.png" src="../../../_images/activity-lagrange_2_5_1.png" />
+<img alt="../../../_images/activity-lagrange_2_4_0.png" src="../../../_images/activity-lagrange_2_4_0.png" />
+<img alt="../../../_images/activity-lagrange_2_4_1.png" src="../../../_images/activity-lagrange_2_4_1.png" />
 </div>
 </div>
 </section>
@@ -784,17 +716,16 @@ v = \dot{x}
 <p>Let’s consider the problem where a particle was constrained to move on the surface <span class="math notranslate nohighlight">\(z = c\rho^2\)</span>. The EOM we arrived at are complex
 $<span class="math notranslate nohighlight">\(\ddot{\rho} = \dfrac{\rho\dot{\phi}^2 - 4c^2\rho\dot{\rho}^2 -2cg\rho}{1 + 4c^2\rho^2}\)</span><span class="math notranslate nohighlight">\(
 \)</span><span class="math notranslate nohighlight">\(\ddot{\phi} = -2\frac{\dot{\rho}\dot{\phi}}{\rho} \)</span>$</p>
-<p>It was unclear if those ODEs had solutions at all. Now That we’ve seen numerical integration, we can tackle the problem.</p>
 <p><strong>✅ Do this</strong></p>
-<p>Introduce variables <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> to use our trick for reducing <span class="math notranslate nohighlight">\(&gt;1\)</span> order differential equations to first order equations to write the equations of motion for this problem as a system of four first order differential equations (shown below). <strong>You may set c=1</strong></p>
+<p>Introduce variables <span class="math notranslate nohighlight">\(v\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> to use our trick for reducing <span class="math notranslate nohighlight">\(&gt;1\)</span> order differential equations to first order equations to write the equations of motion for this problem as a system of four first order differential equations (shown below). <strong>You may set c=1, but keep it as a variable.</strong></p>
 <div class="math notranslate nohighlight">
-\[\dot{r} = ?? \]</div>
+\[\dot{\rho} = ?? \]</div>
 <div class="math notranslate nohighlight">
 \[\dot{v} = ??\]</div>
  <!-- \frac{1}{1 + 4r^2}(- 8rv^2 + r\omega^2 + 4rv^2 -2gr) -->
  <!-- (1/(1 + 4*r**2)) * (-4*v**2*r + r*omega**2 -2*g*r) -->
 <div class="math notranslate nohighlight">
-\[\dot{\theta} = ?? \]</div>
+\[\dot{\phi} = ?? \]</div>
 <div class="math notranslate nohighlight">
 \[\dot{\omega} = ??\]</div>
 <!-- -2\frac{v\omega}{r} -->
@@ -804,7 +735,7 @@ $<span class="math notranslate nohighlight">\(\ddot{\rho} = \dfrac{\rho\dot{\phi
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Derivatives Function</span>
-<span class="k">def</span> <span class="nf">diffyqs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">curr_vals</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">diffyqs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">curr_vals</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
 
     <span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">omega</span> <span class="o">=</span> <span class="n">curr_vals</span>
     
@@ -817,14 +748,15 @@ $<span class="math notranslate nohighlight">\(\ddot{\rho} = \dfrac{\rho\dot{\phi
 <span class="c1"># 2. Time Setup</span>
 <span class="n">tmax</span> <span class="o">=</span> <span class="mi">40</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1"># unneccecarily small dt to make plot super smooth</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tmax</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tmax</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
 
 <span class="c1"># 3. Parameters and Initial Conditions</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
 <span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.6</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> 
 
 <span class="c1"># 4. Call Integrator</span>
-<span class="n">solved</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">diffyqs</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="n">tmax</span><span class="p">),</span><span class="n">x0</span><span class="p">,</span><span class="n">t_eval</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span><span class="p">,),</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;RK45&quot;</span><span class="p">)</span>
+<span class="n">solved</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">diffyqs</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tmax</span><span class="p">),</span> <span class="n">x0</span><span class="p">,</span> <span class="n">t_eval</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;RK45&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -841,17 +773,17 @@ $<span class="math notranslate nohighlight">\(\ddot{\rho} = \dfrac{\rho\dot{\phi
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parabaloid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parabaloid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
     <span class="c1"># function of a paraboloid in Cartesian coordinates</span>
     <span class="k">return</span> <span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">cylindrical_to_cartesian</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">th</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">cylindrical_to_cartesian</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">th</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
     <span class="c1"># convert back to cartesian coordinates for ease of plotting</span>
     <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
     <span class="n">th</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">th</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">th</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">parabaloid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">parabaloid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">plot_solution</span><span class="p">(</span><span class="n">solved</span><span class="p">):</span>
     <span class="c1"># Function to plot the trajectory </span>
@@ -859,13 +791,13 @@ $<span class="math notranslate nohighlight">\(\ddot{\rho} = \dfrac{\rho\dot{\phi
     <span class="c1"># points of the surface to plot</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">2.8</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">2.8</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-    <span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">c</span>
     <span class="c1"># construct meshgrid for plotting</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="n">Z</span> <span class="o">=</span> <span class="n">parabaloid</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span><span class="n">alpha</span><span class="p">)</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">parabaloid</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
 
     <span class="c1"># get trajectory in cartesian coords</span>
-    <span class="n">xtraj</span><span class="p">,</span> <span class="n">ytraj</span><span class="p">,</span> <span class="n">ztraj</span> <span class="o">=</span> <span class="n">cylindrical_to_cartesian</span><span class="p">(</span><span class="n">solved</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">solved</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">xtraj</span><span class="p">,</span> <span class="n">ytraj</span><span class="p">,</span> <span class="n">ztraj</span> <span class="o">=</span> <span class="n">cylindrical_to_cartesian</span><span class="p">(</span><span class="n">solved</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">solved</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">alpha</span><span class="p">)</span>
 
     <span class="c1"># plot plot plot</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
@@ -884,7 +816,7 @@ $<span class="math notranslate nohighlight">\(\ddot{\rho} = \dfrac{\rho\dot{\phi
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/activity-lagrange_2_9_0.png" src="../../../_images/activity-lagrange_2_9_0.png" />
+<img alt="../../../_images/activity-lagrange_2_8_0.png" src="../../../_images/activity-lagrange_2_8_0.png" />
 </div>
 </div>
 </section>
