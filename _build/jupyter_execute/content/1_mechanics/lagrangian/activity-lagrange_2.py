@@ -34,7 +34,7 @@
 # In[1]:
 
 
-# Import libaries
+# Import libraries
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.pyplot as plt
