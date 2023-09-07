@@ -82,6 +82,10 @@
 # 
 # **Read This** Sections 8.1 and 8.1.1. We will discuss and work with ideas from 8.1.2 and 8.1.3, but I don't expect you to read those in detail. We will discuss how these work and then make use of the [built-in integrators from scipy](https://docs.scipy.org/doc/scipy/tutorial/integrate.html). The core one will be ```odeint``` [(Documentation)](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html?highlight=odeint).
 
+# ## Paper Readings
 # 
+# Here's the original paper from Alan Cromer about the correction to the Euler step that makes it more accurate. It's a good read, but not required.
+# 
+# - [Cromer, Alan H. "Stable solutions using the Euler approximation." American Journal of Physics 49.5 (1981): 455-459.](https://aapt.scitation.org/doi/abs/10.1119/1.12542)
 
 # 
