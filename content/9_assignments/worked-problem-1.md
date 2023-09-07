@@ -4,6 +4,16 @@ In this first few class periods, we have discussed formulating mechanics using L
 
 [**Grading Rubric**](../0_course/8_worked_problems.md)
 
+Remember that a worked problem means the scale of a detailed (e.g., parts a-h) homework problem.
+
+## Places to find candidate problems:
+- Classical mechanics textbooks; look at the problems in the Lagrangian chapters
+-  Differential equations textbooks; look at ODEs that represent real systems
+-  Wikipedia has lists of named differential equations and problems
+    - [List of named Diffy Qs](https://en.wikipedia.org/wiki/List_of_named_differential_equations)
+	- [List of nonlinear differential equations](https://en.wikipedia.org/wiki/List_of_nonlinear_ordinary_differential_equations)
+    - Ask on Slack 
+
 ## Developing Equations of Motion
 
 Remember that the process we have developed is:
