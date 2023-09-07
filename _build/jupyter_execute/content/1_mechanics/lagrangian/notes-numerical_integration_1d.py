@@ -86,6 +86,6 @@
 # 
 # Here's the original paper from Alan Cromer about the correction to the Euler step that makes it more accurate. It's a good read, but not required.
 # 
-# - [Cromer, Alan H. "Stable solutions using the Euler approximation." American Journal of Physics 49.5 (1981): 455-459.](https://aapt.scitation.org/doi/abs/10.1119/1.12542)
+# - [Cromer, Alan H. "Stable solutions using the Euler approximation." American Journal of Physics 49.5 (1981): 455-459.](https://github.com/dannycab/phy415fall23/blob/main/content/assets/papers/euler_cromer_1981.pdf)
 
 # 
