@@ -33,6 +33,7 @@ parts:
   - caption: Assignments
     chapters:
     - file: content/9_assignments/worked-problem-1.md
+    - file: content/9_assignments/worked-problem-2.md
   - caption: Appendices
     chapters:
     - file: content/references.ipynb

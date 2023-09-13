@@ -29,7 +29,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-# ## The Phase Portrait of the SHO
+# ## Reminders about the SHO
 # 
 # To get this started, let's remind ourselves of the phase portrait of the SHO. Recall that we separated the second order ODE into two first order ODEs, one for $x$ and one for $v_x$,
 # 
@@ -58,116 +58,6 @@ import matplotlib.pyplot as plt
 #     - That arrow represents the local flow of the system at that point
 # 4. Repeat for all points of interest
 # 5. Plot arrows to demonstrate flow of the solutions in phase space
-# 
-# ### Let's focus on axes first
-# 
-# We talked about how we can look at the axes ($x=0$ and $v_x =0$) to help get a sense of the flow in phase space. Below, we have some code that does this in two parts:
-# 1. We created a function to produce arrows of the right length given a line of points
-# 2. We call that function for each axis and for a line at a diagonal
-# 
-# ### Discussion Question
-# 
-# **&#9989; Do this** 
-# 
-# 1. Review the phase portraits below. Talk with your neighbors about how they are constructed.
-#     - Work to identify which components of the code look familiar and which you have more questions about
-# 2. Make a fourth plot that looks at the other diagonal line that runs at a 45 degree angle to each axes
-# 
-# **You should be able to explain what the code is doing.** We avoided using meshgrid here to make this a smaller bit of code.
-
-# ### PlotPhaseSpaceAxesSHO
-# 
-# This function is computing the arrows for a given line of points in phase space. Send it a line of points in two arrays (one for $x$ and one for $v_x$) and it plots the resulting arrows. The code is documented below with comments and then used several times.
-
-# In[2]:
-
-
-def PlotPhaseSpaceAxesSHO(x, vx, N=20):
-    """Takes two one-dimensional arrays
-    and computes the resulting arrow to
-    represent the flow of the system in 
-    phase space. This code is specifically
-    designed for the SHO with omega=1"""
-
-    ## Map the points to the arrows using the 
-    ## 1st order ODEs for the SHO
-    ## Returns two arrays of the same length
-    ## as the inputs
-    xdot, vxdot = vx, -1*x
-
-    ## Create a figure with a known size
-    plt.figure(figsize=(10,8))
-
-    ## Go through all the arrays we created to plot the arrows
-    ## Syntax for arrow is:
-    ## arrow(xpos, ypos, xchange, ychange, other_parameters)
-    for i in np.arange(N):
-    
-        plt.arrow(x[i], vx[i], xdot[i], vxdot[i], 
-                  head_width=0.2, 
-                  head_length=0.2)
-        plt.xlabel('$x$')
-        plt.ylabel('$v_x$')
-        
-    plt.grid()
-
-
-# ### Plotting along the vx axis
-# 
-
-# In[3]:
-
-
-## Plotting along the vx axis
-N = 20
-
-x = np.zeros(N)
-vx = np.linspace(-5,6,N)
-
-PlotPhaseSpaceAxesSHO(x, vx, N)
-
-
-# ### Plotting along the x axis
-# 
-
-# In[4]:
-
-
-## Plotting along the x axis
-N = 20
-
-x = np.linspace(-5,6,N)
-vx = np.zeros(N)
-
-PlotPhaseSpaceAxesSHO(x, vx, N)
-
-
-# ### Plotting along the 45 degree line between the x and vx axes
-
-# In[5]:
-
-
-## Plotting along the 45 degree line between the x and vx axes
-N = 20
-
-x = np.linspace(-5,6,N)
-vx = np.linspace(-5,6,N)
-
-PlotPhaseSpaceAxesSHO(x, vx, N)
-
-
-# ### Make a Graph
-# 
-# **&#9989; Do this** 
-# 
-# 1. Make a fourth plot that looks at the other diagonal line that runs at a 45 degree angle to each axes
-
-# In[6]:
-
-
-## Your code here
-## Plot the other 45 degree line
-
 
 # ## Phase Portrait of the Simple Harmonic Oscillator
 # 
@@ -185,7 +75,7 @@ PlotPhaseSpaceAxesSHO(x, vx, N)
 # 
 # We can then call these functions can plots the results.
 
-# In[7]:
+# In[2]:
 
 
 def SHOPhasePortrait(x, vx, omega):
@@ -198,7 +88,7 @@ def SHOPhasePortrait(x, vx, omega):
     return xdot, vxdot
 
 
-# In[8]:
+# In[3]:
 
 
 def ComputeSHOPhase(X, VX, omega):
@@ -223,7 +113,7 @@ def ComputeSHOPhase(X, VX, omega):
     return xdot, vxdot
 
 
-# In[9]:
+# In[4]:
 
 
 def SHOTrajectory(x0, vx0, omega, N=100):
@@ -255,7 +145,7 @@ def SHOTrajectory(x0, vx0, omega, N=100):
 # 
 # We then plots the results.
 
-# In[10]:
+# In[5]:
 
 
 ## Setting parameters and the phase space variables
@@ -307,8 +197,7 @@ plt.grid()
 # 
 # Here's the pendulum in all it's glory.
 # 
-# <img src="https://aapt.scitation.org/na101/home/literatum/publisher/aip/journals/content/ajp/2006/ajp.2006.74.issue-10/1.2215616/production/images/large/1.2215616.figures.f1.jpeg" alt="Large Angle Pendulum" width="300"/>
-# 
+# ![Pendulum Bob](../../assets/images/pendulum_bob.png)
 # 
 # The analytical solution for the period is given by:
 # 
@@ -337,7 +226,7 @@ plt.grid()
 # 4. Play with parameters and build a story for what is going on with the motion.
 # 
 
-# In[11]:
+# In[6]:
 
 
 def LAPPhasePortrait(x, vx, omega0 = 10):
@@ -364,7 +253,7 @@ def ComputeLAPPhase(X, VX, omega0):
     return xdot, vxdot
 
 
-# In[12]:
+# In[7]:
 
 
 omega0 = 2
