@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 7 Sep 23 - Numerical Integration and More Lagrangians
+# # 7 Sep 23 - Activity: Numerical Integration and More Lagrangians
 
 # Now that we have an idea how to find a wealth of interesting ordinary differential equations using Lagrangian mechanics, we'll work on building up ways to understand these equations, their solutions and behavior. The issue with this is that **most ODEs do not have analytical solutions**. That means we can't write down nice closed-form solutions for them using transcendental functions. However, don't despair, because that does not mean there is no solution. In fact, the vast majority of non-pathological ODEs one might come across in physics are **guaranteed** to have unique solutions (at least for finite time). We can easily calculate these solutions using **numerical integration**. Next week we'll also see how we can characterize the behavior of ODEs even without access to numerical integration.
 # 

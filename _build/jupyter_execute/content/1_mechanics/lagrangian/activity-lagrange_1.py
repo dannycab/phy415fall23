@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 5 Sep 23 - Calculus of Varations and Lagrangian Dynamics
+# # 5 Sep 23 - Activity: Calculus of Variations and Lagrangian Dynamics
 
 # In this activity, you will work through an example Lagrangian dynamics problem. This problem is a standard one which sets up both our understanding of the Lagrangian and the Lagrangian equations of motion, but also coupled oscillators. The latter is a very important concept in physics, and we will see it again in the context of waves. In addition, we will change coordinate systems from Cartesian to polar coordinates on our way to generalized coordinates.
 # 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 12 Sep 23 - The Dynamical Systems Approach and Phase Portraits
+# # 12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits
 # 
 # Up to now, most of your work with models in physics are those you can solve analytically in terms of known functions. Think about solving differential equations that produce polynomials or sines and cosines. 
 # 
