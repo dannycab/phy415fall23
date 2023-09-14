@@ -27,6 +27,7 @@ parts:
     - file: content/1_mechanics/lagrangian/activity-lagrange_2
     - file: content/1_mechanics/dynamical_systems/notes-phase_space
     - file: content/1_mechanics/dynamical_systems/activity-phase_space
+    - file: content/1_mechanics/dynamical_systems/activity-vanderpol
     - file: content/1_mechanics/dynamical_systems/notes-linearization_odes
     #- file: content/1_mechanics/lagrangian/lagrange_1
     #- file: content/1_mechanics/lagrangian/lagrange_2
