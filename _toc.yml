@@ -15,10 +15,8 @@ parts:
       - file: content/0_course/8_worked_problems
   - caption: 1 - Mechanics and ODEs
     chapters:
-    #- file: content/1_mechanics/modeling/what_is_modeling.md
     - file: content/1_mechanics/modeling/activity-what_is_a_model.md
     - file: content/1_mechanics/sho/notes-SHO.ipynb
-    #- file: content/1_mechanics/modeling/notes-what_is_a_model.md
     - file: content/1_mechanics/lagrangian/notes_frames.md
     - file: content/1_mechanics/lagrangian/frames
     - file: content/1_mechanics/lagrangian/notes-lagrangian-dynamics
@@ -29,9 +27,12 @@ parts:
     - file: content/1_mechanics/dynamical_systems/activity-phase_space
     - file: content/1_mechanics/dynamical_systems/activity-vanderpol
     - file: content/1_mechanics/dynamical_systems/notes-linearization_odes
-    #- file: content/1_mechanics/lagrangian/lagrange_1
-    #- file: content/1_mechanics/lagrangian/lagrange_2
-    #- file: content/1_mechanics/mechanics_intro.ipynb
+  - caption: 2 - E&M and PDEs
+    chapters:
+      - file: content/2_EM/Statics/notes-em_intro
+      - file: content/2_EM/Statics/notes-static_fields
+      # - file: content/2_EM/Statics/notes-scalar_fields
+      # - file: content/2_EM/Statics/notes-sep_of_var
   - caption: Assignments
     chapters:
     - file: content/9_assignments/worked-problem-1.md
@@ -40,22 +41,6 @@ parts:
   - caption: Appendices
     chapters:
     - file: content/references.ipynb
-    #  - file: content/1_mechanics/frames
-    #  - file: content/1_mechanics/lagrange_1
-    #  - file: content/1_mechanics/lagrange_2
-  #   - file: content/1_mechanics/dynamical_1
-  #   - file: content/1_mechanics/dynamical_2
-  #   - file: content/1_mechanics/CHAOS
-  #   - file: content/1_mechanics/ODE_games
-  # - caption: 2 - E&M and PDEs
-  #   chapters:
-  #   - file: content/2_EM/EM_intro.ipynb
-  #   - file: content/2_EM/E_fields_graphing_184
-  #   - file: content/2_EM/laplace_eq
-  #   - file: content/2_EM/more_PDEs
-  #   - file: content/2_EM/relaxation
-  #   - file: content/2_EM/B_fields
-  #   - file: content/2_EM/EM_waves
   # - caption: 3 - Waves and Complex Analysis
   #   chapters:
   #   - file: content/3_waves/waves_intro.ipynb

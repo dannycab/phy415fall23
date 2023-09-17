@@ -5,6 +5,20 @@ PHY 415, called, "Mathematical Methods for Physicists" is a course the brings to
 
 To get a sense of the course, please read all the pages associated with our syllabus.
  
+## Updates
+
+`````{admonition} Last updated: 17 Sep 2023
+:class: tip
+
+### Site Updates
+* [Readings for Week 4](./1_mechanics/dynamical_systems/notes-linearization_odes.ipynb) have been posted. 
+
+### Upcoming Deadlines
+* The [second worked problem](./9_assignments/worked-problem-2.md) is due 22 Sep 2023.
+* The [first project](./9_assignments/project-1.md) is due 29 Sep 2023.
+
+`````
+
 ## Learning Objectives
  
  In this course, you will learn to:
@@ -15,7 +29,7 @@ To get a sense of the course, please read all the pages associated with our syll
  * provide evidence of the quality of work using a variety of sources, and
  * collaborate effectively and contribute to a inclusive learning environment
 
-Table of Contents:
+## Table of Contents
 
 ```{tableofcontents}
 ```

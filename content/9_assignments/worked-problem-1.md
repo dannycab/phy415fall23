@@ -1,5 +1,7 @@
 # Worked Problem Assignment 1
 
+**Due 15 Sep 23**
+
 In this first few class periods, we have discussed formulating mechanics using Lagrangian Dynamics to produce equations of motion and how we can use numerical integration to solve for trajectories.
 
 [**Grading Rubric**](../0_course/8_worked_problems.md)

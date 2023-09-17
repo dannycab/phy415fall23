@@ -1,5 +1,7 @@
 # Project 1 - Classical Mechanics and ODEs
 
+**Due 29 Sep 23**
+
 Project 1 will focus on the the topic of ordinary differential equations in physics. Differential equations are often how we describe nature because nature often changes continuously (quantum mechanics notwithstanding). We focused in class on various oscillators. Your job is to develop a project that investigates some nonlinear differential equation of your choosing. Our expectation is that this ODE is nonlinear, at least 2nd order or two coupled 1st order equations, and that is of interest to you personally or professionally. Below is a list of potential candidates.
 
 ## What do you need to do?

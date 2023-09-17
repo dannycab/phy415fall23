@@ -1,5 +1,7 @@
 # Worked Problem Assignment 2
 
+**Due 22 Sep 23**
+
 We have spent much of our time on a dynamical systems view of ODEs. In this assignment, you will choose an ODE and work through a dynamical analysis of the system.
 
 [**Grading Rubric**](../0_course/8_worked_problems.md)
