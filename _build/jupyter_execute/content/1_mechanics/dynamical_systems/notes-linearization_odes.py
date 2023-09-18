@@ -111,7 +111,7 @@ print("eigenvalues:", eigvals)
 # 
 # ### Handwritten Notes
 # 
-# - [Linearization of ODEs](https://github.com/dannycab/phy415fall23/blob/main/content/assets/notes/Notes-Linearization_ODEs.pdf)
-# - [Linearization example](https://github.com/dannycab/phy415fall23/blob/main/content/assets/notes/Notes-Linearization_Example.pdf)
+# - [Linearization of ODEs](../../assets/notes/Notes-Linearization_ODEs.pdf)
+# - [Linearization example](../../assets/notes/Notes-Linearization_Example.pdf)
 
 # 

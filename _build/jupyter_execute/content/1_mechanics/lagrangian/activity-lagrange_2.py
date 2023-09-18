@@ -145,7 +145,7 @@ plt.grid()
 # 
 # ### Back to Paraboloid Paradise
 # 
-# [Analytical Solution (Finding ODEs for Paraboloid)](https://github.com/dannycab/phy415fall23/blob/main/content/assets/notes/Notes-Bead_in_a_Paraboloid.pdf)
+# [Analytical Solution (Finding ODEs for Paraboloid)](../../assets/notes/Notes-Bead_in_a_Paraboloid.pdf)
 # 
 # Let's consider the problem where a particle was constrained to move on the surface $z = c\rho^2$. The EOM we arrived at are complex
 # $$\ddot{\rho} = \dfrac{\rho\dot{\phi}^2 - 4c^2\rho\dot{\rho}^2 -2cg\rho}{1 + 4c^2\rho^2}$$

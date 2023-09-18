@@ -27,6 +27,7 @@ parts:
     - file: content/1_mechanics/dynamical_systems/activity-phase_space
     - file: content/1_mechanics/dynamical_systems/activity-vanderpol
     - file: content/1_mechanics/dynamical_systems/notes-linearization_odes
+    - file: content/1_mechanics/dynamical_systems/activity-duffing
   - caption: 2 - E&M and PDEs
     chapters:
       - file: content/2_EM/Statics/notes-em_intro

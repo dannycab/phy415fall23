@@ -69,8 +69,8 @@
 # 
 # ### Handwritten Notes
 # 
-# - [Numerical Integration - 1D Spatial integrals](https://github.com/dannycab/phy415fall23/blob/main/content/assets/notes/Notes-Numerical_Integration_1D_Spatial.pdf)
-# - [Numerical Integration - Euler Cromer for ODEs](https://github.com/dannycab/phy415fall23/blob/main/content/assets/notes/Notes-Numerical_Integration_Euler_Cromer.pdf)
+# - [Numerical Integration - 1D Spatial integrals](../../assets/notes/Notes-Numerical_Integration_1D_Spatial.pdf)
+# - [Numerical Integration - Euler Cromer for ODEs](../../assets/notes/Notes-Numerical_Integration_Euler_Cromer.pdf)
 # 
 # ### Book Readings
 # 

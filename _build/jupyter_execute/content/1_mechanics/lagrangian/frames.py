@@ -82,6 +82,6 @@
 # 
 # **Hint: The equation of motion to small angle oscillation frequency pipeline is real.**
 
-# - [Notes on Newton's Second Law in Plane Polar Coordinates](https://github.com/dannycab/phy415fall23/blob/main/content/assets/notes/Notes-Newton_2nd_Plane_polar.pdf)
+# - [Notes on Newton's Second Law in Plane Polar Coordinates](../../assets/notes/Notes-Newton_2nd_Plane_polar.pdf)
 
 # 

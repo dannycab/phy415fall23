@@ -297,6 +297,6 @@ plt.grid()
 # 
 # Below, I have worked up some additional notes that describe the conceptual and procedural aspects of phase space with respect to the SHO.
 # 
-# * [Phase Space and the SHO](https://github.com/dannycab/phy415fall23/blob/main/content/assets/notes/Notes-Phase_Space.pdf)
+# * [Phase Space and the SHO](../../assets/notes/Notes-Phase_Space.pdf)
 
 # 
