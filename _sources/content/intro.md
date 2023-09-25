@@ -10,11 +10,15 @@ To get a sense of the course, please read all the pages associated with our syll
 `````{admonition} Last updated: 17 Sep 2023
 :class: tip
 
+### Grades
+* Worked problem 1 grades are nearly complete.
+
 ### Site Updates
-* [Readings for Week 4](./1_mechanics/dynamical_systems/notes-linearization_odes.ipynb) have been posted. 
+* [Readings for Week 5](./2_EM/Statics/notes-em_intro.ipynb) have been posted. 
+* [Tuesday's class activity](./2_EM/Statics/activity-efields.ipynb) has been posted.
+* Readings for Week 6 are forthcoming.
 
 ### Upcoming Deadlines
-* The [second worked problem](./9_assignments/worked-problem-2.md) is due 22 Sep 2023.
 * The [first project](./9_assignments/project-1.md) is due 29 Sep 2023.
 
 `````
