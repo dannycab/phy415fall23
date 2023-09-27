@@ -12,7 +12,7 @@ To get a sense of the course, please read all the pages associated with our syll
 
 ### Site Updates
 * [Tuesday's class activity](./2_EM/Statics/activity-efields.ipynb) has been updated to include solutions to the different configurations of charges.
-* [Readings for Week 6](./2_EM/Statics/notes-electric_potential.ipynb) are posted.
+* [Readings for Week 5](./2_EM/Statics/notes-electric_potential.ipynb) are posted.
 
 ### Upcoming Deadlines
 * The [first project](./9_assignments/project-1.md) is due 29 Sep 2023.
