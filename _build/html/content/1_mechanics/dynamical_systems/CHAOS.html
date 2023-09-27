@@ -1,44 +1,35 @@
 
-
 <!DOCTYPE html>
 
-
-<html >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>19 Sep 23 - CHAOS &#8212; PHY 415 Fall 2023</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    <title>19 Sep 23 - CHAOS &#8212; PHY 415 Fall 2023</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -46,12 +37,12 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -61,91 +52,59 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/1_mechanics/dynamical_systems/CHAOS';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../../../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../../intro.html">
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">PHY 415 Fall 2023</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -154,280 +113,509 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">0 - Intro and Syllabus</span></p>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  0 - Intro and Syllabus
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../0_course/0_syllabus.html">Syllabus and Overview of PHY 415</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/1_goals.html">Course Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/2_design.html">Course Design</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/3_assessments.html">Assessments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/4_rubric.html">Project Rubrics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/5_calendar.html">Calendar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/6_environment.html">Classroom Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/7_resources.html">Resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/8_worked_problems.html">Worked Problems</a></li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../0_course/0_syllabus.html">
+   Syllabus and Overview of PHY 415
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/1_goals.html">
+     Course Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/2_design.html">
+     Course Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/3_assessments.html">
+     Assessments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/4_rubric.html">
+     Project Rubrics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/5_calendar.html">
+     Calendar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/6_environment.html">
+     Classroom Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/7_resources.html">
+     Resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/8_worked_problems.html">
+     Worked Problems
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">1 - Mechanics and ODEs</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  1 - Mechanics and ODEs
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../modeling/activity-what_is_a_model.html">29 Aug 23 - Activity: What is a Model?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sho/notes-SHO.html">29 Aug 23 - Notes: Simple Harmonic Oscillator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lagrangian/notes_frames.html">31 Aug 23 - Notes: Frames and Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lagrangian/frames.html">31 Aug 23 - Activity: Frames and Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lagrangian/notes-lagrangian-dynamics.html">5 Sept 23 - Notes: Lagrangian Dynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lagrangian/activity-lagrange_1.html">5 Sep 23 - Activity: Calculus of Variations and Lagrangian Dynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lagrangian/notes-numerical_integration_1d.html">7 Sept 23 - Notes: Numerical Integration in 1D</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modeling/activity-what_is_a_model.html">
+   29 Aug 23 - Activity: What is a Model?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sho/notes-SHO.html">
+   29 Aug 23 - Notes: Simple Harmonic Oscillator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lagrangian/notes_frames.html">
+   31 Aug 23 - Notes: Frames and Coordinates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lagrangian/frames.html">
+   31 Aug 23 - Activity: Frames and Coordinates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lagrangian/notes-lagrangian-dynamics.html">
+   5 Sept 23 - Notes: Lagrangian Dynamics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lagrangian/activity-lagrange_1.html">
+   5 Sep 23 - Activity: Calculus of Variations and Lagrangian Dynamics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lagrangian/notes-numerical_integration_1d.html">
+   7 Sept 23 - Notes: Numerical Integration in 1D
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lagrangian/activity-lagrange_2.html">
+   7 Sep 23 - Activity: Numerical Integration and More Lagrangians
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notes-phase_space.html">
+   12 Sept 23 - Notes: Dynamical Systems and Phase Space
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity-phase_space.html">
+   12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity-vanderpol.html">
+   14 Sept 23 - Activity: Conducting a complete analysis of an ODE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notes-linearization_odes.html">
+   19 Sep 23 - Notes: Heading towards Chaos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity-duffing.html">
+   19 Sep 23 - The Duffing Oscillator
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">2 - E&amp;M and PDEs</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2 - E&amp;M and PDEs
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../2_EM/Statics/notes-em_intro.html">26 Sept 23 - Notes: Maxwell’s Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../2_EM/Statics/notes-static_fields.html">26 Sept 23 - Notes: Static Fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../2_EM/Statics/activity-efields.html">26 Sep 23 - Activity: Electrostatic Fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../2_EM/Statics/activity-superposition.html">28 Sep 23 - Activity: Superposition of Fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../2_EM/Statics/notes-electric_potential.html">3 Oct 23 - Notes: Electric Potential - a scalar field</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2_EM/Statics/notes-em_intro.html">
+   26 Sept 23 - Notes: Maxwell’s Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2_EM/Statics/notes-static_fields.html">
+   26 Sept 23 - Notes: Static Fields
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2_EM/Statics/activity-efields.html">
+   26 Sep 23 - Activity: Electrostatic Fields
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2_EM/Statics/activity-superposition.html">
+   28 Sep 23 - Activity: Superposition of Fields
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2_EM/Statics/notes-electric_potential.html">
+   3 Oct 23 - Notes: Electric Potential - a scalar field
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../9_assignments/worked-problem-1.html">Worked Problem Assignment 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../9_assignments/worked-problem-2.html">Worked Problem Assignment 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../9_assignments/project-1.html">Project 1 - Classical Mechanics and ODEs</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../9_assignments/worked-problem-1.html">
+   Worked Problem Assignment 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../9_assignments/worked-problem-2.html">
+   Worked Problem Assignment 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../9_assignments/project-1.html">
+   Project 1 - Classical Mechanics and ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../9_assignments/worked-problem-3.html">
+   Worked Problem Assignment 3
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../references.html">Works Cited</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../references.html">
+   Works Cited
+  </a>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
   
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
     </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
   </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/valentine-alia/phy415fall23" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/1_mechanics/dynamical_systems/CHAOS.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../../../_sources/content/1_mechanics/dynamical_systems/CHAOS.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
+  <div class="menu-dropdown__content">
+    <ul>
       <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
+        <a href="https://mybinder.org/v2/gh/valentine-alia/phy415fall23/master?urlpath=tree/content/1_mechanics/dynamical_systems/CHAOS.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
 >
   
 
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
   </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
       
-  </ul>
+    </ul>
+  </div>
 </div>
-
-
-
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
   </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/valentine-alia/phy415fall23"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>19 Sep 23 - CHAOS</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-chaos">Definition of Chaos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#halvorsen-attractor">Halvorsen Attractor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov-exponents">Lyapunov Exponents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driven-damped-pendulum">Driven Damped Pendulum</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poincare-section">Poincaré Section</a></li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/1_mechanics/dynamical_systems/CHAOS.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/content/1_mechanics/dynamical_systems/CHAOS.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definition-of-chaos">
+   Definition of Chaos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#halvorsen-attractor">
+   Halvorsen Attractor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lyapunov-exponents">
+   Lyapunov Exponents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#driven-damped-pendulum">
+   Driven Damped Pendulum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#poincare-section">
+   Poincaré Section
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>19 Sep 23 - CHAOS</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definition-of-chaos">
+   Definition of Chaos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#halvorsen-attractor">
+   Halvorsen Attractor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lyapunov-exponents">
+   Lyapunov Exponents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#driven-damped-pendulum">
+   Driven Damped Pendulum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#poincare-section">
+   Poincaré Section
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-chaos">
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="sep-23-chaos">
 <h1>19 Sep 23 - CHAOS<a class="headerlink" href="#sep-23-chaos" title="Permalink to this headline">#</a></h1>
 <p>Over the last couple weeks we’ve been looking into a lot of 2 dimensional autonomous (the differential equations don’t depend on time) systems of differential equations.
 Another thing we’ve noticed is that initial conditions in these systems tend to either blast off to infinity, form a closed loop, or are drawn to attracting fixed point(s) or limit cycle(s). In the case of attracting fixed points or limit cycles, many different initial conditions can be drawn to the same fixed point or limit cycle. In fact, we saw that it is possible for <strong>every</strong> initial condition to be drawn to the same limit cycle for the Van der Pol oscillator. This means that trajectories that are initially far apart eventually become close together.</p>
 <p>This seems all well and good, but when we step up to 3 dimensional autonomous systems (or as we’ll see later, non-autonomous 2D ones), some more interesting behavior starts to emerge. Trajectories that start out very close to each other can diverge from each other, while still not diverging to infinity. And it turns out that these sorts of <strong>chaotic</strong> systems arise surprisingly often in systems we’re interested in in physics. The classic example of this is the double pendulum. Its also been shown that the solar system is chaotic for large time scales, and countless other systems exhibit this property.</p>
-<div class="section" id="definition-of-chaos">
+<section id="definition-of-chaos">
 <h2>Definition of Chaos<a class="headerlink" href="#definition-of-chaos" title="Permalink to this headline">#</a></h2>
 <p>Here we’ll follow Strogats’s definition of chaos, which is:</p>
 <p><em><strong>Chaos</strong></em> <em>is aperiodic long-term behavior in a deterministic system that exhibits sensitive dependence on initial conditions.</em></p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p><strong>Aperiodic long-term behavior</strong> means that some trajectories don’t settle into fixed points, periodic orbits, or quasi-periodic orbits, while still not diverging to infinity.</p></li>
 <li><p><strong>Deterministic</strong> means that the equations evolve in totally predictable ways, without any randomness. There are no noisy parameters or imputs.</p></li>
 <li><p><strong>Sensitive dependence on initial conditions</strong> means that nearby trajectories separate exponentially fast.</p></li>
 </ol>
 <p>Let’s investigate this phenomenon for a particular system.</p>
-</div>
-<div class="section" id="halvorsen-attractor">
+</section>
+<section id="halvorsen-attractor">
 <h2>Halvorsen Attractor<a class="headerlink" href="#halvorsen-attractor" title="Permalink to this headline">#</a></h2>
 <p>One system we can start looking at is given by the <strong>Halvorsen Equations:</strong></p>
 <div class="math notranslate nohighlight">
@@ -443,7 +631,7 @@ Another thing we’ve noticed is that initial conditions in these systems tend t
 \dot{z} = -az - 4x - 4y - x^2
 \]</div>
 <p><strong>✅ Do this</strong></p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Review the code below. Talk to your neighbors about what it is doing. Feel free to experiment with more or less initial conditions. <strong>You should be able to explain what this code is doing</strong></p></li>
 <li><p>Based on our definition above, is this system chaotic? Why or why not? Discuss with your neighbors.</p>
 <ul class="simple">
@@ -501,15 +689,15 @@ Another thing we’ve noticed is that initial conditions in these systems tend t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/3c6ae4dbd9bf41f6f211ceca6a92fa370ea64c6b4e6be4b30493053fa33c243c.png" src="../../../_images/3c6ae4dbd9bf41f6f211ceca6a92fa370ea64c6b4e6be4b30493053fa33c243c.png" />
+<img alt="../../../_images/CHAOS_2_0.png" src="../../../_images/CHAOS_2_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="lyapunov-exponents">
+</section>
+<section id="lyapunov-exponents">
 <h2>Lyapunov Exponents<a class="headerlink" href="#lyapunov-exponents" title="Permalink to this headline">#</a></h2>
 <p>One of our criteria for a system to be chaotic was that nearby trajectories must separate exponentially fast. Let’s see if this holds true for this system:</p>
 <p><strong>✅ Do this</strong></p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Numerically calculate and plot the Euclidean distance (<span class="math notranslate nohighlight">\(||\delta(t)||\)</span>) between the first two trajectories  as a function of time. What do you notice?</p></li>
 <li><p>Also calculate  <span class="math notranslate nohighlight">\(\log ||\delta(t)||\)</span> and plot it. What do you notice now?</p></li>
 </ol>
@@ -531,7 +719,7 @@ Another thing we’ve noticed is that initial conditions in these systems tend t
 t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\right)
 \]</div>
 <p><strong>✅ Do this</strong></p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Use <span class="math notranslate nohighlight">\(\log ||\delta(t)||\)</span> that you calculated above and <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> to estimate the value of <span class="math notranslate nohighlight">\(\lambda\)</span> for the Halvorsen system.</p>
 <ul class="simple">
 <li><p>You’ll need to eyeball where <span class="math notranslate nohighlight">\(\log ||\delta(t)||\)</span> stops being linear.</p></li>
@@ -547,8 +735,8 @@ t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\rig
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="driven-damped-pendulum">
+</section>
+<section id="driven-damped-pendulum">
 <h2>Driven Damped Pendulum<a class="headerlink" href="#driven-damped-pendulum" title="Permalink to this headline">#</a></h2>
 <p>Now let’s turn our attention to a more physics-y chaotic system, the Driven Damped Pendulum (DDP). This system is similar to the large angle pendulum that we’ve studied before, but it has a damping term <span class="math notranslate nohighlight">\(-2\beta\dot{\theta}\)</span>, as well as a driving time-dependent torque <span class="math notranslate nohighlight">\(\gamma \omega_0^2\cos(\omega t)\)</span> . The full equation after sufficient non-dimensionalization looks like this (note: <span class="math notranslate nohighlight">\(\omega_0 \neq \omega\)</span>):</p>
 <div class="math notranslate nohighlight">
@@ -605,11 +793,11 @@ t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\rig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/b754401fe7572f547496907c27255a9bc4341f68a2ab3974d7f4435afcb8876a.png" src="../../../_images/b754401fe7572f547496907c27255a9bc4341f68a2ab3974d7f4435afcb8876a.png" />
+<img alt="../../../_images/CHAOS_8_0.png" src="../../../_images/CHAOS_8_0.png" />
 </div>
 </div>
 <p><strong>✅ Do this</strong></p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Discuss the above plots with your neighbors.</p>
 <ul class="simple">
 <li><p>Do you notice any patterns or is the motion totally unpredictable?</p></li>
@@ -618,8 +806,8 @@ t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\rig
 </ul>
 </li>
 </ol>
-</div>
-<div class="section" id="poincare-section">
+</section>
+<section id="poincare-section">
 <h2>Poincaré Section<a class="headerlink" href="#poincare-section" title="Permalink to this headline">#</a></h2>
 <p>To get a better sense of what’s actually going on here, and to maybe have a hope of actually seeing if this thing has an attractor, we can use what is called a <strong>Poincaré section</strong>. The idea behind a Poincaré section is as follows: since the force term of this system is periodic, we should only look at points in phase space where the force term is at the same point in its cycle. Doing this reveals the breautiful fractal cross section of an attractor.</p>
 <p><strong>✅ Do this</strong></p>
@@ -661,7 +849,7 @@ t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\rig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/a7d64b1ac6fffbe7c519b50d549d710c698feee4503f5e26080d828712b321a4.png" src="../../../_images/a7d64b1ac6fffbe7c519b50d549d710c698feee4503f5e26080d828712b321a4.png" />
+<img alt="../../../_images/CHAOS_11_0.png" src="../../../_images/CHAOS_11_0.png" />
 </div>
 </div>
 <p><strong>✅ Do this</strong></p>
@@ -682,8 +870,8 @@ t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\rig
 </ul>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -697,7 +885,7 @@ t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\rig
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./content/1_mechanics/dynamical_systems"
         },
         predefinedOutput: true
@@ -705,91 +893,36 @@ t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\rig
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
-<div class="prev-next-area">
-</div></div>
-  
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
 </div>
-
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-chaos">Definition of Chaos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#halvorsen-attractor">Halvorsen Attractor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lyapunov-exponents">Lyapunov Exponents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driven-damped-pendulum">Driven Damped Pendulum</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poincare-section">Poincaré Section</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Danny Caballero, Alia Valentine
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2023.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+            </footer>
+        </div>
     </div>
-  </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Danny Caballero, Alia Valentine<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>

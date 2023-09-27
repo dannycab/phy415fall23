@@ -7,7 +7,7 @@ To get a sense of the course, please read all the pages associated with our syll
  
 ## Updates
 
-`````{admonition} Last updated: 25 Sep 2023
+`````{admonition} Last updated: 27 Sep 2023
 :class: tip
 
 ### Site Updates
@@ -16,6 +16,7 @@ To get a sense of the course, please read all the pages associated with our syll
 
 ### Upcoming Deadlines
 * The [first project](./9_assignments/project-1.md) is due 29 Sep 2023.
+* The [third worked problem](./9_assignments/worked-problem-3.md) is due 6 Oct 2023.
 
 `````
 

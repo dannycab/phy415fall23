@@ -111,16 +111,18 @@ def plot_electric_field(X, Y, E_x, E_y, stream_color='b'):
     
     # Third Subplot - Color Scaled Quiver Plot
     magnitude = np.sqrt(E_x**2 + E_y**2)
-    norm = Normalize(vmin=magnitude.min(), vmax=magnitude.max())
-    cmap = cm.viridis
-    colors = cmap(norm(magnitude.flatten()))
-    axs[2].quiver(X.flatten(), Y.flatten(), E_x.flatten(), E_y.flatten(), color=colors, scale=1e6)
-    axs[2].set_title('Color Scaled Quiver Plot')
+    colors = np.log(magnitude)
+    strm = axs[2].streamplot(X, Y, E_x, E_y, color=colors, cmap = cm.inferno)
+    axs[2].set_title('Color Scaled Stream Plot')
     axs[2].set_xlabel('x [m]')
     axs[2].set_ylabel('y [m]')
     axs[2].axhline(0, color='black', linewidth=0.5)
     axs[2].axvline(0, color='black', linewidth=0.5)
     axs[2].grid(color='gray', linestyle='--', linewidth=0.5)
+    # Add a colorbar to the plot
+    cbar = plt.colorbar(strm.lines)
+    cbar.set_label(r'$\log{\left|\mathbf{E}\right|}$')
+
     
     plt.tight_layout()  # Adjust spacing between subplots
     plt.show()
@@ -254,10 +256,162 @@ plot_electric_field(X, Y, E_T_x, E_T_y)
 # * Create a circle of charges (like a ring). Is there any symmetry to this situation? Where is the electric field zero? How close does your calculation get to zero? What makes the calculation better or worse?
 # * Create a small locus of charges of different sizes and signs, but make sure the net charge is non-zero. How close do the charges need to be (or how far away do you need to be) for the field to look like a point charge field? What is the symmetry of this situation (or approximately so)? Where is the electric field zero (if at all)?
 
+# #### Uniform line of charges
+
 # In[8]:
 
 
-### Your code here
+## Set up the space again
+size = 2
+step = 40
+
+x = np.linspace(-size, size, step)
+y = np.linspace(-size, size, step)
+X, Y = np.meshgrid(x, y)
+
+N = 100  # Number of charges
+charges = []
+for i in range(N):
+    q = 1e-6  # Charge Value
+    x = i*(2*size)/(N-1) - size  # Spread the charges out
+    y = 0  # everything on the x-axis
+    charges.append(Charge(q, x, y))  # Add the charge to the list of charges
+
+## Set the total electric field to zero
+E_T_x = np.zeros_like(X)
+E_T_y = np.zeros_like(Y)
+
+## Calculate the electric field due to each charge
+for charge in charges:
+    E_x, E_y = electric_field(charge.q, X, Y, charge.x, charge.y)
+    E_T_x += E_x
+    E_T_y += E_y
+
+plot_electric_field(X, Y, E_T_x, E_T_y)
+
+
+# #### Sinusoidal line of charges
+
+# In[9]:
+
+
+## Set up the space again
+size = 2
+step = 100
+
+x = np.linspace(-size, size, step)
+y = np.linspace(-size, size, step)
+X, Y = np.meshgrid(x, y)
+
+N = 600  # Number of charges
+charges = []
+for i in range(N):
+    x = i*(2*size)/(N-1) - size  # Spread the charges out
+    y = 0  # everything on the x-axis
+    
+    q = 1e-6*np.sin(30*x/(size))  # Charge Value
+    
+    charges.append(Charge(q, x, y))  # Add the charge to the list of charges
+
+## Set the total electric field to zero
+E_T_x = np.zeros_like(X)
+E_T_y = np.zeros_like(Y)
+
+## Calculate the electric field due to each charge
+for charge in charges:
+    E_x, E_y = electric_field(charge.q, X, Y, charge.x, charge.y)
+    E_T_x += E_x
+    E_T_y += E_y
+
+plot_electric_field(X, Y, E_T_x, E_T_y)
+
+
+# #### Circle of charges
+
+# In[10]:
+
+
+## Set up the space again
+size = 2
+step = 100
+R = size/2
+
+x = np.linspace(-size, size, step)
+y = np.linspace(-size, size, step)
+X, Y = np.meshgrid(x, y)
+
+N = 360  # Number of charges
+charges = []
+for i in range(N):
+    
+    theta = i*(2*np.pi)/(N-1)  # Spread the charges out
+    x = R*np.cos(theta)
+    y = R*np.sin(theta)
+    
+    q = 1e-6  # Charge Value
+    
+    charges.append(Charge(q, x, y))  # Add the charge to the list of charges
+
+## Set the total electric field to zero
+E_T_x = np.zeros_like(X)
+E_T_y = np.zeros_like(Y)
+
+## Calculate the electric field due to each charge
+for charge in charges:
+    E_x, E_y = electric_field(charge.q, X, Y, charge.x, charge.y)
+    E_T_x += E_x
+    E_T_y += E_y
+
+plot_electric_field(X, Y, E_T_x, E_T_y)
+    
+
+
+# #### Small Locus of Random Charges
+
+# In[11]:
+
+
+## Set up the space again
+size = 2
+step = 100
+R = size/2
+scale = 1e-3 #smaller scale means charges are closer to the origin
+
+x = np.linspace(-size, size, step)
+y = np.linspace(-size, size, step)
+X, Y = np.meshgrid(x, y)
+
+N = 6 # If even there's a chance of a net charge of zero
+charges = []
+for i in range(N):
+    
+    ## Random charge value
+    q = np.random.choice([-1e-6, 1e-6]) # Either a positive or negative charge
+    ## Random x,y locations that are located close to the origin
+    x = np.random.uniform(-scale*size, scale*size)
+    y = np.random.uniform(-scale*size, scale*size)
+    
+    charges.append(Charge(q, x, y))  # Add the charge to the list of charges
+
+## Set the total electric field to zero
+E_T_x = np.zeros_like(X)
+E_T_y = np.zeros_like(Y)
+
+## Calculate the electric field due to each charge
+for charge in charges:
+    E_x, E_y = electric_field(charge.q, X, Y, charge.x, charge.y)
+    E_T_x += E_x
+    E_T_y += E_y
+
+plot_electric_field(X, Y, E_T_x, E_T_y)
+
+total_charge = 0
+
+for charge in charges:
+    print(f"Charge: {charge.q} C, Location: ({charge.x}, {charge.y})")
+    total_charge += charge.q
+    
+print(f"Total Charge: {total_charge} C")
 
 
 # ## Gauss's Law
@@ -328,7 +482,7 @@ plot_electric_field(X, Y, E_T_x, E_T_y)
 # * Create known 3D distributions of charges and demonstrate you can view the field in 3D.
 #     * Note the visualizations will have to change more than the code to create the charges and compute their fields. 
 
-# In[9]:
+# In[12]:
 
 
 ## Your code here
