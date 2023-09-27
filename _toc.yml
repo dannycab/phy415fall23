@@ -32,7 +32,8 @@ parts:
     chapters:
       - file: content/2_EM/Statics/notes-em_intro
       - file: content/2_EM/Statics/notes-static_fields
-      - file: content/2_EM/Statics/activity-efields.ipynb
+      - file: content/2_EM/Statics/activity-efields
+      - file: content/2_EM/Statics/activity-superposition
       - file: content/2_EM/Statics/notes-electric_potential
       # - file: content/2_EM/Statics/notes-scalar_fields
       # - file: content/2_EM/Statics/notes-sep_of_var

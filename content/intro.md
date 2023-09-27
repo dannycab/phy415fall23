@@ -10,13 +10,9 @@ To get a sense of the course, please read all the pages associated with our syll
 `````{admonition} Last updated: 25 Sep 2023
 :class: tip
 
-### Grades
-* Worked problem 1 grades are nearly complete.
-
 ### Site Updates
-* [Readings for Week 5](./2_EM/Statics/notes-em_intro.ipynb) have been posted. 
-* [Tuesday's class activity](./2_EM/Statics/activity-efields.ipynb) has been posted.
-* Readings for Week 6 are forthcoming.
+* [Tuesday's class activity](./2_EM/Statics/activity-efields.ipynb) has been updated to include solutions to the different configurations of charges.
+* [Readings for Week 6](./2_EM/Statics/notes-electric_potential.ipynb) are posted.
 
 ### Upcoming Deadlines
 * The [first project](./9_assignments/project-1.md) is due 29 Sep 2023.
