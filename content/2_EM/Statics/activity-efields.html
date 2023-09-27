@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>26 Sep 2023 - Activity: Electrostatic Fields &#8212; PHY 415 Fall 2023</title>
+    <title>26 Sep 23 - Activity: Electrostatic Fields &#8212; PHY 415 Fall 2023</title>
   
   
   
@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/2_EM/Statics/activity-efields';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Worked Problem Assignment 1" href="../../9_assignments/worked-problem-1.html" />
+    <link rel="next" title="26 Sep 23 - Activity: Superposition of Fields" href="activity-superposition.html" />
     <link rel="prev" title="26 Sept 23 - Notes: Static Fields" href="notes-static_fields.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -191,7 +191,9 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notes-em_intro.html">26 Sept 23 - Notes: Maxwell’s Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-static_fields.html">26 Sept 23 - Notes: Static Fields</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">26 Sep 2023 - Activity: Electrostatic Fields</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">26 Sep 23 - Activity: Electrostatic Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-superposition.html">26 Sep 23 - Activity: Superposition of Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes-electric_potential.html">3 Oct 23 - Notes: Electric Potential - a scalar field</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -385,7 +387,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>26 Sep 2023 - Activity: Electrostatic Fields</h1>
+    <h1>26 Sep 23 - Activity: Electrostatic Fields</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -404,7 +406,13 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-electric-dipole">The electric dipole</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadrupole">Quadrupole</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadrupole">Quadrupole</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-line-of-charges">Uniform line of charges</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sinusoidal-line-of-charges">Sinusoidal line of charges</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#circle-of-charges">Circle of charges</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#small-locus-of-random-charges">Small Locus of Random Charges</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauss-s-law">Gauss’s Law</a><ul class="nav section-nav flex-column">
@@ -424,8 +432,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sep-2023-activity-electrostatic-fields">
-<h1>26 Sep 2023 - Activity: Electrostatic Fields<a class="headerlink" href="#sep-2023-activity-electrostatic-fields" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-activity-electrostatic-fields">
+<h1>26 Sep 23 - Activity: Electrostatic Fields<a class="headerlink" href="#sep-23-activity-electrostatic-fields" title="Permalink to this headline">#</a></h1>
 <p>As we saw the electric field is described by the 4 Maxwell equations. But, in the electrostatic situation where the charges do not move, we find the electric field is described by the following equations:</p>
 <div class="math notranslate nohighlight">
 \[\nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_0}\]</div>
@@ -521,16 +529,18 @@ document.write(`
     
     <span class="c1"># Third Subplot - Color Scaled Quiver Plot</span>
     <span class="n">magnitude</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E_x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">E_y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">norm</span> <span class="o">=</span> <span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">magnitude</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">vmax</span><span class="o">=</span><span class="n">magnitude</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-    <span class="n">cmap</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">viridis</span>
-    <span class="n">colors</span> <span class="o">=</span> <span class="n">cmap</span><span class="p">(</span><span class="n">norm</span><span class="p">(</span><span class="n">magnitude</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span>
-    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">Y</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">E_x</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">E_y</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1e6</span><span class="p">)</span>
-    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Color Scaled Quiver Plot&#39;</span><span class="p">)</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">magnitude</span><span class="p">)</span>
+    <span class="n">strm</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">streamplot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">E_x</span><span class="p">,</span> <span class="n">E_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">inferno</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Color Scaled Stream Plot&#39;</span><span class="p">)</span>
     <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x [m]&#39;</span><span class="p">)</span>
     <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y [m]&#39;</span><span class="p">)</span>
     <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
     <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
     <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="c1"># Add a colorbar to the plot</span>
+    <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">strm</span><span class="o">.</span><span class="n">lines</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\log{\left|\mathbf</span><span class="si">{E}</span><span class="s1">\right|}$&#39;</span><span class="p">)</span>
+
     
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>  <span class="c1"># Adjust spacing between subplots</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -560,7 +570,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/e9b92db086a60e8d7ddd2481aeab758519e1f27e2f5039a6dd35009ad1378358.png" src="../../../_images/e9b92db086a60e8d7ddd2481aeab758519e1f27e2f5039a6dd35009ad1378358.png" />
+<img alt="../../../_images/80992f18e765fc0abacaf371de5f05a63b76d54466f9bdf798a0078c029ead68.png" src="../../../_images/80992f18e765fc0abacaf371de5f05a63b76d54466f9bdf798a0078c029ead68.png" />
 </div>
 </div>
 </div>
@@ -581,7 +591,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/bde799cee98601704622afc402e972b949be51d780b2e3115f18923c3c1413f9.png" src="../../../_images/bde799cee98601704622afc402e972b949be51d780b2e3115f18923c3c1413f9.png" />
+<img alt="../../../_images/cb74521057912ff1bfa9dace49dd67dd09f8e2bdd76b2cd088ca9e78f3c8ddf5.png" src="../../../_images/cb74521057912ff1bfa9dace49dd67dd09f8e2bdd76b2cd088ca9e78f3c8ddf5.png" />
 </div>
 </div>
 </div>
@@ -618,7 +628,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/93f3574c14f70df5e4d4d9f10027172b13b1c03a6e619f95e4821795042e9669.png" src="../../../_images/93f3574c14f70df5e4d4d9f10027172b13b1c03a6e619f95e4821795042e9669.png" />
+<img alt="../../../_images/ffc0f6a352053e588ec9b51209c6ba24907c853e01b335752575449f74b4023d.png" src="../../../_images/ffc0f6a352053e588ec9b51209c6ba24907c853e01b335752575449f74b4023d.png" />
 </div>
 </div>
 </div>
@@ -680,7 +690,7 @@ Charge: -1e-06 C, Location: (-1, -1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/b6a0acbf32ebc906eb05c85070e8799e09a7f5669523399224c2c1e5258ca39d.png" src="../../../_images/b6a0acbf32ebc906eb05c85070e8799e09a7f5669523399224c2c1e5258ca39d.png" />
+<img alt="../../../_images/fafe378219c4b70a1bcf35efebb46229f6b2ea18c9d516aeec5dcd71a985c480.png" src="../../../_images/fafe378219c4b70a1bcf35efebb46229f6b2ea18c9d516aeec5dcd71a985c480.png" />
 </div>
 </div>
 <p><strong>✅ Do this</strong></p>
@@ -691,10 +701,190 @@ Charge: -1e-06 C, Location: (-1, -1)
 <li><p>Create a circle of charges (like a ring). Is there any symmetry to this situation? Where is the electric field zero? How close does your calculation get to zero? What makes the calculation better or worse?</p></li>
 <li><p>Create a small locus of charges of different sizes and signs, but make sure the net charge is non-zero. How close do the charges need to be (or how far away do you need to be) for the field to look like a point charge field? What is the symmetry of this situation (or approximately so)? Where is the electric field zero (if at all)?</p></li>
 </ul>
+<div class="section" id="uniform-line-of-charges">
+<h4>Uniform line of charges<a class="headerlink" href="#uniform-line-of-charges" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Set up the space again</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mi">40</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Number of charges</span>
+<span class="n">charges</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="mf">1e-6</span>  <span class="c1"># Charge Value</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">size</span>  <span class="c1"># Spread the charges out</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># everything on the x-axis</span>
+    <span class="n">charges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Charge</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>  <span class="c1"># Add the charge to the list of charges</span>
+
+<span class="c1">## Set the total electric field to zero</span>
+<span class="n">E_T_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">E_T_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+
+<span class="c1">## Calculate the electric field due to each charge</span>
+<span class="k">for</span> <span class="n">charge</span> <span class="ow">in</span> <span class="n">charges</span><span class="p">:</span>
+    <span class="n">E_x</span><span class="p">,</span> <span class="n">E_y</span> <span class="o">=</span> <span class="n">electric_field</span><span class="p">(</span><span class="n">charge</span><span class="o">.</span><span class="n">q</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">charge</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">charge</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">E_T_x</span> <span class="o">+=</span> <span class="n">E_x</span>
+    <span class="n">E_T_y</span> <span class="o">+=</span> <span class="n">E_y</span>
+
+<span class="n">plot_electric_field</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">E_T_x</span><span class="p">,</span> <span class="n">E_T_y</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/0e618d2a9e6ae477c3a65e19a4b7910b54303c9f0f3259dae37f9b37aa2dfa49.png" src="../../../_images/0e618d2a9e6ae477c3a65e19a4b7910b54303c9f0f3259dae37f9b37aa2dfa49.png" />
+</div>
+</div>
+</div>
+<div class="section" id="sinusoidal-line-of-charges">
+<h4>Sinusoidal line of charges<a class="headerlink" href="#sinusoidal-line-of-charges" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Set up the space again</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">600</span>  <span class="c1"># Number of charges</span>
+<span class="n">charges</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">size</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">size</span>  <span class="c1"># Spread the charges out</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># everything on the x-axis</span>
+    
+    <span class="n">q</span> <span class="o">=</span> <span class="mf">1e-6</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="n">size</span><span class="p">))</span>  <span class="c1"># Charge Value</span>
+    
+    <span class="n">charges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Charge</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>  <span class="c1"># Add the charge to the list of charges</span>
+
+<span class="c1">## Set the total electric field to zero</span>
+<span class="n">E_T_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">E_T_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+
+<span class="c1">## Calculate the electric field due to each charge</span>
+<span class="k">for</span> <span class="n">charge</span> <span class="ow">in</span> <span class="n">charges</span><span class="p">:</span>
+    <span class="n">E_x</span><span class="p">,</span> <span class="n">E_y</span> <span class="o">=</span> <span class="n">electric_field</span><span class="p">(</span><span class="n">charge</span><span class="o">.</span><span class="n">q</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">charge</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">charge</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">E_T_x</span> <span class="o">+=</span> <span class="n">E_x</span>
+    <span class="n">E_T_y</span> <span class="o">+=</span> <span class="n">E_y</span>
+
+<span class="n">plot_electric_field</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">E_T_x</span><span class="p">,</span> <span class="n">E_T_y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/feaf2fc9e875b955804bf8053620fc997b8e1c102f0c88463ad21a098f5f9415.png" src="../../../_images/feaf2fc9e875b955804bf8053620fc997b8e1c102f0c88463ad21a098f5f9415.png" />
+</div>
+</div>
+</div>
+<div class="section" id="circle-of-charges">
+<h4>Circle of charges<a class="headerlink" href="#circle-of-charges" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Set up the space again</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">size</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">360</span>  <span class="c1"># Number of charges</span>
+<span class="n">charges</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Spread the charges out</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    
+    <span class="n">q</span> <span class="o">=</span> <span class="mf">1e-6</span>  <span class="c1"># Charge Value</span>
+    
+    <span class="n">charges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Charge</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>  <span class="c1"># Add the charge to the list of charges</span>
+
+<span class="c1">## Set the total electric field to zero</span>
+<span class="n">E_T_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">E_T_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+
+<span class="c1">## Calculate the electric field due to each charge</span>
+<span class="k">for</span> <span class="n">charge</span> <span class="ow">in</span> <span class="n">charges</span><span class="p">:</span>
+    <span class="n">E_x</span><span class="p">,</span> <span class="n">E_y</span> <span class="o">=</span> <span class="n">electric_field</span><span class="p">(</span><span class="n">charge</span><span class="o">.</span><span class="n">q</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">charge</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">charge</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">E_T_x</span> <span class="o">+=</span> <span class="n">E_x</span>
+    <span class="n">E_T_y</span> <span class="o">+=</span> <span class="n">E_y</span>
+
+<span class="n">plot_electric_field</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">E_T_x</span><span class="p">,</span> <span class="n">E_T_y</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/14eb338e6899d693d644500b58c8ba1a89c33d820a31575e94822af722fb2924.png" src="../../../_images/14eb338e6899d693d644500b58c8ba1a89c33d820a31575e94822af722fb2924.png" />
+</div>
+</div>
+</div>
+<div class="section" id="small-locus-of-random-charges">
+<h4>Small Locus of Random Charges<a class="headerlink" href="#small-locus-of-random-charges" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Set up the space again</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">size</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="mf">1e-3</span> <span class="c1">#smaller scale means charges are closer to the origin</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">6</span> <span class="c1"># If even there&#39;s a chance of a net charge of zero</span>
+<span class="n">charges</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    
+    <span class="c1">## Random charge value</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="o">-</span><span class="mf">1e-6</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">])</span> <span class="c1"># Either a positive or negative charge</span>
+    <span class="c1">## Random x,y locations that are located close to the origin</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">scale</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="n">scale</span><span class="o">*</span><span class="n">size</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">scale</span><span class="o">*</span><span class="n">size</span><span class="p">,</span> <span class="n">scale</span><span class="o">*</span><span class="n">size</span><span class="p">)</span>
+    
+    <span class="n">charges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Charge</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>  <span class="c1"># Add the charge to the list of charges</span>
+
+<span class="c1">## Set the total electric field to zero</span>
+<span class="n">E_T_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">E_T_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+
+<span class="c1">## Calculate the electric field due to each charge</span>
+<span class="k">for</span> <span class="n">charge</span> <span class="ow">in</span> <span class="n">charges</span><span class="p">:</span>
+    <span class="n">E_x</span><span class="p">,</span> <span class="n">E_y</span> <span class="o">=</span> <span class="n">electric_field</span><span class="p">(</span><span class="n">charge</span><span class="o">.</span><span class="n">q</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">charge</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">charge</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">E_T_x</span> <span class="o">+=</span> <span class="n">E_x</span>
+    <span class="n">E_T_y</span> <span class="o">+=</span> <span class="n">E_y</span>
+
+<span class="n">plot_electric_field</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">E_T_x</span><span class="p">,</span> <span class="n">E_T_y</span><span class="p">)</span>
+
+<span class="n">total_charge</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">charge</span> <span class="ow">in</span> <span class="n">charges</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Charge: </span><span class="si">{</span><span class="n">charge</span><span class="o">.</span><span class="n">q</span><span class="si">}</span><span class="s2"> C, Location: (</span><span class="si">{</span><span class="n">charge</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">charge</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="n">total_charge</span> <span class="o">+=</span> <span class="n">charge</span><span class="o">.</span><span class="n">q</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Charge: </span><span class="si">{</span><span class="n">total_charge</span><span class="si">}</span><span class="s2"> C&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/64e17a49a3a72ee9921bf037c1b0593ac00c1611ac7b00b90a9f4ec87a41ff56.png" src="../../../_images/64e17a49a3a72ee9921bf037c1b0593ac00c1611ac7b00b90a9f4ec87a41ff56.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Charge: 1e-06 C, Location: (-0.001331294967744173, -0.001411312974785021)
+Charge: -1e-06 C, Location: (-0.00021390268326017194, -0.0009952568930207471)
+Charge: 1e-06 C, Location: (-0.000302734948628371, 0.0012053657777987403)
+Charge: -1e-06 C, Location: (0.001426100290629955, -0.001344218680324385)
+Charge: 1e-06 C, Location: (0.0011410044641208751, 0.0019994305594018312)
+Charge: -1e-06 C, Location: (-0.0005799748226070843, 2.1808869840496837e-05)
+Total Charge: 0.0 C
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -811,11 +1001,11 @@ Charge: -1e-06 C, Location: (-1, -1)
       </div>
     </a>
     <a class="right-next"
-       href="../../9_assignments/worked-problem-1.html"
+       href="activity-superposition.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Worked Problem Assignment 1</p>
+        <p class="prev-next-title">26 Sep 23 - Activity: Superposition of Fields</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -846,7 +1036,13 @@ Charge: -1e-06 C, Location: (-1, -1)
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-electric-dipole">The electric dipole</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadrupole">Quadrupole</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quadrupole">Quadrupole</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-line-of-charges">Uniform line of charges</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sinusoidal-line-of-charges">Sinusoidal line of charges</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#circle-of-charges">Circle of charges</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#small-locus-of-random-charges">Small Locus of Random Charges</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauss-s-law">Gauss’s Law</a><ul class="nav section-nav flex-column">
