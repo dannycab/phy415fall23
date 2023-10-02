@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>26 Sept 23 - Notes: Static Fields &#8212; PHY 415 Fall 2023</title>
+    <title>3 Oct 23 - Activity: PDEs and Separation of Variables &#8212; PHY 415 Fall 2023</title>
   
   
   
@@ -61,11 +61,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/2_EM/Statics/notes-static_fields';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/2_EM/Statics/activity-sep_var';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="26 Sep 23 - Activity: Electrostatic Fields" href="activity-efields.html" />
-    <link rel="prev" title="26 Sept 23 - Notes: Maxwell’s Equations" href="notes-em_intro.html" />
+    <link rel="next" title="Worked Problem Assignment 1" href="../../9_assignments/worked-problem-1.html" />
+    <link rel="prev" title="3 Oct 23 - Notes: Electric Potential - a scalar field" href="notes-electric_potential.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -190,11 +190,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2 - E&amp;M and PDEs</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notes-em_intro.html">26 Sept 23 - Notes: Maxwell’s Equations</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">26 Sept 23 - Notes: Static Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes-static_fields.html">26 Sept 23 - Notes: Static Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-efields.html">26 Sep 23 - Activity: Electrostatic Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-superposition.html">28 Sep 23 - Activity: Superposition of Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-electric_potential.html">3 Oct 23 - Notes: Electric Potential - a scalar field</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity-sep_var.html">3 Oct 23 - Activity: PDEs and Separation of Variables</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3 Oct 23 - Activity: PDEs and Separation of Variables</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -277,7 +277,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/2_EM/Statics/notes-static_fields.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/2_EM/Statics/activity-sep_var.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -307,7 +307,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/content/2_EM/Statics/notes-static_fields.ipynb" target="_blank"
+      <li><a href="../../../_sources/content/2_EM/Statics/activity-sep_var.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -389,7 +389,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>26 Sept 23 - Notes: Static Fields</h1>
+    <h1>3 Oct 23 - Activity: PDEs and Separation of Variables</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -399,19 +399,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-calculus">Vector Calculus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrostatic-fields">Electrostatic fields</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-electric-field">The electric field</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-magnetic-field">The magnetic field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-s-equation">Laplace’s Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-solutions-to-laplace-s-equation">Properties of Solutions to Laplace’s Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-the-infinite-gutter">Activity: The Infinite Gutter</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions">Boundary Conditions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-s-trick">Fourier’s Trick</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetostatic-fields">Magnetostatic fields</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The magnetic field</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">The electric field</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handwritten-notes">Handwritten Notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-solution">Visualizing the Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -425,103 +420,120 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sept-23-notes-static-fields">
-<h1>26 Sept 23 - Notes: Static Fields<a class="headerlink" href="#sept-23-notes-static-fields" title="Permalink to this headline">#</a></h1>
-<div class="section" id="vector-calculus">
-<h2>Vector Calculus<a class="headerlink" href="#vector-calculus" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell%27s_equations">Maxwell’s Equations</a>, even in their static form (i.e., static charges or steady currents), are a set of coupled partial differential equations. In order to develop solutions and models to approximate the behavior of electromagnetic fields, we need to be able to use vector calculus.</p>
-<p>The video below from <a class="reference external" href="https://www.3blue1brown.com/">3Blue1Brown</a> provides a conceptual introduction to the vector calculus that we are going to need for this.</p>
-<p><a class="reference external" href="https://inv.tux.pizza/watch?v=rB83DpBJQsE"><img alt="Vector Calculus" src="https://markdown-videos-api.jorgenkh.no/youtube/rB83DpBJQsE?width=720&amp;height=405" /></a></p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-activity-pdes-and-separation-of-variables">
+<h1>3 Oct 23 - Activity: PDEs and Separation of Variables<a class="headerlink" href="#oct-23-activity-pdes-and-separation-of-variables" title="Permalink to this headline">#</a></h1>
+<p>As we have realized, solving field problems using vector equations is not always the best way to go about solving our problems. The integrals can be difficult to set up and the equations might be difficult, if not, impossible to solve (e.g., because there is no anti-derivative for the integrand). While we might not fully eliminate the need for vector equations, in electrostatic situations, we can posit the <a class="reference external" href="https://en.wikipedia.org/wiki/Electric_potential">electric potential</a>, <span class="math notranslate nohighlight">\(\Phi\)</span>. **We changed to using <span class="math notranslate nohighlight">\(\Phi\)</span> because there are also things like <span class="math notranslate nohighlight">\(dV\)</span> – volume elements. The scalar field, <span class="math notranslate nohighlight">\(\Phi(\mathbf{r})\)</span> is given by Poisson’s equation as it is related to the eletric field by the gradient.</p>
+<div class="math notranslate nohighlight">
+\[\nabla \cdot \vec{E} = \frac{\rho}{\epsilon_0} \rightarrow \vec{E} = -\nabla \Phi\]</div>
+<div class="math notranslate nohighlight">
+\[\nabla \cdot (-\nabla \Phi) = -\nabla^2 \Phi = \frac{\rho}{\epsilon_0}\]</div>
+<div class="math notranslate nohighlight">
+\[\nabla^2 \Phi = -\frac{\rho}{\epsilon_0}\]</div>
+<p>As you might have seen, there is an integral form of the electric potential. This is built up from the description that we have seen for the electric field of a point charge.</p>
+<div class="math notranslate nohighlight">
+\[\vec{E}_{pt} = \frac{1}{4\pi\epsilon_0}\frac{q}{r^2}\hat{r} \rightarrow \Phi_{pt} = \frac{1}{4\pi\epsilon_0}\frac{q}{r}\]</div>
+<p>Or more generally, for a continuous charge distribution,</p>
+<div class="math notranslate nohighlight">
+\[d\Phi = \frac{1}{4\pi\epsilon_0}\frac{\rho dV}{|\mathbf{r}-\mathbf{r}'|}\]</div>
+<div class="math notranslate nohighlight">
+\[\Phi = \frac{1}{4\pi\epsilon_0}\iiint\frac{\rho dV}{|\mathbf{r}-\mathbf{r}'|}\]</div>
+<p>Much like we have done with the electric field, one can set up a forward integral formulation of the electric potential and add up the elements to find the total potential. However, this is typically not the best way to solve electric potential problems because they often only work for specific geometries and at certain locations. Instead, we will use the differential form of the electric potential where there are no charges, but the boundaries are set to a given potential. This is called <strong>Laplace’s equation</strong>.</p>
+<div class="section" id="laplace-s-equation">
+<h2>Laplace’s Equation<a class="headerlink" href="#laplace-s-equation" title="Permalink to this headline">#</a></h2>
+<p><em>Numerical solution to Laplace’s equation on an annulus</em>
+<img alt="Laplace's Equation" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Laplace%27s_equation_on_an_annulus.svg/800px-Laplace%27s_equation_on_an_annulus.svg.png" /></p>
+<p>While Poisson’s equation describes how the value of the local Laplacian of the electric potential is directly related to the local electric potential, there are many places where there are no charges. For example, it’s common to solve problems where the <strong>boundary conditions</strong> are set to a given potential or with a certain amount of charge, and the remaining space is empty (or free space). This doesn’t mean that an electric field is not present in that empty space, but rather that there are no charges. In this case, the problem that are solving is called <strong>Laplace’s equation</strong> - a special case of Poisson’s equation where <span class="math notranslate nohighlight">\(\rho = 0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\nabla^2 \Phi = 0\]</div>
+<p>There are two important ways to go about solving these problems. The first is using separation of variables, which is a common analytical technique. The second is to use numerical methods that we will discuss later in the course. Both of these methods rely on the the following properties of the solutions to Laplace’s equation.</p>
+<div class="section" id="properties-of-solutions-to-laplace-s-equation">
+<h3>Properties of Solutions to Laplace’s Equation<a class="headerlink" href="#properties-of-solutions-to-laplace-s-equation" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\Phi\)</span> has no local maxima or minima except at boundaries</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi\)</span> is smooth and continuous everywhere</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi\)</span> is single valued</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi\)</span> at a location is the average of the values of <span class="math notranslate nohighlight">\(\Phi\)</span> over the surrounding space</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi\)</span> is unique. There is only one solution to Laplace’s equation for a given set of boundary conditions.</p></li>
+</ol>
 </div>
-<div class="section" id="electrostatic-fields">
-<h2>Electrostatic fields<a class="headerlink" href="#electrostatic-fields" title="Permalink to this headline">#</a></h2>
-<p>The electrostatic field is one that is created by static (stationary) charges. This is often the first type of field that we encounter, where <span class="math notranslate nohighlight">\(\rho(\mathbf{r},t)) = \rho(\mathbf{r})\)</span>. Because the charges are stationary, the current density is zero, <span class="math notranslate nohighlight">\(\mathbf{J}(\mathbf{r},t) = \mathbf{0}\)</span>.</p>
-<div class="section" id="the-electric-field">
-<h3>The electric field<a class="headerlink" href="#the-electric-field" title="Permalink to this headline">#</a></h3>
-<p>The relevant Maxwell equations for <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> that govern an electrostatic situation are the following:</p>
+<div class="section" id="activity-the-infinite-gutter">
+<h3>Activity: The Infinite Gutter<a class="headerlink" href="#activity-the-infinite-gutter" title="Permalink to this headline">#</a></h3>
+<p><img alt="Infinite Gutter" src="https://i.stack.imgur.com/nHF7a.jpg" /></p>
+<p>Consider a metal gutter that extends into infinitely in the <span class="math notranslate nohighlight">\(z\)</span> direction. The gutter width in the <span class="math notranslate nohighlight">\(y\)</span> direction is <span class="math notranslate nohighlight">\(a\)</span>. It is placed in the <span class="math notranslate nohighlight">\(y-z\)</span> plane and the <span class="math notranslate nohighlight">\(+x\)</span> direction is not constrained and extends to infinity (both the wall at <span class="math notranslate nohighlight">\(y=0\)</span> and <span class="math notranslate nohighlight">\(y=a\)</span>). So that Laplace’s equation applies in the region:</p>
+<ol class="arabic simple">
+<li><p>any <span class="math notranslate nohighlight">\(z\)</span> value</p></li>
+<li><p><span class="math notranslate nohighlight">\(x &gt; 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 &lt; y &lt; a\)</span></p></li>
+</ol>
+<div class="section" id="boundary-conditions">
+<h4>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">#</a></h4>
+<p>What uniquely determines our solution to Laplace’s equation are the boundary conditions. For this case, we are going to set all the conditions to zero except one to illustrate the way we find those unique solutions. The boundary conditions are:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\Phi(x&gt;0, y=0) = 0\)</span> Grounded</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi(x&gt;0, y=a) = 0\)</span> Grounded</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi(x=0, 0 &lt; y &lt; a) = V_0(y)\)</span> Set potential at the bottom of the gutter</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi(x\rightarrow \infty,0&lt;y&lt;a) = 0\)</span> Potential goes to zero at infinity</p></li>
+</ol>
+<p>Because we have infinite extent in the <span class="math notranslate nohighlight">\(z\)</span> direction, we don’t need to solve for that direction. We can assume the potential looks the same for every slice of the <span class="math notranslate nohighlight">\(x-y\)</span> plane in the region. This means we can simplify our approach:</p>
 <div class="math notranslate nohighlight">
-\[\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}\]</div>
-<div class="math notranslate nohighlight">
-\[\nabla \times \mathbf{E} = 0\]</div>
-<p>You might recognize the first equation as the differential form of <a class="reference external" href="https://en.wikipedia.org/wiki/Gauss%27s_law">Gauss’s Law</a>.</p>
-<p><img alt="Gauss's Law" src="https://subratachak.files.wordpress.com/2017/12/gauss-law-diagram-03.jpg?w=782" /></p>
-<p>As you can see from the figure above, Gauss’s Law is always true, but almost never useful in solving problem outside specific geometries. The integral form of that equation is:</p>
-<div class="math notranslate nohighlight">
-\[\oint \mathbf{E} \cdot d\mathbf{A} = \frac{Q_{enc}}{\varepsilon_0}\]</div>
-<p>It is from considering the integral form of Gauss’ Law that we can obtain the electric field produced by a single point charge, <span class="math notranslate nohighlight">\(Q\)</span>, at a location <span class="math notranslate nohighlight">\(\mathbf{r}'\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\mathbf{E}(\mathbf{r}) = \frac{Q}{4\pi\varepsilon_0} \frac{\mathbf{r} - \mathbf{r}'}{|\mathbf{r} - \mathbf{r}'|^3}\]</div>
-<p>The second relevant equation is a statement that the curl of the electrostatic field is zero. This indicates that an electrostatic field is a <a class="reference external" href="https://en.wikipedia.org/wiki/Conservative_vector_field">conservative field</a>. This means that the electrostatic field can be written as the gradient of a scalar potential, <span class="math notranslate nohighlight">\(\mathbf{E} = -\nabla V\)</span>, as we will see later.</p>
-<p>There is a general integral solution the electrostatic problem, which is built up from the concept of a point charge. That solution, which can be used in certain integrable situations and adapted to numerical methods is:</p>
-<div class="math notranslate nohighlight">
-\[d\mathbf{E} = \frac{1}{4\pi\varepsilon_0} \frac{dq}{|\mathbf{r} - \mathbf{r}'|^3} (\mathbf{r} - \mathbf{r}')\]</div>
-<div class="math notranslate nohighlight">
-\[\mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \int \frac{dq}{|\mathbf{r} - \mathbf{r}'|^3} (\mathbf{r} - \mathbf{r}')\]</div>
-<p>We will find later that the <a class="reference external" href="https://en.wikipedia.org/wiki/Electric_potential">electric potential</a> (<span class="math notranslate nohighlight">\(V\)</span>) is a better choice if we can use it. It simplifies our vector problem to a scalar problem.</p>
+\[\nabla^2 \Phi = \nabla^2 \Phi(x,y) = 0 \longrightarrow \Phi(x,y) = X(x)Y(y)\]</div>
+<p><strong>✅ Do this</strong></p>
+<ol class="arabic simple">
+<li><p>Using the proposed solution, use separation of variables to find ODEs for <span class="math notranslate nohighlight">\(X(x)\)</span> and <span class="math notranslate nohighlight">\(Y(y)\)</span>.</p></li>
+<li><p>Solve the ODEs for <span class="math notranslate nohighlight">\(X(x)\)</span> and <span class="math notranslate nohighlight">\(Y(y)\)</span> in general. How do you choose which general solution to use in which direction?</p></li>
+<li><p>Apply the boundary conditions to solve for the constants in the general solutions.</p></li>
+</ol>
+<p><strong>Note that applying the boundary condition for <span class="math notranslate nohighlight">\(x=a\)</span> will result in an equation of the form <span class="math notranslate nohighlight">\(V(0,y) = C'\sin(ky)\)</span> where <span class="math notranslate nohighlight">\(C'\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are some constants.</strong> This is a new thing that we running up against. It requires that we use Fourier’s trick to solve for the appropriate constants. This will lead us into <a class="reference external" href="https://en.wikipedia.org/wiki/Orthogonal_functions">orthgonal functions</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Fourier_series">Fourier series</a>.</p>
 </div>
-<div class="section" id="the-magnetic-field">
-<h3>The magnetic field<a class="headerlink" href="#the-magnetic-field" title="Permalink to this headline">#</a></h3>
-<p>The relevant Maxwell equations for <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> that govern an electrostatic situation are the following:</p>
+<div class="section" id="fourier-s-trick">
+<h4>Fourier’s Trick<a class="headerlink" href="#fourier-s-trick" title="Permalink to this headline">#</a></h4>
+<p>Fourier’s trick is just what results from integrated orthonormal functions over the domain of importance. For example, the most common version of this approach is to integrate the product of two sine functions over the domain <span class="math notranslate nohighlight">\([0,\pi]\)</span> or the equivalent in the case of a length scale <span class="math notranslate nohighlight">\(a\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[\nabla \cdot \mathbf{B} = 0\]</div>
+\[\begin{split}\int_0^a \sin\left(\dfrac{n\pi y}{a}\right) \sin\left(\dfrac{m\pi y}{a}\right) dx = \begin{cases} 0 &amp; n \neq m \\ \dfrac{a}{2} &amp; n = m \end{cases}\end{split}\]</div>
+<p>We have shown that the final form of the undetermined boundary condition is:</p>
 <div class="math notranslate nohighlight">
-\[\nabla \times \mathbf{B} = 0\]</div>
-<p>Notice that these equations are solved when <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> = 0. This is because there are no magnetic monopoles, so if the divergence and curl of the field are zero everywhere, then the field must be zero everywhere. There’s simply no sources of magnetic field. So in an electrostatic situation, the magnetic field is zero and we are purely focused on the electric field.</p>
-</div>
-</div>
-<div class="section" id="magnetostatic-fields">
-<h2>Magnetostatic fields<a class="headerlink" href="#magnetostatic-fields" title="Permalink to this headline">#</a></h2>
-<p>In a magnetostatic situation, there have to be currents; that is, moving charges. That is the only make to generate magnetic field from particles. So you are going to have a non-zero current density. But we argue that the currents are steady, so <span class="math notranslate nohighlight">\(\mathbf{J}(\mathbf{r},t) = \mathbf{J}(\mathbf{r})\)</span>. Now, of course, there will be electric field, but we will discuss how we consider that in a moment.</p>
-<div class="section" id="id1">
-<h3>The magnetic field<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<p>The relevant Maxwell equations for <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> that govern a magnetostatic situation are the following:</p>
+\[\Phi(0,y) = \sum_n C_n \sin\left(\dfrac{n\pi y}{a}\right)\]</div>
+<p>Let’s multiple both sides by <span class="math notranslate nohighlight">\(\sin\left(\dfrac{m\pi y}{a}\right)\)</span> and integrate over the domain <span class="math notranslate nohighlight">\([0,a]\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[\nabla \cdot \mathbf{B} = 0\]</div>
+\[\int_0^a \Phi(0,y) \sin\left(\dfrac{m\pi y}{a}\right) dx = \sum_n C_n \int_0^a \sin\left(\dfrac{n\pi y}{a}\right) \sin\left(\dfrac{m\pi y}{a}\right) dx\]</div>
+<p>The left hand side is only non-zero when <span class="math notranslate nohighlight">\(n=m\)</span>, so we use the <a class="reference external" href="https://en.wikipedia.org/wiki/Kronecker_delta">Kronecker delta</a> to simplify the right hand side.</p>
 <div class="math notranslate nohighlight">
-\[\nabla \times \mathbf{B} = \mu_0 \mathbf{J}\]</div>
-<p>The first equation always holds; there are no <a class="reference external" href="https://en.wikipedia.org/wiki/Magnetic_monopole">magnetic monopoles</a>, despite much research into the area <a class="reference external" href="https://en.wikipedia.org/wiki/Magnetic_monopole#Searches_for_magnetic_monopoles">including searches</a> and a <a class="reference external" href="https://en.wikipedia.org/wiki/Magnetic_monopole#In_SI_units">theory of electromagnetism</a> that posits them. Here’s a nice article summarizing the state of the magnetic monopole research from 2016, <a class="reference external" href="https://phys.org/news/2016-08-mysterious-magnetic-monopole.html">The mysterious missing magnetic monopole</a>, and an <a class="reference external" href="https://icecube.wisc.edu/news/research/2022/01/icecube-and-the-mystery-of-the-missing-magnetic-monopoles/">article from the IceCube experiment</a>, which a number of our <a class="reference external" href="https://pa.msu.edu/high-energy-physics/icecube-neutrino-observatory.aspx">faculty, grad students, and undergrads are involved in</a>.</p>
-<p>The second equation is <a class="reference external" href="https://en.wikipedia.org/wiki/Amp%C3%A8re%27s_circuital_law">Ampere’s Law</a> in it’s differential form. Much like Gauss’s law, it is always true, but rarely useful outside of specific geometries. Note that for the magnetostatic situation that current density can vary with space only. The integral form of Ampere’s Law is can be used to solve problems with symmetry:</p>
+\[\int_0^a \Phi(0,y) \sin\left(\dfrac{m\pi y}{a}\right) dx = \sum_n C_n \dfrac{a}{2}\delta_{nm}\]</div>
+<p>We further simplify by noticing that the right hand side is only non-zero when <span class="math notranslate nohighlight">\(n=m\)</span>, so that the requirement is that the indicies are equal.</p>
 <div class="math notranslate nohighlight">
-\[\oint \mathbf{B} \cdot d\mathbf{l} = \mu_0 I_{enc}\]</div>
-<p>And it is from considering this form for a single current carrying wire that we can determine the magnetic field produced by a single current carrying wire, <span class="math notranslate nohighlight">\(I\)</span>, at a location <span class="math notranslate nohighlight">\(\mathbf{r}'\)</span>:</p>
+\[\int_0^a \Phi(0,y) \sin\left(\dfrac{m\pi y}{a}\right) dx = C_m \dfrac{a}{2}\]</div>
+<p>Turn the equation around to solve for <span class="math notranslate nohighlight">\(C_m\)</span>, and we have an integral expression.</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{B}(\mathbf{r}) = \frac{\mu_0 I}{4\pi} \frac{\hat{\mathbf{\phi}}}{|\mathbf{r} - \mathbf{r}'|^2}\]</div>
-<p>Because of the curly nature of magnetic field, we find that the general solution to the magnetostatic problem is given by the <a class="reference external" href="https://en.wikipedia.org/wiki/Biot%E2%80%93Savart_law">Biot-Savart Law</a>:</p>
-<div class="math notranslate nohighlight">
-\[d\mathbf{B} = \frac{\mu_0}{4\pi} \frac{I d\mathbf{l} \times (\mathbf{r} - \mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|^3}\]</div>
-<div class="math notranslate nohighlight">
-\[\mathbf{B}(\mathbf{r}) = \frac{\mu_0}{4\pi} \int \frac{I d\mathbf{l} \times (\mathbf{r} - \mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|^3}\]</div>
-<p>In practice, we rarely use this form of the qeuation directly because it requires integrable solutions. Instead, we use the integral form of Ampere’s Law to solve problems with symmetry, we use the differential forms to solve problems numerically, and we develop other theoretical approaches. Because the divergence of the magnetic field is zero, we can write the magnetic field as the curl of a <a class="reference external" href="https://en.wikipedia.org/wiki/Magnetic_vector_potential">vector potential</a>, <span class="math notranslate nohighlight">\(\mathbf{B} = \nabla \times \mathbf{A}\)</span>. This has a integral form that is similar to the Biot-Savart Law, but directly proportional to the current density, which is much nicer:</p>
-<div class="math notranslate nohighlight">
-\[\mathbf{A} = \frac{\mu_0}{4\pi} \int_V \frac{\mathbf{J}(\mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|} d\tau'\]</div>
-<p>It turns out this is a better method for solving problems, especially computationally. That is beyond the scope of this course.</p>
-</div>
-<div class="section" id="id2">
-<h3>The electric field<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<p>Because there is a magnetic field, the relevant Maxwell equations for <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> that govern a magnetostatic situation are the following:</p>
-<div class="math notranslate nohighlight">
-\[\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}\]</div>
-<div class="math notranslate nohighlight">
-\[\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}\]</div>
-<p>Notice now we have to consider a changing magnetic field. In the magnetostatic situation, we argue the current densities are setup such that the magnetic field is static (i.e., <span class="math notranslate nohighlight">\(\frac{\partial \mathbf{B}}{\partial t} = 0\)</span>).  This means the relevant equations for the electric field remain those in the electrostatic situation:</p>
-<div class="math notranslate nohighlight">
-\[\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}\]</div>
-<div class="math notranslate nohighlight">
-\[\nabla \times \mathbf{E} = 0\]</div>
-<p>And all the relevant tools we will develop for the electrostatic situation for <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> apply here as well.</p>
+\[C_m = \dfrac{2}{a}\int_0^a \Phi(0,y) \sin\left(\dfrac{m\pi y}{a}\right) dx\]</div>
+<p><strong>✅ Do this</strong></p>
+<ol class="arabic simple">
+<li><p>Let <span class="math notranslate nohighlight">\(\Phi(0,y) = V_0\)</span>, which is the potential at the bottom of the gutter. Use the integral expression to find <span class="math notranslate nohighlight">\(C_m\)</span>.</p></li>
+<li><p>Combined with your prior work, write down the solution for the electric potential in the gutter. What do you notice about the solution? Can you visualize it?</p></li>
+</ol>
 </div>
 </div>
-<div class="section" id="additional-resources">
-<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">#</a></h2>
-<div class="section" id="handwritten-notes">
-<h3>Handwritten Notes<a class="headerlink" href="#handwritten-notes" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../../_downloads/d349b12f6b4461e1950e5276b862200a/Notes-Vector_Calculus.pdf"><span class="xref download myst">Vector Calculus</span></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../../_downloads/42a5d980e1abd33cfb05ff708d07df7f/Notes-Electrostatics_and_Superposition.pdf"><span class="xref download myst">Electrostatics and Superposition</span></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../../_downloads/46d2fc59484b8ee8b5807006af52522f/Notes-Gauss_Law.pdf"><span class="xref download myst">Gauss’s Law</span></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../../_downloads/ad835ffadf5e5c6d53877f9d7c582b9f/Notes-Magnetostatics.pdf"><span class="xref download myst">Magnetostatics</span></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../../_downloads/747d7361d0231ae665a062647d02f878/Notes-Amperes_Law.pdf"><span class="xref download myst">Ampere’s Law</span></a></p></li>
-</ul>
+<div class="section" id="visualizing-the-solution">
+<h3>Visualizing the Solution<a class="headerlink" href="#visualizing-the-solution" title="Permalink to this headline">#</a></h3>
+<p>We often find from these analyses that we produce infinite series solutions like this for the potential (note this is for a different problem):</p>
+<div class="math notranslate nohighlight">
+\[\Phi(x,y) = \sum_{n=1,3,5,\dots}^{\infty} \dfrac{4V_0}{n\pi} \sin\left(\dfrac{n\pi x}{a}\right) e^{-\frac{n\pi y}{a}}\]</div>
+<p>This solution is for the domain <span class="math notranslate nohighlight">\(0&lt; x&lt; a\)</span> and infinite <span class="math notranslate nohighlight">\(y\)</span> extent. It’s a 90 degree-turned version of the problem you solved earlier.</p>
+<p><strong>✅ Do this</strong></p>
+<p>Create a 3D figure of the electric potential of this situation.</p>
+<ol class="arabic simple">
+<li><p>You will need to create a mesh grid of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> values.</p></li>
+<li><p>You will need to create a function that sums the series for a given <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> value.</p></li>
+<li><p>You will need to truncate the series after some terms (you can’t sum to infinity).</p></li>
+<li><p>You will need to plot the result using <code class="docutils literal notranslate"><span class="pre">plot_surface</span></code> from <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -558,20 +570,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="notes-em_intro.html"
+       href="notes-electric_potential.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">26 Sept 23 - Notes: Maxwell’s Equations</p>
+        <p class="prev-next-title">3 Oct 23 - Notes: Electric Potential - a scalar field</p>
       </div>
     </a>
     <a class="right-next"
-       href="activity-efields.html"
+       href="../../9_assignments/worked-problem-1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">26 Sep 23 - Activity: Electrostatic Fields</p>
+        <p class="prev-next-title">Worked Problem Assignment 1</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -593,19 +605,14 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-calculus">Vector Calculus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrostatic-fields">Electrostatic fields</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-electric-field">The electric field</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-magnetic-field">The magnetic field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-s-equation">Laplace’s Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-solutions-to-laplace-s-equation">Properties of Solutions to Laplace’s Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-the-infinite-gutter">Activity: The Infinite Gutter</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions">Boundary Conditions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-s-trick">Fourier’s Trick</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetostatic-fields">Magnetostatic fields</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The magnetic field</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">The electric field</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handwritten-notes">Handwritten Notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-solution">Visualizing the Solution</a></li>
 </ul>
 </li>
 </ul>

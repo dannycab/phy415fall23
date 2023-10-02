@@ -192,6 +192,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/activity-efields.html">26 Sep 23 - Activity: Electrostatic Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/activity-superposition.html">28 Sep 23 - Activity: Superposition of Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/notes-electric_potential.html">3 Oct 23 - Notes: Electric Potential - a scalar field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/activity-sep_var.html">3 Oct 23 - Activity: PDEs and Separation of Variables</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -469,15 +470,15 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Matrix</span> <span class="c1"># get symbolic matrix methods</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># make math display good</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span> <span class="c1">## numpy matrix</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">A_sympy</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="c1">## Take numpy matrix and make it a sympy one</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">eigenvals</span><span class="p">,</span> <span class="n">eigenvects</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1"># numpy numerical methods</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numpy eigenvals:&quot;</span><span class="p">,</span><span class="n">eigenvals</span><span class="p">)</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
+<span class="ne">NameError</span>: name &#39;M&#39; is not defined
 </pre></div>
 </div>
 </div>
