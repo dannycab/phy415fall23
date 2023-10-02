@@ -399,6 +399,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-charge-potential">Point Charge Potential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-of-a-charged-rod">Potential of a charged rod</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-s-equation">Laplace’s Equation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-solutions-to-laplace-s-equation">Properties of Solutions to Laplace’s Equation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-the-infinite-gutter">Activity: The Infinite Gutter</a><ul class="nav section-nav flex-column">
@@ -422,7 +424,9 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-activity-pdes-and-separation-of-variables">
 <h1>3 Oct 23 - Activity: PDEs and Separation of Variables<a class="headerlink" href="#oct-23-activity-pdes-and-separation-of-variables" title="Permalink to this headline">#</a></h1>
-<p>As we have realized, solving field problems using vector equations is not always the best way to go about solving our problems. The integrals can be difficult to set up and the equations might be difficult, if not, impossible to solve (e.g., because there is no anti-derivative for the integrand). While we might not fully eliminate the need for vector equations, in electrostatic situations, we can posit the <a class="reference external" href="https://en.wikipedia.org/wiki/Electric_potential">electric potential</a>, <span class="math notranslate nohighlight">\(\Phi\)</span>. **We changed to using <span class="math notranslate nohighlight">\(\Phi\)</span> because there are also things like <span class="math notranslate nohighlight">\(dV\)</span> – volume elements. The scalar field, <span class="math notranslate nohighlight">\(\Phi(\mathbf{r})\)</span> is given by Poisson’s equation as it is related to the eletric field by the gradient.</p>
+<p>As we have realized, solving field problems using vector equations is not always the best way to go about solving our problems. The integrals can be difficult to set up and the equations might be difficult, if not, impossible to solve (e.g., because there is no anti-derivative for the integrand). While we might not fully eliminate the need for vector equations, in electrostatic situations, we can posit the <a class="reference external" href="https://en.wikipedia.org/wiki/Electric_potential">electric potential</a>, <span class="math notranslate nohighlight">\(\Phi\)</span>.</p>
+<p><strong>We changed to using <span class="math notranslate nohighlight">\(\Phi\)</span> because there are also things like <span class="math notranslate nohighlight">\(dV\)</span> – volume elements.</strong></p>
+<p>The scalar field, <span class="math notranslate nohighlight">\(\Phi(\mathbf{r})\)</span> is given by Poisson’s equation as it is related to the electric field by the gradient.</p>
 <div class="math notranslate nohighlight">
 \[\nabla \cdot \vec{E} = \frac{\rho}{\epsilon_0} \rightarrow \vec{E} = -\nabla \Phi\]</div>
 <div class="math notranslate nohighlight">
@@ -437,7 +441,109 @@ document.write(`
 \[d\Phi = \frac{1}{4\pi\epsilon_0}\frac{\rho dV}{|\mathbf{r}-\mathbf{r}'|}\]</div>
 <div class="math notranslate nohighlight">
 \[\Phi = \frac{1}{4\pi\epsilon_0}\iiint\frac{\rho dV}{|\mathbf{r}-\mathbf{r}'|}\]</div>
-<p>Much like we have done with the electric field, one can set up a forward integral formulation of the electric potential and add up the elements to find the total potential. However, this is typically not the best way to solve electric potential problems because they often only work for specific geometries and at certain locations. Instead, we will use the differential form of the electric potential where there are no charges, but the boundaries are set to a given potential. This is called <strong>Laplace’s equation</strong>.</p>
+<p>Much like we have done with the electric field, one can set up a forward integral formulation of the electric potential and add up the elements to find the total potential. Let’s use Python [sympy] library to illustrate this. We start with the point charge. Here <span class="math notranslate nohighlight">\(k=\frac{1}{4\pi\epsilon_0}\)</span>.</p>
+<p>First, we show how to form an expression for the point charge potential.</p>
+<div class="section" id="point-charge-potential">
+<h2>Point Charge Potential<a class="headerlink" href="#point-charge-potential" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">init_printing</span><span class="p">,</span> <span class="n">Rational</span>
+<span class="kn">from</span> <span class="nn">sympy.interactive</span> <span class="kn">import</span> <span class="n">printing</span>
+
+<span class="c1"># Setup LaTeX printing</span>
+<span class="n">init_printing</span><span class="p">(</span><span class="n">use_latex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Define variables</span>
+<span class="n">k</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;k q r&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define electric potential equation for point charge</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">k</span> <span class="o">*</span> <span class="n">q</span> <span class="o">/</span> <span class="n">r</span>
+
+<span class="c1"># Print the equation in LaTeX format</span>
+<span class="n">display</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/d362fdebb9dc95e239118908fda43a0abcf8379d616710377c6c7b9264cf8fef.png" src="../../../_images/d362fdebb9dc95e239118908fda43a0abcf8379d616710377c6c7b9264cf8fef.png" />
+</div>
+</div>
+</div>
+<div class="section" id="potential-of-a-charged-rod">
+<h2>Potential of a charged rod<a class="headerlink" href="#potential-of-a-charged-rod" title="Permalink to this headline">#</a></h2>
+<p>It is common to compute the electric potential of a charged rod along a line perpendicular to it along the y-axis. Let’s do this for a rod of length <span class="math notranslate nohighlight">\(L\)</span> with a uniform charge density, <span class="math notranslate nohighlight">\(\lambda\)</span>. We will assume that the rod is centered on the origin and that the axis of the rod is aligned with the <span class="math notranslate nohighlight">\(x\)</span>-axis. We can treat a tiny piece of the rod like a point charge and add things up!</p>
+<p>Let’s find the electric potential at <span class="math notranslate nohighlight">\(\langle 0,y,0 \rangle\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">integrate</span><span class="p">,</span> <span class="n">sqrt</span>
+
+<span class="c1"># Define more variables</span>
+<span class="n">L</span><span class="p">,</span> <span class="n">lambda_</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;L lambda y x&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define limits of integration for a rod of length L centered at the origin</span>
+<span class="n">lower_limit</span> <span class="o">=</span> <span class="o">-</span><span class="n">L</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">upper_limit</span> <span class="o">=</span> <span class="n">L</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="c1"># Define the integrand for electric potential due to a uniformly charged rod</span>
+<span class="n">integrand</span> <span class="o">=</span> <span class="p">(</span><span class="n">lambda_</span> <span class="o">*</span> <span class="n">k</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Perform the integration</span>
+<span class="n">V_rod</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">lower_limit</span><span class="p">,</span> <span class="n">upper_limit</span><span class="p">))</span>
+
+<span class="c1"># Print the result in LaTeX format</span>
+<span class="n">display</span><span class="p">(</span><span class="n">V_rod</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/8233fea5b68f4c18dd8ed23271ae610b6b520fc5b2458b01fe40f6694e8b44a4.png" src="../../../_images/8233fea5b68f4c18dd8ed23271ae610b6b520fc5b2458b01fe40f6694e8b44a4.png" />
+</div>
+</div>
+<p>What’s nice is that we can change the problem quickly byt changing the location or the distribution. For example, to find the field on the end of the rod, we have to change the integrand a bit. Let’s assume we are looking at the end of the rod at <span class="math notranslate nohighlight">\(\langle x_0,0,0 \rangle\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define more variables</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x0&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define the integrand for electric potential due to a uniformly charged rod</span>
+<span class="n">integrand</span> <span class="o">=</span> <span class="p">(</span><span class="n">lambda_</span> <span class="o">*</span> <span class="n">k</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Perform the integration</span>
+<span class="n">V_rod_2</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">lower_limit</span><span class="p">,</span> <span class="n">upper_limit</span><span class="p">))</span>
+
+<span class="c1"># Print the result in LaTeX format</span>
+<span class="n">display</span><span class="p">(</span><span class="n">V_rod_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/599c5423996047a8d9ec9eb9aa28aedc15ef7a3b5ab739bdfe22d339810df0a3.png" src="../../../_images/599c5423996047a8d9ec9eb9aa28aedc15ef7a3b5ab739bdfe22d339810df0a3.png" />
+</div>
+</div>
+<p>However, this approach is typically not the best way to solve electric potential problems because they often only work for specific geometries and at certain locations. For example, consider the general location <span class="math notranslate nohighlight">\(\langle x_0,y_0,0 \rangle\)</span>. We can still use the integral approach, but we find that our solution is becoming more complicated and harder to interpret easily. It is also the case that we can (quite easily) form integrals that are not possible to compute analytically.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define more variables</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;y0&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define the integrand for electric potential due to a uniformly charged rod</span>
+<span class="n">integrand</span> <span class="o">=</span> <span class="p">(</span><span class="n">lambda_</span> <span class="o">*</span> <span class="n">k</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Perform the integration</span>
+<span class="n">V_rod_3</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">lower_limit</span><span class="p">,</span> <span class="n">upper_limit</span><span class="p">))</span>
+
+<span class="c1"># Print the result in LaTeX format</span>
+<span class="n">display</span><span class="p">(</span><span class="n">V_rod_3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/33dfc441951a50773af4742f726b0dcf7233e472e952fbfed36b4a6fa8b234fd.png" src="../../../_images/33dfc441951a50773af4742f726b0dcf7233e472e952fbfed36b4a6fa8b234fd.png" />
+</div>
+</div>
+<p>Instead, we will use the differential form of the electric potential where there are no charges, but the boundaries are set to a given potential. This is called <strong>Laplace’s equation</strong>.</p>
+<p><em>Note that regardless of the approach to find the electric field we will need to eventually compute the gradient of the electric potential.</em> We will need to do that numerically later.</p>
+</div>
 <div class="section" id="laplace-s-equation">
 <h2>Laplace’s Equation<a class="headerlink" href="#laplace-s-equation" title="Permalink to this headline">#</a></h2>
 <p><em>Numerical solution to Laplace’s equation on an annulus</em>
@@ -605,6 +711,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-charge-potential">Point Charge Potential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-of-a-charged-rod">Potential of a charged rod</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-s-equation">Laplace’s Equation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-solutions-to-laplace-s-equation">Properties of Solutions to Laplace’s Equation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-the-infinite-gutter">Activity: The Infinite Gutter</a><ul class="nav section-nav flex-column">
