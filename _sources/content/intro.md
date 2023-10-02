@@ -10,12 +10,11 @@ To get a sense of the course, please read all the pages associated with our syll
 `````{admonition} Last updated: 27 Sep 2023
 :class: tip
 
-### Site Updates
-* [Tuesday's class activity](./2_EM/Statics/activity-efields.ipynb) has been updated to include solutions to the different configurations of charges.
-* [Readings for Week 5](./2_EM/Statics/notes-electric_potential.ipynb) are posted.
+### Updates
+* [Readings for Week 6](./2_EM/Statics/notes-relaxation.ipynb) are posted.
+* Professor [Rachel Henderson](https://rachehenderson.wordpress.com/) will teach the course on 5 October 2023.
 
 ### Upcoming Deadlines
-* The [first project](./9_assignments/project-1.md) is due 29 Sep 2023.
 * The [third worked problem](./9_assignments/worked-problem-3.md) is due 6 Oct 2023.
 
 `````
