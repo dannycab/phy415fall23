@@ -597,22 +597,22 @@ document.write(`
 <h4>Fourier’s Trick<a class="headerlink" href="#fourier-s-trick" title="Permalink to this headline">#</a></h4>
 <p>Fourier’s trick is just what results from integrated orthonormal functions over the domain of importance. For example, the most common version of this approach is to integrate the product of two sine functions over the domain <span class="math notranslate nohighlight">\([0,\pi]\)</span> or the equivalent in the case of a length scale <span class="math notranslate nohighlight">\(a\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\int_0^a \sin\left(\dfrac{n\pi y}{a}\right) \sin\left(\dfrac{m\pi y}{a}\right) dx = \begin{cases} 0 &amp; n \neq m \\ \dfrac{a}{2} &amp; n = m \end{cases}\end{split}\]</div>
+\[\begin{split}\int_0^a \sin\left(\dfrac{n\pi y}{a}\right) \sin\left(\dfrac{m\pi y}{a}\right) dy = \begin{cases} 0 &amp; n \neq m \\ \dfrac{a}{2} &amp; n = m \end{cases}\end{split}\]</div>
 <p>We have shown that the final form of the undetermined boundary condition is:</p>
 <div class="math notranslate nohighlight">
 \[\Phi(0,y) = \sum_n C_n \sin\left(\dfrac{n\pi y}{a}\right)\]</div>
 <p>Let’s multiple both sides by <span class="math notranslate nohighlight">\(\sin\left(\dfrac{m\pi y}{a}\right)\)</span> and integrate over the domain <span class="math notranslate nohighlight">\([0,a]\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[\int_0^a \Phi(0,y) \sin\left(\dfrac{m\pi y}{a}\right) dx = \sum_n C_n \int_0^a \sin\left(\dfrac{n\pi y}{a}\right) \sin\left(\dfrac{m\pi y}{a}\right) dx\]</div>
+\[\int_0^a \Phi(0,y) \sin\left(\dfrac{m\pi y}{a}\right) dy = \sum_n C_n \int_0^a \sin\left(\dfrac{n\pi y}{a}\right) \sin\left(\dfrac{m\pi y}{a}\right) dy\]</div>
 <p>The left hand side is only non-zero when <span class="math notranslate nohighlight">\(n=m\)</span>, so we use the <a class="reference external" href="https://en.wikipedia.org/wiki/Kronecker_delta">Kronecker delta</a> to simplify the right hand side.</p>
 <div class="math notranslate nohighlight">
-\[\int_0^a \Phi(0,y) \sin\left(\dfrac{m\pi y}{a}\right) dx = \sum_n C_n \dfrac{a}{2}\delta_{nm}\]</div>
+\[\int_0^a \Phi(0,y) \sin\left(\dfrac{m\pi y}{a}\right) dy = \sum_n C_n \dfrac{a}{2}\delta_{nm}\]</div>
 <p>We further simplify by noticing that the right hand side is only non-zero when <span class="math notranslate nohighlight">\(n=m\)</span>, so that the requirement is that the indicies are equal.</p>
 <div class="math notranslate nohighlight">
-\[\int_0^a \Phi(0,y) \sin\left(\dfrac{m\pi y}{a}\right) dx = C_m \dfrac{a}{2}\]</div>
+\[\int_0^a \Phi(0,y) \sin\left(\dfrac{m\pi y}{a}\right) dy = C_m \dfrac{a}{2}\]</div>
 <p>Turn the equation around to solve for <span class="math notranslate nohighlight">\(C_m\)</span>, and we have an integral expression.</p>
 <div class="math notranslate nohighlight">
-\[C_m = \dfrac{2}{a}\int_0^a \Phi(0,y) \sin\left(\dfrac{m\pi y}{a}\right) dx\]</div>
+\[C_m = \dfrac{2}{a}\int_0^a \Phi(0,y) \sin\left(\dfrac{m\pi y}{a}\right) dy\]</div>
 <p><strong>✅ Do this</strong></p>
 <ol class="arabic simple">
 <li><p>Let <span class="math notranslate nohighlight">\(\Phi(0,y) = V_0\)</span>, which is the potential at the bottom of the gutter. Use the integral expression to find <span class="math notranslate nohighlight">\(C_m\)</span>.</p></li>
