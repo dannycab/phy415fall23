@@ -11,7 +11,8 @@ To get a sense of the course, please read all the pages associated with our syll
 :class: tip
 
 ### Updates
-* [Readings for Week 6](./2_EM/Statics/notes-relaxation.ipynb) are posted.
+* [Readings for Week 6](./2_EM/Numerics/notes-relaxation.ipynb) are posted.
+* [Tuesday's activity was updated](./2_EM/Statics/activity-sep_var.ipynb) to include some code to start visualizing the potential.
 * Professor [Rachel Henderson](https://rachehenderson.wordpress.com/) will teach the course on 5 October 2023.
 
 ### Upcoming Deadlines
