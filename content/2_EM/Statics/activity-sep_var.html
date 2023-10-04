@@ -196,7 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="notes-electric_potential.html">3 Oct 23 - Notes: Electric Potential - a scalar field</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3 Oct 23 - Activity: PDEs and Separation of Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-sep_var_spherical.html">5 Oct 2023 - Activity: Solving PDEs in Spherical Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notes-relaxation.html">9 Oct 23 - Notes: Method of Relaxation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Numerics/notes-relaxation.html">9 Oct 23 - Notes: Method of Relaxation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -638,8 +638,60 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Constants</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># Gap width</span>
+<span class="n">V0</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># Potential difference</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1"># Set size of space</span>
+<span class="n">x_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">steps</span><span class="p">)</span> 
+<span class="n">y_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">steps</span><span class="p">)</span> 
+
+<span class="c1"># Create a mesh</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x_range</span><span class="p">,</span> <span class="n">y_range</span><span class="p">)</span>
+
+<span class="c1"># Function to calculate the electric potential at a given (x, y)</span>
+<span class="k">def</span> <span class="nf">electric_potential</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">terms</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    
+    <span class="n">phi</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="c1">## Compute Phi at (x, y) due to each term in the series</span>
+    <span class="c1">## Write the summation up to the &#39;terms&#39; number of terms</span>
+    
+    
+    <span class="k">return</span> <span class="n">phi</span>
+
+<span class="c1"># Calculate the electric potential on the mesh grid</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1">## Write the routine to calculate the electric potential on the mesh</span>
+<span class="c1">## You will need to step through each point in the mesh and call the</span>
+<span class="c1">## electric_potential() function to calculate the electric potential</span>
+
+<span class="c1"># Create a 3D plot</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the electric potential surface</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;Electric Potential&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Electric Potential&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/423cd18699162213239c491f06c0b2e39abdbbd12d2fabbbc905df8a0891735d.png" src="../../../_images/423cd18699162213239c491f06c0b2e39abdbbd12d2fabbbc905df8a0891735d.png" />
 </div>
 </div>
 </div>
