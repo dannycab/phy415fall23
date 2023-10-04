@@ -7,7 +7,7 @@ To get a sense of the course, please read all the pages associated with our syll
  
 ## Updates
 
-`````{admonition} Last updated: 27 Sep 2023
+`````{admonition} Last updated: 4 Oct 2023
 :class: tip
 
 ### Updates
