@@ -14,8 +14,8 @@ To get a sense of the course, please read all the pages associated with our syll
 * [Readings for Week 6](./2_EM/Numerics/notes-relaxation.ipynb) are posted.
 
 ### Upcoming Deadlines
-* The [third worked problem](./9_assignments/worked-problem-3.md) is due 6 Oct 2023.
 * The [fourth worked problem](./9_assignments/worked-problem-4.md) is due 13 Oct 2023.
+* The [second project](./9_assignments/project-2.md) is due 20 Oct 2023.
 
 `````
 
