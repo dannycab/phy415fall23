@@ -7,6 +7,9 @@
 # 
 # [![](https://markdown-videos-api.jorgenkh.no/youtube/fDek6cYijxI?width=720&height=405)](https://inv.tux.pizza/watch?v=fDek6cYijxI)
 # 
+# - Non-Commercial Link: [https://inv.tux.pizza/watch?v=fDek6cYijxI](https://inv.tux.pizza/watch?v=fDek6cYijxI)
+# - Commercial Link: [https://youtube.com/watch?v=fDek6cYijxI](https://youtube.com/watch?v=fDek6cYijxI)
+# 
 
 # ## Reminders of the Large Angle Pendulum
 # 
@@ -59,6 +62,9 @@
 # 
 # [![](https://markdown-videos-api.jorgenkh.no/youtube/PFDu9oVAE-g?width=720&height=405)](https://inv.tux.pizza/watch?v=PFDu9oVAE-g)
 # 
+# - Non-Commercial Link: [https://inv.tux.pizza/watch?v=PFDu9oVAE-g](https://inv.tux.pizza/watch?v=PFDu9oVAE-g)
+# - Commercial Link: [https://youtube.com/watch?v=PFDu9oVAE-g](https://youtube.com/watch?v=PFDu9oVAE-g)
+# 
 # 
 # ### Finding Eigenvalues
 # 
@@ -91,6 +97,9 @@
 # Steve Brunton at UW does dynamical systems research and has a great video that demonstrates how we make meaning of those eigenvalues.
 # 
 # [![](https://markdown-videos-api.jorgenkh.no/youtube/XXjoh8L1HkE?width=720&height=405)](https://inv.tux.pizza/watch?v=XXjoh8L1HkE)
+# 
+# - Non-Commercial Link: [https://inv.tux.pizza/watch?v=XXjoh8L1HkE](https://inv.tux.pizza/watch?v=XXjoh8L1HkE)
+# - Commercial Link: [https://youtube.com/watch?v=XXjoh8L1HkE](https://youtube.com/watch?v=XXjoh8L1HkE)
 # 
 # ### Eigenvalues, Computationally 
 # 

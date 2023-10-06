@@ -12,6 +12,10 @@
 # ### Magnetic Confinement in Fusion Energy
 # 
 # [![Magnetic Confinement](https://markdown-videos-api.jorgenkh.no/youtube/PWCqwZoE0FY?width=720&height=405)](https://inv.tux.pizza/watch?v=PWCqwZoE0FY)
+# 
+# - Non-Commercial Link: [https://inv.tux.pizza/watch?v=PWCqwZoE0FY](https://inv.tux.pizza/watch?v=PWCqwZoE0FY)
+# - Commercial Link: [https://youtube.com/watch?v=PWCqwZoE0FY](https://youtube.com/watch?v=PWCqwZoE0FY)
+# 
 
 # ## Developing a complete theory
 # 
@@ -86,5 +90,8 @@
 # This video from the [Mechanical Universe series](https://en.wikipedia.org/wiki/The_Mechanical_Universe) and tells the story of the development of this theory. The video is dated and sexist and the instructor's stories are similarly problematic. The video puts scientists on a pedestal. But, it is worth a watch, both to recognize the history as presented and to reckon with the issues that these perspectives have continued to perpetuate. 
 # 
 # [![Maxwell's Equations](https://markdown-videos-api.jorgenkh.no/youtube/SS4tcajTsW8?width=720&height=405)](https://inv.tux.pizza/watch?v=SS4tcajTsW8)
+# 
+# - Non-Commercial Link: [https://inv.tux.pizza/watch?v=SS4tcajTsW8](https://inv.tux.pizza/watch?v=SS4tcajTsW8)
+# - Commercial Link: [https://youtube.com/watch?v=SS4tcajTsW8](https://youtube.com/watch?v=SS4tcajTsW8)
 
 # 

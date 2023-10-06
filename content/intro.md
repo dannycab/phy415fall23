@@ -7,16 +7,15 @@ To get a sense of the course, please read all the pages associated with our syll
  
 ## Updates
 
-`````{admonition} Last updated: 4 Oct 2023
+`````{admonition} Last updated: 6 Oct 2023
 :class: tip
 
-### Updates
+### Site updates
 * [Readings for Week 6](./2_EM/Numerics/notes-relaxation.ipynb) are posted.
-* [Tuesday's activity was updated](./2_EM/Statics/activity-sep_var.ipynb) to include some code to start visualizing the potential.
-* Professor [Rachel Henderson](https://rachehenderson.wordpress.com/) will teach the course on 5 October 2023.
 
 ### Upcoming Deadlines
 * The [third worked problem](./9_assignments/worked-problem-3.md) is due 6 Oct 2023.
+* The [fourth worked problem](./9_assignments/worked-problem-4.md) is due 13 Oct 2023.
 
 `````
 

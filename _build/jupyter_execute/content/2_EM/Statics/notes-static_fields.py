@@ -10,6 +10,9 @@
 # The video below from [3Blue1Brown](https://www.3blue1brown.com/) provides a conceptual introduction to the vector calculus that we are going to need for this.
 # 
 # [![Vector Calculus](https://markdown-videos-api.jorgenkh.no/youtube/rB83DpBJQsE?width=720&height=405)](https://inv.tux.pizza/watch?v=rB83DpBJQsE)
+# 
+# - Non-Commercial Link: [https://inv.tux.pizza/watch?v=rB83DpBJQsE](https://inv.tux.pizza/watch?v=rB83DpBJQsE)
+# - Commercial Link: [https://youtube.com/watch?v=rB83DpBJQsE](https://youtube.com/watch?v=rB83DpBJQsE)
 
 # ## Electrostatic fields
 # 

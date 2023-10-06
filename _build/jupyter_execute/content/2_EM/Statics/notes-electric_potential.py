@@ -25,6 +25,9 @@
 # 
 # [![Electric Potential](https://markdown-videos-api.jorgenkh.no/youtube/7rjAtuwxrEA?width=720&height=405)](https://inv.tux.pizza/watch?v=7rjAtuwxrEA)
 # 
+# - Non-Commercial Link: [https://inv.tux.pizza/watch?v=7rjAtuwxrEA](https://inv.tux.pizza/watch?v=7rjAtuwxrEA)
+# - Commercial Link: [https://youtube.com/watch?v=7rjAtuwxrEA](https://youtube.com/watch?v=7rjAtuwxrEA)
+# 
 # 
 # The [electric potential](https://en.wikipedia.org/wiki/Electric_potential) is the scalar field that we have developed. One thing to note about it, is that it is only defined up to a constant. That is because when we take the gradient, and constant will drop out. This is really important when stitching together solutions from multiple sources. They need to all have the same "zero of potential."
 # 
@@ -138,8 +141,15 @@
 # 
 # [![Possion's and Laplace's Equation](https://markdown-videos-api.jorgenkh.no/youtube/nmvs0vrBT18?width=720&height=405)](https://inv.tux.pizza/watch?v=nmvs0vrBT18)
 # 
+# 
+# - Non-Commercial Link: [https://inv.tux.pizza/watch?v=nmvs0vrBT18?](https://inv.tux.pizza/watch?v=nmvs0vrBT18?)
+# - Commercial Link: [https://youtube.com/watch?v=nmvs0vrBT18?](https://youtube.com/watch?v=nmvs0vrBT18?)
+# 
 # #### Separation of Variables
 # [![Separation of Variables](https://markdown-videos-api.jorgenkh.no/youtube/VjWtMl6vQ3Q?width=720&height=405)](https://inv.tux.pizza/watch?v=VjWtMl6vQ3Q)
+# 
+# - Non-Commercial Link: [https://inv.tux.pizza/watch?v=VjWtMl6vQ3Q](https://inv.tux.pizza/watch?v=VjWtMl6vQ3Q)
+# - Commercial Link: [https://youtube.com/watch?v=VjWtMl6vQ3Q](https://youtube.com/watch?v=VjWtMl6vQ3Q)
 # 
 # ### Handwritten Notes
 #  - [Electric Potential](../../assets/notes/Notes-Electric_Potential.pdf)

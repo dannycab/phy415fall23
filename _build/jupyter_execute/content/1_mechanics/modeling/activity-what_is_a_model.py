@@ -23,6 +23,8 @@
 # We are going to start with this short video made by Geoscientist John Aiken when he was a graduate student at Georgia Tech.
 # 
 # [![](https://markdown-videos-api.jorgenkh.no/youtube/dkTncoPqo5Y?width=720&height=405)](https://inv.tux.pizza/watch?v=dkTncoPqo5Y)
+# - Non-Commercial Link: [https://inv.tux.pizza/watch?v=dkTncoPqo5Y](https://inv.tux.pizza/watch?v=dkTncoPqo5Y)
+# - Commercial Link: [https://youtube.com/watch?v=dkTncoPqo5Y](https://youtube.com/watch?v=dkTncoPqo5Y)
 
 # ### History and Philosophy of Science
 # If you would like to dive deeper into models and modeling, there's excellent work in history and philosophy of science. The field studies how science develops knowledge, practice, culture, and so on. It studies important events and provides critical information on important and, often, overlooked folks who do science. For example, historian and gender studies professor [Sharon Traweek](https://en.wikipedia.org/wiki/Sharon_Traweek) studies the high energy physics field. Her book, [Beamtimes and Lifetimes: The World of High Energy Physicists](https://en.wikipedia.org/wiki/Beamtimes_and_Lifetimes) {cite}`traweek2009beamtimes` is excellent.

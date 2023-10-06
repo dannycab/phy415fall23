@@ -84,6 +84,8 @@
 # Parth G. has a lovely video below about the basics of Lagrangian Dynamics.
 # 
 # [![](https://markdown-videos-api.jorgenkh.no/youtube/KpLno70oYHE?width=720&height=405)](https://inv.tux.pizza/watch?v=KpLno70oYHE)
+# - Non-Commercial Link: [https://inv.tux.pizza/watch?v=KpLno70oYHE](https://inv.tux.pizza/watch?v=KpLno70oYHE)
+# - Commercial Link: [https://youtube.com/watch?v=KpLno70oYHE](https://youtube.com/watch?v=KpLno70oYHE)
 
 # ## Additional Resources
 # 
@@ -112,5 +114,7 @@
 # If you are a feeling that you would like a little direct instruction on this, this lecture is great. Lots of examples!
 # 
 # [![](https://markdown-videos-api.jorgenkh.no/youtube/zhk9xLjrmi4?width=720&height=405)](https://inv.tux.pizza/watch?v=zhk9xLjrmi4)
+# - Non-Commercial Link: [https://inv.tux.pizza/watch?v=zhk9xLjrmi4](https://inv.tux.pizza/watch?v=zhk9xLjrmi4)
+# - Commercial Link: [https://youtube.com/watch?v=zhk9xLjrmi4](https://youtube.com/watch?v=zhk9xLjrmi4)
 
 # 
