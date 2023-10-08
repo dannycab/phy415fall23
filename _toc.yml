@@ -38,8 +38,10 @@ parts:
       - file: content/2_EM/Statics/activity-sep_var
       - file: content/2_EM/Statics/activity-sep_var_spherical
       - file: content/2_EM/Numerics/notes-relaxation
-      # - file: content/2_EM/Statics/notes-scalar_fields
-      # - file: content/2_EM/Statics/notes-sep_of_var
+  - caption: 3 - Waves and Oscillations
+    chapters:
+      - file: content/3_waves/notes-coupled_oscillations
+      - file: content/3_waves/notes-waves_intro
   - caption: Assignments
     chapters:
     - file: content/9_assignments/worked-problem-1.md
@@ -51,14 +53,3 @@ parts:
   - caption: Appendices
     chapters:
     - file: content/references.ipynb
-  # - caption: 3 - Waves and Complex Analysis
-  #   chapters:
-  #   - file: content/3_waves/waves_intro.ipynb
-  #   - file: content/3_waves/normal_modes
-  #   - file: content/3_waves/mech_waves
-  #   - file: content/3_waves/wave_examples
-  #   - file: content/3_waves/complex
-  #   - file: content/3_waves/DFT_FFT
-  # - caption: 4 - Random Processes and Distributions
-  #   chapters:
-  #   - file: content/4_distributions/distributions_intro.ipynb
