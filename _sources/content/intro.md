@@ -7,11 +7,11 @@ To get a sense of the course, please read all the pages associated with our syll
  
 ## Updates
 
-`````{admonition} Last updated: 6 Oct 2023
+`````{admonition} Last updated: 9 Oct 2023
 :class: tip
 
 ### Site updates
-* [Readings for Week 6](./2_EM/Numerics/notes-relaxation.ipynb) are posted.
+* Readings for Week 7 ([coupled oscillators](./3_waves/notes-coupled_oscillations.ipynb) and [waves](./3_waves/notes-waves_intro.ipynb)) are posted.
 
 ### Upcoming Deadlines
 * The [fourth worked problem](./9_assignments/worked-problem-4.md) is due 13 Oct 2023.
