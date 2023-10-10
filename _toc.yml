@@ -38,6 +38,7 @@ parts:
       - file: content/2_EM/Statics/activity-sep_var
       - file: content/2_EM/Statics/activity-sep_var_spherical
       - file: content/2_EM/Numerics/notes-relaxation
+      - file: content/2_EM/Statics/activity-sep_var_spherical_examples
   - caption: 3 - Waves and Oscillations
     chapters:
       - file: content/3_waves/notes-coupled_oscillations
