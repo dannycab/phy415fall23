@@ -1,0 +1,62 @@
+Traceback (most recent call last):
+  File "/Users/caballero/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/caballero/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/caballero/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/caballero/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/caballero/opt/anaconda3/envs/teaching/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/Users/caballero/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/caballero/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/caballero/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import matplotlib.pyplot as plt
+def LV_eqns(x, y):
+    xdot, ydot = [x*(A - B*x - C*y), y*(D - F*x - G*y)]
+    return xdot, ydot
+
+def LV_phase(X, VX):
+    xdot, ydot = np.zeros(X.shape), np.zeros(VX.shape)
+    Xlim, Ylim = X.shape
+    for i in range(Xlim):
+        for j in range(Ylim):
+            xloc = X[i, j]
+            yloc = VX[i, j]
+            xdot[i,j], ydot[i,j] = LV_eqns(xloc, yloc)
+    return xdot, ydot
+
+N = 40
+x = np.linspace(0., 3.5, N)
+y = np.linspace(0., 3.5, N)
+X, Y = np.meshgrid(x, y)
+xdot, ydot = LV_phase(X, Y)
+ax = plt.figure(figsize=(10,10))
+Q = plt.streamplot(X, Y, xdot, ydot, color='k',broken_streamlines = False)
+plt.scatter(x1,y1, label = 'fixed point 1')
+plt.scatter(x2,y2, label = "fixed point 2")
+plt.legend()
+plt.grid()
+plt.xlabel('$rabbits$')
+plt.ylabel('$sheep$')
+plt.show()
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Input [0;32mIn [3][0m, in [0;36m<cell line: 22>[0;34m()[0m
+[1;32m     20[0m xdot, ydot [38;5;241m=[39m LV_phase(X, Y)
+[1;32m     21[0m ax [38;5;241m=[39m plt[38;5;241m.[39mfigure(figsize[38;5;241m=[39m([38;5;241m10[39m,[38;5;241m10[39m))
+[0;32m---> 22[0m Q [38;5;241m=[39m [43mplt[49m[38;5;241;43m.[39;49m[43mstreamplot[49m[43m([49m[43mX[49m[43m,[49m[43m [49m[43mY[49m[43m,[49m[43m [49m[43mxdot[49m[43m,[49m[43m [49m[43mydot[49m[43m,[49m[43m [49m[43mcolor[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mk[39;49m[38;5;124;43m'[39;49m[43m,[49m[43mbroken_streamlines[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;28;43;01mFalse[39;49;00m[43m)[49m
+[1;32m     23[0m plt[38;5;241m.[39mscatter(x1,y1, label [38;5;241m=[39m [38;5;124m'[39m[38;5;124mfixed point 1[39m[38;5;124m'[39m)
+[1;32m     24[0m plt[38;5;241m.[39mscatter(x2,y2, label [38;5;241m=[39m [38;5;124m"[39m[38;5;124mfixed point 2[39m[38;5;124m"[39m)
+
+[0;31mTypeError[0m: streamplot() got an unexpected keyword argument 'broken_streamlines'
+TypeError: streamplot() got an unexpected keyword argument 'broken_streamlines'
+

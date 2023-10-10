@@ -1,44 +1,35 @@
 
-
 <!DOCTYPE html>
 
-
-<html >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3 Oct 23 - Activity: PDEs and Separation of Variables &#8212; PHY 415 Fall 2023</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    <title>3 Oct 23 - Activity: PDEs and Separation of Variables &#8212; PHY 415 Fall 2023</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -46,12 +37,12 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -61,93 +52,61 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/2_EM/Statics/activity-sep_var';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="5 Oct 2023 - Activity: Solving PDEs in Spherical Coordinates" href="activity-sep_var_spherical.html" />
     <link rel="prev" title="3 Oct 23 - Notes: Electric Potential - a scalar field" href="notes-electric_potential.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../../../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../../intro.html">
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">PHY 415 Fall 2023</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -156,282 +115,578 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">0 - Intro and Syllabus</span></p>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  0 - Intro and Syllabus
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../0_course/0_syllabus.html">Syllabus and Overview of PHY 415</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/1_goals.html">Course Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/2_design.html">Course Design</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/3_assessments.html">Assessments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/4_rubric.html">Project Rubrics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/5_calendar.html">Calendar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/6_environment.html">Classroom Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/7_resources.html">Resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../0_course/8_worked_problems.html">Worked Problems</a></li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../0_course/0_syllabus.html">
+   Syllabus and Overview of PHY 415
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/1_goals.html">
+     Course Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/2_design.html">
+     Course Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/3_assessments.html">
+     Assessments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/4_rubric.html">
+     Project Rubrics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/5_calendar.html">
+     Calendar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/6_environment.html">
+     Classroom Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/7_resources.html">
+     Resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../0_course/8_worked_problems.html">
+     Worked Problems
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">1 - Mechanics and ODEs</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  1 - Mechanics and ODEs
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/modeling/activity-what_is_a_model.html">29 Aug 23 - Activity: What is a Model?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/sho/notes-SHO.html">29 Aug 23 - Notes: Simple Harmonic Oscillator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/lagrangian/notes_frames.html">31 Aug 23 - Notes: Frames and Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/lagrangian/frames.html">31 Aug 23 - Activity: Frames and Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/lagrangian/notes-lagrangian-dynamics.html">5 Sept 23 - Notes: Lagrangian Dynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/lagrangian/activity-lagrange_1.html">5 Sep 23 - Activity: Calculus of Variations and Lagrangian Dynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/lagrangian/notes-numerical_integration_1d.html">7 Sept 23 - Notes: Numerical Integration in 1D</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../1_mechanics/modeling/activity-what_is_a_model.html">
+   29 Aug 23 - Activity: What is a Model?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../1_mechanics/sho/notes-SHO.html">
+   29 Aug 23 - Notes: Simple Harmonic Oscillator
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../1_mechanics/lagrangian/notes_frames.html">
+   31 Aug 23 - Notes: Frames and Coordinates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../1_mechanics/lagrangian/frames.html">
+   31 Aug 23 - Activity: Frames and Coordinates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../1_mechanics/lagrangian/notes-lagrangian-dynamics.html">
+   5 Sept 23 - Notes: Lagrangian Dynamics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../1_mechanics/lagrangian/activity-lagrange_1.html">
+   5 Sep 23 - Activity: Calculus of Variations and Lagrangian Dynamics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../1_mechanics/lagrangian/notes-numerical_integration_1d.html">
+   7 Sept 23 - Notes: Numerical Integration in 1D
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../1_mechanics/lagrangian/activity-lagrange_2.html">
+   7 Sep 23 - Activity: Numerical Integration and More Lagrangians
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../1_mechanics/dynamical_systems/notes-phase_space.html">
+   12 Sept 23 - Notes: Dynamical Systems and Phase Space
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../1_mechanics/dynamical_systems/activity-phase_space.html">
+   12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../1_mechanics/dynamical_systems/activity-vanderpol.html">
+   14 Sept 23 - Activity: Conducting a complete analysis of an ODE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../1_mechanics/dynamical_systems/notes-linearization_odes.html">
+   19 Sep 23 - Notes: Heading towards Chaos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../1_mechanics/dynamical_systems/activity-duffing.html">
+   19 Sep 23 - The Duffing Oscillator
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">2 - E&amp;M and PDEs</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2 - E&amp;M and PDEs
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="notes-em_intro.html">26 Sept 23 - Notes: Maxwell’s Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notes-static_fields.html">26 Sept 23 - Notes: Static Fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity-efields.html">26 Sep 23 - Activity: Electrostatic Fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity-superposition.html">28 Sep 23 - Activity: Superposition of Fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notes-electric_potential.html">3 Oct 23 - Notes: Electric Potential - a scalar field</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3 Oct 23 - Activity: PDEs and Separation of Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity-sep_var_spherical.html">5 Oct 2023 - Activity: Solving PDEs in Spherical Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Numerics/notes-relaxation.html">9 Oct 23 - Notes: Method of Relaxation</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notes-em_intro.html">
+   26 Sept 23 - Notes: Maxwell’s Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notes-static_fields.html">
+   26 Sept 23 - Notes: Static Fields
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity-efields.html">
+   26 Sep 23 - Activity: Electrostatic Fields
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity-superposition.html">
+   28 Sep 23 - Activity: Superposition of Fields
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notes-electric_potential.html">
+   3 Oct 23 - Notes: Electric Potential - a scalar field
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3 Oct 23 - Activity: PDEs and Separation of Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity-sep_var_spherical.html">
+   5 Oct 2023 - Activity: Solving PDEs in Spherical Coordinates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Numerics/notes-relaxation.html">
+   9 Oct 23 - Notes: Method of Relaxation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activity-sep_var_spherical_examples.html">
+   10 Oct 2023 - Activity: Matching Boundary Conditions and Plotting the Potential
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillations</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  3 - Waves and Oscillations
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-coupled_oscillations.html">16 Oct 23 - Notes: Coupled Oscillations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-waves_intro.html">16 Oct 23 - Notes: Introduction to Waves</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../3_waves/notes-coupled_oscillations.html">
+   16 Oct 23 - Notes: Coupled Oscillations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../3_waves/notes-waves_intro.html">
+   16 Oct 23 - Notes: Introduction to Waves
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../9_assignments/worked-problem-1.html">Worked Problem Assignment 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../9_assignments/worked-problem-2.html">Worked Problem Assignment 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../9_assignments/project-1.html">Project 1 - Classical Mechanics and ODEs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../9_assignments/worked-problem-3.html">Worked Problem Assignment 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../9_assignments/worked-problem-4.html">Worked Problem Assignment 4</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../9_assignments/project-2.html">Project 2 - PDEs, Laplace’s Equation, and the Method of Relaxation</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../9_assignments/worked-problem-1.html">
+   Worked Problem Assignment 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../9_assignments/worked-problem-2.html">
+   Worked Problem Assignment 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../9_assignments/project-1.html">
+   Project 1 - Classical Mechanics and ODEs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../9_assignments/worked-problem-3.html">
+   Worked Problem Assignment 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../9_assignments/worked-problem-4.html">
+   Worked Problem Assignment 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../9_assignments/project-2.html">
+   Project 2 - PDEs, Laplace’s Equation, and the Method of Relaxation
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../references.html">Works Cited</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../references.html">
+   Works Cited
+  </a>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
   
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
     </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
   </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/valentine-alia/phy415fall23" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/2_EM/Statics/activity-sep_var.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../../../_sources/content/2_EM/Statics/activity-sep_var.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
+  <div class="menu-dropdown__content">
+    <ul>
       <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
+        <a href="https://mybinder.org/v2/gh/valentine-alia/phy415fall23/master?urlpath=tree/content/2_EM/Statics/activity-sep_var.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
 >
   
 
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
   </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
       
-  </ul>
+    </ul>
+  </div>
 </div>
-
-
-
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
   </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/valentine-alia/phy415fall23"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>3 Oct 23 - Activity: PDEs and Separation of Variables</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-charge-potential">Point Charge Potential</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-of-a-charged-rod">Potential of a charged rod</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-s-equation">Laplace’s Equation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-solutions-to-laplace-s-equation">Properties of Solutions to Laplace’s Equation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-the-infinite-gutter">Activity: The Infinite Gutter</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions">Boundary Conditions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-s-trick">Fourier’s Trick</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-solution">Visualizing the Solution</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/2_EM/Statics/activity-sep_var.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/content/2_EM/Statics/activity-sep_var.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#point-charge-potential">
+   Point Charge Potential
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#potential-of-a-charged-rod">
+   Potential of a charged rod
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laplace-s-equation">
+   Laplace’s Equation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-solutions-to-laplace-s-equation">
+     Properties of Solutions to Laplace’s Equation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#activity-the-infinite-gutter">
+     Activity: The Infinite Gutter
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#boundary-conditions">
+       Boundary Conditions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fourier-s-trick">
+       Fourier’s Trick
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-the-solution">
+     Visualizing the Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>3 Oct 23 - Activity: PDEs and Separation of Variables</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#point-charge-potential">
+   Point Charge Potential
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#potential-of-a-charged-rod">
+   Potential of a charged rod
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laplace-s-equation">
+   Laplace’s Equation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-solutions-to-laplace-s-equation">
+     Properties of Solutions to Laplace’s Equation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#activity-the-infinite-gutter">
+     Activity: The Infinite Gutter
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#boundary-conditions">
+       Boundary Conditions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fourier-s-trick">
+       Fourier’s Trick
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-the-solution">
+     Visualizing the Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-activity-pdes-and-separation-of-variables">
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="oct-23-activity-pdes-and-separation-of-variables">
 <h1>3 Oct 23 - Activity: PDEs and Separation of Variables<a class="headerlink" href="#oct-23-activity-pdes-and-separation-of-variables" title="Permalink to this headline">#</a></h1>
 <p>As we have realized, solving field problems using vector equations is not always the best way to go about solving our problems. The integrals can be difficult to set up and the equations might be difficult, if not, impossible to solve (e.g., because there is no anti-derivative for the integrand). While we might not fully eliminate the need for vector equations, in electrostatic situations, we can posit the <a class="reference external" href="https://en.wikipedia.org/wiki/Electric_potential">electric potential</a>, <span class="math notranslate nohighlight">\(\Phi\)</span>.</p>
 <p><strong>We changed to using <span class="math notranslate nohighlight">\(\Phi\)</span> because there are also things like <span class="math notranslate nohighlight">\(dV\)</span> – volume elements.</strong></p>
@@ -452,7 +707,7 @@ document.write(`
 \[\Phi = \frac{1}{4\pi\epsilon_0}\iiint\frac{\rho dV}{|\mathbf{r}-\mathbf{r}'|}\]</div>
 <p>Much like we have done with the electric field, one can set up a forward integral formulation of the electric potential and add up the elements to find the total potential. Let’s use Python [sympy] library to illustrate this. We start with the point charge. Here <span class="math notranslate nohighlight">\(k=\frac{1}{4\pi\epsilon_0}\)</span>.</p>
 <p>First, we show how to form an expression for the point charge potential.</p>
-<div class="section" id="point-charge-potential">
+<section id="point-charge-potential">
 <h2>Point Charge Potential<a class="headerlink" href="#point-charge-potential" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -474,11 +729,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/d362fdebb9dc95e239118908fda43a0abcf8379d616710377c6c7b9264cf8fef.png" src="../../../_images/d362fdebb9dc95e239118908fda43a0abcf8379d616710377c6c7b9264cf8fef.png" />
+<img alt="../../../_images/activity-sep_var_1_0.png" src="../../../_images/activity-sep_var_1_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="potential-of-a-charged-rod">
+</section>
+<section id="potential-of-a-charged-rod">
 <h2>Potential of a charged rod<a class="headerlink" href="#potential-of-a-charged-rod" title="Permalink to this headline">#</a></h2>
 <p>It is common to compute the electric potential of a charged rod along a line perpendicular to it along the y-axis. Let’s do this for a rod of length <span class="math notranslate nohighlight">\(L\)</span> with a uniform charge density, <span class="math notranslate nohighlight">\(\lambda\)</span>. We will assume that the rod is centered on the origin and that the axis of the rod is aligned with the <span class="math notranslate nohighlight">\(x\)</span>-axis. We can treat a tiny piece of the rod like a point charge and add things up!</p>
 <p>Let’s find the electric potential at <span class="math notranslate nohighlight">\(\langle 0,y,0 \rangle\)</span>.</p>
@@ -505,7 +760,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/8233fea5b68f4c18dd8ed23271ae610b6b520fc5b2458b01fe40f6694e8b44a4.png" src="../../../_images/8233fea5b68f4c18dd8ed23271ae610b6b520fc5b2458b01fe40f6694e8b44a4.png" />
+<img alt="../../../_images/activity-sep_var_3_0.png" src="../../../_images/activity-sep_var_3_0.png" />
 </div>
 </div>
 <p>What’s nice is that we can change the problem quickly byt changing the location or the distribution. For example, to find the field on the end of the rod, we have to change the integrand a bit. Let’s assume we are looking at the end of the rod at <span class="math notranslate nohighlight">\(\langle x_0,0,0 \rangle\)</span>.</p>
@@ -526,7 +781,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/599c5423996047a8d9ec9eb9aa28aedc15ef7a3b5ab739bdfe22d339810df0a3.png" src="../../../_images/599c5423996047a8d9ec9eb9aa28aedc15ef7a3b5ab739bdfe22d339810df0a3.png" />
+<img alt="../../../_images/activity-sep_var_5_0.png" src="../../../_images/activity-sep_var_5_0.png" />
 </div>
 </div>
 <p>However, this approach is typically not the best way to solve electric potential problems because they often only work for specific geometries and at certain locations. For example, consider the general location <span class="math notranslate nohighlight">\(\langle x_0,y_0,0 \rangle\)</span>. We can still use the integral approach, but we find that our solution is becoming more complicated and harder to interpret easily. It is also the case that we can (quite easily) form integrals that are not possible to compute analytically.</p>
@@ -547,13 +802,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/33dfc441951a50773af4742f726b0dcf7233e472e952fbfed36b4a6fa8b234fd.png" src="../../../_images/33dfc441951a50773af4742f726b0dcf7233e472e952fbfed36b4a6fa8b234fd.png" />
+<img alt="../../../_images/activity-sep_var_7_0.png" src="../../../_images/activity-sep_var_7_0.png" />
 </div>
 </div>
 <p>Instead, we will use the differential form of the electric potential where there are no charges, but the boundaries are set to a given potential. This is called <strong>Laplace’s equation</strong>.</p>
 <p><em>Note that regardless of the approach to find the electric field we will need to eventually compute the gradient of the electric potential.</em> We will need to do that numerically later.</p>
-</div>
-<div class="section" id="laplace-s-equation">
+</section>
+<section id="laplace-s-equation">
 <h2>Laplace’s Equation<a class="headerlink" href="#laplace-s-equation" title="Permalink to this headline">#</a></h2>
 <p><em>Numerical solution to Laplace’s equation on an annulus</em>
 <img alt="Laplace's Equation" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Laplace%27s_equation_on_an_annulus.svg/800px-Laplace%27s_equation_on_an_annulus.svg.png" /></p>
@@ -561,29 +816,29 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\nabla^2 \Phi = 0\]</div>
 <p>There are two important ways to go about solving these problems. The first is using separation of variables, which is a common analytical technique. The second is to use numerical methods that we will discuss later in the course. Both of these methods rely on the the following properties of the solutions to Laplace’s equation.</p>
-<div class="section" id="properties-of-solutions-to-laplace-s-equation">
+<section id="properties-of-solutions-to-laplace-s-equation">
 <h3>Properties of Solutions to Laplace’s Equation<a class="headerlink" href="#properties-of-solutions-to-laplace-s-equation" title="Permalink to this headline">#</a></h3>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p><span class="math notranslate nohighlight">\(\Phi\)</span> has no local maxima or minima except at boundaries</p></li>
 <li><p><span class="math notranslate nohighlight">\(\Phi\)</span> is smooth and continuous everywhere</p></li>
 <li><p><span class="math notranslate nohighlight">\(\Phi\)</span> is single valued</p></li>
 <li><p><span class="math notranslate nohighlight">\(\Phi\)</span> at a location is the average of the values of <span class="math notranslate nohighlight">\(\Phi\)</span> over the surrounding space</p></li>
 <li><p><span class="math notranslate nohighlight">\(\Phi\)</span> is unique. There is only one solution to Laplace’s equation for a given set of boundary conditions.</p></li>
 </ol>
-</div>
-<div class="section" id="activity-the-infinite-gutter">
+</section>
+<section id="activity-the-infinite-gutter">
 <h3>Activity: The Infinite Gutter<a class="headerlink" href="#activity-the-infinite-gutter" title="Permalink to this headline">#</a></h3>
 <p><img alt="Infinite Gutter" src="https://i.stack.imgur.com/nHF7a.jpg" /></p>
 <p>Consider a metal gutter that extends into infinitely in the <span class="math notranslate nohighlight">\(z\)</span> direction. The gutter width in the <span class="math notranslate nohighlight">\(y\)</span> direction is <span class="math notranslate nohighlight">\(a\)</span>. It is placed in the <span class="math notranslate nohighlight">\(y-z\)</span> plane and the <span class="math notranslate nohighlight">\(+x\)</span> direction is not constrained and extends to infinity (both the wall at <span class="math notranslate nohighlight">\(y=0\)</span> and <span class="math notranslate nohighlight">\(y=a\)</span>). So that Laplace’s equation applies in the region:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>any <span class="math notranslate nohighlight">\(z\)</span> value</p></li>
 <li><p><span class="math notranslate nohighlight">\(x &gt; 0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(0 &lt; y &lt; a\)</span></p></li>
 </ol>
-<div class="section" id="boundary-conditions">
+<section id="boundary-conditions">
 <h4>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">#</a></h4>
 <p>What uniquely determines our solution to Laplace’s equation are the boundary conditions. For this case, we are going to set all the conditions to zero except one to illustrate the way we find those unique solutions. The boundary conditions are:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p><span class="math notranslate nohighlight">\(\Phi(x&gt;0, y=0) = 0\)</span> Grounded</p></li>
 <li><p><span class="math notranslate nohighlight">\(\Phi(x&gt;0, y=a) = 0\)</span> Grounded</p></li>
 <li><p><span class="math notranslate nohighlight">\(\Phi(x=0, 0 &lt; y &lt; a) = V_0(y)\)</span> Set potential at the bottom of the gutter</p></li>
@@ -593,14 +848,14 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\nabla^2 \Phi = \nabla^2 \Phi(x,y) = 0 \longrightarrow \Phi(x,y) = X(x)Y(y)\]</div>
 <p><strong>✅ Do this</strong></p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Using the proposed solution, use separation of variables to find ODEs for <span class="math notranslate nohighlight">\(X(x)\)</span> and <span class="math notranslate nohighlight">\(Y(y)\)</span>.</p></li>
 <li><p>Solve the ODEs for <span class="math notranslate nohighlight">\(X(x)\)</span> and <span class="math notranslate nohighlight">\(Y(y)\)</span> in general. How do you choose which general solution to use in which direction?</p></li>
 <li><p>Apply the boundary conditions to solve for the constants in the general solutions.</p></li>
 </ol>
 <p><strong>Note that applying the boundary condition for <span class="math notranslate nohighlight">\(x=a\)</span> will result in an equation of the form <span class="math notranslate nohighlight">\(V(0,y) = C'\sin(ky)\)</span> where <span class="math notranslate nohighlight">\(C'\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are some constants.</strong> This is a new thing that we running up against. It requires that we use Fourier’s trick to solve for the appropriate constants. This will lead us into <a class="reference external" href="https://en.wikipedia.org/wiki/Orthogonal_functions">orthgonal functions</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Fourier_series">Fourier series</a>.</p>
-</div>
-<div class="section" id="fourier-s-trick">
+</section>
+<section id="fourier-s-trick">
 <h4>Fourier’s Trick<a class="headerlink" href="#fourier-s-trick" title="Permalink to this headline">#</a></h4>
 <p>Fourier’s trick is just what results from integrated orthonormal functions over the domain of importance. For example, the most common version of this approach is to integrate the product of two sine functions over the domain <span class="math notranslate nohighlight">\([0,\pi]\)</span> or the equivalent in the case of a length scale <span class="math notranslate nohighlight">\(a\)</span>.</p>
 <div class="math notranslate nohighlight">
@@ -621,13 +876,13 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[C_m = \dfrac{2}{a}\int_0^a \Phi(0,y) \sin\left(\dfrac{m\pi y}{a}\right) dy\]</div>
 <p><strong>✅ Do this</strong></p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Let <span class="math notranslate nohighlight">\(\Phi(0,y) = V_0\)</span>, which is the potential at the bottom of the gutter. Use the integral expression to find <span class="math notranslate nohighlight">\(C_m\)</span>.</p></li>
 <li><p>Combined with your prior work, write down the solution for the electric potential in the gutter. What do you notice about the solution? Can you visualize it?</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="visualizing-the-solution">
+</section>
+</section>
+<section id="visualizing-the-solution">
 <h3>Visualizing the Solution<a class="headerlink" href="#visualizing-the-solution" title="Permalink to this headline">#</a></h3>
 <p>We often find from these analyses that we produce infinite series solutions like this for the potential (note this is for a different problem):</p>
 <div class="math notranslate nohighlight">
@@ -635,7 +890,7 @@ document.write(`
 <p>This solution is for the domain <span class="math notranslate nohighlight">\(0&lt; x&lt; a\)</span> and infinite <span class="math notranslate nohighlight">\(y\)</span> extent. It’s a 90 degree-turned version of the problem you solved earlier.</p>
 <p><strong>✅ Do this</strong></p>
 <p>Create a 3D figure of the electric potential of this situation.</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>You will need to create a mesh grid of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> values.</p></li>
 <li><p>You will need to create a function that sums the series for a given <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> value.</p></li>
 <li><p>You will need to truncate the series after some terms (you can’t sum to infinity).</p></li>
@@ -698,12 +953,12 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Electric Potential&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/423cd18699162213239c491f06c0b2e39abdbbd12d2fabbbc905df8a0891735d.png" src="../../../_images/423cd18699162213239c491f06c0b2e39abdbbd12d2fabbbc905df8a0891735d.png" />
+<img alt="../../../_images/activity-sep_var_15_1.png" src="../../../_images/activity-sep_var_15_1.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -717,7 +972,7 @@ document.write(`
             mode: "teaching"
         },
         kernelOptions: {
-            name: "teaching",
+            kernelName: "teaching",
             path: "./content/2_EM/Statics"
         },
         predefinedOutput: true
@@ -725,116 +980,50 @@ document.write(`
     </script>
     <script>kernelName = 'teaching'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="notes-electric_potential.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">3 Oct 23 - Notes: Electric Potential - a scalar field</p>
-      </div>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="notes-electric_potential.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">3 Oct 23 - Notes: Electric Potential - a scalar field</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="activity-sep_var_spherical.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="activity-sep_var_spherical.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">5 Oct 2023 - Activity: Solving PDEs in Spherical Coordinates</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div></div>
-  
-</div>
-
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-charge-potential">Point Charge Potential</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-of-a-charged-rod">Potential of a charged rod</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-s-equation">Laplace’s Equation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-solutions-to-laplace-s-equation">Properties of Solutions to Laplace’s Equation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-the-infinite-gutter">Activity: The Infinite Gutter</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-conditions">Boundary Conditions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fourier-s-trick">Fourier’s Trick</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-the-solution">Visualizing the Solution</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Danny Caballero, Alia Valentine
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2023.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
     </div>
-  </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Danny Caballero, Alia Valentine<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>
