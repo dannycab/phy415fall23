@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 5 Oct 2023 - Activity: Solving PDEs in Spherical Coordinates
+# # 5 Oct 23 - Activity: Solving PDEs in Spherical Coordinates
 # 
 # We can extend the ideas we developed from Separation of Variables to solve PDEs in spherical coordinates. We propose a similar solution to the one we used for Cartesian coordinates, functions of a single variable.
 # 
@@ -194,39 +194,6 @@ plt.show()
 # 4. Make a heat map plot (in $x$ and $y$) of the potential inside and outside the sphere. You can set $a=1$ and $V_0=1$ if that helps.
 
 # In[5]:
-
-
-## your code here
-
-
-# **&#9989; Do this** 
-# 
-# ### Sphere of variable potential
-# 
-# Consider a sphere of with a radius $a$. If the potential on the surface is $V(\theta)$, what is the potential inside and outside the sphere?
-# 
-# 1. Consider the radial solutions (what doesn't blow up?)
-# 2. Consider the polar angle solutions, what has to be true? Can you say anything about them?
-# 3. What if $V(\theta) = V_0 \cos(\theta)$? What is the potential inside and outside the sphere?
-
-# ## Example of Polarization
-# 
-# **&#9989; Do this** 
-# 
-# Put a metal sphere of radius $a$ in a uniform electric field $\vec{E} = E_0 \hat{z}$. 
-# 
-# ![Sphere in a uniform electric field](https://d2vlcm61l7u1fs.cloudfront.net/media%2F2f6%2F2f6e4bc3-0070-470f-9451-6376a4eceddc%2Fphpl2HMKa.png)
-# 
-# What is the potential inside and outside the sphere?
-# 
-# 1. Draw the picture and write down the boundary conditions. What is the potential everywhere on a metal?
-# 2. What general solution do you need to use? How do you know?
-# 3. What are the boundary conditions for the radial solutions? The polar angle solutions?
-# 4. Match your boundary conditions to your general solution. What is the potential inside and outside the sphere?
-# 5. Make a heat map plot (in $x$ and $y$) of the potential inside and outside the sphere. You can set $a=1$ and $E_0=1$ if that helps.
-# 6. (challenge) Find the polarization charge density on the surface of the sphere. What is the total charge on the sphere?
-
-# In[6]:
 
 
 ## your code here
