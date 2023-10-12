@@ -18,7 +18,7 @@ parts:
     - file: content/1_mechanics/modeling/activity-what_is_a_model.md
     - file: content/1_mechanics/sho/notes-SHO.ipynb
     - file: content/1_mechanics/lagrangian/notes_frames.md
-    - file: content/1_mechanics/lagrangian/frames
+    - file: content/1_mechanics/lagrangian/activity-frames
     - file: content/1_mechanics/lagrangian/notes-lagrangian-dynamics
     - file: content/1_mechanics/lagrangian/activity-lagrange_1
     - file: content/1_mechanics/lagrangian/notes-numerical_integration_1d
