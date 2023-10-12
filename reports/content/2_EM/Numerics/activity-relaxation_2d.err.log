@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['# Example Usage', 'L = 1.0', 'h = 0.01', 'tolerance = 1e-5', 'N = int(L/h)']
+['# constants and parameters', 'L = 1', 'h = 0.01', 'V = 1', 'N = int(L/0.01)']
 ...
-["set_boundary(phi, 'right', 5)", '', '# Relaxation', 'stored_phi, stored_deltas, iterations = relax(phi, N, tolerance)', 'print(f"Converged in {iterations} iterations.")']
+['    delta = np.abs(phi-phiprime).max()', '', 'print(k)', 'plt.imshow(phi)', 'plt.show()']
 -------------------
 

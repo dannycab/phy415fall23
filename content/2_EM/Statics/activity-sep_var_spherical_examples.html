@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>10 Oct 2023 - Activity: Matching Boundary Conditions and Plotting the Potential &#8212; PHY 415 Fall 2023</title>
+    <title>10 Oct 23 - Activity: Matching Boundary Conditions and Plotting the Potential &#8212; PHY 415 Fall 2023</title>
   
   
   
@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/2_EM/Statics/activity-sep_var_spherical_examples';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="16 Oct 23 - Notes: Coupled Oscillations" href="../../3_waves/notes-coupled_oscillations.html" />
+    <link rel="next" title="12 Oct 23 - Activity: Method of Relaxation" href="../Numerics/activity-relaxation_2d.html" />
     <link rel="prev" title="9 Oct 23 - Notes: Method of Relaxation" href="../Numerics/notes-relaxation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -195,9 +195,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="activity-superposition.html">28 Sep 23 - Activity: Superposition of Fields</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-electric_potential.html">3 Oct 23 - Notes: Electric Potential - a scalar field</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-sep_var.html">3 Oct 23 - Activity: PDEs and Separation of Variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity-sep_var_spherical.html">5 Oct 2023 - Activity: Solving PDEs in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-sep_var_spherical.html">5 Oct 23 - Activity: Solving PDEs in Spherical Coordinates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Numerics/notes-relaxation.html">9 Oct 23 - Notes: Method of Relaxation</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10 Oct 2023 - Activity: Matching Boundary Conditions and Plotting the Potential</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10 Oct 23 - Activity: Matching Boundary Conditions and Plotting the Potential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Numerics/activity-relaxation_2d.html">12 Oct 23 - Activity: Method of Relaxation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillations</span></p>
 <ul class="nav bd-sidenav">
@@ -399,7 +400,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>10 Oct 2023 - Activity: Matching Boundary Conditions and Plotting the Potential</h1>
+    <h1>10 Oct 23 - Activity: Matching Boundary Conditions and Plotting the Potential</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -412,10 +413,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#azimuthally-symmetric-solutions">Azimuthally Symmetric Solutions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sphere-of-constant-surface-potential">Sphere of constant surface potential</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sphere-of-variable-potential">Sphere of variable potential</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-thick-spherical-shell">A Thick spherical shell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-thick-spherical-shell">A thick spherical shell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-polarization">Example of Polarization</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-polarization">Example of Polarization</a></li>
 </ul>
             </nav>
         </div>
@@ -427,8 +428,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="oct-2023-activity-matching-boundary-conditions-and-plotting-the-potential">
-<h1>10 Oct 2023 - Activity: Matching Boundary Conditions and Plotting the Potential<a class="headerlink" href="#oct-2023-activity-matching-boundary-conditions-and-plotting-the-potential" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-activity-matching-boundary-conditions-and-plotting-the-potential">
+<h1>10 Oct 23 - Activity: Matching Boundary Conditions and Plotting the Potential<a class="headerlink" href="#oct-23-activity-matching-boundary-conditions-and-plotting-the-potential" title="Permalink to this headline">#</a></h1>
 <div class="section" id="azimuthally-symmetric-solutions">
 <h2>Azimuthally Symmetric Solutions<a class="headerlink" href="#azimuthally-symmetric-solutions" title="Permalink to this headline">#</a></h2>
 <p>As we saw, azimuthally symmetric solutions, the electric potential is independent of <span class="math notranslate nohighlight">\(\phi\)</span> and the solutions are of the form:</p>
@@ -464,7 +465,7 @@ document.write(`
 </ol>
 </div>
 <div class="section" id="a-thick-spherical-shell">
-<h3>A Thick spherical shell<a class="headerlink" href="#a-thick-spherical-shell" title="Permalink to this headline">#</a></h3>
+<h3>A thick spherical shell<a class="headerlink" href="#a-thick-spherical-shell" title="Permalink to this headline">#</a></h3>
 <p>Suppose you have a spherical shell of inner radius <span class="math notranslate nohighlight">\(a\)</span> and outer radius <span class="math notranslate nohighlight">\(b\)</span>, and you know the electric potential on the inner (<span class="math notranslate nohighlight">\(V(a,\theta) = V_a(\theta)\)</span>) and outer (<span class="math notranslate nohighlight">\(V(b,\theta) = V_b(\theta)\)</span>) surfaces. You want to find the electric potential <span class="math notranslate nohighlight">\(V(r,\theta)\)</span> inside the hole (<span class="math notranslate nohighlight">\(r&lt;a\)</span>) and outside the shell (<span class="math notranslate nohighlight">\(r&gt;b\)</span>).</p>
 <p>Let’s allow:</p>
 <div class="math notranslate nohighlight">
@@ -479,9 +480,8 @@ document.write(`
 </ol>
 <p>What do you do in the case of <span class="math notranslate nohighlight">\(V_a(\theta) = f(\theta)\)</span> and <span class="math notranslate nohighlight">\(V_b(\theta) = g(\theta)\)</span> - generic functions?</p>
 </div>
-</div>
 <div class="section" id="example-of-polarization">
-<h2>Example of Polarization<a class="headerlink" href="#example-of-polarization" title="Permalink to this headline">#</a></h2>
+<h3>Example of Polarization<a class="headerlink" href="#example-of-polarization" title="Permalink to this headline">#</a></h3>
 <p><strong>✅ Do this</strong></p>
 <p>Put a metal sphere of radius <span class="math notranslate nohighlight">\(a\)</span> in a uniform electric field <span class="math notranslate nohighlight">\(\vec{E} = E_0 \hat{z}\)</span>.</p>
 <p><img alt="Sphere in a uniform electric field" src="https://d2vlcm61l7u1fs.cloudfront.net/media%2F2f6%2F2f6e4bc3-0070-470f-9451-6376a4eceddc%2Fphpl2HMKa.png" /></p>
@@ -498,6 +498,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -545,11 +546,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../../3_waves/notes-coupled_oscillations.html"
+       href="../Numerics/activity-relaxation_2d.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">16 Oct 23 - Notes: Coupled Oscillations</p>
+        <p class="prev-next-title">12 Oct 23 - Activity: Method of Relaxation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -574,10 +575,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#azimuthally-symmetric-solutions">Azimuthally Symmetric Solutions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sphere-of-constant-surface-potential">Sphere of constant surface potential</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sphere-of-variable-potential">Sphere of variable potential</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-thick-spherical-shell">A Thick spherical shell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-thick-spherical-shell">A thick spherical shell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-polarization">Example of Polarization</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-polarization">Example of Polarization</a></li>
 </ul>
   </nav></div>
 
