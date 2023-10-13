@@ -176,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/modeling/activity-what_is_a_model.html">29 Aug 23 - Activity: What is a Model?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/sho/notes-SHO.html">29 Aug 23 - Notes: Simple Harmonic Oscillator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/lagrangian/notes_frames.html">31 Aug 23 - Notes: Frames and Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/lagrangian/frames.html">31 Aug 23 - Activity: Frames and Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/lagrangian/activity-frames.html">31 Aug 23 - Activity: Frames and Coordinates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/lagrangian/notes-lagrangian-dynamics.html">5 Sept 23 - Notes: Lagrangian Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/lagrangian/activity-lagrange_1.html">5 Sep 23 - Activity: Calculus of Variations and Lagrangian Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../1_mechanics/lagrangian/notes-numerical_integration_1d.html">7 Sept 23 - Notes: Numerical Integration in 1D</a></li>
@@ -731,9 +731,9 @@ document.write(`
     <span class="n">x</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">h</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="n">h</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">0.6</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mf">0.8</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mf">0.2</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="mf">0.4</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mf">0.01</span>
+        <span class="k">return</span> <span class="mf">1e-7</span>
     <span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mf">0.2</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mf">0.4</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mf">0.6</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="mf">0.8</span><span class="p">:</span>
-        <span class="k">return</span> <span class="o">-</span><span class="mf">0.01</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mf">1e-7</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="mf">0.</span>
 
@@ -769,34 +769,22 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter: 1 delta: 28235.825615541005
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter: 1 delta: 0.28235825615541005
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter: 500 delta: 6832.1411354132
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter: 500 delta: 0.06832141135411973
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter: 1000 delta: 3251.0140515118837
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter: 1000 delta: 0.03251014051510026
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter: 1500 delta: 1711.4857647046447
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter: 1500 delta: 0.017114857647044346
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter: 2000 delta: 917.3925458248705
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1931
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">34</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span>             <span class="n">phiprime</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span>             <span class="c1"># relaxation update equation</span>
-<span class="ne">---&gt; </span><span class="mi">34</span>             <span class="n">phiprime</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="p">(</span><span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">phi</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">h</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">epsilon0</span><span class="p">)</span> <span class="o">*</span> <span class="n">rho</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span> <span class="c1"># find max difference for delta</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">phi</span><span class="o">-</span><span class="n">phiprime</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
+<img alt="../../../_images/74cce85a7a2ac5b8f1f4e5ccb523871d9d3afa0c528a838eecb5833fd29244e3.png" src="../../../_images/74cce85a7a2ac5b8f1f4e5ccb523871d9d3afa0c528a838eecb5833fd29244e3.png" />
 </div>
 </div>
 </div>
