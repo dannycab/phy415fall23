@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>12 Oct 23 - Activity: Method of Relaxation &#8212; PHY 415 Fall 2023</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -67,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="16 Oct 23 - Notes: Coupled Oscillations" href="../../3_waves/notes-coupled_oscillations.html" />
     <link rel="prev" title="10 Oct 23 - Activity: Matching Boundary Conditions and Plotting the Potential" href="../Statics/activity-sep_var_spherical_examples.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -76,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -263,6 +275,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415fall23&urlpath=lab/tree/phy415fall23/content/2_EM/Numerics/activity-relaxation_2d.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com""/github/dannycab/phy415fall23/blob/master/content/2_EM/Numerics/activity-relaxation_2d.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -271,7 +332,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23" target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +349,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/2_EM/Numerics/activity-relaxation_2d.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/2_EM/Numerics/activity-relaxation_2d.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -372,10 +433,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -383,7 +444,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -430,8 +491,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-activity-method-of-relaxation">
-<h1>12 Oct 23 - Activity: Method of Relaxation<a class="headerlink" href="#oct-23-activity-method-of-relaxation" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="oct-23-activity-method-of-relaxation">
+<h1>12 Oct 23 - Activity: Method of Relaxation<a class="headerlink" href="#oct-23-activity-method-of-relaxation" title="Permalink to this heading">#</a></h1>
 <p>As we discussed, we can use the relaxation approach to solve Laplace’s equation. As a reminder the process for doing this is as follows:</p>
 <ol class="arabic simple">
 <li><p>Divide the region into a grid</p></li>
@@ -449,15 +510,15 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="dimensional-relaxation">
-<h2>1 Dimensional Relaxation<a class="headerlink" href="#dimensional-relaxation" title="Permalink to this headline">#</a></h2>
+<section id="dimensional-relaxation">
+<h2>1 Dimensional Relaxation<a class="headerlink" href="#dimensional-relaxation" title="Permalink to this heading">#</a></h2>
 <p>The 1D problem is rather simple in that it produces a linear function – always. This is because the only solution to the 1D Laplace’s equation is a linear function.</p>
 <div class="math notranslate nohighlight">
 \[\frac{d^2V}{dx^2} = 0\]</div>
 <p>The solution to this equation is <span class="math notranslate nohighlight">\(V(x) = ax + b\)</span>. We can use this to test our relaxation code and make sure that it is accurate. In general, you cannot do this and instead need to have some other mechanism for checking the accuracy of your code (like <a class="reference external" href="https://en.wikipedia.org/wiki/Rate_of_convergence">convergence</a>).</p>
 <p>Below, we have written the 1D code as a set of functions.</p>
-<div class="section" id="initialize-the-grid-and-set-the-boundary-conditions">
-<h3>Initialize the Grid and set the Boundary Conditions<a class="headerlink" href="#initialize-the-grid-and-set-the-boundary-conditions" title="Permalink to this headline">#</a></h3>
+<section id="initialize-the-grid-and-set-the-boundary-conditions">
+<h3>Initialize the Grid and set the Boundary Conditions<a class="headerlink" href="#initialize-the-grid-and-set-the-boundary-conditions" title="Permalink to this heading">#</a></h3>
 <p>We wrote two functions <code class="docutils literal notranslate"><span class="pre">initialize_grid</span></code> and <code class="docutils literal notranslate"><span class="pre">set_boundary_conditions</span></code> that initialize a linear grid and also set the boundary conditions. The <code class="docutils literal notranslate"><span class="pre">initialize_grid</span></code> function simply sets all values to zero and then <code class="docutils literal notranslate"><span class="pre">set_boundary_conditions</span></code> sets the values at the edges to the correct values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -476,9 +537,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="relaxation">
-<h3>Relaxation<a class="headerlink" href="#relaxation" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="relaxation">
+<h3>Relaxation<a class="headerlink" href="#relaxation" title="Permalink to this heading">#</a></h3>
 <p>The core relaxation function is <code class="docutils literal notranslate"><span class="pre">run_relaxation</span></code>. Notice that it takes in the number of iterations (<code class="docutils literal notranslate"><span class="pre">num_iterations</span></code>); that is, the number of times you want the relaxation algorithm to run. That is, it will calculate the average of the neighboring points fully, and repeat it a limited number of times.</p>
 <p><strong>This is not how the typical relaxation approach works.</strong></p>
 <p>Normally, you would run the algorithm until the changes between each iteration are below some error tolerance you’ve chosen. This can lead to (near)infinite loops if your approach: (1) doesn’t converge or (2) converges very slowly.  So it is important to have a maximum number of iterations to run. <strong>You will modify the 1D code to do this.</strong></p>
@@ -505,9 +566,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plotting">
-<h3>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="plotting">
+<h3>Plotting<a class="headerlink" href="#plotting" title="Permalink to this heading">#</a></h3>
 <p>Our relaxtion algorithm stores a list of grids at different points in the relaxation process. We can use this to plot the potential at different points. Below, we have a function that does just that.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -524,9 +585,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="let-s-run-it">
-<h3>Let’s run it<a class="headerlink" href="#let-s-run-it" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="let-s-run-it">
+<h3>Let’s run it<a class="headerlink" href="#let-s-run-it" title="Permalink to this heading">#</a></h3>
 <p>We run the code below for linear grid of 100 points. The left boundary condition (<span class="math notranslate nohighlight">\(x=0\)</span>) is set to zero and the right one (<span class="math notranslate nohighlight">\(x=a\)</span>) is set to 10. Notice that there is an exact solution:</p>
 <div class="math notranslate nohighlight">
 \[V(x) = 10\frac{x}{a}\]</div>
@@ -593,10 +654,10 @@ document.write(`
 <li><p>Modify the code to do a better job of predicting the exact solution. Get the maximum absolute error below 0.01, 0.001, 1e-4, 1e-5. How many iterations does it take to get to each of these values?</p></li>
 <li><p>Modify the code to stop when the maximum absolute error is below a value of your choosing. Did you include a <code class="docutils literal notranslate"><span class="pre">max_iterations</span></code> variable? If not, do so to avoid infinite loops.</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="d-relaxation">
-<h2>2D Relaxation<a class="headerlink" href="#d-relaxation" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="d-relaxation">
+<h2>2D Relaxation<a class="headerlink" href="#d-relaxation" title="Permalink to this heading">#</a></h2>
 <p>The 2D relaxation code is very similar to the 1D code. One difference is that the grid has to be traversed in both directions. This means that you will need to move systematically through the 2D grid. The second is that you have to ensure the boundary conditions are set across the entire edge of the grid.</p>
 <p>We recommend breaking the approach into similar functions as above.</p>
 <ol class="arabic simple">
@@ -695,9 +756,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="what-about-poisson-s-equation">
-<h2>What about Poisson’s equation?<a class="headerlink" href="#what-about-poisson-s-equation" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="what-about-poisson-s-equation">
+<h2>What about Poisson’s equation?<a class="headerlink" href="#what-about-poisson-s-equation" title="Permalink to this heading">#</a></h2>
 <p>It turns out we can use a very similar approach when we have charges! Alia has written up a script that implements the relaxation approach for Poisson’s equation. You can find it below along with the derivation.</p>
 <div class="math notranslate nohighlight">
 \[\nabla^2 \phi = -\frac{\rho}{\epsilon_0}\]</div>
@@ -787,8 +848,8 @@ document.write(`
 <img alt="../../../_images/74cce85a7a2ac5b8f1f4e5ccb523871d9d3afa0c528a838eecb5833fd29244e3.png" src="../../../_images/74cce85a7a2ac5b8f1f4e5ccb523871d9d3afa0c528a838eecb5833fd29244e3.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -815,11 +876,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../Statics/activity-sep_var_spherical_examples.html"
@@ -839,10 +899,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -913,8 +970,8 @@ By Danny Caballero, Alia Valentine
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

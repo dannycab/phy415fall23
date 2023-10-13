@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>16 Oct 23 - Notes: Introduction to Waves &#8212; PHY 415 Fall 2023</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -67,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Worked Problem Assignment 1" href="../9_assignments/worked-problem-1.html" />
     <link rel="prev" title="16 Oct 23 - Notes: Coupled Oscillations" href="notes-coupled_oscillations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -76,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -263,6 +275,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415fall23&urlpath=lab/tree/phy415fall23/content/3_waves/notes-waves_intro.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com""/github/dannycab/phy415fall23/blob/master/content/3_waves/notes-waves_intro.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -271,7 +332,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23" target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +349,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/3_waves/notes-waves_intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/3_waves/notes-waves_intro.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -372,10 +433,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -383,7 +444,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -428,51 +489,51 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-notes-introduction-to-waves">
-<h1>16 Oct 23 - Notes: Introduction to Waves<a class="headerlink" href="#oct-23-notes-introduction-to-waves" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="oct-23-notes-introduction-to-waves">
+<h1>16 Oct 23 - Notes: Introduction to Waves<a class="headerlink" href="#oct-23-notes-introduction-to-waves" title="Permalink to this heading">#</a></h1>
 <p>Coupled oscillations are quite common in nature; collections of objects and larger systems exhibit oscillatory behavior frequently. At times, the number of objects in a system that are oscillating are so many that we begin to zoom out and look at the behavior not of individual elements but of larger collections. This is moving to a continuum view of this oscillatory behavior. Consider going from 1 SHO, to two coupled SHO, to N coupled SHOs where N is very large, and, finally to a rope. It seems like there is a connection between a rope and a set of SHOs. Indeed, we can develop the wave equation for a rope using this kind of modeling. That is a well-known result, so we will instead use it. We start with motivating ourselves with how important waves are to our understanding of nature.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=hebGhsNsjG0"><img alt="Graviational Waves" src="https://markdown-videos-api.jorgenkh.no/youtube/hebGhsNsjG0?width=720&amp;height=405" /></a></p>
 <ul class="simple">
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=hebGhsNsjG0">https://inv.tux.pizza/watch?v=hebGhsNsjG0</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=hebGhsNsjG0">https://youtube.com/watch?v=hebGhsNsjG0</a></p></li>
 </ul>
-<div class="section" id="gravitational-waves">
-<h2>Gravitational Waves<a class="headerlink" href="#gravitational-waves" title="Permalink to this headline">#</a></h2>
+<section id="gravitational-waves">
+<h2>Gravitational Waves<a class="headerlink" href="#gravitational-waves" title="Permalink to this heading">#</a></h2>
 <p>Predicted by the <a class="reference external" href="https://en.wikipedia.org/wiki/General_relativity">General Theory of Relativity</a> in the early 20th centruty, but only <a class="reference external" href="https://news.mit.edu/2016/ligo-first-detection-gravitational-waves-0211">observed less than a decade</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/First_observation_of_gravitational_waves">gravitational waves</a> are not only a critical finding in our search to understand the universe, but also a new [way to observe] the universe! These waves ripple through space time, disrupting matter on the smallest of scales. The LIGO detector’s strain sensitivity (how small a deformation it can detect) is incredible. At scale, LIGO can detect a change in length about the width of your thumb over a distance that would be between us and the next closest galaxy. That is incredibly sensitive.</p>
 <div class="admonition-discovery-of-gravitation-waves admonition">
 <p class="admonition-title">Discovery of Gravitation Waves</p>
 <p>The work to find measure gravitational waves has been a long effort. Since the prediction of these waves by Einstein in 1916, folks have tried to push experimentalists to construct a detector. Enter LIGO, the massive gravitational wave observatories in Louisiana and Washington State. These detectors were discussed since the 1960s! But only started to be developed in the late 1990s. These detectors consist of two 3km long interferometers that measure the time of flight between ends of the detectors. The length is needed because the changes are so small! They came online in 2002, observing the first gravitational wave on 14 Sept 2015 at 5:51AM ET.</p>
 <p>One scientist who lead the LIGO team and has been instrumental in the work of LIGO since then is <a class="reference external" href="https://physics.mit.edu/faculty/nergis-mavalvala/">Nergis Mavalvala</a>. She is a MacArthur award winning scientist who directed the first successful LIGO mission. While the <a class="reference external" href="https://www.nobelprize.org/prizes/physics/2017/press-release/">2017 Nobel prize</a> went to the Rainer Weiss, Barry Barish and Kip Throne for their pioneering work on gravitational waves including immense contributions to the design and development of LIGO, it was Mavalvala who directed the mission.</p>
 </div>
-</div>
-<div class="section" id="the-wave-equation">
-<h2>The Wave Equation<a class="headerlink" href="#the-wave-equation" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="the-wave-equation">
+<h2>The Wave Equation<a class="headerlink" href="#the-wave-equation" title="Permalink to this heading">#</a></h2>
 <p>There are <em>many</em> wave equations. They simply describe the relationship between how something changes in space and time. It is a specific relationship that relates the influences (e.g., forces, electric interactions, viscosity, etc.) to what we can observe (e.g., changes in height, frequency, color, or number). But the one to being with is the the most basic one. By basic, we do not mean that it is simple but rather that it is the basis for many other wave equations. This is the 1D wave equation for a rope:</p>
 <div class="math notranslate nohighlight">
 \[\dfrac{\partial^2 h(x,t)}{\partial t^2} = \dfrac{T_0}{\rho_0}\dfrac{\partial^2 h(x,t)}{dx^2}\]</div>
 <p>The function <span class="math notranslate nohighlight">\(h(x,t)\)</span> represent the height of the string relative to some zero line both along the strong (in the <span class="math notranslate nohighlight">\(x\)</span> direction) and over time (as <span class="math notranslate nohighlight">\(t\)</span> marches forward).</p>
 <p>Solving this equation in general can be done using a standing wave solution - the continuous analog to our normal modes approach for coupled oscillators. We can guess the mode will be oscillatory and derive the resulting general solution. This is done in the principal reading below, which comes from Crawford’s Waves book.</p>
-</div>
-<div class="section" id="additional-resources">
-<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">#</a></h2>
-<div class="section" id="crawford-s-waves-book">
-<h3>Crawford’s Waves Book<a class="headerlink" href="#crawford-s-waves-book" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h2>
+<section id="crawford-s-waves-book">
+<h3>Crawford’s Waves Book<a class="headerlink" href="#crawford-s-waves-book" title="Permalink to this heading">#</a></h3>
 <p>Crawford’s book is excellent here, but derives the equation from first principles. This is important physics, but I do not expect you to develop such a model from scratch. It is an important derivation that shows how we start many PDE problems. More important to our work those is what appears from pages 54 forward. The solutions and their meaning. We will get to using Fast Fourier Transforms starting from this, but you don’t need to read about the Fourier Analysis yet. Just focus on Secs. 2.1-2.2 and the first parts of 2.3.</p>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../../_downloads/5729ae9ed843c96c8d530caa3c504f67/Crawford-Waves-Sec_2.1-2.3.pdf"><span class="xref download myst">Crawford Sec 2.1-2.3</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="lecture-video">
-<h3>Lecture Video<a class="headerlink" href="#lecture-video" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="lecture-video">
+<h3>Lecture Video<a class="headerlink" href="#lecture-video" title="Permalink to this heading">#</a></h3>
 <p>The video below covers the Crawford’s book in the first 30 minutes. The instructor speaks quickly, but the content is solid and follows what you’ll read fairly well. If you want more of the mathematical background, watch this video for sure. We will cover some of it in class, but you are not expected you to derive it.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=1JeBWHzrRD4"><img alt="Waves Lecture" src="https://markdown-videos-api.jorgenkh.no/youtube/1JeBWHzrRD4?width=720&amp;height=405" /></a></p>
 <ul class="simple">
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=1JeBWHzrRD4">https://inv.tux.pizza/watch?v=1JeBWHzrRD4</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=1JeBWHzrRD4">https://youtube.com/watch?v=1JeBWHzrRD4</a></p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -499,11 +560,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="notes-coupled_oscillations.html"
@@ -523,10 +583,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -595,8 +652,8 @@ By Danny Caballero, Alia Valentine
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

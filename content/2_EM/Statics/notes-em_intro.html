@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>26 Sept 23 - Notes: Maxwell’s Equations &#8212; PHY 415 Fall 2023</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -67,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="26 Sept 23 - Notes: Static Fields" href="notes-static_fields.html" />
     <link rel="prev" title="19 Sep 23 - The Duffing Oscillator" href="../../1_mechanics/dynamical_systems/activity-duffing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -76,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -263,6 +275,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415fall23&urlpath=lab/tree/phy415fall23/content/2_EM/Statics/notes-em_intro.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com""/github/dannycab/phy415fall23/blob/master/content/2_EM/Statics/notes-em_intro.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -271,7 +332,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23" target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +349,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/2_EM/Statics/notes-em_intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/2_EM/Statics/notes-em_intro.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -372,10 +433,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -383,7 +444,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -432,23 +493,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sept-23-notes-maxwell-s-equations">
-<h1>26 Sept 23 - Notes: Maxwell’s Equations<a class="headerlink" href="#sept-23-notes-maxwell-s-equations" title="Permalink to this headline">#</a></h1>
-<div class="section" id="electromagnetic-phenomena">
-<h2>Electromagnetic Phenomena<a class="headerlink" href="#electromagnetic-phenomena" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="sept-23-notes-maxwell-s-equations">
+<h1>26 Sept 23 - Notes: Maxwell’s Equations<a class="headerlink" href="#sept-23-notes-maxwell-s-equations" title="Permalink to this heading">#</a></h1>
+<section id="electromagnetic-phenomena">
+<h2>Electromagnetic Phenomena<a class="headerlink" href="#electromagnetic-phenomena" title="Permalink to this heading">#</a></h2>
 <p>You have certainly experienced a wide variety of electromagnetic phenomena in your life – both natural (e.g., a sun rise, a rainbow, your hair standing on end) and human-made (e.g., switching on a light, using a microwave, using a cell phone). We now know that we can explain many of those phenomenon using a set of four partial differential equations: <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell%27s_equations">Maxwell’s Equations</a>. These equations describe a new mathematical object: a <a class="reference external" href="https://en.wikipedia.org/wiki/Field_(physics)">field</a>. The models that we develop from this theory are still <a class="reference external" href="https://en.wikipedia.org/wiki/Classical_physics">Classical</a> – in that we don’t consider quantum mechanical effects. Rather we treat the fields as continuous functions of space and time.</p>
 <p>While this might not seem that this classical theory is still useful in modern research, it is often the basis for much of the work done in physics. In fact, some important fusion energy research uses <a class="reference external" href="https://en.wikipedia.org/wiki/Magnetic_confinement_fusion">magnetic confinement</a>, which is effectively a classical electromagnetic phenomenon. The South Korean experimental fusion reactor, <a class="reference external" href="https://en.wikipedia.org/wiki/KSTAR">KSTAR</a>, is an example of this type of research, and it recently <a class="reference external" href="https://www.popularmechanics.com/science/energy/a41191247/koreas-fusion-reactor-sustained-temperatures-7-times-hotter-than-the-sun-for-30-seconds/">sustained temperatures of 100 million degrees Celsius</a>.</p>
-<div class="section" id="magnetic-confinement-in-fusion-energy">
-<h3>Magnetic Confinement in Fusion Energy<a class="headerlink" href="#magnetic-confinement-in-fusion-energy" title="Permalink to this headline">#</a></h3>
+<section id="magnetic-confinement-in-fusion-energy">
+<h3>Magnetic Confinement in Fusion Energy<a class="headerlink" href="#magnetic-confinement-in-fusion-energy" title="Permalink to this heading">#</a></h3>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=PWCqwZoE0FY"><img alt="Magnetic Confinement" src="https://markdown-videos-api.jorgenkh.no/youtube/PWCqwZoE0FY?width=720&amp;height=405" /></a></p>
 <ul class="simple">
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=PWCqwZoE0FY">https://inv.tux.pizza/watch?v=PWCqwZoE0FY</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=PWCqwZoE0FY">https://youtube.com/watch?v=PWCqwZoE0FY</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="developing-a-complete-theory">
-<h2>Developing a complete theory<a class="headerlink" href="#developing-a-complete-theory" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="developing-a-complete-theory">
+<h2>Developing a complete theory<a class="headerlink" href="#developing-a-complete-theory" title="Permalink to this heading">#</a></h2>
 <p>The work to develop <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell%27s_equations">Maxwell’s Equations</a> was substantial and involved not only theoretical developments but confirmations using experiments. A model of reality is only as good as its ability to predict the results of experiments, which classical electromagnetism does very well (up to the point of quantum phenomena). The resulting Maxwell Equations that describe the electric (<span class="math notranslate nohighlight">\(\mathbf{E}\)</span>) and magnetic (<span class="math notranslate nohighlight">\(\mathbf{B}\)</span>) fields (in vacuum) are given by:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -499,21 +560,21 @@ document.write(`
 \oint \mathbf{B} \cdot d\mathbf{l} = \mu_0 \int \mathbf{J} \cdot d\mathbf{A} + \mu_0 \varepsilon_0 \frac{d}{dt} \int \mathbf{E} \cdot d\mathbf{A}
 \]</div>
 <p>We will work with different aspects of these equations as we make different assumptions about the physical system.</p>
-<div class="section" id="a-comment-on-the-development-of-this-theory">
-<h3>A comment on the development of this theory<a class="headerlink" href="#a-comment-on-the-development-of-this-theory" title="Permalink to this headline">#</a></h3>
+<section id="a-comment-on-the-development-of-this-theory">
+<h3>A comment on the development of this theory<a class="headerlink" href="#a-comment-on-the-development-of-this-theory" title="Permalink to this heading">#</a></h3>
 <p>During the development of Classical Electromagnetism, physics research was often lead by single individuals with small armies of technicians, specialists, drafters, secretarial staff, and the like. While presented as the intellectual work of a single person, the work was an effort by a number of underpaid and under-recognized people (including, at the time, women and non-white men) who are unnamed in many books. A classical, and non critical, view of the development appears below in the video, but also in Meyer’s book <a class="reference external" href="https://mitpress.mit.edu/9780262130707/a-history-of-electricity-and-magnetism/">A History of Electricity and Magnetism</a>. A more nuanced view of how science develops and is negotiated appears in Traweek’s book <a class="reference external" href="https://en.wikipedia.org/wiki/Beamtimes_and_Lifetimes">Beamtimes and Lifetimes</a>.</p>
-<div class="section" id="the-mechanical-universe">
-<h4>The Mechanical Universe<a class="headerlink" href="#the-mechanical-universe" title="Permalink to this headline">#</a></h4>
+<section id="the-mechanical-universe">
+<h4>The Mechanical Universe<a class="headerlink" href="#the-mechanical-universe" title="Permalink to this heading">#</a></h4>
 <p>This video from the <a class="reference external" href="https://en.wikipedia.org/wiki/The_Mechanical_Universe">Mechanical Universe series</a> and tells the story of the development of this theory. The video is dated and sexist and the instructor’s stories are similarly problematic. The video puts scientists on a pedestal. But, it is worth a watch, both to recognize the history as presented and to reckon with the issues that these perspectives have continued to perpetuate.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=SS4tcajTsW8"><img alt="Maxwell's Equations" src="https://markdown-videos-api.jorgenkh.no/youtube/SS4tcajTsW8?width=720&amp;height=405" /></a></p>
 <ul class="simple">
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=SS4tcajTsW8">https://inv.tux.pizza/watch?v=SS4tcajTsW8</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=SS4tcajTsW8">https://youtube.com/watch?v=SS4tcajTsW8</a></p></li>
 </ul>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -540,11 +601,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../../1_mechanics/dynamical_systems/activity-duffing.html"
@@ -564,10 +624,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -640,8 +697,8 @@ By Danny Caballero, Alia Valentine
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

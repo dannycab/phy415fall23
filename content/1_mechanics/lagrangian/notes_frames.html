@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>31 Aug 23 - Notes: Frames and Coordinates &#8212; PHY 415 Fall 2023</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -67,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="31 Aug 23 - Activity: Frames and Coordinates" href="activity-frames.html" />
     <link rel="prev" title="29 Aug 23 - Notes: Simple Harmonic Oscillator" href="../sho/notes-SHO.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -76,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -271,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23" target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +300,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/1_mechanics/lagrangian/notes_frames.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/1_mechanics/lagrangian/notes_frames.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -372,10 +384,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -383,7 +395,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -432,28 +444,28 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="aug-23-notes-frames-and-coordinates">
-<h1>31 Aug 23 - Notes: Frames and Coordinates<a class="headerlink" href="#aug-23-notes-frames-and-coordinates" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="aug-23-notes-frames-and-coordinates">
+<h1>31 Aug 23 - Notes: Frames and Coordinates<a class="headerlink" href="#aug-23-notes-frames-and-coordinates" title="Permalink to this heading">#</a></h1>
 <p>A <strong>Frame of Reference</strong>, <strong>Reference Frame</strong>, or simply <strong>Frame</strong> is a set of coordinates. These coordinates describe where things are. Sometimes it makes sense to choose different coordinates to describe the same situation. It is also important to recognize when to change coordinates to make a problem easier to work with. This will lead us to the concept of <a class="reference external" href="https://en.wikipedia.org/wiki/Generalized_coordinates">generalized coordinates</a>, which are quite powerful in working with mechanical systems.</p>
 <p>In physics, we often seek to work with a problem in the simplest way possible. That means we are typically looking to work with a problem in an <strong>inertial frame</strong>. Now, this is not always possible, consider systems that can flow and deform like in fluid mechanics or continuum mechanics. But, regardless, we should always know what frame we are working in.</p>
 <p>An <strong>inertial frame</strong> is a reference frame where Newton’s First Law holds, which means that in this frame a net force of zero means an acceleration of zero. In practice, this means that if you have two frames that are moving at a constant velocity relative to each other (without rotation), these are inertial frames.</p>
-<div class="section" id="video-reminder-about-inertial-frames">
-<h2>Video Reminder about Inertial Frames<a class="headerlink" href="#video-reminder-about-inertial-frames" title="Permalink to this headline">#</a></h2>
+<section id="video-reminder-about-inertial-frames">
+<h2>Video Reminder about Inertial Frames<a class="headerlink" href="#video-reminder-about-inertial-frames" title="Permalink to this heading">#</a></h2>
 <p>From Physics Professor <a class="reference external" href="https://www.youtube.com/user/yoprofmatt">Matt Anderson</a> (6min 33s)</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=WqWWM0673bk"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/WqWWM0673bk?width=720&amp;height=405" /></a></p>
 <ul class="simple">
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=WqWWM0673bk">https://inv.tux.pizza/watch?v=WqWWM0673bk</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=WqWWM0673bk">https://youtube.com/watch?v=WqWWM0673bk</a></p></li>
 </ul>
-</div>
-<div class="section" id="relative-velocities-in-cartesian-coordinates">
-<h2>Relative Velocities in Cartesian Coordinates<a class="headerlink" href="#relative-velocities-in-cartesian-coordinates" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="relative-velocities-in-cartesian-coordinates">
+<h2>Relative Velocities in Cartesian Coordinates<a class="headerlink" href="#relative-velocities-in-cartesian-coordinates" title="Permalink to this heading">#</a></h2>
 <p>Suppose you’re walking down Shaw Lane eager to get to BPS for your favorite physics class at constant velocity <span class="math notranslate nohighlight">\(v_A\)</span> when you notice a <a class="reference external" href="https://www.instagram.com/qualitysquirrelsofmsu/">squirrel</a> sitting stationary on the sidewalk <span class="math notranslate nohighlight">\(d\)</span> meters in front of you. Like an reasonable person, you naturally feel the urge to unnecessarily and mathematically analyze this situation using reference frames.</p>
 <p>Let’s call your reference frame <span class="math notranslate nohighlight">\(A\)</span> and the squirrel’s <span class="math notranslate nohighlight">\(B\)</span>. We’ll ignore height differences between you and the squirrel, which we assume are negligible given the amount of food our squirrels are consuming lately.</p>
 <p>A note on notation: <span class="math notranslate nohighlight">\(r_{A/B}\)</span> means “the position of <strong>object</strong> <span class="math notranslate nohighlight">\(A\)</span> in <strong>frame</strong> <span class="math notranslate nohighlight">\(B\)</span>,” or simply “the position of <span class="math notranslate nohighlight">\(A\)</span> relative to <span class="math notranslate nohighlight">\(B\)</span>.”</p>
 <img src="../../assets/squirrel1.png" alt="squirrel1" width=500px/>
-<div class="section" id="reminders-about-frames-and-linear-frame-changes">
-<h3>Reminders about frames and linear frame changes<a class="headerlink" href="#reminders-about-frames-and-linear-frame-changes" title="Permalink to this headline">#</a></h3>
+<section id="reminders-about-frames-and-linear-frame-changes">
+<h3>Reminders about frames and linear frame changes<a class="headerlink" href="#reminders-about-frames-and-linear-frame-changes" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>What is the squirrel’s position in your frame, <span class="math notranslate nohighlight">\(\mathbf{r}_{B/A}\)</span>?</p></li>
 </ol>
@@ -527,18 +539,18 @@ Answer<div class="sd-summary-down docutils">
 <p class="sd-card-text">In the squirrel’s frame, you are now stationary, the distance between you and the squirrel remains constant. Thus, <span class="math notranslate nohighlight">\(\mathbf{v}_{B/A} = \mathbf{0}\)</span>.</p>
 </div>
 </details><p>Hopefully these are intuitive from what you’ve learned back in introductory physics, but there are subtleties to the mathematics that you just did. These issues are incredibly important for working in other coordinate systems and do analysis between frames.</p>
-</div>
-</div>
-<div class="section" id="is-there-a-relationship-between-mathbf-v-b-a-and-mathbf-v-a-b">
-<h2>Is there a relationship between <span class="math notranslate nohighlight">\(\mathbf{v}_{B/A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}_{A/B}\)</span>?<a class="headerlink" href="#is-there-a-relationship-between-mathbf-v-b-a-and-mathbf-v-a-b" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="is-there-a-relationship-between-mathbf-v-b-a-and-mathbf-v-a-b">
+<h2>Is there a relationship between <span class="math notranslate nohighlight">\(\mathbf{v}_{B/A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}_{A/B}\)</span>?<a class="headerlink" href="#is-there-a-relationship-between-mathbf-v-b-a-and-mathbf-v-a-b" title="Permalink to this heading">#</a></h2>
 <p>This is relatively simple to understand if we consider the position of one object (C) in two different frames (A and B). The location of object C in frame A is <span class="math notranslate nohighlight">\(\mathbf{r}_{C/A}\)</span> and in frame B is <span class="math notranslate nohighlight">\(\mathbf{r}_{C/B}\)</span>. Note that these vectors point from the origin of the frame (A or B) to the position of the object (C). See below.</p>
 <img src="../../assets/frame_vectors.png" alt="Diagram showing relative position vectors for three different points to illustrate the mathematical relationship between the position vectors." width=500px/>
 <p>From this diagram it is clear that we can write the following relationship between the position vectors:</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{r}_{C/A} = \mathbf{r}_{B/A} + \mathbf{r}_{C/B}\]</div>
 <p>In words this states, if we measure the distance vector from A to C, then that is the same as adding the distance vectors that measure from A to B and then B to C. This distance concept holds in any coordinate system and even where the concept of coordinates is more abstract. We can define relationships between locations in real (and imagined) spaces using vectors.</p>
-<div class="section" id="what-about-the-velocities">
-<h3>What about the velocities?<a class="headerlink" href="#what-about-the-velocities" title="Permalink to this headline">#</a></h3>
+<section id="what-about-the-velocities">
+<h3>What about the velocities?<a class="headerlink" href="#what-about-the-velocities" title="Permalink to this heading">#</a></h3>
 <p>Here we have to be a bit more careful. Normally, you would think we can simply take derivatives like this:</p>
 <div class="math notranslate nohighlight">
 \[\dot{\mathbf{r}}_{C/A} = \dot{\mathbf{r}}_{B/A} + \dot{\mathbf{r}}_{C/B}\]</div>
@@ -554,9 +566,9 @@ Answer<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \[\dot{\mathbf{r}} = \frac{d}{dt} \mathbf{r} = \frac{dx}{dt}\mathbf{\hat x} + \frac{d\mathbf{\hat x}}{dt} x + \frac{dy}{dt}\mathbf{\hat y} + \frac{d\mathbf{\hat y}}{dt} y + \frac{dz}{dt}\mathbf{\hat z} + \frac{d\mathbf{\hat z}}{dt} z = \dot{x}\mathbf{\hat x} + \dot{y}\mathbf{\hat y} + \dot{z} \mathbf{\hat z}.\]</div>
 <p>because the derivatives of the unit vectors vanish. Later, we’ll figure out what happens when you have non-constant unit vectors.</p>
-</div>
-<div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h3>
 <p>Let’s use these transformations in a problem.</p>
 <p>A second squirrel appears, which we’ll call squirrel <span class="math notranslate nohighlight">\(C\)</span>. This scares the first squirrel into running toward you (<span class="math notranslate nohighlight">\(\mathbf{v}_{B/A}\)</span>), while the new squirrel runs away (<span class="math notranslate nohighlight">\(\mathbf{v}_{C/A}\)</span>).</p>
 <img src="../../assets/squirrel2.png" alt="Picutre of person and two squirrels, show the first squirrel running towards the person and the second running away." width=650px/>
@@ -579,10 +591,10 @@ Answer<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \[\mathbf{v}_{B/C} = \mathbf{v}_{B/A} - \mathbf{v}_{C/A}\]</div>
 </div>
-</details></div>
-</div>
-<div class="section" id="the-galilean-transformation">
-<h2>The Galilean Transformation<a class="headerlink" href="#the-galilean-transformation" title="Permalink to this headline">#</a></h2>
+</details></section>
+</section>
+<section id="the-galilean-transformation">
+<h2>The Galilean Transformation<a class="headerlink" href="#the-galilean-transformation" title="Permalink to this heading">#</a></h2>
 <p>We just did an example of a <a class="reference external" href="https://https://en.wikipedia.org/wiki/Galilean_transformation"><strong>Galilean Transformation</strong></a>. Traditionally, if we have a frame <span class="math notranslate nohighlight">\(B\)</span> that with moves with constant velocity <span class="math notranslate nohighlight">\(v_{B/A}\)</span> with respect to frame <span class="math notranslate nohighlight">\(A\)</span>, we re-write the above equations as the following:</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{v}_B = \mathbf{v}_A - \textbf{v}_{B/A}\]</div>
@@ -591,8 +603,8 @@ Answer<div class="sd-summary-down docutils">
 <p>Where we have taken <span class="math notranslate nohighlight">\(_A\)</span> to mean <span class="math notranslate nohighlight">\(_{C/A}\)</span> and <span class="math notranslate nohighlight">\(_B\)</span> to mean <span class="math notranslate nohighlight">\(_{C/B}\)</span>. Also note that since we are ignoring relativistic effects, we also have that:</p>
 <div class="math notranslate nohighlight">
 \[t_B = t_A\]</div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -619,11 +631,10 @@ Answer<div class="sd-summary-down docutils">
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../sho/notes-SHO.html"
@@ -643,10 +654,7 @@ Answer<div class="sd-summary-down docutils">
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -719,8 +727,8 @@ By Danny Caballero, Alia Valentine
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

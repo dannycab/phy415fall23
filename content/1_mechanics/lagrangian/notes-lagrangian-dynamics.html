@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>5 Sept 23 - Notes: Lagrangian Dynamics &#8212; PHY 415 Fall 2023</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -67,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="5 Sep 23 - Activity: Calculus of Variations and Lagrangian Dynamics" href="activity-lagrange_1.html" />
     <link rel="prev" title="31 Aug 23 - Activity: Frames and Coordinates" href="activity-frames.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -76,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -263,6 +275,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415fall23&urlpath=lab/tree/phy415fall23/content/1_mechanics/lagrangian/notes-lagrangian-dynamics.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com""/github/dannycab/phy415fall23/blob/master/content/1_mechanics/lagrangian/notes-lagrangian-dynamics.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -271,7 +332,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23" target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +349,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/1_mechanics/lagrangian/notes-lagrangian-dynamics.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/1_mechanics/lagrangian/notes-lagrangian-dynamics.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -372,10 +433,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -383,7 +444,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -437,8 +498,8 @@ document.write(`
 <li><p>Any Classical Mechanics Book Section on Lagrangian Dynamics</p></li>
 <li><p><a class="reference external" href="https://www.physics.rutgers.edu/~shapiro/507/book.pdf">[Section 2.1 and 2.2 of Shapiro’s Book is online]</a></p></li>
 </ul>
-<div class="tex2jax_ignore mathjax_ignore section" id="sept-23-notes-lagrangian-dynamics">
-<h1>5 Sept 23 - Notes: Lagrangian Dynamics<a class="headerlink" href="#sept-23-notes-lagrangian-dynamics" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="sept-23-notes-lagrangian-dynamics">
+<h1>5 Sept 23 - Notes: Lagrangian Dynamics<a class="headerlink" href="#sept-23-notes-lagrangian-dynamics" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion">Newtonian Mechanics</a> is an incredibly useful model of the natural world. In fact, it wasn’t until the mid 1970s that we were able to truly <a class="reference external" href="https://en.wikipedia.org/wiki/Tests_of_general_relativity">test Einstein’s gravity as a true replacement</a> for Newton. That being said, for most terrestrial situations (macroscopic objects moving at low speeds), Newton’s mechanics is very good. However, the problem with Newton is that it requires a few things:</p>
 <ol class="arabic simple">
 <li><p>We must be able identify each interaction on the object or model an average behavior from many littler interactions (e.g., models of friction vs. detailed E&amp;M forces)</p></li>
@@ -455,8 +516,8 @@ document.write(`
 <li><p>The one that minimizes the action integral over that time/space is the one the system takes</p></li>
 </ol>
 <p>This might seem magical! But it’s truly a deep connection to the energetics of the system, which limit the the relevant equations of motion by both the number of degrees of freedom (ways the system can move) and the constraints equation (things that influence the motion).</p>
-<div class="section" id="variational-analysis">
-<h2>Variational Analysis<a class="headerlink" href="#variational-analysis" title="Permalink to this headline">#</a></h2>
+<section id="variational-analysis">
+<h2>Variational Analysis<a class="headerlink" href="#variational-analysis" title="Permalink to this heading">#</a></h2>
 <p>The name of the game in calculus of variations is finding extrema (minima, maxima, or stationary points) of integrals that have the form:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -468,8 +529,8 @@ S = \int_{x_1}^{x_2} f[y(x),\dot{y}(x),x] dx
 \[
 \frac{\partial f}{\partial y} - \frac{d}{dx}\left(\frac{\partial f}{\partial \dot{y}} \right) = 0
 \]</div>
-<div class="section" id="applications-to-classical-mechanics">
-<h3>Applications to Classical Mechanics<a class="headerlink" href="#applications-to-classical-mechanics" title="Permalink to this headline">#</a></h3>
+<section id="applications-to-classical-mechanics">
+<h3>Applications to Classical Mechanics<a class="headerlink" href="#applications-to-classical-mechanics" title="Permalink to this heading">#</a></h3>
 <p>In practice, when approaching a variational problem, the typical workflow if something like this:</p>
 <ol class="arabic simple">
 <li><p>Write your problem down in the form of an integral like <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
@@ -494,22 +555,22 @@ S = \int_{t_1}^{t_2} \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} dt
 \frac{\partial \mathcal{L}}{\partial q_i} - \frac{d}{dt}\left(\frac{\partial \mathcal{L}}{\partial \dot{q}_i} \right) = 0
 \]</div>
 <p>Once we perform these derivatives on this function, we will obtain <span class="math notranslate nohighlight">\(n\)</span> equations of motion (EOM) for our system; one for each generalized coordinate (<span class="math notranslate nohighlight">\(q_i\)</span>). Note how we didn’t have to know anything about the forces acting on our system to arrive at equations of motion, but rather the energy.</p>
-</div>
-</div>
-<div class="section" id="video-on-lagrangian-dynamics">
-<h2>Video on Lagrangian Dynamics<a class="headerlink" href="#video-on-lagrangian-dynamics" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="video-on-lagrangian-dynamics">
+<h2>Video on Lagrangian Dynamics<a class="headerlink" href="#video-on-lagrangian-dynamics" title="Permalink to this heading">#</a></h2>
 <p>Parth G. has a lovely video below about the basics of Lagrangian Dynamics.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=KpLno70oYHE"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/KpLno70oYHE?width=720&amp;height=405" /></a></p>
 <ul class="simple">
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=KpLno70oYHE">https://inv.tux.pizza/watch?v=KpLno70oYHE</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=KpLno70oYHE">https://youtube.com/watch?v=KpLno70oYHE</a></p></li>
 </ul>
-</div>
-<div class="section" id="additional-resources">
-<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h2>
 <p>My notes go into detail on the development of the Lagrangian problem. But practice is the best approach.</p>
-<div class="section" id="handwritten-notes">
-<h3>Handwritten Notes<a class="headerlink" href="#handwritten-notes" title="Permalink to this headline">#</a></h3>
+<section id="handwritten-notes">
+<h3>Handwritten Notes<a class="headerlink" href="#handwritten-notes" title="Permalink to this heading">#</a></h3>
 <p>Here are my handwritten notes on the Calculus of Variations and Lagrangian Mechanics.</p>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../../../_downloads/02356da9006e30d949ae4f8905549fe6/Notes-Calculus_of_Variations.pdf"><span class="xref download myst">Calculus of Variations</span></a></p></li>
@@ -517,27 +578,27 @@ S = \int_{t_1}^{t_2} \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} dt
 <li><p><a class="reference download internal" download="" href="../../../_downloads/d2bea0ac490d267467416e741545ba9c/Notes-Lagrangian_Example.pdf"><span class="xref download myst">Lagrangian Example</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../../_downloads/8efa84abd67acc5a791a190b9bb7fa3c/Notes-Lagrangian_Example_Gen_Force.pdf"><span class="xref download myst">Lagrangian Example with Generalized Forces and Lagrange Multipliers</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="book-readings">
-<h3>Book Readings<a class="headerlink" href="#book-readings" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="book-readings">
+<h3>Book Readings<a class="headerlink" href="#book-readings" title="Permalink to this heading">#</a></h3>
 <p>This reading is useful preparation for reminding yourself of Lagrangian Dynamics.</p>
 <ul class="simple">
 <li><p>Any classical mechanics book you like! Taylor is a good one.</p></li>
 <li><p><a class="reference external" href="https://www.physics.rutgers.edu/~shapiro/507/book.pdf">Section 2.1 and 2.2 of Shapiro’s Book</a></p></li>
 <li><p><a class="reference external" href="https://www.google.com/books/edition/A_Student_s_Guide_to_Lagrangians_and_Ham/ebTCAQAAQBAJ?hl=en&amp;gbpv=1&amp;dq=lagrangian+dynamics+book&amp;printsec=frontcover">A Google Book you can review</a></p></li>
 </ul>
-</div>
-<div class="section" id="video-resources">
-<h3>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="video-resources">
+<h3>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this heading">#</a></h3>
 <p>If you are a feeling that you would like a little direct instruction on this, this lecture is great. Lots of examples!</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=zhk9xLjrmi4"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/zhk9xLjrmi4?width=720&amp;height=405" /></a></p>
 <ul class="simple">
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=zhk9xLjrmi4">https://inv.tux.pizza/watch?v=zhk9xLjrmi4</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=zhk9xLjrmi4">https://youtube.com/watch?v=zhk9xLjrmi4</a></p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -564,11 +625,10 @@ S = \int_{t_1}^{t_2} \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} dt
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="activity-frames.html"
@@ -588,10 +648,7 @@ S = \int_{t_1}^{t_2} \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} dt
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -664,8 +721,8 @@ By Danny Caballero, Alia Valentine
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

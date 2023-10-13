@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>08 Sept 22 - Activity: Large Angle Pendulum &#8212; PHY 415 Fall 2023</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -65,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -74,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -261,6 +273,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415fall23&urlpath=lab/tree/phy415fall23/content/1_mechanics/dynamical_systems/activity-SHO_and_Large_Angles.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com""/github/dannycab/phy415fall23/blob/master/content/1_mechanics/dynamical_systems/activity-SHO_and_Large_Angles.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -269,7 +330,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23" target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +347,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/1_mechanics/dynamical_systems/activity-SHO_and_Large_Angles.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/1_mechanics/dynamical_systems/activity-SHO_and_Large_Angles.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -370,10 +431,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -381,7 +442,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -429,8 +490,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sept-22-activity-large-angle-pendulum">
-<h1>08 Sept 22 - Activity: Large Angle Pendulum<a class="headerlink" href="#sept-22-activity-large-angle-pendulum" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="sept-22-activity-large-angle-pendulum">
+<h1>08 Sept 22 - Activity: Large Angle Pendulum<a class="headerlink" href="#sept-22-activity-large-angle-pendulum" title="Permalink to this heading">#</a></h1>
 <p>Up to now, most of your work with models in physics are those you can solve analytically in terms of known functions. Think about solving differential equations that produce polynomials or sines and cosines.</p>
 <p>But what happens when the solution to the problem is not obviously tractable in an analytical form. Rather, how can we investigate systems that are new to us?</p>
 <p>This activity uses the Large Angle Pendulum. You probably have seen something like this before and maybe even worked with it. Below is a figure that describes the situation. Notice a lot of the geometry work has been done for you with this figure.</p>
@@ -454,8 +515,8 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="reminders-about-the-sho">
-<h2>Reminders about the SHO<a class="headerlink" href="#reminders-about-the-sho" title="Permalink to this headline">#</a></h2>
+<section id="reminders-about-the-sho">
+<h2>Reminders about the SHO<a class="headerlink" href="#reminders-about-the-sho" title="Permalink to this heading">#</a></h2>
 <p>To get this started, let’s remind ourselves of the phase portrait of the SHO. Recall that we separated the second order ODE into two first order ODEs, one for <span class="math notranslate nohighlight">\(x\)</span> and one for <span class="math notranslate nohighlight">\(v_x\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\dot{x} = v_x\]</div>
@@ -491,9 +552,9 @@ document.write(`
 <li><p>Repeat for all points of interest</p></li>
 <li><p>Plot arrows to demonstrate flow of the solutions in phase space</p></li>
 </ol>
-</div>
-<div class="section" id="phase-portrait-of-the-simple-harmonic-oscillator">
-<h2>Phase Portrait of the Simple Harmonic Oscillator<a class="headerlink" href="#phase-portrait-of-the-simple-harmonic-oscillator" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="phase-portrait-of-the-simple-harmonic-oscillator">
+<h2>Phase Portrait of the Simple Harmonic Oscillator<a class="headerlink" href="#phase-portrait-of-the-simple-harmonic-oscillator" title="Permalink to this heading">#</a></h2>
 <p>Below, we have written code that makes a phase portrait from the simple harmonic oscillator. It’s written in terms of three functions that serve three purposes that you might want to modify in your own work:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">SHOPhasePortrait</span></code> is a function that simply returns the relationship between the locations in phase space and how the phase variables change at that location.</p></li>
@@ -575,8 +636,8 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="putting-the-functions-to-use">
-<h3>Putting the functions to use<a class="headerlink" href="#putting-the-functions-to-use" title="Permalink to this headline">#</a></h3>
+<section id="putting-the-functions-to-use">
+<h3>Putting the functions to use<a class="headerlink" href="#putting-the-functions-to-use" title="Permalink to this heading">#</a></h3>
 <p>With these two functions, all we are left to do is specify the size of the space and the grid points (that is where exactly we are computing the changes). We use <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.meshgrid.html">meshgrid</a> to make those arrays a set of Cartesian coordinates and then send that to our functions.</p>
 <p>We then plots the results.</p>
 <div class="cell docutils container">
@@ -615,9 +676,9 @@ document.write(`
 <img alt="../../../_images/a4229728d4bf32e1bc73a5f5bf475acc2c6a663cd25c81bf9843fb416c83def0.png" src="../../../_images/a4229728d4bf32e1bc73a5f5bf475acc2c6a663cd25c81bf9843fb416c83def0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="what-can-phase-space-help-us-do">
-<h3>What can phase space help us do?<a class="headerlink" href="#what-can-phase-space-help-us-do" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="what-can-phase-space-help-us-do">
+<h3>What can phase space help us do?<a class="headerlink" href="#what-can-phase-space-help-us-do" title="Permalink to this heading">#</a></h3>
 <p><strong>✅ Do this</strong></p>
 <p>Let’s remember a few things about the SHO.</p>
 <ol class="arabic simple">
@@ -631,10 +692,10 @@ document.write(`
 </li>
 </ol>
 <p>What does this plots tell you about all potential solutions?</p>
-</div>
-</div>
-<div class="section" id="the-large-angle-pendulum">
-<h2>The Large Angle Pendulum<a class="headerlink" href="#the-large-angle-pendulum" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="the-large-angle-pendulum">
+<h2>The Large Angle Pendulum<a class="headerlink" href="#the-large-angle-pendulum" title="Permalink to this heading">#</a></h2>
 <p>The Large Angle Pendulum is the first of a number of nonlinear differential equations out there. This one is quite special in that the integral that solves for the period of this pendulum has a name! It’s called and <a class="reference external" href="https://en.wikipedia.org/wiki/Elliptic_integral">Elliptical Integral of the First Kind</a>. Elliptical because of the nature of the kernel of the integral, which has an elliptic form (in our case, one over the square root of a quantity squared subtracted from one, yes, seriously, we have a name for that).</p>
 <p>Here’s the pendulum in all it’s glory.</p>
 <p><img alt="Pendulum Bob" src="../../../_images/pendulum_bob.png" /></p>
@@ -646,8 +707,8 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\ddot{\theta} = -\dfrac{g}{L}\sin(\theta)\]</div>
 <p>You have a second order differential equation for <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
-<div class="section" id="make-a-new-phase-portrait">
-<h3>Make a new phase portrait<a class="headerlink" href="#make-a-new-phase-portrait" title="Permalink to this headline">#</a></h3>
+<section id="make-a-new-phase-portrait">
+<h3>Make a new phase portrait<a class="headerlink" href="#make-a-new-phase-portrait" title="Permalink to this heading">#</a></h3>
 <p><strong>✅ Do this</strong></p>
 <p>With your partners,</p>
 <ol class="arabic simple">
@@ -718,9 +779,9 @@ document.write(`
 <img alt="../../../_images/63f6f710eebc013142714f98b91beb2f3f973a314b533f9258fbe7ab1bd50596.png" src="../../../_images/63f6f710eebc013142714f98b91beb2f3f973a314b533f9258fbe7ab1bd50596.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -747,16 +808,12 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -828,8 +885,8 @@ By Danny Caballero, Alia Valentine
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

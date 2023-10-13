@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>5 Oct 23 - Activity: Solving PDEs in Spherical Coordinates &#8212; PHY 415 Fall 2023</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -67,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="9 Oct 23 - Notes: Method of Relaxation" href="../Numerics/notes-relaxation.html" />
     <link rel="prev" title="3 Oct 23 - Activity: PDEs and Separation of Variables" href="activity-sep_var.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -76,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -263,6 +275,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415fall23&urlpath=lab/tree/phy415fall23/content/2_EM/Statics/activity-sep_var_spherical.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com""/github/dannycab/phy415fall23/blob/master/content/2_EM/Statics/activity-sep_var_spherical.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -271,7 +332,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23" target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +349,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/2_EM/Statics/activity-sep_var_spherical.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/2_EM/Statics/activity-sep_var_spherical.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -372,10 +433,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -383,7 +444,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -434,8 +495,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-activity-solving-pdes-in-spherical-coordinates">
-<h1>5 Oct 23 - Activity: Solving PDEs in Spherical Coordinates<a class="headerlink" href="#oct-23-activity-solving-pdes-in-spherical-coordinates" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="oct-23-activity-solving-pdes-in-spherical-coordinates">
+<h1>5 Oct 23 - Activity: Solving PDEs in Spherical Coordinates<a class="headerlink" href="#oct-23-activity-solving-pdes-in-spherical-coordinates" title="Permalink to this heading">#</a></h1>
 <p>We can extend the ideas we developed from Separation of Variables to solve PDEs in spherical coordinates. We propose a similar solution to the one we used for Cartesian coordinates, functions of a single variable.</p>
 <div class="math notranslate nohighlight">
 \[V(r,\theta,\phi) = R(r) \Theta(\theta) \Phi(\phi)\]</div>
@@ -452,11 +513,11 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\(A_{nlm}\)</span> and <span class="math notranslate nohighlight">\(B_{nlm}\)</span> are constants. Because Laplace’s equation is linear, we can write the general solution as a sum of these solutions:</p>
 <div class="math notranslate nohighlight">
 \[V(r,\theta,\phi) = \sum_{n=0}^\infty \sum_{l=0}^\infty \sum_{m=-l}^l \left(A_{nlm} r^n + \frac{B_{nlm}}{r^{n+1}}\right) P^m_l(\cos\theta) e^{i m \phi}\]</div>
-<div class="section" id="visualizing-the-solutions">
-<h2>Visualizing the Solutions<a class="headerlink" href="#visualizing-the-solutions" title="Permalink to this headline">#</a></h2>
+<section id="visualizing-the-solutions">
+<h2>Visualizing the Solutions<a class="headerlink" href="#visualizing-the-solutions" title="Permalink to this heading">#</a></h2>
 <p>One of the major challenges with these general solutions is seeing what the solutions look like. We can use these picture to help us dtermine if we can remove one or more terms before trying to match boundary conditions. We will plot each of the solutions below with respect to their relative variables.</p>
-<div class="section" id="radial-solutions">
-<h3>Radial Solutions<a class="headerlink" href="#radial-solutions" title="Permalink to this headline">#</a></h3>
+<section id="radial-solutions">
+<h3>Radial Solutions<a class="headerlink" href="#radial-solutions" title="Permalink to this heading">#</a></h3>
 <p>Below, we are plotting the solutions <span class="math notranslate nohighlight">\(r^n\)</span> and <span class="math notranslate nohighlight">\(r^{-(n+1)}\)</span> for several choices of <span class="math notranslate nohighlight">\(n\)</span>. You can see where the solutions blow up. This is helpful for matching boundary conditions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -512,10 +573,10 @@ document.write(`
 <img alt="../../../_images/50fdc38ac55ae249d18a6e43acb3a5cbd2caa6a380b7196a1cb20924b3a87a0f.png" src="../../../_images/50fdc38ac55ae249d18a6e43acb3a5cbd2caa6a380b7196a1cb20924b3a87a0f.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="the-polar-angle-solutions">
-<h2>The Polar Angle Solutions<a class="headerlink" href="#the-polar-angle-solutions" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="the-polar-angle-solutions">
+<h2>The Polar Angle Solutions<a class="headerlink" href="#the-polar-angle-solutions" title="Permalink to this heading">#</a></h2>
 <p>These solutions are the associated Legendre Polynomials, presented below.</p>
 <div class="math notranslate nohighlight">
 \[P_l^m(\cos\theta)\]</div>
@@ -546,8 +607,8 @@ document.write(`
 <img alt="../../../_images/6b7ee71a4282b7389493da41c13a0cbca104b858f0cceee93fccc4a5e7b7e2f9.png" src="../../../_images/6b7ee71a4282b7389493da41c13a0cbca104b858f0cceee93fccc4a5e7b7e2f9.png" />
 </div>
 </div>
-<div class="section" id="the-azimuthal-angle-solutions">
-<h3>The Azimuthal Angle Solutions<a class="headerlink" href="#the-azimuthal-angle-solutions" title="Permalink to this headline">#</a></h3>
+<section id="the-azimuthal-angle-solutions">
+<h3>The Azimuthal Angle Solutions<a class="headerlink" href="#the-azimuthal-angle-solutions" title="Permalink to this heading">#</a></h3>
 <p>These solutions are the exponential functions, presented below.</p>
 <div class="math notranslate nohighlight">
 \[e^{i m \phi}\]</div>
@@ -579,10 +640,10 @@ document.write(`
 <img alt="../../../_images/863d820ce02167edb6437d60474558c0f9867da34a420aaad024f4528142ba91.png" src="../../../_images/863d820ce02167edb6437d60474558c0f9867da34a420aaad024f4528142ba91.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="azimuthally-symmetric-solutions">
-<h2>Azimuthally Symmetric Solutions<a class="headerlink" href="#azimuthally-symmetric-solutions" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="azimuthally-symmetric-solutions">
+<h2>Azimuthally Symmetric Solutions<a class="headerlink" href="#azimuthally-symmetric-solutions" title="Permalink to this heading">#</a></h2>
 <p>In the case of azimuthally symmetric solutions, the potential is independent of <span class="math notranslate nohighlight">\(\phi\)</span> and the solutions are of the form:</p>
 <div class="math notranslate nohighlight">
 \[V(r,\theta) = \sum_{n=0}^\infty \sum_{l=0}^\infty \left(A_{nl} r^n + \frac{B_{nl}}{r^{n+1}}\right) P_l(\cos\theta)\]</div>
@@ -621,12 +682,12 @@ document.write(`
 <img alt="../../../_images/4b5ba1615a5d9cf28bd1e1e6913bb6692b64bcb5b15d10ab05a4e6a6a23d05d8.png" src="../../../_images/4b5ba1615a5d9cf28bd1e1e6913bb6692b64bcb5b15d10ab05a4e6a6a23d05d8.png" />
 </div>
 </div>
-</div>
-<div class="section" id="matching-boundary-conditions-and-plotting-the-potential">
-<h2>Matching Boundary Conditions and Plotting the Potential<a class="headerlink" href="#matching-boundary-conditions-and-plotting-the-potential" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="matching-boundary-conditions-and-plotting-the-potential">
+<h2>Matching Boundary Conditions and Plotting the Potential<a class="headerlink" href="#matching-boundary-conditions-and-plotting-the-potential" title="Permalink to this heading">#</a></h2>
 <p><strong>✅ Do this</strong></p>
-<div class="section" id="sphere-of-constant-surface-potential">
-<h3>Sphere of constant surface potential<a class="headerlink" href="#sphere-of-constant-surface-potential" title="Permalink to this headline">#</a></h3>
+<section id="sphere-of-constant-surface-potential">
+<h3>Sphere of constant surface potential<a class="headerlink" href="#sphere-of-constant-surface-potential" title="Permalink to this heading">#</a></h3>
 <p>Consider a sphere of with a radius <span class="math notranslate nohighlight">\(a\)</span>. If the potential on the surface is <span class="math notranslate nohighlight">\(V_0\)</span>, what is the potential inside and outside the sphere?</p>
 <ol class="arabic simple">
 <li><p>Consider the radial solutions (what doesn’t blow up?)</p></li>
@@ -641,9 +702,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -670,11 +731,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="activity-sep_var.html"
@@ -694,10 +754,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -772,8 +829,8 @@ By Danny Caballero, Alia Valentine
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

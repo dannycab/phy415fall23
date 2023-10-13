@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Worked Problem Assignment 1 &#8212; PHY 415 Fall 2023</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -67,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Worked Problem Assignment 2" href="worked-problem-2.html" />
     <link rel="prev" title="16 Oct 23 - Notes: Introduction to Waves" href="../3_waves/notes-waves_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -76,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -271,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23" target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +300,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/9_assignments/worked-problem-1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/9_assignments/worked-problem-1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -372,10 +384,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -383,7 +395,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -427,14 +439,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="worked-problem-assignment-1">
-<h1>Worked Problem Assignment 1<a class="headerlink" href="#worked-problem-assignment-1" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="worked-problem-assignment-1">
+<h1>Worked Problem Assignment 1<a class="headerlink" href="#worked-problem-assignment-1" title="Permalink to this heading">#</a></h1>
 <p><strong>Due 15 Sep 23</strong></p>
 <p>In this first few class periods, we have discussed formulating mechanics using Lagrangian Dynamics to produce equations of motion and how we can use numerical integration to solve for trajectories.</p>
 <p><a class="reference internal" href="../0_course/8_worked_problems.html"><span class="doc std std-doc"><strong>Grading Rubric</strong></span></a></p>
 <p>Remember that a worked problem means the scale of a detailed (e.g., parts a-h) homework problem.</p>
-<div class="section" id="places-to-find-candidate-problems">
-<h2>Places to find candidate problems:<a class="headerlink" href="#places-to-find-candidate-problems" title="Permalink to this headline">#</a></h2>
+<section id="places-to-find-candidate-problems">
+<h2>Places to find candidate problems:<a class="headerlink" href="#places-to-find-candidate-problems" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Classical mechanics textbooks; look at the problems in the Lagrangian chapters</p></li>
 <li><p>Differential equations textbooks; look at ODEs that represent real systems</p></li>
@@ -446,9 +458,9 @@ document.write(`
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="developing-equations-of-motion">
-<h2>Developing Equations of Motion<a class="headerlink" href="#developing-equations-of-motion" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="developing-equations-of-motion">
+<h2>Developing Equations of Motion<a class="headerlink" href="#developing-equations-of-motion" title="Permalink to this heading">#</a></h2>
 <p>Remember that the process we have developed is:</p>
 <ol class="arabic simple">
 <li><p>Identify problem and motivate assumptions</p></li>
@@ -456,14 +468,14 @@ document.write(`
 <li><p>Use the Euler-Lagrange equations to produce equations of motion</p></li>
 </ol>
 <p>This “pipeline” is really how we formulate a mechanics problem into something we can do mathematics with. In this assignment, you will develop your own Lagrangian for a system and solve for the equations of motion.</p>
-</div>
-<div class="section" id="investigating-the-system">
-<h2>Investigating the System<a class="headerlink" href="#investigating-the-system" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="investigating-the-system">
+<h2>Investigating the System<a class="headerlink" href="#investigating-the-system" title="Permalink to this heading">#</a></h2>
 <p>After we produce our equations of motion, we used both approximation techniques and numerical techniques to find solutions to the equations of motion. Here we developed “trajectories” for the system, that is, how the system evolves in time. In the approximate cases, we often sought frequencies of small oscillations to say something about how the system behaves near stable equilibria. In the numerical cases, we could choose particular initial conditions and see how they evolved in time.</p>
 <p>In this assignment, you will take your equations of motion and solve them numerically to produce trajectories. Approximate solutions, where you look into equilibria and frequencies of oscillation, should be included as well.</p>
-</div>
-<div class="section" id="assignment">
-<h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="assignment">
+<h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Choose a mechanical (or dynamical) system with two degrees of freedom (e.g., <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(\dot{x}\)</span>). This could be a system you have already worked with, or something new.</p></li>
 <li><p>Develop a Lagrangian for the system. You may need to make some assumptions to simplify the problem. You may also need to introduce some new variables to make the problem work. Make sure that is explained.</p></li>
@@ -471,20 +483,20 @@ document.write(`
 <li><p>Solve the equations of motion numerically to produce trajectories for the system. You should include at least two different initial conditions.</p></li>
 <li><p>Use the approximate techniques we have discussed to find frequencies of oscillation and stable equilibria. Compare these to the numerical results.</p></li>
 </ol>
-</div>
-<div class="section" id="looking-ahead-earn-extra-credit">
-<h2>Looking ahead (earn extra credit)<a class="headerlink" href="#looking-ahead-earn-extra-credit" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="looking-ahead-earn-extra-credit">
+<h2>Looking ahead (earn extra credit)<a class="headerlink" href="#looking-ahead-earn-extra-credit" title="Permalink to this heading">#</a></h2>
 <p>If you are looking into these systems and finding them interesting here’s two things you can do to earn extra credit that we will discuss later in the course.</p>
 <ol class="arabic simple">
 <li><p>Develop a phase space diagram for your system to show what families of solutions exist.</p></li>
 <li><p>Investigate the stability of the equilibria that you find.</p></li>
 </ol>
-</div>
-<div class="section" id="submitting-your-work">
-<h2>Submitting your work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="submitting-your-work">
+<h2>Submitting your work<a class="headerlink" href="#submitting-your-work" title="Permalink to this heading">#</a></h2>
 <p>You will upload your work to D2L. It should be a single PDF of your work. If you also write code, please submit the associated files as well. If you do all of this in a Jupyter notebook, please export the notebook as a PDF and submit the notebook and PDF file. If you have any questions, please ask. We want you to enjoy working on these problems.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -511,11 +523,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../3_waves/notes-waves_intro.html"
@@ -535,10 +546,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -606,8 +614,8 @@ By Danny Caballero, Alia Valentine
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>19 Sep 23 - The Duffing Oscillator &#8212; PHY 415 Fall 2023</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -67,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="26 Sept 23 - Notes: Maxwell’s Equations" href="../../2_EM/Statics/notes-em_intro.html" />
     <link rel="prev" title="19 Sep 23 - Notes: Heading towards Chaos" href="notes-linearization_odes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -76,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -263,6 +275,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415fall23&urlpath=lab/tree/phy415fall23/content/1_mechanics/dynamical_systems/activity-duffing.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com""/github/dannycab/phy415fall23/blob/master/content/1_mechanics/dynamical_systems/activity-duffing.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -271,7 +332,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23" target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +349,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/1_mechanics/dynamical_systems/activity-duffing.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/1_mechanics/dynamical_systems/activity-duffing.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -372,10 +433,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -383,7 +444,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -428,8 +489,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-the-duffing-oscillator">
-<h1>19 Sep 23 - The Duffing Oscillator<a class="headerlink" href="#sep-23-the-duffing-oscillator" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="sep-23-the-duffing-oscillator">
+<h1>19 Sep 23 - The Duffing Oscillator<a class="headerlink" href="#sep-23-the-duffing-oscillator" title="Permalink to this heading">#</a></h1>
 <p>We have developed a set of tools to investigate differential equations. You will now apply those skills to the <a class="reference external" href="https://en.wikipedia.org/wiki/Duffing_equation">Duffing Oscillator</a>. The Duffing Oscillator is a second order differential equation that is used to model a forced nonlinear spring. The equation is given by:</p>
 <div class="math notranslate nohighlight">
 \[\frac{d^2x}{dt^2} + \delta \frac{dx}{dt} + \alpha x + \beta x^3 = \gamma \cos(\omega t)\]</div>
@@ -439,11 +500,11 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\(x\)</span> is the position of the oscillator, <span class="math notranslate nohighlight">\(\delta\)</span> is a damping term, <span class="math notranslate nohighlight">\(\alpha\)</span> is the stiffness of the spring, <span class="math notranslate nohighlight">\(\beta\)</span> is the strength of the non-linear term, <span class="math notranslate nohighlight">\(\gamma\)</span> is the amplitude of the driving force, and <span class="math notranslate nohighlight">\(\omega\)</span> is the frequency of the driving force.</p>
 <p><img alt="Duffing Oscillator" src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Duffing_oscillator_strange_attractor_with_color.gif" /></p>
 <p><em>From <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Duffing_oscillator_strange_attractor_with_color.gif">Wikipedia</a></em></p>
-<div class="section" id="activity">
-<h2>Activity<a class="headerlink" href="#activity" title="Permalink to this headline">#</a></h2>
+<section id="activity">
+<h2>Activity<a class="headerlink" href="#activity" title="Permalink to this heading">#</a></h2>
 <p>This is a complicated oscillator with damping, forcing, and non-linearity. We will investigate the behavior of the oscillator for different values of the parameters, and you will need to bring all the tools we have used so far to bear on this problem. We will perform this work systematically, as way of helping you recognize the steps you can take to investigate any differential equation. <em>You are welcome to use any of the code that we developed or presented in class.</em></p>
-<div class="section" id="organizing-your-analysis">
-<h3>Organizing your analysis<a class="headerlink" href="#organizing-your-analysis" title="Permalink to this headline">#</a></h3>
+<section id="organizing-your-analysis">
+<h3>Organizing your analysis<a class="headerlink" href="#organizing-your-analysis" title="Permalink to this heading">#</a></h3>
 <p>The Duffing Oscillator has a lot of different elements and can become complicated very quickly. To help start our analysis let’s consider three models with increasing complexity:</p>
 <ol class="arabic simple">
 <li><p><strong>Model 1</strong> (no damping and no forcing) <span class="math notranslate nohighlight">\(\ddot{x} = - \alpha x - \beta x^3\)</span></p></li>
@@ -451,9 +512,9 @@ document.write(`
 <li><p><strong>Model 3</strong> (full model) <span class="math notranslate nohighlight">\(\ddot{x} = - \delta \dot{x} - \alpha x - \beta x^3 + \gamma \cos(\omega t)\)</span></p></li>
 </ol>
 <p><strong>✅ Do this</strong></p>
-</div>
-<div class="section" id="tasks-to-complete">
-<h3>Tasks to complete<a class="headerlink" href="#tasks-to-complete" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="tasks-to-complete">
+<h3>Tasks to complete<a class="headerlink" href="#tasks-to-complete" title="Permalink to this heading">#</a></h3>
 <p>For each of these models, you should produce the following:</p>
 <ol class="arabic simple">
 <li><p>The fixed points (if they can be found and their linear stability)</p></li>
@@ -462,9 +523,9 @@ document.write(`
 <li><p>A graph of a trajectory in the phase portrait</p></li>
 <li><p>An approximate solution to the differential equation for a limiting case</p></li>
 </ol>
-</div>
-<div class="section" id="exploring-your-models">
-<h3>Exploring your models<a class="headerlink" href="#exploring-your-models" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="exploring-your-models">
+<h3>Exploring your models<a class="headerlink" href="#exploring-your-models" title="Permalink to this heading">#</a></h3>
 <p>As you are developing your models, you should consider the following questions:</p>
 <ol class="arabic simple">
 <li><p>What kinds of motion seems possible for each model?</p></li>
@@ -489,10 +550,10 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="routes-to-chaos">
-<h2>Routes to Chaos<a class="headerlink" href="#routes-to-chaos" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="routes-to-chaos">
+<h2>Routes to Chaos<a class="headerlink" href="#routes-to-chaos" title="Permalink to this heading">#</a></h2>
 <p>One important route to chaotic behavior is through <a class="reference external" href="https://en.wikipedia.org/wiki/Period-doubling_bifurcation">period doubling</a>. It is not the only way for a system to become chaotic, but it is a characteristic way that a system will tend towards chaos.</p>
 <p><strong>✅ Do this</strong></p>
 <p>If your code is fully working, you can use known values of the parameters to investigate this behavior. For this part of the activity, you should use the full model and the following parameters:</p>
@@ -521,8 +582,8 @@ document.write(`
 </tbody>
 </table>
 <p>Here <span class="math notranslate nohighlight">\(\gamma\)</span> is the only parameter that we will change. Produce phase plots of <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(x(\dot{x})\)</span> for several choices of <span class="math notranslate nohighlight">\(\gamma\)</span> with <span class="math notranslate nohighlight">\(x(0) = 1\)</span> and <span class="math notranslate nohighlight">\(\dot{x}(0) = 0\)</span>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -549,11 +610,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="notes-linearization_odes.html"
@@ -573,10 +633,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -645,8 +702,8 @@ By Danny Caballero, Alia Valentine
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

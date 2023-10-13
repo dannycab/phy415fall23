@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>14 Sep 23 - Dynamical Systems Continued &#8212; PHY 415 Fall 2023</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
@@ -65,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -74,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -261,6 +273,55 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415fall23&urlpath=lab/tree/phy415fall23/content/1_mechanics/old/dynamical_2.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com""/github/dannycab/phy415fall23/blob/master/content/1_mechanics/old/dynamical_2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -269,7 +330,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23" target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +347,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/valentine-alia/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/1_mechanics/old/dynamical_2.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dannycab/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/1_mechanics/old/dynamical_2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -370,10 +431,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -381,7 +442,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -429,8 +490,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-dynamical-systems-continued">
-<h1>14 Sep 23 - Dynamical Systems Continued<a class="headerlink" href="#sep-23-dynamical-systems-continued" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="sep-23-dynamical-systems-continued">
+<h1>14 Sep 23 - Dynamical Systems Continued<a class="headerlink" href="#sep-23-dynamical-systems-continued" title="Permalink to this heading">#</a></h1>
 <p>Last time we investigated the phase portrait of the large angle pendulum, we we could arrive at by re-writing the differential equation</p>
 <div class="math notranslate nohighlight">
 \[
@@ -451,8 +512,8 @@ A = \begin{bmatrix} \frac{\partial f}{\partial x} &amp; \frac{\partial f}{\parti
 (this is the same problem as the last problem from tuesday)</p>
 <p>Calculate the general Jacobian matrix <span class="math notranslate nohighlight">\(A\)</span> for this system, then calculate what it is at the fixed point <span class="math notranslate nohighlight">\((0,0)\)</span>.</p>
 <p>We have the Jacobian at <span class="math notranslate nohighlight">\((0,0)\)</span> now but we still need to find its eigenvalues. Let’s take a quick detour to remember how to do that.</p>
-<div class="section" id="eigenvalues">
-<h2>Eigenvalues<a class="headerlink" href="#eigenvalues" title="Permalink to this headline">#</a></h2>
+<section id="eigenvalues">
+<h2>Eigenvalues<a class="headerlink" href="#eigenvalues" title="Permalink to this heading">#</a></h2>
 <p>Eigenvalues and the closely related Eigenvectors are indispensible in physics, math, and computational science. These ideas for the basis (pun somewhat intened) for countless problems, from the <a class="reference external" href="https://phys.libretexts.org/Bookshelves/Nuclear_and_Particle_Physics/Introduction_to_Applied_Nuclear_Physics_(Cappellaro)/02%3A_Introduction_to_Quantum_Mechanics/2.04%3A_Energy_Eigenvalue_Problem">energy eigenvalue equation</a> that is the founcation of quantum mechanics, to the stability of complex nonlinear systems, to Normal Modes of oscillators, which we’ll study later in this course, eigenproblems show up all over in physics. I can’t resist a brief tangent: Once some scientists were using an eigenvalue driven algorithm called principal component analysis to study the genes of people that live in Europe. They found that these egenvalues/vectors reproduced a map of Europe with surprising accuracy (<a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2735096/">link</a>). So these tools are extremely, and often unreasonably powerful.</p>
 <p>Eigenvalues are the <span class="math notranslate nohighlight">\(\lambda\)</span> in the equation:</p>
 <div class="math notranslate nohighlight">
@@ -461,8 +522,8 @@ A\mathbf{v} = \lambda \mathbf{v}
 \]</div>
 <p>Where <span class="math notranslate nohighlight">\(A\)</span> is a linear operator of the vector space that <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> lives in. In finite-dimensional vector spaces, like what we’re considering today, these linear operators are always matricies. There is a bit of physical intuition behind this equation: An eigenvector of <span class="math notranslate nohighlight">\(A\)</span> is a vector that only gets stretched or squished by <span class="math notranslate nohighlight">\(\lambda\)</span> when <span class="math notranslate nohighlight">\(A\)</span> acts on <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>. Here’s a gif from Grant Sanderson’s <a class="reference external" href="https://www.youtube.com/watch?v=PFDu9oVAE-g">fantastic video</a> on eigenvalues and eigenvectors that shows this:</p>
 <img src="https://thumbs.gfycat.com/FluffyMiniatureBackswimmer-max-1mb.gif" alt="Computer man" style="width:320px;height:180px;">
-<div class="section" id="finding-eigenvalues">
-<h3>Finding Eigenvalues<a class="headerlink" href="#finding-eigenvalues" title="Permalink to this headline">#</a></h3>
+<section id="finding-eigenvalues">
+<h3>Finding Eigenvalues<a class="headerlink" href="#finding-eigenvalues" title="Permalink to this heading">#</a></h3>
 <p>To actually find the eigenvalues of a matrix, you solve the <strong>characteristic polynomial</strong> of the matrix, which you obtain by solving the equation:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -479,9 +540,9 @@ A\mathbf{v} = \lambda \mathbf{v}
 <li><p>Both eigenvalues pure imaginary: Center</p></li>
 </ul>
 <p>Note: You can actually learn quite a bit more from this analysis, see Strogatz chaper 6.</p>
-</div>
-<div class="section" id="eigenvalues-computationally">
-<h3>Eigenvalues, Computationally<a class="headerlink" href="#eigenvalues-computationally" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="eigenvalues-computationally">
+<h3>Eigenvalues, Computationally<a class="headerlink" href="#eigenvalues-computationally" title="Permalink to this heading">#</a></h3>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">np.linalg.eig()</span></code> to find the eigenvalues (and normalized eigenvectors) of a matrix which we represent as numpy array. Below is some doe that does this (note the imaginary unit is represented as <span class="math notranslate nohighlight">\(j\)</span> in python):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -501,10 +562,10 @@ A\mathbf{v} = \lambda \mathbf{v}
 </div>
 </div>
 <p>This can be super handy when you just need to do some quick caracterization from the eigenvalues of a matrix. However, be warned - since you only get numerical answers you can lose quite a bit of the nuance that comes from if you had calculated these. We’ll see how that can be an issue later in the semester when we tackle normal modes.</p>
-</div>
-</div>
-<div class="section" id="activity-lotka-volterra-equations">
-<h2>Activity: Lotka - Volterra Equations<a class="headerlink" href="#activity-lotka-volterra-equations" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="activity-lotka-volterra-equations">
+<h2>Activity: Lotka - Volterra Equations<a class="headerlink" href="#activity-lotka-volterra-equations" title="Permalink to this heading">#</a></h2>
 <p>The Lotka -Volterra Equations are a pair of coupled ODEs</p>
 <div class="math notranslate nohighlight">
 \[\dot{x}= x(A − Bx - Cy)\]</div>
@@ -581,9 +642,9 @@ eigenvalues, 2nd fixed point: [0. 0.]
 <img alt="../../../_images/11c46a62dac5d70d9956d23717ffd74c7077e677d25724f5935205b66a04721c.png" src="../../../_images/11c46a62dac5d70d9956d23717ffd74c7077e677d25724f5935205b66a04721c.png" />
 </div>
 </div>
-</div>
-<div class="section" id="investigating-the-van-der-pol-oscillator">
-<h2>Investigating the Van der Pol Oscillator<a class="headerlink" href="#investigating-the-van-der-pol-oscillator" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="investigating-the-van-der-pol-oscillator">
+<h2>Investigating the Van der Pol Oscillator<a class="headerlink" href="#investigating-the-van-der-pol-oscillator" title="Permalink to this heading">#</a></h2>
 <p>It turns out there is some more interesting behavior other than just the behavior around fixed points. Toward seeing that, let’s look at the Van der Pol Oscillator. This equation originates from lonlinear circuits in early radios, but has now also been used in neuroscience and geology. It is given by the differential equation:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -666,8 +727,8 @@ eigenvalues, 2nd fixed point: [0. 0.]
 </div>
 </div>
 </div>
-<div class="section" id="limit-cycles">
-<h3>Limit Cycles<a class="headerlink" href="#limit-cycles" title="Permalink to this headline">#</a></h3>
+<section id="limit-cycles">
+<h3>Limit Cycles<a class="headerlink" href="#limit-cycles" title="Permalink to this heading">#</a></h3>
 <p>The new behavior we’ve seen from this equation is what’s called a <strong>limit cycle</strong>, where the system is attracted/reppeled from a closed curve instead of a fixed point(s). There’s a lot of really great math here that’s a bit beyond what we can cover in class, but it would be a great thing to look into for a project!</p>
 <p><strong>✅ Do this</strong></p>
 <p>Spend the rest of class investigating the Van der Pol oscillator. Here are a few investigations you could do:</p>
@@ -683,9 +744,9 @@ eigenvalues, 2nd fixed point: [0. 0.]
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -712,16 +773,12 @@ eigenvalues, 2nd fixed point: [0. 0.]
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -793,8 +850,8 @@ By Danny Caballero, Alia Valentine
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
