@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>19 Sep 23 - The Duffing Oscillator &#8212; PHY 415 Fall 2023</title>
   
   
@@ -216,6 +215,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-coupled_oscillations.html">16 Oct 23 - Notes: Coupled Oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-waves_intro.html">16 Oct 23 - Notes: Introduction to Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-CoupledOsc-NormalModes.html">17 Oct 23 - Activity: Normal Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-CoupledOsc-NumericalNormalModes.html">19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -489,7 +490,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sep-23-the-duffing-oscillator">
+  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-the-duffing-oscillator">
 <h1>19 Sep 23 - The Duffing Oscillator<a class="headerlink" href="#sep-23-the-duffing-oscillator" title="Permalink to this heading">#</a></h1>
 <p>We have developed a set of tools to investigate differential equations. You will now apply those skills to the <a class="reference external" href="https://en.wikipedia.org/wiki/Duffing_equation">Duffing Oscillator</a>. The Duffing Oscillator is a second order differential equation that is used to model a forced nonlinear spring. The equation is given by:</p>
 <div class="math notranslate nohighlight">
@@ -500,10 +501,10 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\(x\)</span> is the position of the oscillator, <span class="math notranslate nohighlight">\(\delta\)</span> is a damping term, <span class="math notranslate nohighlight">\(\alpha\)</span> is the stiffness of the spring, <span class="math notranslate nohighlight">\(\beta\)</span> is the strength of the non-linear term, <span class="math notranslate nohighlight">\(\gamma\)</span> is the amplitude of the driving force, and <span class="math notranslate nohighlight">\(\omega\)</span> is the frequency of the driving force.</p>
 <p><img alt="Duffing Oscillator" src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Duffing_oscillator_strange_attractor_with_color.gif" /></p>
 <p><em>From <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Duffing_oscillator_strange_attractor_with_color.gif">Wikipedia</a></em></p>
-<section id="activity">
+<div class="section" id="activity">
 <h2>Activity<a class="headerlink" href="#activity" title="Permalink to this heading">#</a></h2>
 <p>This is a complicated oscillator with damping, forcing, and non-linearity. We will investigate the behavior of the oscillator for different values of the parameters, and you will need to bring all the tools we have used so far to bear on this problem. We will perform this work systematically, as way of helping you recognize the steps you can take to investigate any differential equation. <em>You are welcome to use any of the code that we developed or presented in class.</em></p>
-<section id="organizing-your-analysis">
+<div class="section" id="organizing-your-analysis">
 <h3>Organizing your analysis<a class="headerlink" href="#organizing-your-analysis" title="Permalink to this heading">#</a></h3>
 <p>The Duffing Oscillator has a lot of different elements and can become complicated very quickly. To help start our analysis let’s consider three models with increasing complexity:</p>
 <ol class="arabic simple">
@@ -512,8 +513,8 @@ document.write(`
 <li><p><strong>Model 3</strong> (full model) <span class="math notranslate nohighlight">\(\ddot{x} = - \delta \dot{x} - \alpha x - \beta x^3 + \gamma \cos(\omega t)\)</span></p></li>
 </ol>
 <p><strong>✅ Do this</strong></p>
-</section>
-<section id="tasks-to-complete">
+</div>
+<div class="section" id="tasks-to-complete">
 <h3>Tasks to complete<a class="headerlink" href="#tasks-to-complete" title="Permalink to this heading">#</a></h3>
 <p>For each of these models, you should produce the following:</p>
 <ol class="arabic simple">
@@ -523,8 +524,8 @@ document.write(`
 <li><p>A graph of a trajectory in the phase portrait</p></li>
 <li><p>An approximate solution to the differential equation for a limiting case</p></li>
 </ol>
-</section>
-<section id="exploring-your-models">
+</div>
+<div class="section" id="exploring-your-models">
 <h3>Exploring your models<a class="headerlink" href="#exploring-your-models" title="Permalink to this heading">#</a></h3>
 <p>As you are developing your models, you should consider the following questions:</p>
 <ol class="arabic simple">
@@ -550,9 +551,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="routes-to-chaos">
+</div>
+</div>
+<div class="section" id="routes-to-chaos">
 <h2>Routes to Chaos<a class="headerlink" href="#routes-to-chaos" title="Permalink to this heading">#</a></h2>
 <p>One important route to chaotic behavior is through <a class="reference external" href="https://en.wikipedia.org/wiki/Period-doubling_bifurcation">period doubling</a>. It is not the only way for a system to become chaotic, but it is a characteristic way that a system will tend towards chaos.</p>
 <p><strong>✅ Do this</strong></p>
@@ -582,8 +583,8 @@ document.write(`
 </tbody>
 </table>
 <p>Here <span class="math notranslate nohighlight">\(\gamma\)</span> is the only parameter that we will change. Produce phase plots of <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(x(\dot{x})\)</span> for several choices of <span class="math notranslate nohighlight">\(\gamma\)</span> with <span class="math notranslate nohighlight">\(x(0) = 1\)</span> and <span class="math notranslate nohighlight">\(\dot{x}(0) = 0\)</span>.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

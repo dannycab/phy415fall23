@@ -7,9 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <title>27 Sept 22 - Activity: Normal Modes &#8212; PHY 415 Fall 2023</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17 Oct 23 - Activity: Normal Modes &#8212; PHY 415 Fall 2023</title>
   
   
   
@@ -67,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/3_waves/activity-CoupledOsc-NormalModes';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators" href="activity-CoupledOsc-NumericalNormalModes.html" />
+    <link rel="prev" title="16 Oct 23 - Notes: Introduction to Waves" href="notes-waves_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -211,9 +212,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../2_EM/Numerics/activity-relaxation_2d.html">12 Oct 23 - Activity: Method of Relaxation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillations</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notes-coupled_oscillations.html">16 Oct 23 - Notes: Coupled Oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-waves_intro.html">16 Oct 23 - Notes: Introduction to Waves</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">17 Oct 23 - Activity: Normal Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-CoupledOsc-NumericalNormalModes.html">19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -459,7 +462,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>27 Sept 22 - Activity: Normal Modes</h1>
+    <h1>17 Oct 23 - Activity: Normal Modes</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -469,12 +472,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-lecture-canonical-coupled-oscillators">Guided Lecture: Canonical Coupled Oscillators</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-assume-the-solution">Method 1: Assume the solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-find-the-normal-modes">Method 2: Find the normal modes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-coupled-oscillators">Canonical Coupled Oscillators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-the-equations-of-motion">Deriving the Equations of Motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-normal-modes">Finding Normal Modes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-assume-a-solution">Method 1: Assume a Solution</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-matrix-analysis-the-eigenvalue-problem">Method 2: Matrix Analysis (the Eigenvalue Problem)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apply">Apply:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-normal-modes-to-a-new-system">Applying Normal Modes to a New System</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-vertical-pendulums-connected-by-a-spring">Two vertical pendulums connected by a spring</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-coupled-oscillators">Three Coupled Oscillators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-normal-mode-frequencies">Finding the Normal Mode Frequencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-normal-modes-amplitudes">Finding the Normal Modes Amplitudes</a></li>
 </ul>
             </nav>
         </div>
@@ -486,23 +499,87 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sept-22-activity-normal-modes">
-<h1>27 Sept 22 - Activity: Normal Modes<a class="headerlink" href="#sept-22-activity-normal-modes" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-activity-normal-modes">
+<h1>17 Oct 23 - Activity: Normal Modes<a class="headerlink" href="#oct-23-activity-normal-modes" title="Permalink to this heading">#</a></h1>
 <p>As we begin to work with multi-particle systems, we begin to open the number of degrees of freedom of the system. We increase the complexity of it and the challenge of modeling it. We will increasingly need tools that help us take less tractable issues and make them palatable. One such tool that forms the basis of many others is <strong>Normal Modes</strong>.</p>
 <p>Normal modes are ways of breaking up our understanding of a system into discrete (potentially infinite and hopefully vanishingly small) pieces. This lets us get at the big picture of the system and characterize how much we are neglecting. The concept of normal modes underlies much of the analysis done in quantum mechanics, field theory, fluid mechanics, and signal processing. In fact, numerical routines often make use of forms of these modes to do economize calculations – <em>especially when we move beyond a few hundred bodies in the system</em>. This stuff is part and parcel of most research in physics. For example, how we understand the <a class="reference external" href="https://en.wikipedia.org/wiki/Cosmic_background_radiation">Cosmic Background Radiation</a> relies on a <a class="reference external" href="https://www.quantamagazine.org/how-ancient-light-reveals-the-universes-contents-20200128/">normal mode like analysis</a>.</p>
-<section id="guided-lecture-canonical-coupled-oscillators">
-<h2>Guided Lecture: Canonical Coupled Oscillators<a class="headerlink" href="#guided-lecture-canonical-coupled-oscillators" title="Permalink to this heading">#</a></h2>
+<div class="section" id="canonical-coupled-oscillators">
+<h2>Canonical Coupled Oscillators<a class="headerlink" href="#canonical-coupled-oscillators" title="Permalink to this heading">#</a></h2>
 <p>There is still plenty of room for pencil and paper. We will explore this numerically later.</p>
 <p>We will start with a form of guided lecture and build the understanding of these methods together. Then you will apply what you learned to a new system.</p>
 <p>Let’s assume you have a chain of two mass connected by springs (all the same <span class="math notranslate nohighlight">\(k\)</span>) as below.</p>
 <img src='https://www.entropy.energy/static/resources/coupled-oscillators/two-coupled-gliders-diagram.png' alt='Coupled Oscillator set up. Two oscillators connected by three springs in a horizontal line.' width=800px/>
-<section id="method-1-assume-the-solution">
-<h3>Method 1: Assume the solution<a class="headerlink" href="#method-1-assume-the-solution" title="Permalink to this heading">#</a></h3>
+<div class="section" id="deriving-the-equations-of-motion">
+<h3>Deriving the Equations of Motion<a class="headerlink" href="#deriving-the-equations-of-motion" title="Permalink to this heading">#</a></h3>
+<p>Let’s write the Lagrangian for this system to get equations of motion. The kinetic and potential energies are:</p>
+<div class="math notranslate nohighlight">
+\[T=\frac{1}{2}m\dot{x}_1^2+\frac{1}{2}m\dot{x}_2^2\]</div>
+<div class="math notranslate nohighlight">
+\[U=\frac{1}{2}k{x_1}^2+\frac{1}{2}k(x_2-x_1)^2 + \frac{1}{2}k{x_2}^2\]</div>
+<p>Thus the Lagrangian is for this system is:</p>
+<div class="math notranslate nohighlight">
+\[L = \frac{1}{2}m\dot{x}_1^2+\frac{1}{2}m\dot{x}_2^2 - \frac{1}{2}k{x_1}^2-\frac{1}{2}k(x_2-x_1)^2 - \frac{1}{2}k{x_2}^2\]</div>
+<p>Which produces two equations of motion:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{x}_1}\right) - \frac{\partial L}{\partial x_1} = 0\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{x}_2}\right) - \frac{\partial L}{\partial x_2} = 0\]</div>
+<p>Which we can write as:</p>
+<div class="math notranslate nohighlight">
+\[m\ddot{x}_1 = -kx_1 + k(x_2-x_1)\]</div>
+<div class="math notranslate nohighlight">
+\[m\ddot{x}_2 = -kx_2 + k(x_1-x_2)\]</div>
+<p>Or</p>
+<div class="math notranslate nohighlight">
+\[\ddot{x}_1 = -\frac{2k}{m}x_1 + \frac{k}{m}x_2\]</div>
+<div class="math notranslate nohighlight">
+\[\ddot{x}_2 = -\frac{2k}{m}x_2 + \frac{k}{m}x_1\]</div>
+</div>
+<div class="section" id="finding-normal-modes">
+<h3>Finding Normal Modes<a class="headerlink" href="#finding-normal-modes" title="Permalink to this heading">#</a></h3>
+<div class="section" id="method-1-assume-a-solution">
+<h4>Method 1: Assume a Solution<a class="headerlink" href="#method-1-assume-a-solution" title="Permalink to this heading">#</a></h4>
+<p>A normal mode solution is one in which all parts of a system oscillate with the same frequency. For linear systems, this can be a very useful approach because any solution can be represented as a linear combination of normal modes. In general,</p>
+<div class="math notranslate nohighlight">
+\[f(t) = \sum_n c_n \psi_n(t)\]</div>
+<p>where <span class="math notranslate nohighlight">\(f(t)\)</span> is the solution, <span class="math notranslate nohighlight">\(c_n\)</span> are constants, and <span class="math notranslate nohighlight">\(\psi_n(t)\)</span> are the normal modes. This kind of normal mode analysis forms the basis for signal analysis, image processing, and many other fields. For non-linear systems, we lose superposition and thus, we lose out ability to employ normal modes. However, near equilibria and in other limits, normal modes are still used. We will start by assuming a normal mode solution for both masses and plug that into our equations of motion.</p>
+<p>Assume:</p>
+<div class="math notranslate nohighlight">
+\[x_1(t) = A_1\cos(\omega t + \phi_1)\]</div>
+<div class="math notranslate nohighlight">
+\[x_2(t) = A_2\cos(\omega t + \phi_2)\]</div>
+<p>where <span class="math notranslate nohighlight">\(A_1\)</span>, <span class="math notranslate nohighlight">\(A_2\)</span>, <span class="math notranslate nohighlight">\(\phi_1\)</span>, and <span class="math notranslate nohighlight">\(\phi_2\)</span> are constants to be determined. We can plug these into our differential equations and find the normal modes. We made a chose for the form of the solution. Other forms are acceptable as long as they have two free parameters; it’s a second order differential equation.</p>
+<p>We can plug these into our differential equations and get:</p>
+<div class="math notranslate nohighlight">
+\[-\omega^2A_1\cos(\omega t + \phi_1) = -\frac{k}{m}A_1\cos(\omega t + \phi_1) + \frac{k}{m}(A_2\cos(\omega t + \phi_2)-A_1\cos(\omega t + \phi_1))\]</div>
+<div class="math notranslate nohighlight">
+\[-\omega^2A_2\cos(\omega t + \phi_2) = -\frac{k}{m}A_2\cos(\omega t + \phi_2) + \frac{k}{m}(A_1\cos(\omega t + \phi_1)-A_2\cos(\omega t + \phi_2))\]</div>
+<p>which we can collect the terms <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span> and get:</p>
+<div class="math notranslate nohighlight">
+\[-\omega^2A_1\cos(\omega t + \phi_1) + 2\frac{k}{m}A_1\cos(\omega t + \phi_1) = \frac{k}{m}A_2\cos(\omega t + \phi_2)\]</div>
+<div class="math notranslate nohighlight">
+\[-\omega^2A_2\cos(\omega t + \phi_2) + 2\frac{k}{m}A_2\cos(\omega t + \phi_2) = \frac{k}{m}A_1\cos(\omega t + \phi_1)\]</div>
+<p>Which we rewrite as:</p>
+<div class="math notranslate nohighlight">
+\[\left(2\frac{k}{m}-\omega^2\right)A_1\cos(\omega t + \phi_1) = \frac{k}{m}A_2\cos(\omega t + \phi_2)\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{k}{m}A_1\cos(\omega t + \phi_1)=\left(2\frac{k}{m}-\omega^2\right)A_2\cos(\omega t + \phi_2)\]</div>
+<p>Assuming non-zero solutions, we can divide the equations:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{\left(2\frac{k}{m}-\omega^2\right)}{\frac{k}{m}} = \dfrac{\frac{k}{m}}{\left(2\frac{k}{m}-\omega^2\right)}\]</div>
+<p>So that,</p>
+<div class="math notranslate nohighlight">
+\[\left(2\frac{k}{m}-\omega^2\right)^2 = \left(\frac{k}{m}\right)^2\]</div>
+<p>Or,</p>
+<div class="math notranslate nohighlight">
+\[\omega^2 = \frac{2k}{m} \pm \frac{k}{m}\]</div>
+<p>So, if solution is a normal mode, there’s actually two of them it could be: one with <span class="math notranslate nohighlight">\(\omega = \sqrt{\frac{3k}{m}}\)</span> and one with <span class="math notranslate nohighlight">\(\omega = \sqrt{\frac{k}{m}}\)</span>.</p>
 <p><strong>✅ Do this</strong></p>
 <ol class="arabic simple">
-<li><p>Displace the left mass by <span class="math notranslate nohighlight">\(x_1\)</span> and the right mass by <span class="math notranslate nohighlight">\(x_2\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span>. Write down the pair of second order linear differential equations that describes the motion of this system.</p></li>
-<li><p>Assume the solutions to both will be simply oscillatory (e.g., sinusoidal). Plug the general solutions into your differential equation and find the particular solutions. Can you determine the oscillatory behavior of each solution?</p></li>
-<li><p>Pick numbers for your unknowns (e.g., <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, <span class="math notranslate nohighlight">\(k\)</span>) and plot your position vs. time solutions. Does this picture help determine the motion? Is it purely sinusoidal?</p></li>
+<li><p>Given the frequencies of the normal mode solutions, find the relative amplitudes of the two masses for each mode. How do the masses move relative to each other?</p></li>
+<li><p>Consider the following initial conditions, the left mass (<span class="math notranslate nohighlight">\(x_1\)</span>) is displaced by <span class="math notranslate nohighlight">\(x_0\)</span>. Everything else is at rest. Find the particular solution for each mass (<span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>).</p></li>
+<li><p>Plot their motion.</p></li>
+<li><p>(later, if time) develop a numerical solution for <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> for any choice of conditions.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -511,15 +588,28 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="method-2-find-the-normal-modes">
-<h3>Method 2: Find the normal modes<a class="headerlink" href="#method-2-find-the-normal-modes" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="method-2-matrix-analysis-the-eigenvalue-problem">
+<h4>Method 2: Matrix Analysis (the Eigenvalue Problem)<a class="headerlink" href="#method-2-matrix-analysis-the-eigenvalue-problem" title="Permalink to this heading">#</a></h4>
+<p>That analysis to find the normal modes was a bit of a pain in algebra. As we add more objects, that pain will grow. We can use a matrix approach to make this easier. It’s also a systematic approach that as we will see plays nicely with computing.</p>
+<p>Starting from the equations of motion:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{x}_1 = -\frac{2k}{m}x_1 + \frac{k}{m}x_2\]</div>
+<div class="math notranslate nohighlight">
+\[\ddot{x}_2 = -\frac{2k}{m}x_2 + \frac{k}{m}x_1\]</div>
+<p>We rewrite them as a set of matrix equations for the vector <span class="math notranslate nohighlight">\(\mathbf{x} = \begin{bmatrix}x_1\\x_2\end{bmatrix}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\ddot{\mathbf{x}} = \begin{bmatrix}-\frac{2k}{m} &amp; \frac{k}{m}\\\frac{k}{m} &amp; -\frac{2k}{m}\end{bmatrix}\mathbf{x}\end{split}\]</div>
+<p>This is a form of the equation <span class="math notranslate nohighlight">\(\ddot{\mathbf{x}} = \pmb{A} \mathbf{x}\)</span> where <span class="math notranslate nohighlight">\(\pmb{A}\)</span> is the coefficient matrix. We can solve this equation by finding the eigenvalues and eigenvectors of <span class="math notranslate nohighlight">\(\pmb{A}\)</span>. The eigenvalues are the frequencies of the normal modes and the eigenvectors are the relative amplitudes of the masses. The reason is that the determinant of the coefficient matrix when there is a normal mode solution vanishes. That is,</p>
+<div class="math notranslate nohighlight">
+\[\det(\pmb{A}-\omega^2\pmb{I}) = 0\]</div>
+<p>where <span class="math notranslate nohighlight">\(\pmb{I}\)</span> is the identity matrix. This is a polynomial equation in <span class="math notranslate nohighlight">\(\omega^2\)</span> and the roots of that polynomial are the normal mode frequencies.  This technique is very common in theoretical physics with different guesses for the solution forms giving rise to different eigenvalue problems (e.g., <a class="reference external" href="https://en.wikipedia.org/wiki/Bessel_function">Bessel functions for 2D surface problems</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Hermite_polynomials">Hermite polynomials for the Quantum Harmonic Oscillator</a>.</p>
 <p><strong>✅ Do this</strong></p>
 <ol class="arabic simple">
-<li><p>Displace the left mass by <span class="math notranslate nohighlight">\(x_1\)</span> and the right mass by <span class="math notranslate nohighlight">\(x_2\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span>. Again, write down the pair of second order linear differential equations that describes the motion of this system.</p></li>
-<li><p>Rework the differential equation into a matrix description: <span class="math notranslate nohighlight">\(\ddot{\mathbf{x}} = \pmb{A} \mathbf{x}\)</span>. Why can you do this? When can you not do this? Or rather what about the differential equation lets us do this?</p></li>
-<li><p>Find the determinant of the coefficient matrix <span class="math notranslate nohighlight">\(\pmb{A}\)</span>, and use that to determine the oscillation frequencies.</p></li>
-<li><p>Plot the normal mode solutions (remember we assume sinusoidal normal modes); there should be two.</p></li>
+<li><p>Using the “determinant of the coefficient matrix” (really the eigenvalues of <span class="math notranslate nohighlight">\(\pmb{A}\)</span> solved by <span class="math notranslate nohighlight">\(\det(\pmb{A}-\omega^2\pmb{I})\)</span>), find the normal mode <span class="math notranslate nohighlight">\(\omega^2\)</span>.</p></li>
+<li><p>Find the eigenvectors of the coefficient matrix. These are the relative amplitudes of the masses.</p></li>
+<li><p>These results should agree with the previous method. Do they?</p></li>
+<li><p>Plot the normal modes solutions.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -528,17 +618,19 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="apply">
-<h2>Apply:<a class="headerlink" href="#apply" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+</div>
+<div class="section" id="applying-normal-modes-to-a-new-system">
+<h2>Applying Normal Modes to a New System<a class="headerlink" href="#applying-normal-modes-to-a-new-system" title="Permalink to this heading">#</a></h2>
+<div class="section" id="two-vertical-pendulums-connected-by-a-spring">
+<h3>Two vertical pendulums connected by a spring<a class="headerlink" href="#two-vertical-pendulums-connected-by-a-spring" title="Permalink to this heading">#</a></h3>
 <p>Consider two vertical pendulums of length <span class="math notranslate nohighlight">\(l\)</span> connected via their masses <span class="math notranslate nohighlight">\(M\)</span> by a weak spring <span class="math notranslate nohighlight">\(k\)</span>. By weak, we mean that the spring constant is small. See below for a canonical setup:</p>
 <img src="http://www.maths.surrey.ac.uk/explore/michaelspages/coupled/coupled_diag.jpg" />
 <p><strong>✅ Do this</strong></p>
 <ol class="arabic simple">
 <li><p>In this limit, write down the pair of second order linear differential equations for the horizontal motion of each pendulum bob around its equilibrium.</p></li>
 <li><p>Find and describe the normal modes. Use plots of your choosing to explain what you found.</p></li>
-<li><p>Can you build up particular solutions from sums and differences of normal modes?</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -547,8 +639,42 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
+<div class="section" id="three-coupled-oscillators">
+<h2>Three Coupled Oscillators<a class="headerlink" href="#three-coupled-oscillators" title="Permalink to this heading">#</a></h2>
+<p>Consider the setup below consisting of three masses connected by springs to each other. We intend to find the normal modes of the system by denoting each mass’s displacement (<span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span>).</p>
+<p><img alt="3 Coupled Oscillators" src="../../_images/3_coupled_osc.png" /></p>
+</div>
+<div class="section" id="finding-the-normal-mode-frequencies">
+<h2>Finding the Normal Mode Frequencies<a class="headerlink" href="#finding-the-normal-mode-frequencies" title="Permalink to this heading">#</a></h2>
+<p><strong>✅ Do this</strong></p>
+<p>This is not magic as we will see, it follows from our choices of solution. Here’s the steps and what you might notice about them:</p>
+<ol class="arabic simple">
+<li><p>Guess what the normal modes might look like? Write your guesses down; how should the masses move? (It’s ok if you are not sure about all of them, try to determine one of them)</p></li>
+<li><p>Write down the energy for the whole system, <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(U\)</span> (We have done this before, but not for this many particles)</p></li>
+<li><p>Use the Euler-Lagrange Equation to find the equations of motion for <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span>. (We have done this lots, so make sure it feels solid)</p></li>
+<li><p>Reformulate the equations of motion as a matrix equation <span class="math notranslate nohighlight">\(\ddot{\mathbf{x}} = \mathbf{A} \mathbf{x}\)</span>. What is <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>? (We have done this, but only quickly, so take your time)</p></li>
+<li><p>Consider solutions of the form <span class="math notranslate nohighlight">\(Ce^{i{\omega}t}\)</span>, plug that into <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span> to show you get <span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{x} = -\omega^2 \mathbf{x}\)</span>. (We have not done this, we just assumed it works! It’s ok if this is annoying, we only have to show it once.)</p></li>
+<li><p>Find the normal mode frequencies by taking the determinant of <span class="math notranslate nohighlight">\(\mathbf{A} - \mathbf{I}\lambda\)</span>. Note that this produces the following definition: <span class="math notranslate nohighlight">\(\lambda = -\omega^2\)</span> (We have not done this together and we can if it’s confusing.)</p></li>
+</ol>
+</div>
+<div class="section" id="finding-the-normal-modes-amplitudes">
+<h2>Finding the Normal Modes Amplitudes<a class="headerlink" href="#finding-the-normal-modes-amplitudes" title="Permalink to this heading">#</a></h2>
+<p>Ok, now we need to find the normal mode amplitudes. That is we assumed sinusoidal oscillations, but at what amplitudes? We will show how to do this with one frequency (<span class="math notranslate nohighlight">\(\omega_1\)</span>), and then break up the work of the the other two. These frequencies are:</p>
+<div class="math notranslate nohighlight">
+\[\omega_A = 2\dfrac{k}{m}; \qquad \omega_B = \left(2-\sqrt{2}\right)\dfrac{k}{m}; \qquad \omega_C = \left(2+\sqrt{2}\right)\dfrac{k}{m}\qquad\]</div>
+<p><strong>✅ Do this</strong></p>
+<p>After we do the first one, pick another frequencies and repeat. Answer the follow questions:</p>
+<ol class="arabic simple">
+<li><p>What does this motion physically look like? What are the masses doing?</p></li>
+<li><p>How does the frequency of oscillation make sense? Why is it higher or lower than <span class="math notranslate nohighlight">\(\omega_A\)</span>?</p></li>
+</ol>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/1e8a8b4d19c14f517b03bf5e1b89aa76/Notes-Three_Coupled_Oscillators.pdf"><span class="xref download myst">Partial Solution to Activity</span></a></p></li>
+</ul>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -580,6 +706,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="notes-waves_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">16 Oct 23 - Notes: Introduction to Waves</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="activity-CoupledOsc-NumericalNormalModes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -595,12 +739,22 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-lecture-canonical-coupled-oscillators">Guided Lecture: Canonical Coupled Oscillators</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-assume-the-solution">Method 1: Assume the solution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-find-the-normal-modes">Method 2: Find the normal modes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-coupled-oscillators">Canonical Coupled Oscillators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-the-equations-of-motion">Deriving the Equations of Motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-normal-modes">Finding Normal Modes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-assume-a-solution">Method 1: Assume a Solution</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-matrix-analysis-the-eigenvalue-problem">Method 2: Matrix Analysis (the Eigenvalue Problem)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apply">Apply:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-normal-modes-to-a-new-system">Applying Normal Modes to a New System</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-vertical-pendulums-connected-by-a-spring">Two vertical pendulums connected by a spring</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-coupled-oscillators">Three Coupled Oscillators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-normal-mode-frequencies">Finding the Normal Mode Frequencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-normal-modes-amplitudes">Finding the Normal Modes Amplitudes</a></li>
 </ul>
   </nav></div>
 

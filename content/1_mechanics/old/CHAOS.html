@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>19 Sep 23 - CHAOS &#8212; PHY 415 Fall 2023</title>
   
   
@@ -214,6 +213,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-coupled_oscillations.html">16 Oct 23 - Notes: Coupled Oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-waves_intro.html">16 Oct 23 - Notes: Introduction to Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-CoupledOsc-NormalModes.html">17 Oct 23 - Activity: Normal Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-CoupledOsc-NumericalNormalModes.html">19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -485,12 +486,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sep-23-chaos">
+  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-chaos">
 <h1>19 Sep 23 - CHAOS<a class="headerlink" href="#sep-23-chaos" title="Permalink to this heading">#</a></h1>
 <p>Over the last couple weeks we’ve been looking into a lot of 2 dimensional autonomous (the differential equations don’t depend on time) systems of differential equations.
 Another thing we’ve noticed is that initial conditions in these systems tend to either blast off to infinity, form a closed loop, or are drawn to attracting fixed point(s) or limit cycle(s). In the case of attracting fixed points or limit cycles, many different initial conditions can be drawn to the same fixed point or limit cycle. In fact, we saw that it is possible for <strong>every</strong> initial condition to be drawn to the same limit cycle for the Van der Pol oscillator. This means that trajectories that are initially far apart eventually become close together.</p>
 <p>This seems all well and good, but when we step up to 3 dimensional autonomous systems (or as we’ll see later, non-autonomous 2D ones), some more interesting behavior starts to emerge. Trajectories that start out very close to each other can diverge from each other, while still not diverging to infinity. And it turns out that these sorts of <strong>chaotic</strong> systems arise surprisingly often in systems we’re interested in in physics. The classic example of this is the double pendulum. Its also been shown that the solar system is chaotic for large time scales, and countless other systems exhibit this property.</p>
-<section id="definition-of-chaos">
+<div class="section" id="definition-of-chaos">
 <h2>Definition of Chaos<a class="headerlink" href="#definition-of-chaos" title="Permalink to this heading">#</a></h2>
 <p>Here we’ll follow Strogats’s definition of chaos, which is:</p>
 <p><em><strong>Chaos</strong></em> <em>is aperiodic long-term behavior in a deterministic system that exhibits sensitive dependence on initial conditions.</em></p>
@@ -500,8 +501,8 @@ Another thing we’ve noticed is that initial conditions in these systems tend t
 <li><p><strong>Sensitive dependence on initial conditions</strong> means that nearby trajectories separate exponentially fast.</p></li>
 </ol>
 <p>Let’s investigate this phenomenon for a particular system.</p>
-</section>
-<section id="halvorsen-attractor">
+</div>
+<div class="section" id="halvorsen-attractor">
 <h2>Halvorsen Attractor<a class="headerlink" href="#halvorsen-attractor" title="Permalink to this heading">#</a></h2>
 <p>One system we can start looking at is given by the <strong>Halvorsen Equations:</strong></p>
 <div class="math notranslate nohighlight">
@@ -578,8 +579,8 @@ Another thing we’ve noticed is that initial conditions in these systems tend t
 <img alt="../../../_images/4509348069a01275a59cea2618d14a2cfdb572eff02b35cdf1cb521803a7d457.png" src="../../../_images/4509348069a01275a59cea2618d14a2cfdb572eff02b35cdf1cb521803a7d457.png" />
 </div>
 </div>
-</section>
-<section id="lyapunov-exponents">
+</div>
+<div class="section" id="lyapunov-exponents">
 <h2>Lyapunov Exponents<a class="headerlink" href="#lyapunov-exponents" title="Permalink to this heading">#</a></h2>
 <p>One of our criteria for a system to be chaotic was that nearby trajectories must separate exponentially fast. Let’s see if this holds true for this system:</p>
 <p><strong>✅ Do this</strong></p>
@@ -621,8 +622,8 @@ t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\rig
 </div>
 </div>
 </div>
-</section>
-<section id="driven-damped-pendulum">
+</div>
+<div class="section" id="driven-damped-pendulum">
 <h2>Driven Damped Pendulum<a class="headerlink" href="#driven-damped-pendulum" title="Permalink to this heading">#</a></h2>
 <p>Now let’s turn our attention to a more physics-y chaotic system, the Driven Damped Pendulum (DDP). This system is similar to the large angle pendulum that we’ve studied before, but it has a damping term <span class="math notranslate nohighlight">\(-2\beta\dot{\theta}\)</span>, as well as a driving time-dependent torque <span class="math notranslate nohighlight">\(\gamma \omega_0^2\cos(\omega t)\)</span> . The full equation after sufficient non-dimensionalization looks like this (note: <span class="math notranslate nohighlight">\(\omega_0 \neq \omega\)</span>):</p>
 <div class="math notranslate nohighlight">
@@ -692,8 +693,8 @@ t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\rig
 </ul>
 </li>
 </ol>
-</section>
-<section id="poincare-section">
+</div>
+<div class="section" id="poincare-section">
 <h2>Poincaré Section<a class="headerlink" href="#poincare-section" title="Permalink to this heading">#</a></h2>
 <p>To get a better sense of what’s actually going on here, and to maybe have a hope of actually seeing if this thing has an attractor, we can use what is called a <strong>Poincaré section</strong>. The idea behind a Poincaré section is as follows: since the force term of this system is periodic, we should only look at points in phase space where the force term is at the same point in its cycle. Doing this reveals the breautiful fractal cross section of an attractor.</p>
 <p><strong>✅ Do this</strong></p>
@@ -756,8 +757,8 @@ t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\rig
 </ul>
 </li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

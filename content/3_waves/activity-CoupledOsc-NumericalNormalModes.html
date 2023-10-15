@@ -7,9 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <title>13 Oct 22 - Activity: Normal Modes of N Coupled Oscillators &#8212; PHY 415 Fall 2023</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators &#8212; PHY 415 Fall 2023</title>
   
   
   
@@ -67,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/3_waves/activity-CoupledOsc-NumericalNormalModes';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Worked Problem Assignment 1" href="../9_assignments/worked-problem-1.html" />
+    <link rel="prev" title="17 Oct 23 - Activity: Normal Modes" href="activity-CoupledOsc-NormalModes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -211,9 +212,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../2_EM/Numerics/activity-relaxation_2d.html">12 Oct 23 - Activity: Method of Relaxation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillations</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notes-coupled_oscillations.html">16 Oct 23 - Notes: Coupled Oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-waves_intro.html">16 Oct 23 - Notes: Introduction to Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-CoupledOsc-NormalModes.html">17 Oct 23 - Activity: Normal Modes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -459,7 +462,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>13 Oct 22 - Activity: Normal Modes of N Coupled Oscillators</h1>
+    <h1>19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -485,14 +488,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="oct-22-activity-normal-modes-of-n-coupled-oscillators">
-<h1>13 Oct 22 - Activity: Normal Modes of N Coupled Oscillators<a class="headerlink" href="#oct-22-activity-normal-modes-of-n-coupled-oscillators" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-activity-normal-modes-of-n-coupled-oscillators">
+<h1>19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators<a class="headerlink" href="#oct-23-activity-normal-modes-of-n-coupled-oscillators" title="Permalink to this heading">#</a></h1>
 <p>Now that we have developed solutions for the 3 coupled oscillators, let’s try to reproduce that work numerically and plots the modes to make sense of what they are doing for us.</p>
 <p>We can then apply these tools to <span class="math notranslate nohighlight">\(N\)</span> identically coupled 1D oscillators.</p>
-<section id="three-coupled-oscillators">
+<div class="section" id="three-coupled-oscillators">
 <h2>Three Coupled Oscillators<a class="headerlink" href="#three-coupled-oscillators" title="Permalink to this heading">#</a></h2>
 <p>Consider the setup below consisting of three masses connected by springs to each other. We intend to find the normal modes of the system by denoting each mass’s displacement (<span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span>).</p>
-<p><img alt="3 Coupled Oscillators" src="assets/images/3_coupled_osc.png" /></p>
+<p><img alt="3 Coupled Oscillators" src="../../_images/3_coupled_osc.png" /></p>
 <p>We start by importing the libraries that we need.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -505,8 +508,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="finding-the-eigenvalues-and-eigenvectors">
+</div>
+<div class="section" id="finding-the-eigenvalues-and-eigenvectors">
 <h2>Finding the Eigenvalues and Eigenvectors<a class="headerlink" href="#finding-the-eigenvalues-and-eigenvectors" title="Permalink to this heading">#</a></h2>
 <p>We reduced our normal mode problem to the following:</p>
 <div class="math notranslate nohighlight">
@@ -568,8 +571,8 @@ Matrix([[-2, 1, 0], [1, -2, 1], [0, 1, -2]])
 <img alt="../../_images/e634a13b374f5285da90e9887f70ddc4af65896438c7694d2dacce85b1ce2f52.png" src="../../_images/e634a13b374f5285da90e9887f70ddc4af65896438c7694d2dacce85b1ce2f52.png" />
 </div>
 </div>
-</section>
-<section id="plotting-the-modes">
+</div>
+<div class="section" id="plotting-the-modes">
 <h2>Plotting the modes<a class="headerlink" href="#plotting-the-modes" title="Permalink to this heading">#</a></h2>
 <p>Awesome. Now we have our modes, but what do they mean? Remember, in a given mode every object oscillates at the mode frequency, just with different amplitudes. That means everyone has the following form:</p>
 <div class="math notranslate nohighlight">
@@ -582,8 +585,8 @@ Matrix([[-2, 1, 0], [1, -2, 1], [0, 1, -2]])
 </div>
 </div>
 </div>
-</section>
-<section id="extending-your-work">
+</div>
+<div class="section" id="extending-your-work">
 <h2>Extending your work<a class="headerlink" href="#extending-your-work" title="Permalink to this heading">#</a></h2>
 <p>Given what we have done thus far, you can see that we could easily construct the matrix for a <span class="math notranslate nohighlight">\(N\)</span> dimensional chain of 1D oscillators. So let’s do that.</p>
 <p>Repeat this analysis for a set of <span class="math notranslate nohighlight">\(N\)</span> oscillators. Your code should be able to:</p>
@@ -601,12 +604,12 @@ Matrix([[-2, 1, 0], [1, -2, 1], [0, 1, -2]])
 </div>
 </div>
 </div>
-</section>
-<section id="even-further">
+</div>
+<div class="section" id="even-further">
 <h2>Even further<a class="headerlink" href="#even-further" title="Permalink to this heading">#</a></h2>
 <p>These models can be used with lattices (solid objects). Draw a sketch of 4 oscillators in a plane connected together in a square shape. Write down the energy equations for this system (assume the springs do not move laterally much). What do the EOMs look like?</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -617,16 +620,16 @@ Matrix([[-2, 1, 0], [1, -2, 1], [0, 1, -2]])
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "teaching"
         },
         kernelOptions: {
-            name: "python3",
+            name: "teaching",
             path: "./content/3_waves"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'teaching'</script>
 
                 </article>
               
@@ -638,6 +641,24 @@ Matrix([[-2, 1, 0], [1, -2, 1], [0, 1, -2]])
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="activity-CoupledOsc-NormalModes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">17 Oct 23 - Activity: Normal Modes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../9_assignments/worked-problem-1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Worked Problem Assignment 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

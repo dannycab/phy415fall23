@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>29 Aug 23 - Activity: What is a Model? &#8212; PHY 415 Fall 2023</title>
   
   
@@ -214,6 +213,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-coupled_oscillations.html">16 Oct 23 - Notes: Coupled Oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-waves_intro.html">16 Oct 23 - Notes: Introduction to Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-CoupledOsc-NormalModes.html">17 Oct 23 - Activity: Normal Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-CoupledOsc-NumericalNormalModes.html">19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -488,26 +489,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="aug-23-activity-what-is-a-model">
+  <div class="tex2jax_ignore mathjax_ignore section" id="aug-23-activity-what-is-a-model">
 <h1>29 Aug 23 - Activity: What is a Model?<a class="headerlink" href="#aug-23-activity-what-is-a-model" title="Permalink to this heading">#</a></h1>
-<section id="notes">
+<div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><em>Class Meeting:</em> 29 Sept 23</p></li>
 <li><p><em>Prior Reading:</em> None necessary</p></li>
 </ul>
-</section>
-<section id="what-is-mathematical-modeling">
+</div>
+<div class="section" id="what-is-mathematical-modeling">
 <h2>What is Mathematical Modeling?<a class="headerlink" href="#what-is-mathematical-modeling" title="Permalink to this heading">#</a></h2>
 <p>Nature reveals itself to us through interactions. We can tell from observations that it is nature’s interactions that lead to its evolution. How nature is changing and predicting how it will change in the future is the work of science. In this work, we observe nature and its interactions to make models of those observations. We aim to predict and explain our observations of nature through this building of models.</p>
 <p>In physics, our goals are typically to explain and predict observations of physical phenomenon. Here, we focus ourselves to those canonical things that physicists concern themselves with: motion, fields, waves, atoms, nuclei, and so on.</p>
-</section>
-<section id="models-and-modeling">
+</div>
+<div class="section" id="models-and-modeling">
 <h2>Models and modeling<a class="headerlink" href="#models-and-modeling" title="Permalink to this heading">#</a></h2>
 <p>This course focuses on common physical models and how we use mathematics and computing tools to investigate these models. But, we need to agree on an mutual understanding of a model. In this activity, you will be working in a group to define aspects of a good model for the physical sciences.</p>
 <p>There are plenty of ideas on the internet, I can even <a class="reference external" href="https://bfy.tw/TUdA">provide you a link</a> with plenty of information. But, the point of this activity is for us to define a good model now (given all your prior experiences with models and modeling), and to reflect on that definition as you develop expertise with models and modeling (through your learning in this class).</p>
-</section>
-<section id="what-is-a-model">
+</div>
+<div class="section" id="what-is-a-model">
 <h2>What is a model?<a class="headerlink" href="#what-is-a-model" title="Permalink to this heading">#</a></h2>
 <p>We are going to start with this short video made by Geoscientist John Aiken when he was a graduate student at Georgia Tech.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=dkTncoPqo5Y"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/dkTncoPqo5Y?width=720&amp;height=405" /></a></p>
@@ -515,7 +516,7 @@ document.write(`
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=dkTncoPqo5Y">https://inv.tux.pizza/watch?v=dkTncoPqo5Y</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=dkTncoPqo5Y">https://youtube.com/watch?v=dkTncoPqo5Y</a></p></li>
 </ul>
-<section id="history-and-philosophy-of-science">
+<div class="section" id="history-and-philosophy-of-science">
 <h3>History and Philosophy of Science<a class="headerlink" href="#history-and-philosophy-of-science" title="Permalink to this heading">#</a></h3>
 <p>If you would like to dive deeper into models and modeling, there’s excellent work in history and philosophy of science. The field studies how science develops knowledge, practice, culture, and so on. It studies important events and provides critical information on important and, often, overlooked folks who do science. For example, historian and gender studies professor <a class="reference external" href="https://en.wikipedia.org/wiki/Sharon_Traweek">Sharon Traweek</a> studies the high energy physics field. Her book, <a class="reference external" href="https://en.wikipedia.org/wiki/Beamtimes_and_Lifetimes">Beamtimes and Lifetimes: The World of High Energy Physicists</a> <span id="id1">[<a class="reference internal" href="../../references.html#id4" title="Sharon Traweek. Beamtimes and Lifetimes. Harvard University Press, 2009.">Tra09</a>]</span> is excellent.</p>
 <div class="admonition-dame-nancy-cartwright-philosopher-of-science admonition">
@@ -523,9 +524,9 @@ document.write(`
 <p>One of the more interesting scholars in <a class="reference external" href="https://en.wikipedia.org/wiki/Nancy_Cartwright_(philosopher)">Dame Nancy Cartwright</a> who wrote a lot about the ‘practice of science.’ Her philosophical work informed many of the innovations in physics and broader science education – including many science courses at MSU.</p>
 <p>Her writing is very interesting, but the style of writing can be a challenge to read. This is the nature of academic writing in different disciplines. Her book called “How The Laws of Physics Lie” <span id="id2">[<a class="reference internal" href="../../references.html#id5" title="Nancy Cartwright. How the Laws of Physics Lie. OUP Oxford, 1983.">Car83</a>]</span> is worth a read. Here’s a link to the <a class="reference external" href="http://www.generativescience.org/papers/nature/Cartwright-_1983.pdf">first chapter</a>.</p>
 </div>
-</section>
-</section>
-<section id="what-has-been-your-experience-with-models">
+</div>
+</div>
+<div class="section" id="what-has-been-your-experience-with-models">
 <h2>What has been your experience with models?<a class="headerlink" href="#what-has-been-your-experience-with-models" title="Permalink to this heading">#</a></h2>
 <p>Take 2-3 minutes to think about your prior physics class.</p>
 <ul class="simple">
@@ -574,8 +575,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
