@@ -44,6 +44,8 @@ parts:
     chapters:
       - file: content/3_waves/notes-coupled_oscillations
       - file: content/3_waves/notes-waves_intro
+      - file: content/3_waves/activity-CoupledOsc-NormalModes
+      - file: content/3_waves/activity-CoupledOsc-NumericalNormalModes
   - caption: Assignments
     chapters:
     - file: content/9_assignments/worked-problem-1.md
