@@ -7,15 +7,15 @@ To get a sense of the course, please read all the pages associated with our syll
  
 ## Updates
 
-`````{admonition} Last updated: 9 Oct 2023
+`````{admonition} Last updated: 17 Oct 2023
 :class: tip
 
 ### Site updates
-* Readings for Week 7 ([coupled oscillators](./3_waves/notes-coupled_oscillations.ipynb) and [waves](./3_waves/notes-waves_intro.ipynb)) are posted.
+* Readings for Week 8 ([the wave equation](./3_waves/notes-solve_the_wave_eq.ipynb)) is posted.
 
 ### Upcoming Deadlines
-* The [fourth worked problem](./9_assignments/worked-problem-4.md) is due 13 Oct 2023.
 * The [second project](./9_assignments/project-2.md) is due 20 Oct 2023.
+* The [fifth worked problem](./9_assignments/worked-problem-5.md) is due 27 Oct 2023.
 
 `````
 
