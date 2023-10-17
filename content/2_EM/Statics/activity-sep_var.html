@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>3 Oct 23 - Activity: PDEs and Separation of Variables &#8212; PHY 415 Fall 2023</title>
   
   
@@ -497,7 +498,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-activity-pdes-and-separation-of-variables">
+  <section class="tex2jax_ignore mathjax_ignore" id="oct-23-activity-pdes-and-separation-of-variables">
 <h1>3 Oct 23 - Activity: PDEs and Separation of Variables<a class="headerlink" href="#oct-23-activity-pdes-and-separation-of-variables" title="Permalink to this heading">#</a></h1>
 <p>As we have realized, solving field problems using vector equations is not always the best way to go about solving our problems. The integrals can be difficult to set up and the equations might be difficult, if not, impossible to solve (e.g., because there is no anti-derivative for the integrand). While we might not fully eliminate the need for vector equations, in electrostatic situations, we can posit the <a class="reference external" href="https://en.wikipedia.org/wiki/Electric_potential">electric potential</a>, <span class="math notranslate nohighlight">\(\Phi\)</span>.</p>
 <p><strong>We changed to using <span class="math notranslate nohighlight">\(\Phi\)</span> because there are also things like <span class="math notranslate nohighlight">\(dV\)</span> – volume elements.</strong></p>
@@ -518,7 +519,7 @@ document.write(`
 \[\Phi = \frac{1}{4\pi\epsilon_0}\iiint\frac{\rho dV}{|\mathbf{r}-\mathbf{r}'|}\]</div>
 <p>Much like we have done with the electric field, one can set up a forward integral formulation of the electric potential and add up the elements to find the total potential. Let’s use Python [sympy] library to illustrate this. We start with the point charge. Here <span class="math notranslate nohighlight">\(k=\frac{1}{4\pi\epsilon_0}\)</span>.</p>
 <p>First, we show how to form an expression for the point charge potential.</p>
-<div class="section" id="point-charge-potential">
+<section id="point-charge-potential">
 <h2>Point Charge Potential<a class="headerlink" href="#point-charge-potential" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -543,8 +544,8 @@ document.write(`
 <img alt="../../../_images/d362fdebb9dc95e239118908fda43a0abcf8379d616710377c6c7b9264cf8fef.png" src="../../../_images/d362fdebb9dc95e239118908fda43a0abcf8379d616710377c6c7b9264cf8fef.png" />
 </div>
 </div>
-</div>
-<div class="section" id="potential-of-a-charged-rod">
+</section>
+<section id="potential-of-a-charged-rod">
 <h2>Potential of a charged rod<a class="headerlink" href="#potential-of-a-charged-rod" title="Permalink to this heading">#</a></h2>
 <p>It is common to compute the electric potential of a charged rod along a line perpendicular to it along the y-axis. Let’s do this for a rod of length <span class="math notranslate nohighlight">\(L\)</span> with a uniform charge density, <span class="math notranslate nohighlight">\(\lambda\)</span>. We will assume that the rod is centered on the origin and that the axis of the rod is aligned with the <span class="math notranslate nohighlight">\(x\)</span>-axis. We can treat a tiny piece of the rod like a point charge and add things up!</p>
 <p>Let’s find the electric potential at <span class="math notranslate nohighlight">\(\langle 0,y,0 \rangle\)</span>.</p>
@@ -618,8 +619,8 @@ document.write(`
 </div>
 <p>Instead, we will use the differential form of the electric potential where there are no charges, but the boundaries are set to a given potential. This is called <strong>Laplace’s equation</strong>.</p>
 <p><em>Note that regardless of the approach to find the electric field we will need to eventually compute the gradient of the electric potential.</em> We will need to do that numerically later.</p>
-</div>
-<div class="section" id="laplace-s-equation">
+</section>
+<section id="laplace-s-equation">
 <h2>Laplace’s Equation<a class="headerlink" href="#laplace-s-equation" title="Permalink to this heading">#</a></h2>
 <p><em>Numerical solution to Laplace’s equation on an annulus</em>
 <img alt="Laplace's Equation" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Laplace%27s_equation_on_an_annulus.svg/800px-Laplace%27s_equation_on_an_annulus.svg.png" /></p>
@@ -627,7 +628,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\nabla^2 \Phi = 0\]</div>
 <p>There are two important ways to go about solving these problems. The first is using separation of variables, which is a common analytical technique. The second is to use numerical methods that we will discuss later in the course. Both of these methods rely on the the following properties of the solutions to Laplace’s equation.</p>
-<div class="section" id="properties-of-solutions-to-laplace-s-equation">
+<section id="properties-of-solutions-to-laplace-s-equation">
 <h3>Properties of Solutions to Laplace’s Equation<a class="headerlink" href="#properties-of-solutions-to-laplace-s-equation" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\Phi\)</span> has no local maxima or minima except at boundaries</p></li>
@@ -636,8 +637,8 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\Phi\)</span> at a location is the average of the values of <span class="math notranslate nohighlight">\(\Phi\)</span> over the surrounding space</p></li>
 <li><p><span class="math notranslate nohighlight">\(\Phi\)</span> is unique. There is only one solution to Laplace’s equation for a given set of boundary conditions.</p></li>
 </ol>
-</div>
-<div class="section" id="activity-the-infinite-gutter">
+</section>
+<section id="activity-the-infinite-gutter">
 <h3>Activity: The Infinite Gutter<a class="headerlink" href="#activity-the-infinite-gutter" title="Permalink to this heading">#</a></h3>
 <p><img alt="Infinite Gutter" src="https://i.stack.imgur.com/nHF7a.jpg" /></p>
 <p>Consider a metal gutter that extends into infinitely in the <span class="math notranslate nohighlight">\(z\)</span> direction. The gutter width in the <span class="math notranslate nohighlight">\(y\)</span> direction is <span class="math notranslate nohighlight">\(a\)</span>. It is placed in the <span class="math notranslate nohighlight">\(y-z\)</span> plane and the <span class="math notranslate nohighlight">\(+x\)</span> direction is not constrained and extends to infinity (both the wall at <span class="math notranslate nohighlight">\(y=0\)</span> and <span class="math notranslate nohighlight">\(y=a\)</span>). So that Laplace’s equation applies in the region:</p>
@@ -646,7 +647,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(x &gt; 0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(0 &lt; y &lt; a\)</span></p></li>
 </ol>
-<div class="section" id="boundary-conditions">
+<section id="boundary-conditions">
 <h4>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this heading">#</a></h4>
 <p>What uniquely determines our solution to Laplace’s equation are the boundary conditions. For this case, we are going to set all the conditions to zero except one to illustrate the way we find those unique solutions. The boundary conditions are:</p>
 <ol class="arabic simple">
@@ -665,8 +666,8 @@ document.write(`
 <li><p>Apply the boundary conditions to solve for the constants in the general solutions.</p></li>
 </ol>
 <p><strong>Note that applying the boundary condition for <span class="math notranslate nohighlight">\(x=a\)</span> will result in an equation of the form <span class="math notranslate nohighlight">\(V(0,y) = C'\sin(ky)\)</span> where <span class="math notranslate nohighlight">\(C'\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are some constants.</strong> This is a new thing that we running up against. It requires that we use Fourier’s trick to solve for the appropriate constants. This will lead us into <a class="reference external" href="https://en.wikipedia.org/wiki/Orthogonal_functions">orthgonal functions</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Fourier_series">Fourier series</a>.</p>
-</div>
-<div class="section" id="fourier-s-trick">
+</section>
+<section id="fourier-s-trick">
 <h4>Fourier’s Trick<a class="headerlink" href="#fourier-s-trick" title="Permalink to this heading">#</a></h4>
 <p>Fourier’s trick is just what results from integrated orthonormal functions over the domain of importance. For example, the most common version of this approach is to integrate the product of two sine functions over the domain <span class="math notranslate nohighlight">\([0,\pi]\)</span> or the equivalent in the case of a length scale <span class="math notranslate nohighlight">\(a\)</span>.</p>
 <div class="math notranslate nohighlight">
@@ -691,9 +692,9 @@ document.write(`
 <li><p>Let <span class="math notranslate nohighlight">\(\Phi(0,y) = V_0\)</span>, which is the potential at the bottom of the gutter. Use the integral expression to find <span class="math notranslate nohighlight">\(C_m\)</span>.</p></li>
 <li><p>Combined with your prior work, write down the solution for the electric potential in the gutter. What do you notice about the solution? Can you visualize it?</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="visualizing-the-solution">
+</section>
+</section>
+<section id="visualizing-the-solution">
 <h3>Visualizing the Solution<a class="headerlink" href="#visualizing-the-solution" title="Permalink to this heading">#</a></h3>
 <p>We often find from these analyses that we produce infinite series solutions like this for the potential (note this is for a different problem):</p>
 <div class="math notranslate nohighlight">
@@ -767,9 +768,9 @@ document.write(`
 <img alt="../../../_images/423cd18699162213239c491f06c0b2e39abdbbd12d2fabbbc905df8a0891735d.png" src="../../../_images/423cd18699162213239c491f06c0b2e39abdbbd12d2fabbbc905df8a0891735d.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

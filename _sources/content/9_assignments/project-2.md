@@ -1,6 +1,6 @@
 # Project 2 - PDEs, Laplace's Equation, and the Method of Relaxation
 
-**Due 20 Oct 23**
+**Due 27 Oct 23**
 
 Project 2 will focus on the topic of partial differential equations, specifically Laplace's equation. For this project, **you will be given a choice to work alone or in a pair**. If you work in a pair, we expect the work to be more in-depth and to explore more aspects of the problem. For example, you should consider one of the extensions listed below to add to your project. If you work alone, we expect the same level of depth as with project 1.
 

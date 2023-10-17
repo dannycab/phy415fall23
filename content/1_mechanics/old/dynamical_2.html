@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>14 Sep 23 - Dynamical Systems Continued &#8212; PHY 415 Fall 2023</title>
   
   
@@ -493,7 +494,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-dynamical-systems-continued">
+  <section class="tex2jax_ignore mathjax_ignore" id="sep-23-dynamical-systems-continued">
 <h1>14 Sep 23 - Dynamical Systems Continued<a class="headerlink" href="#sep-23-dynamical-systems-continued" title="Permalink to this heading">#</a></h1>
 <p>Last time we investigated the phase portrait of the large angle pendulum, we we could arrive at by re-writing the differential equation</p>
 <div class="math notranslate nohighlight">
@@ -515,7 +516,7 @@ A = \begin{bmatrix} \frac{\partial f}{\partial x} &amp; \frac{\partial f}{\parti
 (this is the same problem as the last problem from tuesday)</p>
 <p>Calculate the general Jacobian matrix <span class="math notranslate nohighlight">\(A\)</span> for this system, then calculate what it is at the fixed point <span class="math notranslate nohighlight">\((0,0)\)</span>.</p>
 <p>We have the Jacobian at <span class="math notranslate nohighlight">\((0,0)\)</span> now but we still need to find its eigenvalues. Let’s take a quick detour to remember how to do that.</p>
-<div class="section" id="eigenvalues">
+<section id="eigenvalues">
 <h2>Eigenvalues<a class="headerlink" href="#eigenvalues" title="Permalink to this heading">#</a></h2>
 <p>Eigenvalues and the closely related Eigenvectors are indispensible in physics, math, and computational science. These ideas for the basis (pun somewhat intened) for countless problems, from the <a class="reference external" href="https://phys.libretexts.org/Bookshelves/Nuclear_and_Particle_Physics/Introduction_to_Applied_Nuclear_Physics_(Cappellaro)/02%3A_Introduction_to_Quantum_Mechanics/2.04%3A_Energy_Eigenvalue_Problem">energy eigenvalue equation</a> that is the founcation of quantum mechanics, to the stability of complex nonlinear systems, to Normal Modes of oscillators, which we’ll study later in this course, eigenproblems show up all over in physics. I can’t resist a brief tangent: Once some scientists were using an eigenvalue driven algorithm called principal component analysis to study the genes of people that live in Europe. They found that these egenvalues/vectors reproduced a map of Europe with surprising accuracy (<a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2735096/">link</a>). So these tools are extremely, and often unreasonably powerful.</p>
 <p>Eigenvalues are the <span class="math notranslate nohighlight">\(\lambda\)</span> in the equation:</p>
@@ -525,7 +526,7 @@ A\mathbf{v} = \lambda \mathbf{v}
 \]</div>
 <p>Where <span class="math notranslate nohighlight">\(A\)</span> is a linear operator of the vector space that <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> lives in. In finite-dimensional vector spaces, like what we’re considering today, these linear operators are always matricies. There is a bit of physical intuition behind this equation: An eigenvector of <span class="math notranslate nohighlight">\(A\)</span> is a vector that only gets stretched or squished by <span class="math notranslate nohighlight">\(\lambda\)</span> when <span class="math notranslate nohighlight">\(A\)</span> acts on <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>. Here’s a gif from Grant Sanderson’s <a class="reference external" href="https://www.youtube.com/watch?v=PFDu9oVAE-g">fantastic video</a> on eigenvalues and eigenvectors that shows this:</p>
 <img src="https://thumbs.gfycat.com/FluffyMiniatureBackswimmer-max-1mb.gif" alt="Computer man" style="width:320px;height:180px;">
-<div class="section" id="finding-eigenvalues">
+<section id="finding-eigenvalues">
 <h3>Finding Eigenvalues<a class="headerlink" href="#finding-eigenvalues" title="Permalink to this heading">#</a></h3>
 <p>To actually find the eigenvalues of a matrix, you solve the <strong>characteristic polynomial</strong> of the matrix, which you obtain by solving the equation:</p>
 <div class="math notranslate nohighlight">
@@ -543,8 +544,8 @@ A\mathbf{v} = \lambda \mathbf{v}
 <li><p>Both eigenvalues pure imaginary: Center</p></li>
 </ul>
 <p>Note: You can actually learn quite a bit more from this analysis, see Strogatz chaper 6.</p>
-</div>
-<div class="section" id="eigenvalues-computationally">
+</section>
+<section id="eigenvalues-computationally">
 <h3>Eigenvalues, Computationally<a class="headerlink" href="#eigenvalues-computationally" title="Permalink to this heading">#</a></h3>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">np.linalg.eig()</span></code> to find the eigenvalues (and normalized eigenvectors) of a matrix which we represent as numpy array. Below is some doe that does this (note the imaginary unit is represented as <span class="math notranslate nohighlight">\(j\)</span> in python):</p>
 <div class="cell docutils container">
@@ -565,9 +566,9 @@ A\mathbf{v} = \lambda \mathbf{v}
 </div>
 </div>
 <p>This can be super handy when you just need to do some quick caracterization from the eigenvalues of a matrix. However, be warned - since you only get numerical answers you can lose quite a bit of the nuance that comes from if you had calculated these. We’ll see how that can be an issue later in the semester when we tackle normal modes.</p>
-</div>
-</div>
-<div class="section" id="activity-lotka-volterra-equations">
+</section>
+</section>
+<section id="activity-lotka-volterra-equations">
 <h2>Activity: Lotka - Volterra Equations<a class="headerlink" href="#activity-lotka-volterra-equations" title="Permalink to this heading">#</a></h2>
 <p>The Lotka -Volterra Equations are a pair of coupled ODEs</p>
 <div class="math notranslate nohighlight">
@@ -645,8 +646,8 @@ eigenvalues, 2nd fixed point: [0. 0.]
 <img alt="../../../_images/11c46a62dac5d70d9956d23717ffd74c7077e677d25724f5935205b66a04721c.png" src="../../../_images/11c46a62dac5d70d9956d23717ffd74c7077e677d25724f5935205b66a04721c.png" />
 </div>
 </div>
-</div>
-<div class="section" id="investigating-the-van-der-pol-oscillator">
+</section>
+<section id="investigating-the-van-der-pol-oscillator">
 <h2>Investigating the Van der Pol Oscillator<a class="headerlink" href="#investigating-the-van-der-pol-oscillator" title="Permalink to this heading">#</a></h2>
 <p>It turns out there is some more interesting behavior other than just the behavior around fixed points. Toward seeing that, let’s look at the Van der Pol Oscillator. This equation originates from lonlinear circuits in early radios, but has now also been used in neuroscience and geology. It is given by the differential equation:</p>
 <div class="math notranslate nohighlight">
@@ -730,7 +731,7 @@ eigenvalues, 2nd fixed point: [0. 0.]
 </div>
 </div>
 </div>
-<div class="section" id="limit-cycles">
+<section id="limit-cycles">
 <h3>Limit Cycles<a class="headerlink" href="#limit-cycles" title="Permalink to this heading">#</a></h3>
 <p>The new behavior we’ve seen from this equation is what’s called a <strong>limit cycle</strong>, where the system is attracted/reppeled from a closed curve instead of a fixed point(s). There’s a lot of really great math here that’s a bit beyond what we can cover in class, but it would be a great thing to look into for a project!</p>
 <p><strong>✅ Do this</strong></p>
@@ -747,9 +748,9 @@ eigenvalues, 2nd fixed point: [0. 0.]
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

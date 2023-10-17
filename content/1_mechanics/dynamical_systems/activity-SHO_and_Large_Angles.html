@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>08 Sept 22 - Activity: Large Angle Pendulum &#8212; PHY 415 Fall 2023</title>
   
   
@@ -493,7 +494,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sept-22-activity-large-angle-pendulum">
+  <section class="tex2jax_ignore mathjax_ignore" id="sept-22-activity-large-angle-pendulum">
 <h1>08 Sept 22 - Activity: Large Angle Pendulum<a class="headerlink" href="#sept-22-activity-large-angle-pendulum" title="Permalink to this heading">#</a></h1>
 <p>Up to now, most of your work with models in physics are those you can solve analytically in terms of known functions. Think about solving differential equations that produce polynomials or sines and cosines.</p>
 <p>But what happens when the solution to the problem is not obviously tractable in an analytical form. Rather, how can we investigate systems that are new to us?</p>
@@ -518,7 +519,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="reminders-about-the-sho">
+<section id="reminders-about-the-sho">
 <h2>Reminders about the SHO<a class="headerlink" href="#reminders-about-the-sho" title="Permalink to this heading">#</a></h2>
 <p>To get this started, let’s remind ourselves of the phase portrait of the SHO. Recall that we separated the second order ODE into two first order ODEs, one for <span class="math notranslate nohighlight">\(x\)</span> and one for <span class="math notranslate nohighlight">\(v_x\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -555,8 +556,8 @@ document.write(`
 <li><p>Repeat for all points of interest</p></li>
 <li><p>Plot arrows to demonstrate flow of the solutions in phase space</p></li>
 </ol>
-</div>
-<div class="section" id="phase-portrait-of-the-simple-harmonic-oscillator">
+</section>
+<section id="phase-portrait-of-the-simple-harmonic-oscillator">
 <h2>Phase Portrait of the Simple Harmonic Oscillator<a class="headerlink" href="#phase-portrait-of-the-simple-harmonic-oscillator" title="Permalink to this heading">#</a></h2>
 <p>Below, we have written code that makes a phase portrait from the simple harmonic oscillator. It’s written in terms of three functions that serve three purposes that you might want to modify in your own work:</p>
 <ul class="simple">
@@ -639,7 +640,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="putting-the-functions-to-use">
+<section id="putting-the-functions-to-use">
 <h3>Putting the functions to use<a class="headerlink" href="#putting-the-functions-to-use" title="Permalink to this heading">#</a></h3>
 <p>With these two functions, all we are left to do is specify the size of the space and the grid points (that is where exactly we are computing the changes). We use <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.meshgrid.html">meshgrid</a> to make those arrays a set of Cartesian coordinates and then send that to our functions.</p>
 <p>We then plots the results.</p>
@@ -679,8 +680,8 @@ document.write(`
 <img alt="../../../_images/a4229728d4bf32e1bc73a5f5bf475acc2c6a663cd25c81bf9843fb416c83def0.png" src="../../../_images/a4229728d4bf32e1bc73a5f5bf475acc2c6a663cd25c81bf9843fb416c83def0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="what-can-phase-space-help-us-do">
+</section>
+<section id="what-can-phase-space-help-us-do">
 <h3>What can phase space help us do?<a class="headerlink" href="#what-can-phase-space-help-us-do" title="Permalink to this heading">#</a></h3>
 <p><strong>✅ Do this</strong></p>
 <p>Let’s remember a few things about the SHO.</p>
@@ -695,9 +696,9 @@ document.write(`
 </li>
 </ol>
 <p>What does this plots tell you about all potential solutions?</p>
-</div>
-</div>
-<div class="section" id="the-large-angle-pendulum">
+</section>
+</section>
+<section id="the-large-angle-pendulum">
 <h2>The Large Angle Pendulum<a class="headerlink" href="#the-large-angle-pendulum" title="Permalink to this heading">#</a></h2>
 <p>The Large Angle Pendulum is the first of a number of nonlinear differential equations out there. This one is quite special in that the integral that solves for the period of this pendulum has a name! It’s called and <a class="reference external" href="https://en.wikipedia.org/wiki/Elliptic_integral">Elliptical Integral of the First Kind</a>. Elliptical because of the nature of the kernel of the integral, which has an elliptic form (in our case, one over the square root of a quantity squared subtracted from one, yes, seriously, we have a name for that).</p>
 <p>Here’s the pendulum in all it’s glory.</p>
@@ -710,7 +711,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\ddot{\theta} = -\dfrac{g}{L}\sin(\theta)\]</div>
 <p>You have a second order differential equation for <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
-<div class="section" id="make-a-new-phase-portrait">
+<section id="make-a-new-phase-portrait">
 <h3>Make a new phase portrait<a class="headerlink" href="#make-a-new-phase-portrait" title="Permalink to this heading">#</a></h3>
 <p><strong>✅ Do this</strong></p>
 <p>With your partners,</p>
@@ -782,9 +783,9 @@ document.write(`
 <img alt="../../../_images/63f6f710eebc013142714f98b91beb2f3f973a314b533f9258fbe7ab1bd50596.png" src="../../../_images/63f6f710eebc013142714f98b91beb2f3f973a314b533f9258fbe7ab1bd50596.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

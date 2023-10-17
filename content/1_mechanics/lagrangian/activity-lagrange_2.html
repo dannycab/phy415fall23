@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>7 Sep 23 - Activity: Numerical Integration and More Lagrangians &#8212; PHY 415 Fall 2023</title>
   
   
@@ -499,10 +500,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-activity-numerical-integration-and-more-lagrangians">
+  <section class="tex2jax_ignore mathjax_ignore" id="sep-23-activity-numerical-integration-and-more-lagrangians">
 <h1>7 Sep 23 - Activity: Numerical Integration and More Lagrangians<a class="headerlink" href="#sep-23-activity-numerical-integration-and-more-lagrangians" title="Permalink to this heading">#</a></h1>
 <p>Now that we have an idea how to find a wealth of interesting ordinary differential equations using Lagrangian mechanics, we’ll work on building up ways to understand these equations, their solutions and behavior. The issue with this is that <strong>most ODEs do not have analytical solutions</strong>. That means we can’t write down nice closed-form solutions for them using transcendental functions. However, don’t despair, because that does not mean there is no solution. In fact, the vast majority of non-pathological ODEs one might come across in physics are <strong>guaranteed</strong> to have unique solutions (at least for finite time). We can easily calculate these solutions using <strong>numerical integration</strong>. Next week we’ll also see how we can characterize the behavior of ODEs even without access to numerical integration.</p>
-<div class="section" id="the-simple-harmonic-oscillator">
+<section id="the-simple-harmonic-oscillator">
 <h2>The Simple Harmonic Oscillator<a class="headerlink" href="#the-simple-harmonic-oscillator" title="Permalink to this heading">#</a></h2>
 <p>Let’s start simple with everyone’s favorite differential equation, the simple harmonic oscillator. Recall that we can write the SHO as:</p>
 <div class="math notranslate nohighlight">
@@ -520,7 +521,7 @@ v = \dot{x}
 \dot{v}  = -\omega_0^2x
 \]</div>
 <p>This trick for writing higher order differential equations as first order equations is incredibly common.</p>
-<div class="section" id="setting-up-to-numerically-integrate">
+<section id="setting-up-to-numerically-integrate">
 <h3>Setting up to numerically integrate<a class="headerlink" href="#setting-up-to-numerically-integrate" title="Permalink to this heading">#</a></h3>
 <p>We need a few things to numerically integrate using <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> in python. First, we import the relevant libraries and functions.</p>
 <div class="cell docutils container">
@@ -535,7 +536,7 @@ v = \dot{x}
 </div>
 </div>
 <p>*<em>Note: The code in this block is not meant to be run directly, it is just a reference for the steps we need to take. Working code that is put together appears in the next cell.</em></p>
-<div class="section" id="derivatives-function">
+<section id="derivatives-function">
 <h4>1. Derivatives Function<a class="headerlink" href="#derivatives-function" title="Permalink to this heading">#</a></h4>
 <p>First, we need to set up a derivatives function that calculates and returns a list of the values of the first order derivatives given an input list of current values. These current values represent a location in <strong>phase space</strong>. As we will learn, <a class="reference external" href="https://en.wikipedia.org/wiki/Phase_space">phase space</a> is a space that contains all the information about the state of an ODE. The simple harmonic oscillator has a 2D phase space since its state is totally defined by its position and velocity.</p>
 <p>Here’s what our derivatives function looks like for a SHO:</p>
@@ -550,8 +551,8 @@ v = \dot{x}
 </pre></div>
 </div>
 <p>We will pass this function to our solver, which will give us back integrated solutions of our list of derivatives. So since <span class="math notranslate nohighlight">\(v = \dot{x}\)</span>, our solution will return <span class="math notranslate nohighlight">\(x\)</span> first, and <span class="math notranslate nohighlight">\(v\)</span>.</p>
-</div>
-<div class="section" id="time-setup">
+</section>
+<section id="time-setup">
 <h4>2. Time Setup<a class="headerlink" href="#time-setup" title="Permalink to this heading">#</a></h4>
 <p>We need to define the time span to solve the ODE for AND the specific times we’d like solution points for. Here it is also convienient to choose a time step <span class="math notranslate nohighlight">\(dt\)</span>. Here’s one way we could do this in python:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tmax</span> <span class="o">=</span> <span class="mi">15</span>
@@ -560,16 +561,16 @@ v = \dot{x}
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tmax</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span> <span class="c1"># specific times to return solutions for</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="parameters-and-initial-conditions">
+</section>
+<section id="parameters-and-initial-conditions">
 <h4>3. Parameters and Initial Conditions<a class="headerlink" href="#parameters-and-initial-conditions" title="Permalink to this heading">#</a></h4>
 <p>Since we’re dealing with ODEs, we need to supply an initial condition to be able to solve. The SHO has 2D phase space so we need 2 values for our initial condition. We’ll also define parameter value(s) in this step.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">omega2</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">initial_condition</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># pull back 1m, no initial velocity</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="call-integrator">
+</section>
+<section id="call-integrator">
 <h4>4. Call Integrator<a class="headerlink" href="#call-integrator" title="Permalink to this heading">#</a></h4>
 <p>Now all we have left to do is to actually use <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> to do the integration. The syntax for how to do this is shown below. We also get the opportunity to tell <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> exactly what numerical integration method we’d like it to use. For now we can think of the integrator as a magic box and choose <code class="docutils literal notranslate"><span class="pre">RK45</span></code>, or a Runge-Kutta 4th order method.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">solved</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">diffyqs</span><span class="p">,</span> <span class="n">tspan</span><span class="p">,</span> <span class="n">initial_condition</span><span class="p">,</span> <span class="n">t_eval</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">omega2</span><span class="p">,</span> <span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;RK45&quot;</span><span class="p">)</span>
@@ -628,12 +629,12 @@ v = \dot{x}
 <img alt="../../../_images/c4cfe3a71cbcec172d87c706a5dfee7185a07dc6551a2d233f8d13647b5bab33.png" src="../../../_images/c4cfe3a71cbcec172d87c706a5dfee7185a07dc6551a2d233f8d13647b5bab33.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="group-activity">
+</section>
+</section>
+</section>
+<section id="group-activity">
 <h2>Group Activity<a class="headerlink" href="#group-activity" title="Permalink to this heading">#</a></h2>
-<div class="section" id="back-to-paraboloid-paradise">
+<section id="back-to-paraboloid-paradise">
 <h3>Back to Paraboloid Paradise<a class="headerlink" href="#back-to-paraboloid-paradise" title="Permalink to this heading">#</a></h3>
 <p><a class="reference download internal" download="" href="../../../_downloads/3f16c062ad2436fc32edddbc0138a1e1/Notes-Bead_in_a_Paraboloid.pdf"><span class="xref download myst">Analytical Solution (Finding ODEs for Paraboloid)</span></a></p>
 <p>Let’s consider the problem where a particle was constrained to move on the surface <span class="math notranslate nohighlight">\(z = c\rho^2\)</span>. The EOM we arrived at are complex
@@ -742,9 +743,9 @@ $<span class="math notranslate nohighlight">\(\ddot{\rho} = \dfrac{\rho\dot{\phi
 <img alt="../../../_images/872c6942c681c9824fc9f325b977179d81dc08ca3a7e22d13ab6fc034bd38cbc.png" src="../../../_images/872c6942c681c9824fc9f325b977179d81dc08ca3a7e22d13ab6fc034bd38cbc.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

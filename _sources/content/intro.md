@@ -14,8 +14,8 @@ To get a sense of the course, please read all the pages associated with our syll
 * Readings for Week 8 ([the wave equation](./3_waves/notes-solve_the_wave_eq.ipynb)) is posted.
 
 ### Upcoming Deadlines
-* The [second project](./9_assignments/project-2.md) is due 20 Oct 2023.
-* The [fifth worked problem](./9_assignments/worked-problem-5.md) is due 27 Oct 2023.
+* The [second project](./9_assignments/project-2.md) is *NOW* due 27 Oct 2023.
+* The [fifth worked problem](./9_assignments/worked-problem-5.md) is *NOW* due 3 Nov 2023.
 
 `````
 
