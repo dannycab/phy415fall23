@@ -55,6 +55,7 @@ parts:
     - file: content/9_assignments/worked-problem-3.md
     - file: content/9_assignments/worked-problem-4.md
     - file: content/9_assignments/project-2.md
+    - file: content/9_assignments/worked-problem-5.md
   - caption: Appendices
     chapters:
     - file: content/references.ipynb
