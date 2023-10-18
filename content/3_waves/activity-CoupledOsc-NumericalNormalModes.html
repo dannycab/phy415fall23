@@ -476,7 +476,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-coupled-oscillators">Three Coupled Oscillators</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-eigenvalues-and-eigenvectors">Finding the Eigenvalues and Eigenvectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-normal-mode-frequencies">Finding the Normal Mode Frequencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-normal-modes-amplitudes">Finding the Normal Modes Amplitudes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-eigenvalues-and-eigenvectors-using-numerical-approaches">Finding the Eigenvalues and Eigenvectors using Numerical Approaches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-modes">Plotting the modes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extending-your-work">Extending your work</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#even-further">Even further</a></li>
@@ -493,13 +495,41 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="oct-23-activity-normal-modes-of-n-coupled-oscillators">
 <h1>19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators<a class="headerlink" href="#oct-23-activity-normal-modes-of-n-coupled-oscillators" title="Permalink to this heading">#</a></h1>
-<p>Now that we have developed solutions for the 3 coupled oscillators, let’s try to reproduce that work numerically and plots the modes to make sense of what they are doing for us.</p>
-<p>We can then apply these tools to <span class="math notranslate nohighlight">\(N\)</span> identically coupled 1D oscillators.</p>
+<p>Now that we have discussed and built some facility with Lagrangian dynamics, let’s see how using it makes our study of normal modes much simpler than Newtonian mechanics. We will couple this analysis to solving an eigenvalue problem by guessing the form of the solutions. This technique is very common in theoretical physics with different guesses for the solution forms giving rise to different eigenvalue problems (e.g., <a class="reference external" href="https://en.wikipedia.org/wiki/Bessel_function">Bessel functions for 2D surface problems</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Hermite_polynomials">Hermite polynomials for the Quantum Harmonic Oscillator</a>.</p>
 <section id="three-coupled-oscillators">
 <h2>Three Coupled Oscillators<a class="headerlink" href="#three-coupled-oscillators" title="Permalink to this heading">#</a></h2>
 <p>Consider the setup below consisting of three masses connected by springs to each other. We intend to find the normal modes of the system by denoting each mass’s displacement (<span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span>).</p>
 <p><img alt="3 Coupled Oscillators" src="../../_images/3_coupled_osc.png" /></p>
-<p>We start by importing the libraries that we need.</p>
+</section>
+<section id="finding-the-normal-mode-frequencies">
+<h2>Finding the Normal Mode Frequencies<a class="headerlink" href="#finding-the-normal-mode-frequencies" title="Permalink to this heading">#</a></h2>
+<p><strong>✅ Do this</strong></p>
+<p>This is not magic as we will see, it follows from our choices of solution. Here’s the steps and what you might notice about them:</p>
+<ol class="arabic simple">
+<li><p>Guess what the normal modes might look like? Write your guesses down; how should the masses move? (It’s ok if you are not sure about all of them, try to determine one of them)</p></li>
+<li><p>Write down the energy for the whole system, <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(U\)</span> (We have done this before, but not for this many particles)</p></li>
+<li><p>Use the Euler-Lagrange Equation to find the equations of motion for <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span>. (We have done this lots, so make sure it feels solid)</p></li>
+<li><p>Reformulate the equations of motion as a matrix equation <span class="math notranslate nohighlight">\(\ddot{\mathbf{x}} = \mathbf{A} \mathbf{x}\)</span>. What is <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>? (We have done this, but only quickly, so take your time)</p></li>
+<li><p>Consider solutions of the form <span class="math notranslate nohighlight">\(Ce^{i{\omega}t}\)</span>, plug that into <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span> to show you get <span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{x} = -\omega^2 \mathbf{x}\)</span>. (We have not done this, we just assumed it works! It’s ok if this is annoying, we only have to show it once.)</p></li>
+<li><p>Find the normal mode frequencies by taking the determinant of <span class="math notranslate nohighlight">\(\mathbf{A} - \mathbf{I}\lambda\)</span>. Note that this produces the following definition: <span class="math notranslate nohighlight">\(\lambda = -\omega^2\)</span> (We have not done this together and we can if it’s confusing.)</p></li>
+</ol>
+</section>
+<section id="finding-the-normal-modes-amplitudes">
+<h2>Finding the Normal Modes Amplitudes<a class="headerlink" href="#finding-the-normal-modes-amplitudes" title="Permalink to this heading">#</a></h2>
+<p>Ok, now we need to find the normal mode amplitudes. That is we assumed sinusoidal oscillations, but at what amplitudes? We will show how to do this with one frequency (<span class="math notranslate nohighlight">\(\omega_1\)</span>), and then break up the work of the the other two. These frequencies are:</p>
+<div class="math notranslate nohighlight">
+\[\omega_A = 2\dfrac{k}{m}; \qquad \omega_B = \left(2-\sqrt{2}\right)\dfrac{k}{m}; \qquad \omega_C = \left(2+\sqrt{2}\right)\dfrac{k}{m}\qquad\]</div>
+<p><strong>✅ Do this</strong></p>
+<p>After we do the first one, pick another frequencies and repeat. Answer the follow questions:</p>
+<ol class="arabic simple">
+<li><p>What does this motion physically look like? What are the masses doing?</p></li>
+<li><p>How does the frequency of oscillation make sense? Why is it higher or lower than <span class="math notranslate nohighlight">\(\omega_A\)</span>?</p></li>
+</ol>
+</section>
+<section id="finding-the-eigenvalues-and-eigenvectors-using-numerical-approaches">
+<h2>Finding the Eigenvalues and Eigenvectors using Numerical Approaches<a class="headerlink" href="#finding-the-eigenvalues-and-eigenvectors-using-numerical-approaches" title="Permalink to this heading">#</a></h2>
+<p>Now that we have developed solutions for the 3 coupled oscillators, let’s try to reproduce that work numerically and plots the modes to make sense of what they are doing for us.</p>
+<p>We can then apply these tools to <span class="math notranslate nohighlight">\(N\)</span> identically coupled 1D oscillators.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -511,9 +541,6 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="finding-the-eigenvalues-and-eigenvectors">
-<h2>Finding the Eigenvalues and Eigenvectors<a class="headerlink" href="#finding-the-eigenvalues-and-eigenvectors" title="Permalink to this heading">#</a></h2>
 <p>We reduced our normal mode problem to the following:</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{A}\mathbf{x} = -\omega^2\mathbf{x}\]</div>
@@ -678,7 +705,9 @@ Matrix([[-2, 1, 0], [1, -2, 1], [0, 1, -2]])
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-coupled-oscillators">Three Coupled Oscillators</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-eigenvalues-and-eigenvectors">Finding the Eigenvalues and Eigenvectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-normal-mode-frequencies">Finding the Normal Mode Frequencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-normal-modes-amplitudes">Finding the Normal Modes Amplitudes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-eigenvalues-and-eigenvectors-using-numerical-approaches">Finding the Eigenvalues and Eigenvectors using Numerical Approaches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-modes">Plotting the modes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extending-your-work">Extending your work</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#even-further">Even further</a></li>
