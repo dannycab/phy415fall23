@@ -27,7 +27,7 @@ This is not to say that you are on your own. Here's what you can expect from us:
 -  [Prof. Danny Caballero](http://dannycab.github.io) (he/him/his)
 -   Class Meetings: Tuesdays and Thursdays 10:20am-12:10pm (Location: 1300 BPS)
 -   Email: [caball14@msu.edu](mailto:caball14@msu.edu), office: 1310-A BPS
--   Office hrs: 4:00pm-5:00pm Mondays and 4:00pm-5:00pm Wednesdays in the Strosacker Help Room. I also have an "open door" policy ([find a time](https://calendly.com/dannycab/15min)). I enjoy visiting and talking with you about physics.
+-   Office hrs: 4:00pm-5:00pm Wednesdays in the Strosacker Help Room (or zoom). I also have an "open door" policy ([find a time](https://calendly.com/dannycab/15min)). I enjoy visiting and talking with you about physics.
 
 ## Teaching Assistant/Grader
 - [Ian Neuhart](https://directory.natsci.msu.edu/directory/Profiles/Person/101905) (he/him/his)
@@ -37,7 +37,7 @@ This is not to say that you are on your own. Here's what you can expect from us:
 ### Learning Assistant
 -   [Alia Valentine](https://valentine-alia.github.io/) (she/her/hers)
 -   Email: [valen176@msu.edu](mailto:valen176@msu.edu)
--   Office hrs: 5:00pm-6:00pm Mondays and 4:00pm-5:00pm Fridays in the Strosacker Help Room. Feel free to email me if you want to set up a time. I too enjoy visiting and talking with you about math and physics.
+-   Office hrs: 5:00pm-6:00pm Mondays and 3:00pm-5:00pm Fridays in the Strosacker Help Room. Feel free to email me if you want to set up a time. I too enjoy visiting and talking with you about math and physics.
 
 ## Grading
 Details about [course activities are here](design.md) and [information regarding assessment is here](assessments.md). Your grade will be comprised of completing weekly discussion questions, seven of eight worked problems, and three of four projects that you will complete in the form of a Jupyter notebook (a "computational essay", which we will discuss later). 

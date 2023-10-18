@@ -1,6 +1,6 @@
 # Worked Problem Assignment 5
 
-**Due 27 Oct 23**
+**Due 3 Nov 23**
 
 We have developed an approach to find the normal modes of a linear oscillating systems. For this problem you will choose a system that oscillates with at least 3 oscillators and explore the motion and dynamics of that system. You cannot choose coupled springs; it must be a system that you have not already explored in class.
 
