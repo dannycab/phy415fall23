@@ -7,11 +7,12 @@ To get a sense of the course, please read all the pages associated with our syll
  
 ## Updates
 
-`````{admonition} Last updated: 17 Oct 2023
+`````{admonition} Last updated: 19 Oct 2023
 :class: tip
 
 ### Site updates
 * Readings for Week 8 ([the wave equation](./3_waves/notes-solve_the_wave_eq.ipynb)) is posted.
+* An [updated rubric](./9_assignments/updated_rubric.md) is now available.
 
 ### Upcoming Deadlines
 * The [second project](./9_assignments/project-2.md) is *NOW* due 27 Oct 2023.

@@ -2,6 +2,8 @@
 
 **Due 27 Oct 23**
 
+[**Updated Rubric**](./updated_rubric.md)
+
 Project 2 will focus on the topic of partial differential equations, specifically Laplace's equation. For this project, **you will be given a choice to work alone or in a pair**. If you work in a pair, we expect the work to be more in-depth and to explore more aspects of the problem. For example, you should consider one of the extensions listed below to add to your project. If you work alone, we expect the same level of depth as with project 1.
 
 ## What do you need to do?
