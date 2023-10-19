@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>12 Oct 23 - Activity: Method of Relaxation &#8212; PHY 415 Fall 2023</title>
   
   
@@ -495,7 +494,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="oct-23-activity-method-of-relaxation">
+  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-activity-method-of-relaxation">
 <h1>12 Oct 23 - Activity: Method of Relaxation<a class="headerlink" href="#oct-23-activity-method-of-relaxation" title="Permalink to this heading">#</a></h1>
 <p>As we discussed, we can use the relaxation approach to solve Laplace’s equation. As a reminder the process for doing this is as follows:</p>
 <ol class="arabic simple">
@@ -514,14 +513,14 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="dimensional-relaxation">
+<div class="section" id="dimensional-relaxation">
 <h2>1 Dimensional Relaxation<a class="headerlink" href="#dimensional-relaxation" title="Permalink to this heading">#</a></h2>
 <p>The 1D problem is rather simple in that it produces a linear function – always. This is because the only solution to the 1D Laplace’s equation is a linear function.</p>
 <div class="math notranslate nohighlight">
 \[\frac{d^2V}{dx^2} = 0\]</div>
 <p>The solution to this equation is <span class="math notranslate nohighlight">\(V(x) = ax + b\)</span>. We can use this to test our relaxation code and make sure that it is accurate. In general, you cannot do this and instead need to have some other mechanism for checking the accuracy of your code (like <a class="reference external" href="https://en.wikipedia.org/wiki/Rate_of_convergence">convergence</a>).</p>
 <p>Below, we have written the 1D code as a set of functions.</p>
-<section id="initialize-the-grid-and-set-the-boundary-conditions">
+<div class="section" id="initialize-the-grid-and-set-the-boundary-conditions">
 <h3>Initialize the Grid and set the Boundary Conditions<a class="headerlink" href="#initialize-the-grid-and-set-the-boundary-conditions" title="Permalink to this heading">#</a></h3>
 <p>We wrote two functions <code class="docutils literal notranslate"><span class="pre">initialize_grid</span></code> and <code class="docutils literal notranslate"><span class="pre">set_boundary_conditions</span></code> that initialize a linear grid and also set the boundary conditions. The <code class="docutils literal notranslate"><span class="pre">initialize_grid</span></code> function simply sets all values to zero and then <code class="docutils literal notranslate"><span class="pre">set_boundary_conditions</span></code> sets the values at the edges to the correct values.</p>
 <div class="cell docutils container">
@@ -541,8 +540,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="relaxation">
+</div>
+<div class="section" id="relaxation">
 <h3>Relaxation<a class="headerlink" href="#relaxation" title="Permalink to this heading">#</a></h3>
 <p>The core relaxation function is <code class="docutils literal notranslate"><span class="pre">run_relaxation</span></code>. Notice that it takes in the number of iterations (<code class="docutils literal notranslate"><span class="pre">num_iterations</span></code>); that is, the number of times you want the relaxation algorithm to run. That is, it will calculate the average of the neighboring points fully, and repeat it a limited number of times.</p>
 <p><strong>This is not how the typical relaxation approach works.</strong></p>
@@ -570,8 +569,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="plotting">
+</div>
+<div class="section" id="plotting">
 <h3>Plotting<a class="headerlink" href="#plotting" title="Permalink to this heading">#</a></h3>
 <p>Our relaxtion algorithm stores a list of grids at different points in the relaxation process. We can use this to plot the potential at different points. Below, we have a function that does just that.</p>
 <div class="cell docutils container">
@@ -589,8 +588,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="let-s-run-it">
+</div>
+<div class="section" id="let-s-run-it">
 <h3>Let’s run it<a class="headerlink" href="#let-s-run-it" title="Permalink to this heading">#</a></h3>
 <p>We run the code below for linear grid of 100 points. The left boundary condition (<span class="math notranslate nohighlight">\(x=0\)</span>) is set to zero and the right one (<span class="math notranslate nohighlight">\(x=a\)</span>) is set to 10. Notice that there is an exact solution:</p>
 <div class="math notranslate nohighlight">
@@ -658,9 +657,9 @@ document.write(`
 <li><p>Modify the code to do a better job of predicting the exact solution. Get the maximum absolute error below 0.01, 0.001, 1e-4, 1e-5. How many iterations does it take to get to each of these values?</p></li>
 <li><p>Modify the code to stop when the maximum absolute error is below a value of your choosing. Did you include a <code class="docutils literal notranslate"><span class="pre">max_iterations</span></code> variable? If not, do so to avoid infinite loops.</p></li>
 </ol>
-</section>
-</section>
-<section id="d-relaxation">
+</div>
+</div>
+<div class="section" id="d-relaxation">
 <h2>2D Relaxation<a class="headerlink" href="#d-relaxation" title="Permalink to this heading">#</a></h2>
 <p>The 2D relaxation code is very similar to the 1D code. One difference is that the grid has to be traversed in both directions. This means that you will need to move systematically through the 2D grid. The second is that you have to ensure the boundary conditions are set across the entire edge of the grid.</p>
 <p>We recommend breaking the approach into similar functions as above.</p>
@@ -760,8 +759,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="what-about-poisson-s-equation">
+</div>
+<div class="section" id="what-about-poisson-s-equation">
 <h2>What about Poisson’s equation?<a class="headerlink" href="#what-about-poisson-s-equation" title="Permalink to this heading">#</a></h2>
 <p>It turns out we can use a very similar approach when we have charges! Alia has written up a script that implements the relaxation approach for Poisson’s equation. You can find it below along with the derivation.</p>
 <div class="math notranslate nohighlight">
@@ -852,8 +851,8 @@ document.write(`
 <img alt="../../../_images/74cce85a7a2ac5b8f1f4e5ccb523871d9d3afa0c528a838eecb5833fd29244e3.png" src="../../../_images/74cce85a7a2ac5b8f1f4e5ccb523871d9d3afa0c528a838eecb5833fd29244e3.png" />
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

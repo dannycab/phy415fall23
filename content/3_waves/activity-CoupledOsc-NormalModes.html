@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>17 Oct 23 - Activity: Normal Modes &#8212; PHY 415 Fall 2023</title>
   
   
@@ -502,17 +501,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="oct-23-activity-normal-modes">
+  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-activity-normal-modes">
 <h1>17 Oct 23 - Activity: Normal Modes<a class="headerlink" href="#oct-23-activity-normal-modes" title="Permalink to this heading">#</a></h1>
 <p>As we begin to work with multi-particle systems, we begin to open the number of degrees of freedom of the system. We increase the complexity of it and the challenge of modeling it. We will increasingly need tools that help us take less tractable issues and make them palatable. One such tool that forms the basis of many others is <strong>Normal Modes</strong>.</p>
 <p>Normal modes are ways of breaking up our understanding of a system into discrete (potentially infinite and hopefully vanishingly small) pieces. This lets us get at the big picture of the system and characterize how much we are neglecting. The concept of normal modes underlies much of the analysis done in quantum mechanics, field theory, fluid mechanics, and signal processing. In fact, numerical routines often make use of forms of these modes to do economize calculations – <em>especially when we move beyond a few hundred bodies in the system</em>. This stuff is part and parcel of most research in physics. For example, how we understand the <a class="reference external" href="https://en.wikipedia.org/wiki/Cosmic_background_radiation">Cosmic Background Radiation</a> relies on a <a class="reference external" href="https://www.quantamagazine.org/how-ancient-light-reveals-the-universes-contents-20200128/">normal mode like analysis</a>.</p>
-<section id="canonical-coupled-oscillators">
+<div class="section" id="canonical-coupled-oscillators">
 <h2>Canonical Coupled Oscillators<a class="headerlink" href="#canonical-coupled-oscillators" title="Permalink to this heading">#</a></h2>
 <p>There is still plenty of room for pencil and paper. We will explore this numerically later.</p>
 <p>We will start with a form of guided lecture and build the understanding of these methods together. Then you will apply what you learned to a new system.</p>
 <p>Let’s assume you have a chain of two mass connected by springs (all the same <span class="math notranslate nohighlight">\(k\)</span>) as below.</p>
 <img src='https://www.entropy.energy/static/resources/coupled-oscillators/two-coupled-gliders-diagram.png' alt='Coupled Oscillator set up. Two oscillators connected by three springs in a horizontal line.' width=800px/>
-<section id="deriving-the-equations-of-motion">
+<div class="section" id="deriving-the-equations-of-motion">
 <h3>Deriving the Equations of Motion<a class="headerlink" href="#deriving-the-equations-of-motion" title="Permalink to this heading">#</a></h3>
 <p>Let’s write the Lagrangian for this system to get equations of motion. The kinetic and potential energies are:</p>
 <div class="math notranslate nohighlight">
@@ -537,10 +536,10 @@ document.write(`
 \[\ddot{x}_1 = -\frac{2k}{m}x_1 + \frac{k}{m}x_2\]</div>
 <div class="math notranslate nohighlight">
 \[\ddot{x}_2 = -\frac{2k}{m}x_2 + \frac{k}{m}x_1\]</div>
-</section>
-<section id="finding-normal-modes">
+</div>
+<div class="section" id="finding-normal-modes">
 <h3>Finding Normal Modes<a class="headerlink" href="#finding-normal-modes" title="Permalink to this heading">#</a></h3>
-<section id="method-1-assume-a-solution">
+<div class="section" id="method-1-assume-a-solution">
 <h4>Method 1: Assume a Solution<a class="headerlink" href="#method-1-assume-a-solution" title="Permalink to this heading">#</a></h4>
 <p>A normal mode solution is one in which all parts of a system oscillate with the same frequency. For linear systems, this can be a very useful approach because any solution can be represented as a linear combination of normal modes. In general,</p>
 <div class="math notranslate nohighlight">
@@ -591,8 +590,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="method-2-matrix-analysis-the-eigenvalue-problem">
+</div>
+<div class="section" id="method-2-matrix-analysis-the-eigenvalue-problem">
 <h4>Method 2: Matrix Analysis (the Eigenvalue Problem)<a class="headerlink" href="#method-2-matrix-analysis-the-eigenvalue-problem" title="Permalink to this heading">#</a></h4>
 <p>That analysis to find the normal modes was a bit of a pain in algebra. As we add more objects, that pain will grow. We can use a matrix approach to make this easier. It’s also a systematic approach that as we will see plays nicely with computing.</p>
 <p>Starting from the equations of motion:</p>
@@ -621,12 +620,12 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="applying-normal-modes-to-a-new-system">
+</div>
+</div>
+</div>
+<div class="section" id="applying-normal-modes-to-a-new-system">
 <h2>Applying Normal Modes to a New System<a class="headerlink" href="#applying-normal-modes-to-a-new-system" title="Permalink to this heading">#</a></h2>
-<section id="two-vertical-pendulums-connected-by-a-spring">
+<div class="section" id="two-vertical-pendulums-connected-by-a-spring">
 <h3>Two vertical pendulums connected by a spring<a class="headerlink" href="#two-vertical-pendulums-connected-by-a-spring" title="Permalink to this heading">#</a></h3>
 <p>Consider two vertical pendulums of length <span class="math notranslate nohighlight">\(l\)</span> connected via their masses <span class="math notranslate nohighlight">\(M\)</span> by a weak spring <span class="math notranslate nohighlight">\(k\)</span>. By weak, we mean that the spring constant is small. See below for a canonical setup:</p>
 <img src="http://www.maths.surrey.ac.uk/explore/michaelspages/coupled/coupled_diag.jpg" />
@@ -642,14 +641,14 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="three-coupled-oscillators">
+</div>
+</div>
+<div class="section" id="three-coupled-oscillators">
 <h2>Three Coupled Oscillators<a class="headerlink" href="#three-coupled-oscillators" title="Permalink to this heading">#</a></h2>
 <p>Consider the setup below consisting of three masses connected by springs to each other. We intend to find the normal modes of the system by denoting each mass’s displacement (<span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span>).</p>
 <p><img alt="3 Coupled Oscillators" src="../../_images/3_coupled_osc.png" /></p>
-</section>
-<section id="finding-the-normal-mode-frequencies">
+</div>
+<div class="section" id="finding-the-normal-mode-frequencies">
 <h2>Finding the Normal Mode Frequencies<a class="headerlink" href="#finding-the-normal-mode-frequencies" title="Permalink to this heading">#</a></h2>
 <p><strong>✅ Do this</strong></p>
 <p>This is not magic as we will see, it follows from our choices of solution. Here’s the steps and what you might notice about them:</p>
@@ -661,8 +660,8 @@ document.write(`
 <li><p>Consider solutions of the form <span class="math notranslate nohighlight">\(Ce^{i{\omega}t}\)</span>, plug that into <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span> to show you get <span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{x} = -\omega^2 \mathbf{x}\)</span>. (We have not done this, we just assumed it works! It’s ok if this is annoying, we only have to show it once.)</p></li>
 <li><p>Find the normal mode frequencies by taking the determinant of <span class="math notranslate nohighlight">\(\mathbf{A} - \mathbf{I}\lambda\)</span>. Note that this produces the following definition: <span class="math notranslate nohighlight">\(\lambda = -\omega^2\)</span> (We have not done this together and we can if it’s confusing.)</p></li>
 </ol>
-</section>
-<section id="finding-the-normal-modes-amplitudes">
+</div>
+<div class="section" id="finding-the-normal-modes-amplitudes">
 <h2>Finding the Normal Modes Amplitudes<a class="headerlink" href="#finding-the-normal-modes-amplitudes" title="Permalink to this heading">#</a></h2>
 <p>Ok, now we need to find the normal mode amplitudes. That is we assumed sinusoidal oscillations, but at what amplitudes? We will show how to do this with one frequency (<span class="math notranslate nohighlight">\(\omega_1\)</span>), and then break up the work of the the other two. These frequencies are:</p>
 <div class="math notranslate nohighlight">
@@ -676,8 +675,8 @@ document.write(`
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../../_downloads/1e8a8b4d19c14f517b03bf5e1b89aa76/Notes-Three_Coupled_Oscillators.pdf"><span class="xref download myst">Partial Solution to Activity</span></a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

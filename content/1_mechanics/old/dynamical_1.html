@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>12 Sep 23 - The Dynamical Systems Approach and Phase Portraits &#8212; PHY 415 Fall 2023</title>
   
   
@@ -505,7 +504,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sep-23-the-dynamical-systems-approach-and-phase-portraits">
+  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-the-dynamical-systems-approach-and-phase-portraits">
 <h1>12 Sep 23 - The Dynamical Systems Approach and Phase Portraits<a class="headerlink" href="#sep-23-the-dynamical-systems-approach-and-phase-portraits" title="Permalink to this heading">#</a></h1>
 <p>Up to now, most of your work with models in physics are those you can solve analytically in terms of known functions. Think about solving differential equations that produce polynomials or sines and cosines.</p>
 <p>But what happens when the solution to the problem is not obviously tractable in an analytical form. Rather, how can we investigate systems that are new to us?</p>
@@ -522,7 +521,7 @@ document.write(`
 <li><p>(if time) Add damping to the model</p></li>
 <li><p>(if time) Analyze fixed points for 2d systems</p></li>
 </ul>
-<section id="d-system">
+<div class="section" id="d-system">
 <h2>1D System<a class="headerlink" href="#d-system" title="Permalink to this heading">#</a></h2>
 <p>Let’s look at a simple 1d system first, given by the differential equation:</p>
 <div class="math notranslate nohighlight">
@@ -557,8 +556,8 @@ document.write(`
 <li><p>What direction does a trajectory that starts at <span class="math notranslate nohighlight">\( x = 1.5\)</span> go?</p></li>
 <li><p>What trends do you notice? Do trajectories settle down at certain locations or blast off to infinity?</p></li>
 </ol>
-</section>
-<section id="fixed-points">
+</div>
+<div class="section" id="fixed-points">
 <h2>Fixed Points<a class="headerlink" href="#fixed-points" title="Permalink to this heading">#</a></h2>
 <p>The <strong>fixed points</strong> of a system are where its derivative vanishes, that is <span class="math notranslate nohighlight">\(\dot{\mathbf{x}} = 0\)</span>. At any fixed point, a system is constant (why?). In the dynamical systems approach, we often care about charactarizing the behavor of systems near fixed points. In 1d, most fixed points are either stable (they attract trajectories) or unstable (they repel trajectories).</p>
 <p><strong>✅ Do this</strong></p>
@@ -598,8 +597,8 @@ document.write(`
 <img alt="../../../_images/f99d7fe04c7c98d3f87ad929f37194a9ce174e2835bcee1994df0208e9fb90ee.png" src="../../../_images/f99d7fe04c7c98d3f87ad929f37194a9ce174e2835bcee1994df0208e9fb90ee.png" />
 </div>
 </div>
-</section>
-<section id="the-phase-portrait-of-the-sho">
+</div>
+<div class="section" id="the-phase-portrait-of-the-sho">
 <h2>The Phase Portrait of the SHO<a class="headerlink" href="#the-phase-portrait-of-the-sho" title="Permalink to this heading">#</a></h2>
 <p>To get this started, let’s remind ourselves of the phase portrait of the SHO. Recall that we separated the second order ODE into two first order ODEs, one for <span class="math notranslate nohighlight">\(x\)</span> and one for <span class="math notranslate nohighlight">\(v_x\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -636,15 +635,15 @@ document.write(`
 <li><p>Repeat for all points of interest</p></li>
 <li><p>Plot arrows to demonstrate flow of the solutions in phase space</p></li>
 </ol>
-<section id="let-s-focus-on-axes-first">
+<div class="section" id="let-s-focus-on-axes-first">
 <h3>Let’s focus on axes first<a class="headerlink" href="#let-s-focus-on-axes-first" title="Permalink to this heading">#</a></h3>
 <p>We talked about how we can look at the axes (<span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(v_x =0\)</span>) to help get a sense of the flow in phase space. Below, we have some code that does this in two parts:</p>
 <ol class="arabic simple">
 <li><p>We created a function to produce arrows of the right length given a line of points</p></li>
 <li><p>We call that function for each axis and for a line at a diagonal</p></li>
 </ol>
-</section>
-<section id="discussion-question">
+</div>
+<div class="section" id="discussion-question">
 <h3>Discussion Question<a class="headerlink" href="#discussion-question" title="Permalink to this heading">#</a></h3>
 <p><strong>✅ Do this</strong></p>
 <ol class="arabic simple">
@@ -656,8 +655,8 @@ document.write(`
 <li><p>Make a fourth plot that looks at the other diagonal line that runs at a 45 degree angle to each axes</p></li>
 </ol>
 <p><strong>You should be able to explain what the code is doing.</strong> We avoided using meshgrid here to make this a smaller bit of code.</p>
-</section>
-<section id="plotphasespaceaxessho">
+</div>
+<div class="section" id="plotphasespaceaxessho">
 <h3>PlotPhaseSpaceAxesSHO<a class="headerlink" href="#plotphasespaceaxessho" title="Permalink to this heading">#</a></h3>
 <p>This function is computing the arrows for a given line of points in phase space. Send it a line of points in two arrays (one for <span class="math notranslate nohighlight">\(x\)</span> and one for <span class="math notranslate nohighlight">\(v_x\)</span>) and it plots the resulting arrows. The code is documented below with comments and then used several times.</p>
 <div class="cell docutils container">
@@ -710,8 +709,8 @@ document.write(`
 <img alt="../../../_images/f69efdb75196bf04f1613d96e7da2a16bd23edb5280b53fbd6d799c84b0c03f4.png" src="../../../_images/f69efdb75196bf04f1613d96e7da2a16bd23edb5280b53fbd6d799c84b0c03f4.png" />
 </div>
 </div>
-</section>
-<section id="plotting-along-the-x-axis">
+</div>
+<div class="section" id="plotting-along-the-x-axis">
 <h3>Plotting along the x axis<a class="headerlink" href="#plotting-along-the-x-axis" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -729,8 +728,8 @@ document.write(`
 <img alt="../../../_images/47d300e5e34009e658ed2777f173418d898326fe9a91fe7ea6212d0c4cb4b9e4.png" src="../../../_images/47d300e5e34009e658ed2777f173418d898326fe9a91fe7ea6212d0c4cb4b9e4.png" />
 </div>
 </div>
-</section>
-<section id="plotting-along-the-45-degree-line-between-the-x-and-vx-axes">
+</div>
+<div class="section" id="plotting-along-the-45-degree-line-between-the-x-and-vx-axes">
 <h3>Plotting along the 45 degree line between the x and vx axes<a class="headerlink" href="#plotting-along-the-45-degree-line-between-the-x-and-vx-axes" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -748,14 +747,14 @@ document.write(`
 <img alt="../../../_images/4bc86b8b896613146dc72cc862f5f961e24b1d1d2fd9044ea297187a93edbadf.png" src="../../../_images/4bc86b8b896613146dc72cc862f5f961e24b1d1d2fd9044ea297187a93edbadf.png" />
 </div>
 </div>
-</section>
-<section id="make-a-graph">
+</div>
+<div class="section" id="make-a-graph">
 <h3>Make a Graph<a class="headerlink" href="#make-a-graph" title="Permalink to this heading">#</a></h3>
 <p><strong>✅ Do this</strong></p>
 <p>Make a fourth plot that looks at the other diagonal line that runs at a 45 degree angle to each axes</p>
-</section>
-</section>
-<section id="phase-portrait-of-the-simple-harmonic-oscillator">
+</div>
+</div>
+<div class="section" id="phase-portrait-of-the-simple-harmonic-oscillator">
 <h2>Phase Portrait of the Simple Harmonic Oscillator<a class="headerlink" href="#phase-portrait-of-the-simple-harmonic-oscillator" title="Permalink to this heading">#</a></h2>
 <p>Below, we have written code that makes a phase portrait from the simple harmonic oscillator. It’s written in terms of three functions that serve three purposes that you might want to modify in your own work:</p>
 <ul class="simple">
@@ -828,7 +827,7 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="putting-the-functions-to-use">
+<div class="section" id="putting-the-functions-to-use">
 <h3>Putting the functions to use<a class="headerlink" href="#putting-the-functions-to-use" title="Permalink to this heading">#</a></h3>
 <p>With these two functions, all we are left to do is specify the size of the space and the grid points (that is where exactly we are computing the changes). We use <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.meshgrid.html">meshgrid</a> to make those arrays a set of Cartesian coordinates and then send that to our functions.</p>
 <p>We then plot the results.</p>
@@ -881,8 +880,8 @@ document.write(`
 <img alt="../../../_images/6a09636aa9c0a2995975377417bddf94347152369117a9a7ce11cff2fc7c4e02.png" src="../../../_images/6a09636aa9c0a2995975377417bddf94347152369117a9a7ce11cff2fc7c4e02.png" />
 </div>
 </div>
-</section>
-<section id="what-can-phase-space-help-us-do">
+</div>
+<div class="section" id="what-can-phase-space-help-us-do">
 <h3>What can phase space help us do?<a class="headerlink" href="#what-can-phase-space-help-us-do" title="Permalink to this heading">#</a></h3>
 <p><strong>✅ Do this</strong></p>
 <p>Let’s remember a few things about the SHO.</p>
@@ -898,9 +897,9 @@ document.write(`
 <li><p>What are the fixed points for this system? Can it be classified as stable/unstable or do we need to think of something new?</p></li>
 </ol>
 <p>What do these plots tell you about all potential solutions?</p>
-</section>
-</section>
-<section id="the-large-angle-pendulum">
+</div>
+</div>
+<div class="section" id="the-large-angle-pendulum">
 <h2>The Large Angle Pendulum<a class="headerlink" href="#the-large-angle-pendulum" title="Permalink to this heading">#</a></h2>
 <p>The Large Angle Pendulum is the first of a number of nonlinear differential equations out there. This one is quite special in that the integral that solves for the period of this pendulum has a name! It’s called and <a class="reference external" href="https://en.wikipedia.org/wiki/Elliptic_integral">Elliptical Integral of the First Kind</a>. Elliptical because of the nature of the kernel of the integral, which has an elliptic form (in our case, one over the square root of a quantity squared subtracted from one, yes, seriously, we have a name for that).</p>
 <p>Here’s the pendulum in all it’s glory.</p>
@@ -913,7 +912,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\ddot{\theta} = -\dfrac{g}{L}\sin(\theta)\]</div>
 <p>You have a second order differential equation for <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
-<section id="make-a-new-phase-portrait">
+<div class="section" id="make-a-new-phase-portrait">
 <h3>Make a new phase portrait<a class="headerlink" href="#make-a-new-phase-portrait" title="Permalink to this heading">#</a></h3>
 <p><strong>✅ Do this</strong></p>
 <p>With your partners,</p>
@@ -980,9 +979,9 @@ document.write(`
 </div>
 <p><strong>✅ Do this</strong></p>
 <p>Find the fixed points of this system. Are they the same as in the SHO case? If they’re different, what about this system makes it different?</p>
-</section>
-</section>
-<section id="time-permitting-fixed-points-in-2-dimensions">
+</div>
+</div>
+<div class="section" id="time-permitting-fixed-points-in-2-dimensions">
 <h2>(Time Permitting) Fixed Points in 2 Dimensions<a class="headerlink" href="#time-permitting-fixed-points-in-2-dimensions" title="Permalink to this heading">#</a></h2>
 <p>If we don’t get to this in class today don’t worry, we’ll start out with this on thursday!</p>
 <p>Now that we’ve stepped into two dimensional phase space, the amount of interesting geometry that our solutions can have is much greater. In particular, local behavior near fixed points can now exhibit much more complex behavior than just being stable or not, as we can see in this figure.</p>
@@ -1037,8 +1036,8 @@ A = \begin{bmatrix} \frac{\partial f}{\partial x} &amp; \frac{\partial f}{\parti
 <p>In fact one can learn quite a bit more from a these eigenvalues (see strogatz chapter 6 or section 5.4 <a class="reference external" href="https://users.math.msu.edu/users/gnagy/teaching/ode.pdf">here</a>), but these charactarizations are a great starting point.</p>
 <p><strong>✅ Do this</strong></p>
 <p>Calculate the Jacobian matrix <span class="math notranslate nohighlight">\(A\)</span> for a fixed point of the large angle pendulum.</p>
-<!-- and find its eigenvalues to charactarize the pendulum's behavior near this fixed point. Does this behavior match your intuition? Does this characterization change if you add drag to the model? --></section>
-</section>
+<!-- and find its eigenvalues to charactarize the pendulum's behavior near this fixed point. Does this behavior match your intuition? Does this characterization change if you add drag to the model? --></div>
+</div>
 
     <script type="text/x-thebe-config">
     {
