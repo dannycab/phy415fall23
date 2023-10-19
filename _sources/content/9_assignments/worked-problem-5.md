@@ -4,7 +4,7 @@
 
 We have developed an approach to find the normal modes of a linear oscillating systems. For this problem you will choose a system that oscillates with at least 3 oscillators and explore the motion and dynamics of that system. You cannot choose coupled springs; it must be a system that you have not already explored in class.
 
-[**Grading Rubric**](../0_course/8_worked_problems.md)
+[**Updated Rubric**](./updated_rubric.md)
 
 Remember that a worked problem means the scale of a detailed (e.g., parts a-h) homework problem.
 
