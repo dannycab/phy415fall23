@@ -40,7 +40,7 @@ parts:
       - file: content/2_EM/Numerics/notes-relaxation
       - file: content/2_EM/Statics/activity-sep_var_spherical_examples
       - file: content/2_EM/Numerics/activity-relaxation_2d
-  - caption: 3 - Waves and Oscillations
+  - caption: 3 - Waves and Oscillationsmake v
     chapters:
       - file: content/3_waves/notes-coupled_oscillations
       - file: content/3_waves/notes-waves_intro
