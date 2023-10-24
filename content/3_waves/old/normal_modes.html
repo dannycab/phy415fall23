@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>17 Oct 23 - Normal Modes &#8212; PHY 415 Fall 2023</title>
   
   
@@ -217,6 +216,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../activity-CoupledOsc-NormalModes.html">17 Oct 23 - Activity: Normal Modes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../activity-CoupledOsc-NumericalNormalModes.html">19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notes-solve_the_wave_eq.html">25 Oct 23 - Notes: Solutions to The Wave Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -495,13 +496,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="oct-23-normal-modes">
+  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-normal-modes">
 <h1>17 Oct 23 - Normal Modes<a class="headerlink" href="#oct-23-normal-modes" title="Permalink to this heading">#</a></h1>
-<section id="three-coupled-oscillators">
+<div class="section" id="three-coupled-oscillators">
 <h2>Three Coupled Oscillators<a class="headerlink" href="#three-coupled-oscillators" title="Permalink to this heading">#</a></h2>
 <p>Consider the setup below consisting of three masses connected by springs to each other. We intend to find the normal modes of the system by denoting each mass’s displacement (<span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span>).</p>
 <img src="https://raw.githubusercontent.com/valentine-alia/phy415fall23/main/content/assets/3_coupled_osc.png" alt="3 coupled SHOs" width=800px/>
-<section id="finding-the-normal-mode-frequencies">
+<div class="section" id="finding-the-normal-mode-frequencies">
 <h3>Finding the Normal Mode Frequencies<a class="headerlink" href="#finding-the-normal-mode-frequencies" title="Permalink to this heading">#</a></h3>
 <p><strong>✅ Do this</strong></p>
 <p>This is not magic as we will see, it follows from our choices of solution. Here’s the steps and what you might notice about them:</p>
@@ -513,8 +514,8 @@ document.write(`
 <li><p>Consider solutions of the form <span class="math notranslate nohighlight">\(Ce^{i{\omega}t}\)</span>, plug that into <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span> to show you get <span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{x} = -\omega^2 \mathbf{x}\)</span>. (We have not done this, we just assumed it works! It’s ok if this is annoying, we only have to show it once.)</p></li>
 <li><p>Find the normal mode frequencies by taking the determinant of <span class="math notranslate nohighlight">\(\mathbf{A} - \mathbf{I}\lambda\)</span>. Note that this produces the following definition: <span class="math notranslate nohighlight">\(\lambda = -\omega^2\)</span></p></li>
 </ol>
-</section>
-<section id="finding-the-normal-modes-amplitudes">
+</div>
+<div class="section" id="finding-the-normal-modes-amplitudes">
 <h3>Finding the Normal Modes Amplitudes<a class="headerlink" href="#finding-the-normal-modes-amplitudes" title="Permalink to this heading">#</a></h3>
 <p>Ok, now we need to find the normal mode amplitudes. That is we assumed sinusoidal oscillations, but at what amplitudes? We will show how to do this with one frequency (<span class="math notranslate nohighlight">\(\omega_1\)</span>), and then break up the work of the the other two. These frequencies are:</p>
 <div class="math notranslate nohighlight">
@@ -574,9 +575,9 @@ document.write(`
 <img alt="../../../_images/e634a13b374f5285da90e9887f70ddc4af65896438c7694d2dacce85b1ce2f52.png" src="../../../_images/e634a13b374f5285da90e9887f70ddc4af65896438c7694d2dacce85b1ce2f52.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="extending-your-work">
+</div>
+</div>
+<div class="section" id="extending-your-work">
 <h2>Extending your work<a class="headerlink" href="#extending-your-work" title="Permalink to this heading">#</a></h2>
 <p>Given what we have done thus far, you can see that we could easily construct the matrix for a <span class="math notranslate nohighlight">\(N\)</span> dimensional chain of 1D oscillators. So let’s do that.</p>
 <p><strong>✅ Do this</strong></p>
@@ -595,18 +596,18 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="even-further">
+</div>
+<div class="section" id="even-further">
 <h2>Even further<a class="headerlink" href="#even-further" title="Permalink to this heading">#</a></h2>
 <p>These models can be used with lattices (solid objects). Draw a sketch of 4 oscillators in a plane connected together in a square shape. Write down the energy equations for this system (assume the springs do not move laterally much). What do the EOMs look like?</p>
-<section id="notes">
+<div class="section" id="notes">
 <h3>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_2_Three_Coupled_Oscillators.pdf">Partial Solution to Activity</a></p></li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

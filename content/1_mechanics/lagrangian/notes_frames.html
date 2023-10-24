@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>31 Aug 23 - Notes: Frames and Coordinates &#8212; PHY 415 Fall 2023</title>
   
   
@@ -219,6 +218,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-CoupledOsc-NormalModes.html">17 Oct 23 - Activity: Normal Modes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-CoupledOsc-NumericalNormalModes.html">19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-solve_the_wave_eq.html">25 Oct 23 - Notes: Solutions to The Wave Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -449,12 +450,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="aug-23-notes-frames-and-coordinates">
+  <div class="tex2jax_ignore mathjax_ignore section" id="aug-23-notes-frames-and-coordinates">
 <h1>31 Aug 23 - Notes: Frames and Coordinates<a class="headerlink" href="#aug-23-notes-frames-and-coordinates" title="Permalink to this heading">#</a></h1>
 <p>A <strong>Frame of Reference</strong>, <strong>Reference Frame</strong>, or simply <strong>Frame</strong> is a set of coordinates. These coordinates describe where things are. Sometimes it makes sense to choose different coordinates to describe the same situation. It is also important to recognize when to change coordinates to make a problem easier to work with. This will lead us to the concept of <a class="reference external" href="https://en.wikipedia.org/wiki/Generalized_coordinates">generalized coordinates</a>, which are quite powerful in working with mechanical systems.</p>
 <p>In physics, we often seek to work with a problem in the simplest way possible. That means we are typically looking to work with a problem in an <strong>inertial frame</strong>. Now, this is not always possible, consider systems that can flow and deform like in fluid mechanics or continuum mechanics. But, regardless, we should always know what frame we are working in.</p>
 <p>An <strong>inertial frame</strong> is a reference frame where Newton’s First Law holds, which means that in this frame a net force of zero means an acceleration of zero. In practice, this means that if you have two frames that are moving at a constant velocity relative to each other (without rotation), these are inertial frames.</p>
-<section id="video-reminder-about-inertial-frames">
+<div class="section" id="video-reminder-about-inertial-frames">
 <h2>Video Reminder about Inertial Frames<a class="headerlink" href="#video-reminder-about-inertial-frames" title="Permalink to this heading">#</a></h2>
 <p>From Physics Professor <a class="reference external" href="https://www.youtube.com/user/yoprofmatt">Matt Anderson</a> (6min 33s)</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=WqWWM0673bk"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/WqWWM0673bk?width=720&amp;height=405" /></a></p>
@@ -462,14 +463,14 @@ document.write(`
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=WqWWM0673bk">https://inv.tux.pizza/watch?v=WqWWM0673bk</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=WqWWM0673bk">https://youtube.com/watch?v=WqWWM0673bk</a></p></li>
 </ul>
-</section>
-<section id="relative-velocities-in-cartesian-coordinates">
+</div>
+<div class="section" id="relative-velocities-in-cartesian-coordinates">
 <h2>Relative Velocities in Cartesian Coordinates<a class="headerlink" href="#relative-velocities-in-cartesian-coordinates" title="Permalink to this heading">#</a></h2>
 <p>Suppose you’re walking down Shaw Lane eager to get to BPS for your favorite physics class at constant velocity <span class="math notranslate nohighlight">\(v_A\)</span> when you notice a <a class="reference external" href="https://www.instagram.com/qualitysquirrelsofmsu/">squirrel</a> sitting stationary on the sidewalk <span class="math notranslate nohighlight">\(d\)</span> meters in front of you. Like an reasonable person, you naturally feel the urge to unnecessarily and mathematically analyze this situation using reference frames.</p>
 <p>Let’s call your reference frame <span class="math notranslate nohighlight">\(A\)</span> and the squirrel’s <span class="math notranslate nohighlight">\(B\)</span>. We’ll ignore height differences between you and the squirrel, which we assume are negligible given the amount of food our squirrels are consuming lately.</p>
 <p>A note on notation: <span class="math notranslate nohighlight">\(r_{A/B}\)</span> means “the position of <strong>object</strong> <span class="math notranslate nohighlight">\(A\)</span> in <strong>frame</strong> <span class="math notranslate nohighlight">\(B\)</span>,” or simply “the position of <span class="math notranslate nohighlight">\(A\)</span> relative to <span class="math notranslate nohighlight">\(B\)</span>.”</p>
 <img src="../../assets/squirrel1.png" alt="squirrel1" width=500px/>
-<section id="reminders-about-frames-and-linear-frame-changes">
+<div class="section" id="reminders-about-frames-and-linear-frame-changes">
 <h3>Reminders about frames and linear frame changes<a class="headerlink" href="#reminders-about-frames-and-linear-frame-changes" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>What is the squirrel’s position in your frame, <span class="math notranslate nohighlight">\(\mathbf{r}_{B/A}\)</span>?</p></li>
@@ -544,9 +545,9 @@ Answer<div class="sd-summary-down docutils">
 <p class="sd-card-text">In the squirrel’s frame, you are now stationary, the distance between you and the squirrel remains constant. Thus, <span class="math notranslate nohighlight">\(\mathbf{v}_{B/A} = \mathbf{0}\)</span>.</p>
 </div>
 </details><p>Hopefully these are intuitive from what you’ve learned back in introductory physics, but there are subtleties to the mathematics that you just did. These issues are incredibly important for working in other coordinate systems and do analysis between frames.</p>
-</section>
-</section>
-<section id="is-there-a-relationship-between-mathbf-v-b-a-and-mathbf-v-a-b">
+</div>
+</div>
+<div class="section" id="is-there-a-relationship-between-mathbf-v-b-a-and-mathbf-v-a-b">
 <h2>Is there a relationship between <span class="math notranslate nohighlight">\(\mathbf{v}_{B/A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}_{A/B}\)</span>?<a class="headerlink" href="#is-there-a-relationship-between-mathbf-v-b-a-and-mathbf-v-a-b" title="Permalink to this heading">#</a></h2>
 <p>This is relatively simple to understand if we consider the position of one object (C) in two different frames (A and B). The location of object C in frame A is <span class="math notranslate nohighlight">\(\mathbf{r}_{C/A}\)</span> and in frame B is <span class="math notranslate nohighlight">\(\mathbf{r}_{C/B}\)</span>. Note that these vectors point from the origin of the frame (A or B) to the position of the object (C). See below.</p>
 <img src="../../assets/frame_vectors.png" alt="Diagram showing relative position vectors for three different points to illustrate the mathematical relationship between the position vectors." width=500px/>
@@ -554,7 +555,7 @@ Answer<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \[\mathbf{r}_{C/A} = \mathbf{r}_{B/A} + \mathbf{r}_{C/B}\]</div>
 <p>In words this states, if we measure the distance vector from A to C, then that is the same as adding the distance vectors that measure from A to B and then B to C. This distance concept holds in any coordinate system and even where the concept of coordinates is more abstract. We can define relationships between locations in real (and imagined) spaces using vectors.</p>
-<section id="what-about-the-velocities">
+<div class="section" id="what-about-the-velocities">
 <h3>What about the velocities?<a class="headerlink" href="#what-about-the-velocities" title="Permalink to this heading">#</a></h3>
 <p>Here we have to be a bit more careful. Normally, you would think we can simply take derivatives like this:</p>
 <div class="math notranslate nohighlight">
@@ -571,8 +572,8 @@ Answer<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \[\dot{\mathbf{r}} = \frac{d}{dt} \mathbf{r} = \frac{dx}{dt}\mathbf{\hat x} + \frac{d\mathbf{\hat x}}{dt} x + \frac{dy}{dt}\mathbf{\hat y} + \frac{d\mathbf{\hat y}}{dt} y + \frac{dz}{dt}\mathbf{\hat z} + \frac{d\mathbf{\hat z}}{dt} z = \dot{x}\mathbf{\hat x} + \dot{y}\mathbf{\hat y} + \dot{z} \mathbf{\hat z}.\]</div>
 <p>because the derivatives of the unit vectors vanish. Later, we’ll figure out what happens when you have non-constant unit vectors.</p>
-</section>
-<section id="example">
+</div>
+<div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h3>
 <p>Let’s use these transformations in a problem.</p>
 <p>A second squirrel appears, which we’ll call squirrel <span class="math notranslate nohighlight">\(C\)</span>. This scares the first squirrel into running toward you (<span class="math notranslate nohighlight">\(\mathbf{v}_{B/A}\)</span>), while the new squirrel runs away (<span class="math notranslate nohighlight">\(\mathbf{v}_{C/A}\)</span>).</p>
@@ -596,9 +597,9 @@ Answer<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \[\mathbf{v}_{B/C} = \mathbf{v}_{B/A} - \mathbf{v}_{C/A}\]</div>
 </div>
-</details></section>
-</section>
-<section id="the-galilean-transformation">
+</details></div>
+</div>
+<div class="section" id="the-galilean-transformation">
 <h2>The Galilean Transformation<a class="headerlink" href="#the-galilean-transformation" title="Permalink to this heading">#</a></h2>
 <p>We just did an example of a <a class="reference external" href="https://https://en.wikipedia.org/wiki/Galilean_transformation"><strong>Galilean Transformation</strong></a>. Traditionally, if we have a frame <span class="math notranslate nohighlight">\(B\)</span> that with moves with constant velocity <span class="math notranslate nohighlight">\(v_{B/A}\)</span> with respect to frame <span class="math notranslate nohighlight">\(A\)</span>, we re-write the above equations as the following:</p>
 <div class="math notranslate nohighlight">
@@ -608,8 +609,8 @@ Answer<div class="sd-summary-down docutils">
 <p>Where we have taken <span class="math notranslate nohighlight">\(_A\)</span> to mean <span class="math notranslate nohighlight">\(_{C/A}\)</span> and <span class="math notranslate nohighlight">\(_B\)</span> to mean <span class="math notranslate nohighlight">\(_{C/B}\)</span>. Also note that since we are ignoring relativistic effects, we also have that:</p>
 <div class="math notranslate nohighlight">
 \[t_B = t_A\]</div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

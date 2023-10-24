@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5 Sept 23 - Notes: Lagrangian Dynamics &#8212; PHY 415 Fall 2023</title>
   
   
@@ -219,6 +218,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-CoupledOsc-NormalModes.html">17 Oct 23 - Activity: Normal Modes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-CoupledOsc-NumericalNormalModes.html">19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-solve_the_wave_eq.html">25 Oct 23 - Notes: Solutions to The Wave Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -503,7 +504,7 @@ document.write(`
 <li><p>Any Classical Mechanics Book Section on Lagrangian Dynamics</p></li>
 <li><p><a class="reference external" href="https://www.physics.rutgers.edu/~shapiro/507/book.pdf">[Section 2.1 and 2.2 of Shapiro’s Book is online]</a></p></li>
 </ul>
-<section class="tex2jax_ignore mathjax_ignore" id="sept-23-notes-lagrangian-dynamics">
+<div class="tex2jax_ignore mathjax_ignore section" id="sept-23-notes-lagrangian-dynamics">
 <h1>5 Sept 23 - Notes: Lagrangian Dynamics<a class="headerlink" href="#sept-23-notes-lagrangian-dynamics" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion">Newtonian Mechanics</a> is an incredibly useful model of the natural world. In fact, it wasn’t until the mid 1970s that we were able to truly <a class="reference external" href="https://en.wikipedia.org/wiki/Tests_of_general_relativity">test Einstein’s gravity as a true replacement</a> for Newton. That being said, for most terrestrial situations (macroscopic objects moving at low speeds), Newton’s mechanics is very good. However, the problem with Newton is that it requires a few things:</p>
 <ol class="arabic simple">
@@ -521,7 +522,7 @@ document.write(`
 <li><p>The one that minimizes the action integral over that time/space is the one the system takes</p></li>
 </ol>
 <p>This might seem magical! But it’s truly a deep connection to the energetics of the system, which limit the the relevant equations of motion by both the number of degrees of freedom (ways the system can move) and the constraints equation (things that influence the motion).</p>
-<section id="variational-analysis">
+<div class="section" id="variational-analysis">
 <h2>Variational Analysis<a class="headerlink" href="#variational-analysis" title="Permalink to this heading">#</a></h2>
 <p>The name of the game in calculus of variations is finding extrema (minima, maxima, or stationary points) of integrals that have the form:</p>
 <div class="math notranslate nohighlight">
@@ -534,7 +535,7 @@ S = \int_{x_1}^{x_2} f[y(x),\dot{y}(x),x] dx
 \[
 \frac{\partial f}{\partial y} - \frac{d}{dx}\left(\frac{\partial f}{\partial \dot{y}} \right) = 0
 \]</div>
-<section id="applications-to-classical-mechanics">
+<div class="section" id="applications-to-classical-mechanics">
 <h3>Applications to Classical Mechanics<a class="headerlink" href="#applications-to-classical-mechanics" title="Permalink to this heading">#</a></h3>
 <p>In practice, when approaching a variational problem, the typical workflow if something like this:</p>
 <ol class="arabic simple">
@@ -560,9 +561,9 @@ S = \int_{t_1}^{t_2} \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} dt
 \frac{\partial \mathcal{L}}{\partial q_i} - \frac{d}{dt}\left(\frac{\partial \mathcal{L}}{\partial \dot{q}_i} \right) = 0
 \]</div>
 <p>Once we perform these derivatives on this function, we will obtain <span class="math notranslate nohighlight">\(n\)</span> equations of motion (EOM) for our system; one for each generalized coordinate (<span class="math notranslate nohighlight">\(q_i\)</span>). Note how we didn’t have to know anything about the forces acting on our system to arrive at equations of motion, but rather the energy.</p>
-</section>
-</section>
-<section id="video-on-lagrangian-dynamics">
+</div>
+</div>
+<div class="section" id="video-on-lagrangian-dynamics">
 <h2>Video on Lagrangian Dynamics<a class="headerlink" href="#video-on-lagrangian-dynamics" title="Permalink to this heading">#</a></h2>
 <p>Parth G. has a lovely video below about the basics of Lagrangian Dynamics.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=KpLno70oYHE"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/KpLno70oYHE?width=720&amp;height=405" /></a></p>
@@ -570,11 +571,11 @@ S = \int_{t_1}^{t_2} \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} dt
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=KpLno70oYHE">https://inv.tux.pizza/watch?v=KpLno70oYHE</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=KpLno70oYHE">https://youtube.com/watch?v=KpLno70oYHE</a></p></li>
 </ul>
-</section>
-<section id="additional-resources">
+</div>
+<div class="section" id="additional-resources">
 <h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h2>
 <p>My notes go into detail on the development of the Lagrangian problem. But practice is the best approach.</p>
-<section id="handwritten-notes">
+<div class="section" id="handwritten-notes">
 <h3>Handwritten Notes<a class="headerlink" href="#handwritten-notes" title="Permalink to this heading">#</a></h3>
 <p>Here are my handwritten notes on the Calculus of Variations and Lagrangian Mechanics.</p>
 <ul class="simple">
@@ -583,8 +584,8 @@ S = \int_{t_1}^{t_2} \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} dt
 <li><p><a class="reference download internal" download="" href="../../../_downloads/d2bea0ac490d267467416e741545ba9c/Notes-Lagrangian_Example.pdf"><span class="xref download myst">Lagrangian Example</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../../_downloads/8efa84abd67acc5a791a190b9bb7fa3c/Notes-Lagrangian_Example_Gen_Force.pdf"><span class="xref download myst">Lagrangian Example with Generalized Forces and Lagrange Multipliers</span></a></p></li>
 </ul>
-</section>
-<section id="book-readings">
+</div>
+<div class="section" id="book-readings">
 <h3>Book Readings<a class="headerlink" href="#book-readings" title="Permalink to this heading">#</a></h3>
 <p>This reading is useful preparation for reminding yourself of Lagrangian Dynamics.</p>
 <ul class="simple">
@@ -592,8 +593,8 @@ S = \int_{t_1}^{t_2} \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} dt
 <li><p><a class="reference external" href="https://www.physics.rutgers.edu/~shapiro/507/book.pdf">Section 2.1 and 2.2 of Shapiro’s Book</a></p></li>
 <li><p><a class="reference external" href="https://www.google.com/books/edition/A_Student_s_Guide_to_Lagrangians_and_Ham/ebTCAQAAQBAJ?hl=en&amp;gbpv=1&amp;dq=lagrangian+dynamics+book&amp;printsec=frontcover">A Google Book you can review</a></p></li>
 </ul>
-</section>
-<section id="video-resources">
+</div>
+<div class="section" id="video-resources">
 <h3>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this heading">#</a></h3>
 <p>If you are a feeling that you would like a little direct instruction on this, this lecture is great. Lots of examples!</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=zhk9xLjrmi4"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/zhk9xLjrmi4?width=720&amp;height=405" /></a></p>
@@ -601,9 +602,9 @@ S = \int_{t_1}^{t_2} \mathcal{L(q_1,\dot{q}_1... q_n,\dot{q}_n)} dt
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=zhk9xLjrmi4">https://inv.tux.pizza/watch?v=zhk9xLjrmi4</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=zhk9xLjrmi4">https://youtube.com/watch?v=zhk9xLjrmi4</a></p></li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
