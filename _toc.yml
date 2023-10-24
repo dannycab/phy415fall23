@@ -47,6 +47,7 @@ parts:
       - file: content/3_waves/activity-CoupledOsc-NormalModes
       - file: content/3_waves/activity-CoupledOsc-NumericalNormalModes
       - file: content/3_waves/notes-solve_the_wave_eq
+      - file: content/3_waves/activity-Waves-1D
   - caption: Assignments
     chapters:
       - file: content/9_assignments/updated_rubric.md
