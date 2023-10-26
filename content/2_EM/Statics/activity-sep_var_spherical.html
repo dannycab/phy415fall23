@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>5 Oct 23 - Activity: Solving PDEs in Spherical Coordinates &#8212; PHY 415 Fall 2023</title>
   
   
@@ -501,7 +502,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-activity-solving-pdes-in-spherical-coordinates">
+  <section class="tex2jax_ignore mathjax_ignore" id="oct-23-activity-solving-pdes-in-spherical-coordinates">
 <h1>5 Oct 23 - Activity: Solving PDEs in Spherical Coordinates<a class="headerlink" href="#oct-23-activity-solving-pdes-in-spherical-coordinates" title="Permalink to this heading">#</a></h1>
 <p>We can extend the ideas we developed from Separation of Variables to solve PDEs in spherical coordinates. We propose a similar solution to the one we used for Cartesian coordinates, functions of a single variable.</p>
 <div class="math notranslate nohighlight">
@@ -519,10 +520,10 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\(A_{nlm}\)</span> and <span class="math notranslate nohighlight">\(B_{nlm}\)</span> are constants. Because Laplace’s equation is linear, we can write the general solution as a sum of these solutions:</p>
 <div class="math notranslate nohighlight">
 \[V(r,\theta,\phi) = \sum_{n=0}^\infty \sum_{l=0}^\infty \sum_{m=-l}^l \left(A_{nlm} r^n + \frac{B_{nlm}}{r^{n+1}}\right) P^m_l(\cos\theta) e^{i m \phi}\]</div>
-<div class="section" id="visualizing-the-solutions">
+<section id="visualizing-the-solutions">
 <h2>Visualizing the Solutions<a class="headerlink" href="#visualizing-the-solutions" title="Permalink to this heading">#</a></h2>
 <p>One of the major challenges with these general solutions is seeing what the solutions look like. We can use these picture to help us dtermine if we can remove one or more terms before trying to match boundary conditions. We will plot each of the solutions below with respect to their relative variables.</p>
-<div class="section" id="radial-solutions">
+<section id="radial-solutions">
 <h3>Radial Solutions<a class="headerlink" href="#radial-solutions" title="Permalink to this heading">#</a></h3>
 <p>Below, we are plotting the solutions <span class="math notranslate nohighlight">\(r^n\)</span> and <span class="math notranslate nohighlight">\(r^{-(n+1)}\)</span> for several choices of <span class="math notranslate nohighlight">\(n\)</span>. You can see where the solutions blow up. This is helpful for matching boundary conditions.</p>
 <div class="cell docutils container">
@@ -579,9 +580,9 @@ document.write(`
 <img alt="../../../_images/50fdc38ac55ae249d18a6e43acb3a5cbd2caa6a380b7196a1cb20924b3a87a0f.png" src="../../../_images/50fdc38ac55ae249d18a6e43acb3a5cbd2caa6a380b7196a1cb20924b3a87a0f.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="the-polar-angle-solutions">
+</section>
+</section>
+<section id="the-polar-angle-solutions">
 <h2>The Polar Angle Solutions<a class="headerlink" href="#the-polar-angle-solutions" title="Permalink to this heading">#</a></h2>
 <p>These solutions are the associated Legendre Polynomials, presented below.</p>
 <div class="math notranslate nohighlight">
@@ -613,7 +614,7 @@ document.write(`
 <img alt="../../../_images/6b7ee71a4282b7389493da41c13a0cbca104b858f0cceee93fccc4a5e7b7e2f9.png" src="../../../_images/6b7ee71a4282b7389493da41c13a0cbca104b858f0cceee93fccc4a5e7b7e2f9.png" />
 </div>
 </div>
-<div class="section" id="the-azimuthal-angle-solutions">
+<section id="the-azimuthal-angle-solutions">
 <h3>The Azimuthal Angle Solutions<a class="headerlink" href="#the-azimuthal-angle-solutions" title="Permalink to this heading">#</a></h3>
 <p>These solutions are the exponential functions, presented below.</p>
 <div class="math notranslate nohighlight">
@@ -646,9 +647,9 @@ document.write(`
 <img alt="../../../_images/863d820ce02167edb6437d60474558c0f9867da34a420aaad024f4528142ba91.png" src="../../../_images/863d820ce02167edb6437d60474558c0f9867da34a420aaad024f4528142ba91.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="azimuthally-symmetric-solutions">
+</section>
+</section>
+<section id="azimuthally-symmetric-solutions">
 <h2>Azimuthally Symmetric Solutions<a class="headerlink" href="#azimuthally-symmetric-solutions" title="Permalink to this heading">#</a></h2>
 <p>In the case of azimuthally symmetric solutions, the potential is independent of <span class="math notranslate nohighlight">\(\phi\)</span> and the solutions are of the form:</p>
 <div class="math notranslate nohighlight">
@@ -688,11 +689,11 @@ document.write(`
 <img alt="../../../_images/4b5ba1615a5d9cf28bd1e1e6913bb6692b64bcb5b15d10ab05a4e6a6a23d05d8.png" src="../../../_images/4b5ba1615a5d9cf28bd1e1e6913bb6692b64bcb5b15d10ab05a4e6a6a23d05d8.png" />
 </div>
 </div>
-</div>
-<div class="section" id="matching-boundary-conditions-and-plotting-the-potential">
+</section>
+<section id="matching-boundary-conditions-and-plotting-the-potential">
 <h2>Matching Boundary Conditions and Plotting the Potential<a class="headerlink" href="#matching-boundary-conditions-and-plotting-the-potential" title="Permalink to this heading">#</a></h2>
 <p><strong>✅ Do this</strong></p>
-<div class="section" id="sphere-of-constant-surface-potential">
+<section id="sphere-of-constant-surface-potential">
 <h3>Sphere of constant surface potential<a class="headerlink" href="#sphere-of-constant-surface-potential" title="Permalink to this heading">#</a></h3>
 <p>Consider a sphere of with a radius <span class="math notranslate nohighlight">\(a\)</span>. If the potential on the surface is <span class="math notranslate nohighlight">\(V_0\)</span>, what is the potential inside and outside the sphere?</p>
 <ol class="arabic simple">
@@ -708,9 +709,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

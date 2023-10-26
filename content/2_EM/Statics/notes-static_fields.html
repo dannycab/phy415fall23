@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>26 Sept 23 - Notes: Static Fields &#8212; PHY 415 Fall 2023</title>
   
   
@@ -503,9 +504,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sept-23-notes-static-fields">
+  <section class="tex2jax_ignore mathjax_ignore" id="sept-23-notes-static-fields">
 <h1>26 Sept 23 - Notes: Static Fields<a class="headerlink" href="#sept-23-notes-static-fields" title="Permalink to this heading">#</a></h1>
-<div class="section" id="vector-calculus">
+<section id="vector-calculus">
 <h2>Vector Calculus<a class="headerlink" href="#vector-calculus" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell%27s_equations">Maxwell’s Equations</a>, even in their static form (i.e., static charges or steady currents), are a set of coupled partial differential equations. In order to develop solutions and models to approximate the behavior of electromagnetic fields, we need to be able to use vector calculus.</p>
 <p>The video below from <a class="reference external" href="https://www.3blue1brown.com/">3Blue1Brown</a> provides a conceptual introduction to the vector calculus that we are going to need for this.</p>
@@ -514,11 +515,11 @@ document.write(`
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=rB83DpBJQsE">https://inv.tux.pizza/watch?v=rB83DpBJQsE</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=rB83DpBJQsE">https://youtube.com/watch?v=rB83DpBJQsE</a></p></li>
 </ul>
-</div>
-<div class="section" id="electrostatic-fields">
+</section>
+<section id="electrostatic-fields">
 <h2>Electrostatic fields<a class="headerlink" href="#electrostatic-fields" title="Permalink to this heading">#</a></h2>
 <p>The electrostatic field is one that is created by static (stationary) charges. This is often the first type of field that we encounter, where <span class="math notranslate nohighlight">\(\rho(\mathbf{r},t)) = \rho(\mathbf{r})\)</span>. Because the charges are stationary, the current density is zero, <span class="math notranslate nohighlight">\(\mathbf{J}(\mathbf{r},t) = \mathbf{0}\)</span>.</p>
-<div class="section" id="the-electric-field">
+<section id="the-electric-field">
 <h3>The electric field<a class="headerlink" href="#the-electric-field" title="Permalink to this heading">#</a></h3>
 <p>The relevant Maxwell equations for <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> that govern an electrostatic situation are the following:</p>
 <div class="math notranslate nohighlight">
@@ -540,8 +541,8 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \int \frac{dq}{|\mathbf{r} - \mathbf{r}'|^3} (\mathbf{r} - \mathbf{r}')\]</div>
 <p>We will find later that the <a class="reference external" href="https://en.wikipedia.org/wiki/Electric_potential">electric potential</a> (<span class="math notranslate nohighlight">\(V\)</span>) is a better choice if we can use it. It simplifies our vector problem to a scalar problem.</p>
-</div>
-<div class="section" id="the-magnetic-field">
+</section>
+<section id="the-magnetic-field">
 <h3>The magnetic field<a class="headerlink" href="#the-magnetic-field" title="Permalink to this heading">#</a></h3>
 <p>The relevant Maxwell equations for <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> that govern an electrostatic situation are the following:</p>
 <div class="math notranslate nohighlight">
@@ -549,12 +550,12 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\nabla \times \mathbf{B} = 0\]</div>
 <p>Notice that these equations are solved when <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> = 0. This is because there are no magnetic monopoles, so if the divergence and curl of the field are zero everywhere, then the field must be zero everywhere. There’s simply no sources of magnetic field. So in an electrostatic situation, the magnetic field is zero and we are purely focused on the electric field.</p>
-</div>
-</div>
-<div class="section" id="magnetostatic-fields">
+</section>
+</section>
+<section id="magnetostatic-fields">
 <h2>Magnetostatic fields<a class="headerlink" href="#magnetostatic-fields" title="Permalink to this heading">#</a></h2>
 <p>In a magnetostatic situation, there have to be currents; that is, moving charges. That is the only make to generate magnetic field from particles. So you are going to have a non-zero current density. But we argue that the currents are steady, so <span class="math notranslate nohighlight">\(\mathbf{J}(\mathbf{r},t) = \mathbf{J}(\mathbf{r})\)</span>. Now, of course, there will be electric field, but we will discuss how we consider that in a moment.</p>
-<div class="section" id="id1">
+<section id="id1">
 <h3>The magnetic field<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>The relevant Maxwell equations for <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> that govern a magnetostatic situation are the following:</p>
 <div class="math notranslate nohighlight">
@@ -577,8 +578,8 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\mathbf{A} = \frac{\mu_0}{4\pi} \int_V \frac{\mathbf{J}(\mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|} d\tau'\]</div>
 <p>It turns out this is a better method for solving problems, especially computationally. That is beyond the scope of this course.</p>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h3>The electric field<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>Because there is a magnetic field, the relevant Maxwell equations for <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> that govern a magnetostatic situation are the following:</p>
 <div class="math notranslate nohighlight">
@@ -591,11 +592,11 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\nabla \times \mathbf{E} = 0\]</div>
 <p>And all the relevant tools we will develop for the electrostatic situation for <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> apply here as well.</p>
-</div>
-</div>
-<div class="section" id="additional-resources">
+</section>
+</section>
+<section id="additional-resources">
 <h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h2>
-<div class="section" id="handwritten-notes">
+<section id="handwritten-notes">
 <h3>Handwritten Notes<a class="headerlink" href="#handwritten-notes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../../../_downloads/d349b12f6b4461e1950e5276b862200a/Notes-Vector_Calculus.pdf"><span class="xref download myst">Vector Calculus</span></a></p></li>
@@ -604,9 +605,9 @@ document.write(`
 <li><p><a class="reference download internal" download="" href="../../../_downloads/ad835ffadf5e5c6d53877f9d7c582b9f/Notes-Magnetostatics.pdf"><span class="xref download myst">Magnetostatics</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../../_downloads/747d7361d0231ae665a062647d02f878/Notes-Amperes_Law.pdf"><span class="xref download myst">Ampere’s Law</span></a></p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
