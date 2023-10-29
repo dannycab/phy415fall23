@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>14 Sept 23 - Conducting a complete analysis of an ODE &#8212; PHY 415 Fall 2023</title>
   
   
@@ -210,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../2_EM/Statics/activity-sep_var_spherical_examples.html">10 Oct 23 - Activity: Matching Boundary Conditions and Plotting the Potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../2_EM/Numerics/activity-relaxation_2d.html">12 Oct 23 - Activity: Method of Relaxation</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillationsmake v</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillations</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-coupled_oscillations.html">16 Oct 23 - Notes: Coupled Oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-waves_intro.html">16 Oct 23 - Notes: Introduction to Waves</a></li>
@@ -219,6 +218,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-solve_the_wave_eq.html">25 Oct 23 - Notes: Solutions to The Wave Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-Signals.html">31 Oct 23 - Activity: Signal Deconstruction</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../4_distributions/here_be_dragons.html">Here Be Dragons (Material not complete)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -488,7 +492,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sept-23-conducting-a-complete-analysis-of-an-ode">
+  <div class="tex2jax_ignore mathjax_ignore section" id="sept-23-conducting-a-complete-analysis-of-an-ode">
 <h1>14 Sept 23 - Conducting a complete analysis of an ODE<a class="headerlink" href="#sept-23-conducting-a-complete-analysis-of-an-ode" title="Permalink to this heading">#</a></h1>
 <p>We’ve built up all the tools that we use to investigate ODEs. Now we are going to practice with an oscillator that exhibits really interesting dynamics: the <a class="reference external" href="https://en.wikipedia.org/wiki/Van_der_Pol_oscillator">Van der Pol oscillator</a>. This equation originates from nonlinear circuits in early radios, but has now also been used in neuroscience and geology. It is given by the differential equation:</p>
 <div class="math notranslate nohighlight">
@@ -566,7 +570,7 @@ document.write(`
 </div>
 <p><strong>✅ Do this</strong></p>
 <p>Based on the phase space diagram, what do you expect actual trajectories to look like in <span class="math notranslate nohighlight">\(x\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> space? Use the numerically integrated trajectories to plot that.</p>
-<section id="limit-cycles">
+<div class="section" id="limit-cycles">
 <h2>Limit Cycles<a class="headerlink" href="#limit-cycles" title="Permalink to this heading">#</a></h2>
 <p>The new behavior we’ve seen from this equation is what’s called a <strong>limit cycle</strong>, where the system is attracted/reppeled from a closed curve instead of a fixed point(s). There’s a lot of really great math here that’s a bit beyond what we can cover in class, but it would be a great thing to look into for a project!</p>
 <p><strong>✅ Do this</strong></p>
@@ -576,8 +580,8 @@ document.write(`
 <li><p>Add an <span class="math notranslate nohighlight">\(A\sin(t)\)</span> driving force term to the differential equation and numerically integrate. What do these trajectories look like in <span class="math notranslate nohighlight">\(x\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> and in phase space?</p></li>
 <li><p>Examine the energetics of this system. Is energy conserved or does it have some interesting behavior? Why?</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

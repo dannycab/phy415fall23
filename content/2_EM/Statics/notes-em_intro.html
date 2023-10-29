@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>26 Sept 23 - Notes: Maxwell’s Equations &#8212; PHY 415 Fall 2023</title>
   
   
@@ -212,7 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="activity-sep_var_spherical_examples.html">10 Oct 23 - Activity: Matching Boundary Conditions and Plotting the Potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Numerics/activity-relaxation_2d.html">12 Oct 23 - Activity: Method of Relaxation</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillationsmake v</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillations</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-coupled_oscillations.html">16 Oct 23 - Notes: Coupled Oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-waves_intro.html">16 Oct 23 - Notes: Introduction to Waves</a></li>
@@ -221,6 +220,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-solve_the_wave_eq.html">25 Oct 23 - Notes: Solutions to The Wave Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-Signals.html">31 Oct 23 - Activity: Signal Deconstruction</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../4_distributions/here_be_dragons.html">Here Be Dragons (Material not complete)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -500,22 +504,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sept-23-notes-maxwell-s-equations">
+  <div class="tex2jax_ignore mathjax_ignore section" id="sept-23-notes-maxwell-s-equations">
 <h1>26 Sept 23 - Notes: Maxwell’s Equations<a class="headerlink" href="#sept-23-notes-maxwell-s-equations" title="Permalink to this heading">#</a></h1>
-<section id="electromagnetic-phenomena">
+<div class="section" id="electromagnetic-phenomena">
 <h2>Electromagnetic Phenomena<a class="headerlink" href="#electromagnetic-phenomena" title="Permalink to this heading">#</a></h2>
 <p>You have certainly experienced a wide variety of electromagnetic phenomena in your life – both natural (e.g., a sun rise, a rainbow, your hair standing on end) and human-made (e.g., switching on a light, using a microwave, using a cell phone). We now know that we can explain many of those phenomenon using a set of four partial differential equations: <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell%27s_equations">Maxwell’s Equations</a>. These equations describe a new mathematical object: a <a class="reference external" href="https://en.wikipedia.org/wiki/Field_(physics)">field</a>. The models that we develop from this theory are still <a class="reference external" href="https://en.wikipedia.org/wiki/Classical_physics">Classical</a> – in that we don’t consider quantum mechanical effects. Rather we treat the fields as continuous functions of space and time.</p>
 <p>While this might not seem that this classical theory is still useful in modern research, it is often the basis for much of the work done in physics. In fact, some important fusion energy research uses <a class="reference external" href="https://en.wikipedia.org/wiki/Magnetic_confinement_fusion">magnetic confinement</a>, which is effectively a classical electromagnetic phenomenon. The South Korean experimental fusion reactor, <a class="reference external" href="https://en.wikipedia.org/wiki/KSTAR">KSTAR</a>, is an example of this type of research, and it recently <a class="reference external" href="https://www.popularmechanics.com/science/energy/a41191247/koreas-fusion-reactor-sustained-temperatures-7-times-hotter-than-the-sun-for-30-seconds/">sustained temperatures of 100 million degrees Celsius</a>.</p>
-<section id="magnetic-confinement-in-fusion-energy">
+<div class="section" id="magnetic-confinement-in-fusion-energy">
 <h3>Magnetic Confinement in Fusion Energy<a class="headerlink" href="#magnetic-confinement-in-fusion-energy" title="Permalink to this heading">#</a></h3>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=PWCqwZoE0FY"><img alt="Magnetic Confinement" src="https://markdown-videos-api.jorgenkh.no/youtube/PWCqwZoE0FY?width=720&amp;height=405" /></a></p>
 <ul class="simple">
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=PWCqwZoE0FY">https://inv.tux.pizza/watch?v=PWCqwZoE0FY</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=PWCqwZoE0FY">https://youtube.com/watch?v=PWCqwZoE0FY</a></p></li>
 </ul>
-</section>
-</section>
-<section id="developing-a-complete-theory">
+</div>
+</div>
+<div class="section" id="developing-a-complete-theory">
 <h2>Developing a complete theory<a class="headerlink" href="#developing-a-complete-theory" title="Permalink to this heading">#</a></h2>
 <p>The work to develop <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell%27s_equations">Maxwell’s Equations</a> was substantial and involved not only theoretical developments but confirmations using experiments. A model of reality is only as good as its ability to predict the results of experiments, which classical electromagnetism does very well (up to the point of quantum phenomena). The resulting Maxwell Equations that describe the electric (<span class="math notranslate nohighlight">\(\mathbf{E}\)</span>) and magnetic (<span class="math notranslate nohighlight">\(\mathbf{B}\)</span>) fields (in vacuum) are given by:</p>
 <div class="math notranslate nohighlight">
@@ -567,10 +571,10 @@ document.write(`
 \oint \mathbf{B} \cdot d\mathbf{l} = \mu_0 \int \mathbf{J} \cdot d\mathbf{A} + \mu_0 \varepsilon_0 \frac{d}{dt} \int \mathbf{E} \cdot d\mathbf{A}
 \]</div>
 <p>We will work with different aspects of these equations as we make different assumptions about the physical system.</p>
-<section id="a-comment-on-the-development-of-this-theory">
+<div class="section" id="a-comment-on-the-development-of-this-theory">
 <h3>A comment on the development of this theory<a class="headerlink" href="#a-comment-on-the-development-of-this-theory" title="Permalink to this heading">#</a></h3>
 <p>During the development of Classical Electromagnetism, physics research was often lead by single individuals with small armies of technicians, specialists, drafters, secretarial staff, and the like. While presented as the intellectual work of a single person, the work was an effort by a number of underpaid and under-recognized people (including, at the time, women and non-white men) who are unnamed in many books. A classical, and non critical, view of the development appears below in the video, but also in Meyer’s book <a class="reference external" href="https://mitpress.mit.edu/9780262130707/a-history-of-electricity-and-magnetism/">A History of Electricity and Magnetism</a>. A more nuanced view of how science develops and is negotiated appears in Traweek’s book <a class="reference external" href="https://en.wikipedia.org/wiki/Beamtimes_and_Lifetimes">Beamtimes and Lifetimes</a>.</p>
-<section id="the-mechanical-universe">
+<div class="section" id="the-mechanical-universe">
 <h4>The Mechanical Universe<a class="headerlink" href="#the-mechanical-universe" title="Permalink to this heading">#</a></h4>
 <p>This video from the <a class="reference external" href="https://en.wikipedia.org/wiki/The_Mechanical_Universe">Mechanical Universe series</a> and tells the story of the development of this theory. The video is dated and sexist and the instructor’s stories are similarly problematic. The video puts scientists on a pedestal. But, it is worth a watch, both to recognize the history as presented and to reckon with the issues that these perspectives have continued to perpetuate.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=SS4tcajTsW8"><img alt="Maxwell's Equations" src="https://markdown-videos-api.jorgenkh.no/youtube/SS4tcajTsW8?width=720&amp;height=405" /></a></p>
@@ -578,10 +582,10 @@ document.write(`
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=SS4tcajTsW8">https://inv.tux.pizza/watch?v=SS4tcajTsW8</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=SS4tcajTsW8">https://youtube.com/watch?v=SS4tcajTsW8</a></p></li>
 </ul>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

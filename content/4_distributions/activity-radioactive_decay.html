@@ -1,0 +1,813 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21 Nov 23 - Activity: Introduction to Random Processes &#8212; PHY 415 Fall 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/4_distributions/activity-radioactive_decay';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Mathematical Modeling in Physics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">0 - Intro and Syllabus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../0_course/0_syllabus.html">Syllabus and Overview of PHY 415</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/1_goals.html">Course Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/2_design.html">Course Design</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../0_course/3_assessments.html">Assessments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/4_rubric.html">Project Rubrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/5_calendar.html">Calendar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/6_environment.html">Classroom Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/7_resources.html">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/8_worked_problems.html">Worked Problems</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">1 - Mechanics and ODEs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/modeling/activity-what_is_a_model.html">29 Aug 23 - Activity: What is a Model?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/sho/notes-SHO.html">29 Aug 23 - Notes: Simple Harmonic Oscillator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/notes_frames.html">31 Aug 23 - Notes: Frames and Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-frames.html">31 Aug 23 - Activity: Frames and Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/notes-lagrangian-dynamics.html">5 Sept 23 - Notes: Lagrangian Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_1.html">5 Sep 23 - Activity: Calculus of Variations and Lagrangian Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/notes-numerical_integration_1d.html">7 Sept 23 - Notes: Numerical Integration in 1D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2 - E&amp;M and PDEs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/notes-em_intro.html">26 Sept 23 - Notes: Maxwell’s Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/notes-static_fields.html">26 Sept 23 - Notes: Static Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/activity-efields.html">26 Sep 23 - Activity: Electrostatic Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/activity-superposition.html">28 Sep 23 - Activity: Superposition of Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/notes-electric_potential.html">3 Oct 23 - Notes: Electric Potential - a scalar field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/activity-sep_var.html">3 Oct 23 - Activity: PDEs and Separation of Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/activity-sep_var_spherical.html">5 Oct 23 - Activity: Solving PDEs in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Numerics/notes-relaxation.html">9 Oct 23 - Notes: Method of Relaxation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/activity-sep_var_spherical_examples.html">10 Oct 23 - Activity: Matching Boundary Conditions and Plotting the Potential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Numerics/activity-relaxation_2d.html">12 Oct 23 - Activity: Method of Relaxation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-coupled_oscillations.html">16 Oct 23 - Notes: Coupled Oscillations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-waves_intro.html">16 Oct 23 - Notes: Introduction to Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-CoupledOsc-NormalModes.html">17 Oct 23 - Activity: Normal Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-CoupledOsc-NumericalNormalModes.html">19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-solve_the_wave_eq.html">25 Oct 23 - Notes: Solutions to The Wave Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-Signals.html">31 Oct 23 - Activity: Signal Deconstruction</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="here_be_dragons.html">Here Be Dragons (Material not complete)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/updated_rubric.html">Updated Rubric for Worked Problems and Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-1.html">Worked Problem Assignment 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-2.html">Worked Problem Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-1.html">Project 1 - Classical Mechanics and ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-3.html">Worked Problem Assignment 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-4.html">Worked Problem Assignment 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-2.html">Project 2 - PDEs, Laplace’s Equation, and the Method of Relaxation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-5.html">Worked Problem Assignment 5</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Works Cited</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415fall23&urlpath=lab/tree/phy415fall23/content/4_distributions/activity-radioactive_decay.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com""/github/dannycab/phy415fall23/blob/master/content/4_distributions/activity-radioactive_decay.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dannycab/phy415fall23" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dannycab/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/4_distributions/activity-radioactive_decay.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/4_distributions/activity-radioactive_decay.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>21 Nov 23 - Activity: Introduction to Random Processes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-random-library">The Random Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seeding-the-number-generator">Seeding the number generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-uniform-distribution">Creating a uniform distribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-biased-die">Make a biased die</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#micro-vs-macro-states">Micro vs Macro states</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-processes">Poisson Processes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decay-of-an-isotope">Decay of an isotope</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decay-chains">Decay Chains</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-challenge">A Challenge</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-activity-introduction-to-random-processes">
+<h1>21 Nov 23 - Activity: Introduction to Random Processes<a class="headerlink" href="#nov-23-activity-introduction-to-random-processes" title="Permalink to this heading">#</a></h1>
+<p>So far we have focused on mostly deterministic systems. These are systems that are typically described by regular ODEs and PDEs; think the SHO or the Wave Equation. In these systems, the game is to analytically determine or estimate the trajectory, field, or wave given the set of equations that describe it. But many processes in nature are random or have a random element ot them.</p>
+<p>How do we model the decay of nuclear isotopes? The gas atoms in a container? Even things like when your bus will arrive.</p>
+<p>Each of these processes has a randomness to it and how we model that randomness and what we can do depends a lot on the nature of the randomness. From a mathematical standpoint, what is the distribution of possible events, or the underlying probability distribution are key questions to ask in making these models. We will get there, but we will start by getting intuition from a place you have probably experienced: rolling dice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rand</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-random-library">
+<h2>The Random Library<a class="headerlink" href="#the-random-library" title="Permalink to this heading">#</a></h2>
+<p>If you have not used <code class="docutils literal notranslate"><span class="pre">random</span></code>, please read this section because it has some implementation things that are useful.</p>
+<p>Random numbers generated by a computer are not random, so it’s important to know how to use them. They aren’t truly random because a computer must generate them with an algorithm and thus we can potentially determine every number we’d receive if we knew the algorithm. There’s tons of research into how to generate good random numbers and there’s precious few ways. The main way right now is the <a class="reference external" href="https://en.wikipedia.org/wiki/Mersenne_Twister">Mersenne Twister method</a>. Testing the quality of a random number generator is beyond the scope of this class, but a useful exercise if you are doing research into random processes.</p>
+</div>
+<div class="section" id="seeding-the-number-generator">
+<h2>Seeding the number generator<a class="headerlink" href="#seeding-the-number-generator" title="Permalink to this heading">#</a></h2>
+<p>But because it’s an algorithm, we can control the sequence of random numbers we get. That is we can tell the random number generator to create random numbers for us in the same way. This helps because we can use them and test them over and over before running a full simulation. See below on how to generate random integers. Re-run to observe what happens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">stop</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">stop</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a =&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">rand</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">stop</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b =&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">rand</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">stop</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c =&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">rand</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">stop</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;d =&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 4
+b = 2
+c = 3
+d = 2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-a-uniform-distribution">
+<h2>Creating a uniform distribution<a class="headerlink" href="#creating-a-uniform-distribution" title="Permalink to this heading">#</a></h2>
+<p>One of the simplest distributions to generate is one that you are likely most familiar with - a fair die or pair of dice. In the case of a single fair die, each outcome is equally likely and distinct from each other. That is rolling a one and rolling a six are different, distinct outcomes - and we can say that for each outcome.</p>
+<p>Below, write a short piece of code (maybe as a function), that rolls one N-sided die as many times as you like and returns all the outcomes. <strong>Be careful using rand.seed() here because you can just an array of all the same numbers!</strong></p>
+<p>Plot a histogram of the outcomes; vary the sides of the die and the number of times it rolls.</p>
+<p><strong>Can you come up with a scheme that quantifies how close your distribution is to uniform?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="make-a-biased-die">
+<h3>Make a biased die<a class="headerlink" href="#make-a-biased-die" title="Permalink to this heading">#</a></h3>
+<p>Adjust your program so that you get even numbered rolls twice as frequently as odd rolls. This is the basis for baking in a probability function into our models. So do try to this. <strong>Make a histogram of the results of the biased die</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="micro-vs-macro-states">
+<h3>Micro vs Macro states<a class="headerlink" href="#micro-vs-macro-states" title="Permalink to this heading">#</a></h3>
+<p>In many random processes, the results are not distinct. Think about rolling two dice (colors are green and white) instead. How many ways can you get a sum of 2 vs a sum of 6? The state of the two dice where we indicate the number of each die can be called a “microstate”. The state of the sum can be called a “macrostate.”</p>
+<p>So as an example consider the macrostate with a sum of 4. This can be constructed of out 3 potential microstates. First he green die could have a 1 and the white one a 3, the green could have a 2 and the white a 2, and then the green could have a 3 and the white a 1. But the result I care about is not the individual die, but the sum. Regardless I get 4.</p>
+<ul class="simple">
+<li><p>Microstate - tracks individual constituent states as if they were unique</p></li>
+<li><p>Macrostate - a group of microstates that share something</p></li>
+</ul>
+<p><strong>Modify or use your code above to roll two fair die and count their sum</strong></p>
+<p>Plot the resulting histogram of macrostates. Vary the number of sides and number of rolls. What do you notice?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="poisson-processes">
+<h2>Poisson Processes<a class="headerlink" href="#poisson-processes" title="Permalink to this heading">#</a></h2>
+<p>Many events in physics can be represented by a <a class="reference external" href="https://en.wikipedia.org/wiki/Poisson_distribution">Poisson Distribution</a>, which results from events that have the following properties:</p>
+<ul class="simple">
+<li><p>The occurrence of one event does not affect the probability that a second event will occur. That is, events occur independently.</p></li>
+<li><p>The average rate at which events occur is independent of any occurrences. For simplicity, this is usually assumed to be constant, but may in practice vary with time.</p></li>
+<li><p>Two events cannot occur at exactly the same instant; instead, at each very small sub-interval, either exactly one event occurs, or no event occurs.</p></li>
+</ul>
+<p>Oftentimes, it’s the average rate (think lifetime of an isotope) that we think about as helping us decide. If it’s true that the rate is roughly constant and the events are independent, then this modeling can work reasonably well. So an event can be random, but the average result should be relatively simple (e.g., a single average decay time), then we can consider the events Poisson distributed.</p>
+<div class="section" id="decay-of-an-isotope">
+<h3>Decay of an isotope<a class="headerlink" href="#decay-of-an-isotope" title="Permalink to this heading">#</a></h3>
+<p>Consider a collection of <span class="math notranslate nohighlight">\(^{208}Tl\)</span> that decays into <span class="math notranslate nohighlight">\(^{208}Pb\)</span> with a half-life of 3.053 minutes. Note that any one atom decays randomly at a random time, but on average, we see that <span class="math notranslate nohighlight">\(1/e\)</span> atoms decay in 3.053 minutes (this is characteristic of a Poisson Process).</p>
+<p>The number of atoms <span class="math notranslate nohighlight">\(N\)</span> that will remain in our sample (that is still be Thallium 208) will fall off exponentially over time (we could observe that from data):</p>
+<div class="math notranslate nohighlight">
+\[N(t) = N(0)2^{-t/\tau}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau\)</span> is the half-life. The fraction of remaining Thallium 208 atoms at any given time <span class="math notranslate nohighlight">\(t\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{N(t)}{N(0)} = 2^{-t/\tau}\]</div>
+<p>The probability that an atom decayed into Lead 208 is just this number subtracted from one:</p>
+<div class="math notranslate nohighlight">
+\[p(t) = 1 - 2^{-t/\tau}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Constants</span>
+<span class="n">NTl</span> <span class="o">=</span> <span class="mi">1000</span>          <span class="c1"># Starting Thallium Atoms</span>
+<span class="n">NPb</span> <span class="o">=</span> <span class="mi">0</span>             <span class="c1"># Starting Lead Atoms</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="mf">3.053</span><span class="o">*</span><span class="mi">60</span>      <span class="c1"># Half life in seconds</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">1.0</span>             <span class="c1"># Time step between checking if a decay occurred</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">h</span><span class="o">/</span><span class="n">tau</span><span class="p">)</span> <span class="c1"># Probability the decay occurs in that time elapsed</span>
+<span class="n">tmax</span> <span class="o">=</span> <span class="mi">1000</span>         <span class="c1"># Total time in seconds </span>
+
+<span class="c1"># List of plot points</span>
+<span class="n">tpoints</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">tmax</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="n">Tlpoints</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">Pbpoints</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">probabilities</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Model</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tpoints</span><span class="p">:</span>
+    
+    <span class="n">Tlpoints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">NTl</span><span class="p">)</span>
+    <span class="n">Pbpoints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">NPb</span><span class="p">)</span>
+    
+    <span class="c1">## Calculate the number of atoms that decay</span>
+    <span class="n">decay</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NTl</span><span class="p">):</span>        <span class="c1"># For each atom in the sample</span>
+        <span class="k">if</span> <span class="n">rand</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>   <span class="c1"># Check if it decayed in the last dt </span>
+            <span class="n">decay</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">NTl</span> <span class="o">-=</span> <span class="n">decay</span>
+    <span class="n">NPb</span> <span class="o">+=</span> <span class="n">decay</span>
+
+<span class="c1"># Plot the data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpoints</span><span class="p">,</span> <span class="n">Tlpoints</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$^</span><span class="si">{208}</span><span class="s1">Tl$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpoints</span><span class="p">,</span> <span class="n">Pbpoints</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$^</span><span class="si">{208}</span><span class="s1">Pb$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of atoms&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/bfb8cde7d0a6adf3189035ac60d20cc080794cbd122f362f350ad161dc9ffb7f.png" src="../../_images/bfb8cde7d0a6adf3189035ac60d20cc080794cbd122f362f350ad161dc9ffb7f.png" />
+</div>
+</div>
+</div>
+<div class="section" id="decay-chains">
+<h3>Decay Chains<a class="headerlink" href="#decay-chains" title="Permalink to this heading">#</a></h3>
+<p>Here’s the big project for today! It is less often the case that decays happen like above. Many times there are [Decay Channels] where the atoms decay over time into different elements with different probabilities. Consider the Bismuth 213 decay to Bismuth 209. It decays in two channels:</p>
+<div class="math notranslate nohighlight">
+\[^{213}Bi \rightarrow  ^{209}Tl \rightarrow  ^{209}Pb \rightarrow  ^{209}Bi\]</div>
+<div class="math notranslate nohighlight">
+\[^{213}Bi \rightarrow  ^{209}Pb \rightarrow  ^{209}Bi\]</div>
+<p>The first channel happens to about 2.09% of atoms. So we will ignore it for now. Let’s focus on the two step decay to Lead.</p>
+<p>Rewrite the model above to account for both decays, which have lifetimes of 46 minutes and 3.3 minutes respectively.</p>
+<p><strong>Plot the number of all three atoms as a function of time</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-challenge">
+<h3>A Challenge<a class="headerlink" href="#a-challenge" title="Permalink to this heading">#</a></h3>
+<p>Model the entire decay including the random but clearly biased split between Lead 209 and Thallium 209, which has a halflife of 2.2 minutes.</p>
+<p><strong>Plot the number of all four atoms as a function of time</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/4_distributions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-random-library">The Random Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seeding-the-number-generator">Seeding the number generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-uniform-distribution">Creating a uniform distribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-biased-die">Make a biased die</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#micro-vs-macro-states">Micro vs Macro states</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-processes">Poisson Processes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decay-of-an-isotope">Decay of an isotope</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decay-chains">Decay Chains</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-challenge">A Challenge</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Danny Caballero, Alia Valentine
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

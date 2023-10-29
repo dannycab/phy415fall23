@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>10 Oct 23 - Activity: Matching Boundary Conditions and Plotting the Potential &#8212; PHY 415 Fall 2023</title>
   
   
@@ -212,7 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">10 Oct 23 - Activity: Matching Boundary Conditions and Plotting the Potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Numerics/activity-relaxation_2d.html">12 Oct 23 - Activity: Method of Relaxation</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillationsmake v</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillations</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-coupled_oscillations.html">16 Oct 23 - Notes: Coupled Oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-waves_intro.html">16 Oct 23 - Notes: Introduction to Waves</a></li>
@@ -221,6 +220,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-solve_the_wave_eq.html">25 Oct 23 - Notes: Solutions to The Wave Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-Signals.html">31 Oct 23 - Activity: Signal Deconstruction</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../4_distributions/here_be_dragons.html">Here Be Dragons (Material not complete)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -496,16 +500,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="oct-23-activity-matching-boundary-conditions-and-plotting-the-potential">
+  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-activity-matching-boundary-conditions-and-plotting-the-potential">
 <h1>10 Oct 23 - Activity: Matching Boundary Conditions and Plotting the Potential<a class="headerlink" href="#oct-23-activity-matching-boundary-conditions-and-plotting-the-potential" title="Permalink to this heading">#</a></h1>
-<section id="azimuthally-symmetric-solutions">
+<div class="section" id="azimuthally-symmetric-solutions">
 <h2>Azimuthally Symmetric Solutions<a class="headerlink" href="#azimuthally-symmetric-solutions" title="Permalink to this heading">#</a></h2>
 <p>As we saw, azimuthally symmetric solutions, the electric potential is independent of <span class="math notranslate nohighlight">\(\phi\)</span> and the solutions are of the form:</p>
 <div class="math notranslate nohighlight">
 \[V(r,\theta) = \sum_{n=0}^\infty \sum_{l=0}^\infty \left(A_{nl} r^n + \frac{B_{nl}}{r^{n+1}}\right) P_l(\cos\theta)\]</div>
 <p>where <span class="math notranslate nohighlight">\(P_l(\cos\theta)\)</span> are the <a class="reference external" href="https://en.wikipedia.org/wiki/Legendre_polynomials">Legendre polynomials</a>. The coefficients <span class="math notranslate nohighlight">\(A_{nl}\)</span> and <span class="math notranslate nohighlight">\(B_{nl}\)</span> are determined by the boundary conditions. We will practice solving for these coefficients in this activity.</p>
 <p><strong>✅ Do this</strong></p>
-<section id="sphere-of-constant-surface-potential">
+<div class="section" id="sphere-of-constant-surface-potential">
 <h3>Sphere of constant surface potential<a class="headerlink" href="#sphere-of-constant-surface-potential" title="Permalink to this heading">#</a></h3>
 <p>Consider a sphere of with a radius <span class="math notranslate nohighlight">\(a\)</span>. If the potential on the surface is <span class="math notranslate nohighlight">\(V_0\)</span>, what is the potential inside and outside the sphere?</p>
 <ol class="arabic simple">
@@ -522,8 +526,8 @@ document.write(`
 </div>
 </div>
 <p><strong>✅ Do this</strong></p>
-</section>
-<section id="sphere-of-variable-potential">
+</div>
+<div class="section" id="sphere-of-variable-potential">
 <h3>Sphere of variable potential<a class="headerlink" href="#sphere-of-variable-potential" title="Permalink to this heading">#</a></h3>
 <p>Consider a sphere of with a radius <span class="math notranslate nohighlight">\(a\)</span>. If the potential on the surface is <span class="math notranslate nohighlight">\(V(\theta)\)</span>, what is the potential inside and outside the sphere?</p>
 <ol class="arabic simple">
@@ -531,8 +535,8 @@ document.write(`
 <li><p>Consider the polar angle solutions, what has to be true? Can you say anything about them?</p></li>
 <li><p>What if <span class="math notranslate nohighlight">\(V(\theta) = V_0 \cos(\theta)\)</span>? What is the potential inside and outside the sphere?</p></li>
 </ol>
-</section>
-<section id="a-thick-spherical-shell">
+</div>
+<div class="section" id="a-thick-spherical-shell">
 <h3>A thick spherical shell<a class="headerlink" href="#a-thick-spherical-shell" title="Permalink to this heading">#</a></h3>
 <p>Suppose you have a spherical shell of inner radius <span class="math notranslate nohighlight">\(a\)</span> and outer radius <span class="math notranslate nohighlight">\(b\)</span>, and you know the electric potential on the inner (<span class="math notranslate nohighlight">\(V(a,\theta) = V_a(\theta)\)</span>) and outer (<span class="math notranslate nohighlight">\(V(b,\theta) = V_b(\theta)\)</span>) surfaces. You want to find the electric potential <span class="math notranslate nohighlight">\(V(r,\theta)\)</span> inside the hole (<span class="math notranslate nohighlight">\(r&lt;a\)</span>) and outside the shell (<span class="math notranslate nohighlight">\(r&gt;b\)</span>).</p>
 <p>Let’s allow:</p>
@@ -547,8 +551,8 @@ document.write(`
 <li><p>Find the unique solution for <span class="math notranslate nohighlight">\(V(r,\theta)\)</span> inside the hole (<span class="math notranslate nohighlight">\(r&lt;a\)</span>) and outside the shell (<span class="math notranslate nohighlight">\(r&gt;b\)</span>).</p></li>
 </ol>
 <p>What do you do in the case of <span class="math notranslate nohighlight">\(V_a(\theta) = f(\theta)\)</span> and <span class="math notranslate nohighlight">\(V_b(\theta) = g(\theta)\)</span> - generic functions?</p>
-</section>
-<section id="example-of-polarization">
+</div>
+<div class="section" id="example-of-polarization">
 <h3>Example of Polarization<a class="headerlink" href="#example-of-polarization" title="Permalink to this heading">#</a></h3>
 <p><strong>✅ Do this</strong></p>
 <p>Put a metal sphere of radius <span class="math notranslate nohighlight">\(a\)</span> in a uniform electric field <span class="math notranslate nohighlight">\(\vec{E} = E_0 \hat{z}\)</span>.</p>
@@ -569,9 +573,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
