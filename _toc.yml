@@ -50,22 +50,22 @@ parts:
       - file: content/3_waves/activity-Waves-1D
       - file: content/3_waves/notes-Waves-Fouriers_Trick
       - file: content/3_waves/activity-Waves-Signals
-      - file: content/3_waves/activity-Waves-Signal_Processing
-      - file: content/3_waves/notes-fft
-      - file: content/3_waves/activity-Waves-Cleaning_Signals
-      - file: content/3_waves/activity-FFT-applications
+      # - file: content/3_waves/activity-Waves-Signal_Processing
+      # - file: content/3_waves/notes-fft
+      # - file: content/3_waves/activity-Waves-Cleaning_Signals
+      # - file: content/3_waves/activity-FFT-applications
   - caption: 4 - Randomness and Distributions
     chapters:
       - file: content/4_distributions/here_be_dragons
-        sections:
-        - file: content/4_distributions/notes-randomness
-        - file: content/4_distributions/activity-radioactive_decay
-        - file: content/4_distributions/notes-monte_carlo_simulations
-        - file: content/4_distributions/activity-thermal_contact
-        - file: content/4_distributions/activity-mc_integration
-        - file: content/4_distributions/notes-mcmc
-        - file: content/4_distributions/activity-metropolis
-        - file: content/4_distributions/activity-ising_model
+        # sections:
+        # - file: content/4_distributions/notes-randomness
+        # - file: content/4_distributions/activity-radioactive_decay
+        # - file: content/4_distributions/notes-monte_carlo_simulations
+        # - file: content/4_distributions/activity-thermal_contact
+        # - file: content/4_distributions/activity-mc_integration
+        # - file: content/4_distributions/notes-mcmc
+        # - file: content/4_distributions/activity-metropolis
+        # - file: content/4_distributions/activity-ising_model
   - caption: Assignments
     chapters:
       - file: content/9_assignments/updated_rubric.md
