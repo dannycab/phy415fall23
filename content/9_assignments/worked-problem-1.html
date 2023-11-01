@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Worked Problem Assignment 1 &#8212; PHY 415 Fall 2023</title>
   
   
@@ -221,6 +222,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-Signals.html">31 Oct 23 - Activity: Signal Deconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-seriesExpand.html">2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-fft.html">6 Oct 23 - Notes: Fast Fourier Transform</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
 <ul class="nav bd-sidenav">
@@ -236,6 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="worked-problem-4.html">Worked Problem Assignment 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project-2.html">Project 2 - PDEs, Laplace’s Equation, and the Method of Relaxation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="worked-problem-5.html">Worked Problem Assignment 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worked-problem-6.html">Worked Problem Assignment 6</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -450,13 +454,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="worked-problem-assignment-1">
+  <section class="tex2jax_ignore mathjax_ignore" id="worked-problem-assignment-1">
 <h1>Worked Problem Assignment 1<a class="headerlink" href="#worked-problem-assignment-1" title="Permalink to this heading">#</a></h1>
 <p><strong>Due 15 Sep 23</strong></p>
 <p>In this first few class periods, we have discussed formulating mechanics using Lagrangian Dynamics to produce equations of motion and how we can use numerical integration to solve for trajectories.</p>
 <p><a class="reference internal" href="../0_course/8_worked_problems.html"><span class="doc std std-doc"><strong>Grading Rubric</strong></span></a></p>
 <p>Remember that a worked problem means the scale of a detailed (e.g., parts a-h) homework problem.</p>
-<div class="section" id="places-to-find-candidate-problems">
+<section id="places-to-find-candidate-problems">
 <h2>Places to find candidate problems:<a class="headerlink" href="#places-to-find-candidate-problems" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Classical mechanics textbooks; look at the problems in the Lagrangian chapters</p></li>
@@ -469,8 +473,8 @@ document.write(`
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="developing-equations-of-motion">
+</section>
+<section id="developing-equations-of-motion">
 <h2>Developing Equations of Motion<a class="headerlink" href="#developing-equations-of-motion" title="Permalink to this heading">#</a></h2>
 <p>Remember that the process we have developed is:</p>
 <ol class="arabic simple">
@@ -479,13 +483,13 @@ document.write(`
 <li><p>Use the Euler-Lagrange equations to produce equations of motion</p></li>
 </ol>
 <p>This “pipeline” is really how we formulate a mechanics problem into something we can do mathematics with. In this assignment, you will develop your own Lagrangian for a system and solve for the equations of motion.</p>
-</div>
-<div class="section" id="investigating-the-system">
+</section>
+<section id="investigating-the-system">
 <h2>Investigating the System<a class="headerlink" href="#investigating-the-system" title="Permalink to this heading">#</a></h2>
 <p>After we produce our equations of motion, we used both approximation techniques and numerical techniques to find solutions to the equations of motion. Here we developed “trajectories” for the system, that is, how the system evolves in time. In the approximate cases, we often sought frequencies of small oscillations to say something about how the system behaves near stable equilibria. In the numerical cases, we could choose particular initial conditions and see how they evolved in time.</p>
 <p>In this assignment, you will take your equations of motion and solve them numerically to produce trajectories. Approximate solutions, where you look into equilibria and frequencies of oscillation, should be included as well.</p>
-</div>
-<div class="section" id="assignment">
+</section>
+<section id="assignment">
 <h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Choose a mechanical (or dynamical) system with two degrees of freedom (e.g., <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(\dot{x}\)</span>). This could be a system you have already worked with, or something new.</p></li>
@@ -494,20 +498,20 @@ document.write(`
 <li><p>Solve the equations of motion numerically to produce trajectories for the system. You should include at least two different initial conditions.</p></li>
 <li><p>Use the approximate techniques we have discussed to find frequencies of oscillation and stable equilibria. Compare these to the numerical results.</p></li>
 </ol>
-</div>
-<div class="section" id="looking-ahead-earn-extra-credit">
+</section>
+<section id="looking-ahead-earn-extra-credit">
 <h2>Looking ahead (earn extra credit)<a class="headerlink" href="#looking-ahead-earn-extra-credit" title="Permalink to this heading">#</a></h2>
 <p>If you are looking into these systems and finding them interesting here’s two things you can do to earn extra credit that we will discuss later in the course.</p>
 <ol class="arabic simple">
 <li><p>Develop a phase space diagram for your system to show what families of solutions exist.</p></li>
 <li><p>Investigate the stability of the equilibria that you find.</p></li>
 </ol>
-</div>
-<div class="section" id="submitting-your-work">
+</section>
+<section id="submitting-your-work">
 <h2>Submitting your work<a class="headerlink" href="#submitting-your-work" title="Permalink to this heading">#</a></h2>
 <p>You will upload your work to D2L. It should be a single PDF of your work. If you also write code, please submit the associated files as well. If you do all of this in a Jupyter notebook, please export the notebook as a PDF and submit the notebook and PDF file. If you have any questions, please ask. We want you to enjoy working on these problems.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

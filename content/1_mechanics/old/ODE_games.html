@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>21 Sept 23 - Activity: ODE Games &#8212; PHY 415 Fall 2023</title>
   
   
@@ -209,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../2_EM/Statics/activity-sep_var_spherical_examples.html">10 Oct 23 - Activity: Matching Boundary Conditions and Plotting the Potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../2_EM/Numerics/activity-relaxation_2d.html">12 Oct 23 - Activity: Method of Relaxation</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillations</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillationsmake v</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-coupled_oscillations.html">16 Oct 23 - Notes: Coupled Oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-waves_intro.html">16 Oct 23 - Notes: Introduction to Waves</a></li>
@@ -218,24 +219,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-solve_the_wave_eq.html">25 Oct 23 - Notes: Solutions to The Wave Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-Signals.html">01 Nov 2022 - Signal Deconstruction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-Signal_Processing.html">03 Nov 2022 - Signal Processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-fft.html">Notes: Fast Fourier Transform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-Cleaning_Signals.html">8 Nov 22 - The Inverse Fourier Transform</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../4_distributions/here_be_dragons.html">Here Be Dragons (Material not complete)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/notes-randomness.html">20 Nov 23 - Notes: Random Processes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/activity-radioactive_decay.html">21 Nov 23 - Activity: Introduction to Random Processes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/notes-monte_carlo_simulations.html">27 Nov 2023 - Reading: Monte Carlo Simulations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/notes-mcmc.html">4 Dec 2023 - Markov Chain Monte Carlo Modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/activity-metropolis.html">5 Dec 2023 - Activity: Modeling the Ideal Gas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/activity-ising_model.html">7 Dec 2023 - Activity: The Ising Model</a></li>
-</ul>
-</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -513,7 +496,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sept-23-activity-ode-games">
+  <section class="tex2jax_ignore mathjax_ignore" id="sept-23-activity-ode-games">
 <h1>21 Sept 23 - Activity: ODE Games<a class="headerlink" href="#sept-23-activity-ode-games" title="Permalink to this heading">#</a></h1>
 <p>Y’all have worked with several different ODEs. We’ve learned that we can use phase space to investigate different potential families of solutions. We’ve learned how to read information from phase space for systems we are familiar with like the SHO and the large angle Pendulum. We’ve also learned how to use numerical integration to find trajectories of the system in time and in phase space, and how chaotic systems behave. Today, you will investigate a new model. There’s quite a few well-known models.</p>
 <p>Some of these models are listed below with links to articles describing them or the ideas related to them. <em>This is for reference, you don’t need to read or understand anything deeply from these articles.</em></p>
@@ -559,39 +542,39 @@ document.write(`
 <li><p>Several of these models have parameters, which you can choose, but maybe look into reasonable values. These models are likely the more challenging for this assignment because you have to keep track of and pass parameters.</p></li>
 <li><p>Some of these models have a versions with time depdendent components , i.e., some <span class="math notranslate nohighlight">\(F(t)\)</span>. Adding these components once you’ve explored the non-time-dependent version gives a ton more to explore!</p></li>
 </ol>
-<div class="section" id="activity">
+<section id="activity">
 <h2>Activity<a class="headerlink" href="#activity" title="Permalink to this heading">#</a></h2>
 <p>Pick an ODE as a group and explore it as we have done in class. The critical element here is not only working on making the models but finding where the key components of our model evaluation framework appear in your work. It is ok if it doesn’t all show up for you. We will dsicuss as a class how we might see these components in our modeling work. As a reminder, here’s the framework:</p>
-<div class="section" id="goal-investigate-physical-systems-0-30">
+<section id="goal-investigate-physical-systems-0-30">
 <h3>Goal: Investigate physical systems (0.30)<a class="headerlink" href="#goal-investigate-physical-systems-0-30" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>How well does your computational essay <mark>predict</mark> or <mark>explain</mark> the system of interest?</p></li>
 <li><p>How well does your computational essay allow the user to <mark>explore</mark> and <mark>investigate</mark> the system?</p></li>
 </ul>
-</div>
-<div class="section" id="goal-construct-and-document-a-reproducible-process-0-10">
+</section>
+<section id="goal-construct-and-document-a-reproducible-process-0-10">
 <h3>Goal: Construct and document a reproducible process (0.10)<a class="headerlink" href="#goal-construct-and-document-a-reproducible-process-0-10" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>How well does your computational essay <mark>reproduce</mark> your results and claims?</p></li>
 <li><p>How  <mark>well documented</mark> is your computational essay?</p></li>
 </ul>
-</div>
-<div class="section" id="goal-use-analytical-computational-and-graphical-approaches-0-30">
+</section>
+<section id="goal-use-analytical-computational-and-graphical-approaches-0-30">
 <h3>Goal: Use analytical, computational, and graphical approaches (0.30)<a class="headerlink" href="#goal-use-analytical-computational-and-graphical-approaches-0-30" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>How well does your computational essay document your <mark>assumptions</mark>?</p></li>
 <li><p>How well does your computational essay produce an <mark>understandable</mark> and <mark>parsimonious</mark> model?</p></li>
 <li><p>How well does your computational essay explain the <mark>limitations</mark> of your analysis?</p></li>
 </ul>
-</div>
-<div class="section" id="goal-provide-evidence-of-the-quality-of-their-work">
+</section>
+<section id="goal-provide-evidence-of-the-quality-of-their-work">
 <h3>Goal: Provide evidence of the quality of their work<a class="headerlink" href="#goal-provide-evidence-of-the-quality-of-their-work" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>How well does your computational essay <mark>present</mark>  the case for its claims?</p></li>
 <li><p>How well <mark>validated</mark>  is your model?</p></li>
 </ul>
-</div>
-<div class="section" id="goal-collaborate-effectively">
+</section>
+<section id="goal-collaborate-effectively">
 <h3>Goal: Collaborate effectively<a class="headerlink" href="#goal-collaborate-effectively" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>How well did you <mark>share</mark>  in the class’s knowledge?</p>
@@ -602,8 +585,8 @@ document.write(`
 <li><p>How well did you <mark>work with your partner</mark> ? <em>For those choosing to do so</em></p></li>
 </ul>
 <p>Below is some starter code to help you get started.</p>
-</div>
-<div class="section" id="starter-code">
+</section>
+<section id="starter-code">
 <h3>Starter Code<a class="headerlink" href="#starter-code" title="Permalink to this heading">#</a></h3>
 <p>Here’s some working code from last week when we looked at the Van der Pol oscillator to help you get started on your invesigation.</p>
 <p>For reference, the Van der Pol oscillator is given by:</p>
@@ -671,9 +654,9 @@ document.write(`
 <img alt="../../../_images/25cdf3d887c86ce188cd8b635536f87f882bbc45ce8c5abe797a1f676a930a7e.png" src="../../../_images/25cdf3d887c86ce188cd8b635536f87f882bbc45ce8c5abe797a1f676a930a7e.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

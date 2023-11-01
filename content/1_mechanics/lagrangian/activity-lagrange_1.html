@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>5 Sep 23 - Activity: Calculus of Variations and Lagrangian Dynamics &#8212; PHY 415 Fall 2023</title>
   
   
@@ -221,6 +222,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-Signals.html">31 Oct 23 - Activity: Signal Deconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-seriesExpand.html">2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-fft.html">6 Oct 23 - Notes: Fast Fourier Transform</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
 <ul class="nav bd-sidenav">
@@ -236,6 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../9_assignments/worked-problem-4.html">Worked Problem Assignment 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../9_assignments/project-2.html">Project 2 - PDEs, Laplace’s Equation, and the Method of Relaxation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../9_assignments/worked-problem-5.html">Worked Problem Assignment 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../9_assignments/worked-problem-6.html">Worked Problem Assignment 6</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -504,21 +508,21 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-activity-calculus-of-variations-and-lagrangian-dynamics">
+  <section class="tex2jax_ignore mathjax_ignore" id="sep-23-activity-calculus-of-variations-and-lagrangian-dynamics">
 <h1>5 Sep 23 - Activity: Calculus of Variations and Lagrangian Dynamics<a class="headerlink" href="#sep-23-activity-calculus-of-variations-and-lagrangian-dynamics" title="Permalink to this heading">#</a></h1>
 <p>In this activity, you will work through an example Lagrangian dynamics problem. This problem is a standard one which sets up both our understanding of the Lagrangian and the Lagrangian equations of motion, but also coupled oscillators. The latter is a very important concept in physics, and we will see it again in the context of waves. In addition, we will change coordinate systems from Cartesian to polar coordinates on our way to generalized coordinates.</p>
 <p>We should be considering all the conceptual questions asked because signs and distances matter in most Lagrangian problems. Setting up the problem incorrectly is the most common mistake (we’ve all made it many times) because the mathematical process is the same for every problem.</p>
-<div class="section" id="group-activity">
+<section id="group-activity">
 <h2>Group Activity<a class="headerlink" href="#group-activity" title="Permalink to this heading">#</a></h2>
-<div class="section" id="simple-harmonic-oscillator-sho">
+<section id="simple-harmonic-oscillator-sho">
 <h3>Simple Harmonic Oscillator (SHO)<a class="headerlink" href="#simple-harmonic-oscillator-sho" title="Permalink to this heading">#</a></h3>
 <p><em>Note (for this and future problems): the form of the EOM might not look the same as the Newtonian approach, but with some algebra we can often see that they are equivalent.</em></p>
 <p><strong>✅ Do this</strong></p>
 <ol class="arabic simple">
 <li><p>Starting with the 1d energy equations (<span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(V\)</span>) for a SHO; derive the equations of motion (<span class="math notranslate nohighlight">\(m\ddot{x}=-kx\)</span>). Use the Lagrangian approach. Did you get the sign right?</p></li>
 </ol>
-</div>
-<div class="section" id="canonical-coupled-oscillators">
+</section>
+<section id="canonical-coupled-oscillators">
 <h3>Canonical Coupled Oscillators<a class="headerlink" href="#canonical-coupled-oscillators" title="Permalink to this heading">#</a></h3>
 <p>Let’s assume you have a chain of two mass connected by springs (all with the same <span class="math notranslate nohighlight">\(k\)</span>) as below.</p>
 <img src='https://www.entropy.energy/static/resources/coupled-oscillators/two-coupled-gliders-diagram.png' alt='Coupled Oscillator set up. Two oscillators connected by three springs in a horizontal line.' width=800px/>
@@ -530,8 +534,8 @@ document.write(`
 <li><p>Do all the signs makes sense to you? Why?</p></li>
 <li><p>Could you have arrived at these equations in the Newtonian framework? No need to do so, just sketch out how you would have done it.</p></li>
 </ol>
-</div>
-<div class="section" id="orbital-problem">
+</section>
+<section id="orbital-problem">
 <h3>Orbital Problem<a class="headerlink" href="#orbital-problem" title="Permalink to this heading">#</a></h3>
 <p>Consider the 2 body orbital problem of a star and an planet under the force of gravity. Assume the star is stationary.</p>
 <p><strong>✅ Do this</strong></p>
@@ -541,12 +545,12 @@ document.write(`
 <li><p>Derive the <span class="math notranslate nohighlight">\(r\)</span> equation of motion. What do you notice about it’s terms? Can you rewrite it in a Netwonian form?</p></li>
 <li><p>Derive the <span class="math notranslate nohighlight">\(\phi\)</span> equation of motion. What do you notice about it’s time derivative? Does that tell you something about a quantity of the motion (i.e. a conserved quantity)? If so, what is it?</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="additonal-examples">
+</section>
+</section>
+<section id="additonal-examples">
 <h2>Additonal Examples<a class="headerlink" href="#additonal-examples" title="Permalink to this heading">#</a></h2>
 <p>We will discuss constrained motion together in class. The code below is just to show you the shape of the constraints.</p>
-<div class="section" id="constrained-motion">
+<section id="constrained-motion">
 <h3>Constrained Motion<a class="headerlink" href="#constrained-motion" title="Permalink to this heading">#</a></h3>
 <p>The Lagrangian framework also excels at dealing with constrained motion, where it is usually not obvious what the constraint forces are. This is because you can write your generalized coordinates for your system in such a way that it contains the information</p>
 <p>Consider a particle of mass <span class="math notranslate nohighlight">\(m\)</span> constrained to move on the surface of a paraboloid <span class="math notranslate nohighlight">\(z =  c\rho^2\)</span> subject to a gravitational force downward, so that the paraboloid and gravity are aligned.</p>
@@ -591,8 +595,8 @@ document.write(`
 <img alt="../../../_images/9ba8eb71414a65d0a81c5cccdd8168324484a24b14e7afd86f804f706c20275e.png" src="../../../_images/9ba8eb71414a65d0a81c5cccdd8168324484a24b14e7afd86f804f706c20275e.png" />
 </div>
 </div>
-</div>
-<div class="section" id="roller-coaster-on-a-holonomic-track">
+</section>
+<section id="roller-coaster-on-a-holonomic-track">
 <h3>Roller Coaster on a Holonomic Track<a class="headerlink" href="#roller-coaster-on-a-holonomic-track" title="Permalink to this heading">#</a></h3>
 <p>Consider 3 roller coaster cars of equal mass <span class="math notranslate nohighlight">\(m\)</span> and positions <span class="math notranslate nohighlight">\(x_1,x_2,x_3\)</span>, constrained to move on a one dimensional “track” defined by <span class="math notranslate nohighlight">\(f(x) = x^4 -2x^2 + 1\)</span>. These cars are also constrained to stay a distance <span class="math notranslate nohighlight">\(d\)</span> apart, since they are linked. We’ll only worry about that distance <span class="math notranslate nohighlight">\(d\)</span> in the direction for now (though a fun problem would be to try this problem with a true fixed distance!)</p>
 <div class="cell docutils container">
@@ -625,9 +629,9 @@ document.write(`
 <li><p>Form the Lagrangian and find the equation(s?) of motion (how many are there?)</p></li>
 <li><p>Are the dynamics of this system different that the dynamics of a system of just one roller coaster car?</p></li>
 </ol>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

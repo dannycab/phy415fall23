@@ -7,16 +7,14 @@ To get a sense of the course, please read all the pages associated with our syll
  
 ## Updates
 
-`````{admonition} Last updated: 24 Oct 2023
+`````{admonition} Last updated: 1 Nov 2023
 :class: tip
 
 ### Site updates
-* Readings for Week 9 ([Deconstructing Waves](./3_waves/notes-Waves-Fouriers_Trick.ipynb)) is posted.
-* An [updated rubric](./9_assignments/updated_rubric.md) is now available.
+* Readings for Week 10 ([Fast Fourier Transforms](./3_waves/notes-fft.ipynb)) is posted.
 
 ### Upcoming Deadlines
-* The [second project](./9_assignments/project-2.md) is *NOW* due 27 Oct 2023.
-* The [fifth worked problem](./9_assignments/worked-problem-5.md) is *NOW* due 3 Nov 2023.
+* The [fifth worked problem](./9_assignments/worked-problem-5.md) is due 3 Nov 2023.
 
 `````
 

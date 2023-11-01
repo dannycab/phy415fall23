@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>5 Dec 23 - Activity: Modeling the Ideal Gas &#8212; PHY 415 Fall 2023</title>
   
   
@@ -219,6 +220,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-Signals.html">31 Oct 23 - Activity: Signal Deconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-seriesExpand.html">2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-fft.html">6 Oct 23 - Notes: Fast Fourier Transform</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
 <ul class="nav bd-sidenav">
@@ -234,6 +237,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-4.html">Worked Problem Assignment 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-2.html">Project 2 - PDEs, Laplace’s Equation, and the Method of Relaxation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-5.html">Worked Problem Assignment 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-6.html">Worked Problem Assignment 6</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -494,12 +498,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="dec-23-activity-modeling-the-ideal-gas">
+  <section class="tex2jax_ignore mathjax_ignore" id="dec-23-activity-modeling-the-ideal-gas">
 <h1>5 Dec 23 - Activity: Modeling the Ideal Gas<a class="headerlink" href="#dec-23-activity-modeling-the-ideal-gas" title="Permalink to this heading">#</a></h1>
 <p>As we developed from <a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_4_Markov_Chain.pdf">lecture</a>, we can sample the Boltzmann distribution by constructing a sample of it through a Markov Chain and computing the value of the quantity of interest and adding it up.</p>
 <div class="math notranslate nohighlight">
 \[\sum_{chain} X_i \approx \langle X \rangle\]</div>
-<div class="section" id="one-dimensional-gas">
+<section id="one-dimensional-gas">
 <h2>One Dimensional Gas<a class="headerlink" href="#one-dimensional-gas" title="Permalink to this heading">#</a></h2>
 <p>We will model an ideal gas, but let’s start with a one-dimensional gas made of a bunch of particles in infinite square wells. The energy spectrum for a particle of mass <span class="math notranslate nohighlight">\(m\)</span> in an infinite square well of length <span class="math notranslate nohighlight">\(L\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
@@ -518,8 +522,8 @@ document.write(`
 \[\Delta E_{down} = E(n-1) - E(n) = \dfrac{1}{2}\left((n-1)^2-n^2\right) = \dfrac{-2n+1}{2}\]</div>
 <div class="math notranslate nohighlight">
 \[\Delta E_{up} = E(n+1) - E(n) = \dfrac{1}{2}\left((n+1)^2-n^2\right) = \dfrac{2n+1}{2}\]</div>
-</div>
-<div class="section" id="implementation">
+</section>
+<section id="implementation">
 <h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
 <p>Below is the code that develops a model of a one dimensional gas. It is annotated. Review the code and make note of each piece of the algorithm.</p>
 <p><strong>Complete the following</strong></p>
@@ -598,14 +602,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x116916460&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x115f8b700&gt;
 </pre></div>
 </div>
-<img alt="../../_images/c2e5add514ef1642877209bdad10fd991e9f36f66a83881fb534381673889253.png" src="../../_images/c2e5add514ef1642877209bdad10fd991e9f36f66a83881fb534381673889253.png" />
+<img alt="../../_images/2e45401d43bfb0ccb99c1ec5968da0132d3a679ab21790f385d6113151645599.png" src="../../_images/2e45401d43bfb0ccb99c1ec5968da0132d3a679ab21790f385d6113151645599.png" />
 </div>
 </div>
-</div>
-<div class="section" id="the-ideal-gas">
+</section>
+<section id="the-ideal-gas">
 <h2>The Ideal Gas<a class="headerlink" href="#the-ideal-gas" title="Permalink to this heading">#</a></h2>
 <p>The code above can be used for an ideal gas. There are some changes you have to make because an ideal gas in three dimensions has an energy spectrum like this:</p>
 <div class="math notranslate nohighlight">
@@ -623,8 +627,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

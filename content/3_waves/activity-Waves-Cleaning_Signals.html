@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>7 Nov 23 - Activity: The Inverse Fourier Transform &#8212; PHY 415 Fall 2023</title>
   
   
@@ -219,6 +220,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-Waves-Signals.html">31 Oct 23 - Activity: Signal Deconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-Waves-seriesExpand.html">2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes-fft.html">6 Oct 23 - Notes: Fast Fourier Transform</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
 <ul class="nav bd-sidenav">
@@ -234,6 +237,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-4.html">Worked Problem Assignment 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-2.html">Project 2 - PDEs, Laplace’s Equation, and the Method of Relaxation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-5.html">Worked Problem Assignment 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-6.html">Worked Problem Assignment 6</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -495,7 +499,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-activity-the-inverse-fourier-transform">
+  <section class="tex2jax_ignore mathjax_ignore" id="nov-23-activity-the-inverse-fourier-transform">
 <h1>7 Nov 23 - Activity: The Inverse Fourier Transform<a class="headerlink" href="#nov-23-activity-the-inverse-fourier-transform" title="Permalink to this heading">#</a></h1>
 <p>We used the Fourier Transform to find all the frequency compeonents of a signal.</p>
 <div class="math notranslate nohighlight">
@@ -523,7 +527,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="cleaning-a-spectrum">
+<section id="cleaning-a-spectrum">
 <h2>Cleaning a spectrum<a class="headerlink" href="#cleaning-a-spectrum" title="Permalink to this heading">#</a></h2>
 <p>Let’s start with a constructed spectrum before we analyze real data. Check out the signal below. This could be thought of a transiting planet eclipsing a local star, a voltage measurement from a defect in a STM sample, really anything. There’s lots of signals that look like this!</p>
 <div class="cell docutils container">
@@ -556,7 +560,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e991dc311aa7f7c119f12c4782761ed05da3d7076ba4590cfa016453043c0862.png" src="../../_images/e991dc311aa7f7c119f12c4782761ed05da3d7076ba4590cfa016453043c0862.png" />
+<img alt="../../_images/ab3646ee538933fc72af2c7177dbecb9ed69c8bca03db73bdda12c3cac0392ea.png" src="../../_images/ab3646ee538933fc72af2c7177dbecb9ed69c8bca03db73bdda12c3cac0392ea.png" />
 </div>
 </div>
 <p>Let’s perform the FFT and look at it.</p>
@@ -574,7 +578,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c58b55a0403507864854a0b8345b13d67182fed6c295f7252f315655e0a0fa85.png" src="../../_images/c58b55a0403507864854a0b8345b13d67182fed6c295f7252f315655e0a0fa85.png" />
+<img alt="../../_images/cc688ea22d102c0aede46c429f3a3d15049a72b0c0b1b05a31a8b82d10c64c11.png" src="../../_images/cc688ea22d102c0aede46c429f3a3d15049a72b0c0b1b05a31a8b82d10c64c11.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -592,7 +596,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1000.0, 0.0, 1.0)
 </pre></div>
 </div>
-<img alt="../../_images/b74302f93e45273bad3cf76c17a5d25741da62b7f629f2e6aef5fda287fa03c0.png" src="../../_images/b74302f93e45273bad3cf76c17a5d25741da62b7f629f2e6aef5fda287fa03c0.png" />
+<img alt="../../_images/d22530ef7d0aff1f75fa56a0a88bfb18ee6bc94e1ff1fba8de4e98b3016c5275.png" src="../../_images/d22530ef7d0aff1f75fa56a0a88bfb18ee6bc94e1ff1fba8de4e98b3016c5275.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -610,7 +614,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 500.0, 0.0, 0.6)
 </pre></div>
 </div>
-<img alt="../../_images/55a9083020ccbd2901d812bef641691f05ebe79bb936b91bfa38bfd42c07a1ba.png" src="../../_images/55a9083020ccbd2901d812bef641691f05ebe79bb936b91bfa38bfd42c07a1ba.png" />
+<img alt="../../_images/f7161b558995f645b81dad04085fa8a29cf0983b8ea22cec6419633e6a03b822.png" src="../../_images/f7161b558995f645b81dad04085fa8a29cf0983b8ea22cec6419633e6a03b822.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -628,7 +632,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(500.0, 25000.0, 0.0, 0.02)
 </pre></div>
 </div>
-<img alt="../../_images/901a5a2a3091a166b1878ad9b595826f01988528679c52699f68299ded7f8913.png" src="../../_images/901a5a2a3091a166b1878ad9b595826f01988528679c52699f68299ded7f8913.png" />
+<img alt="../../_images/473f55b926846cc0c10e387eec5c5d5d59a893e0415c1f550ff893c45946ead7.png" src="../../_images/473f55b926846cc0c10e387eec5c5d5d59a893e0415c1f550ff893c45946ead7.png" />
 </div>
 </div>
 <p>Looks like a lot of noise at high frequencies. Let’s get rid of it. Remember there’s negative frequencies! Those are important to recovering everything.</p>
@@ -647,7 +651,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-1000.0, 1000.0, 0.0, 1.0)
 </pre></div>
 </div>
-<img alt="../../_images/ae3fbc34c63d5ff677c309c783d2272388d7c9560ad5fe734213f17848c50c3b.png" src="../../_images/ae3fbc34c63d5ff677c309c783d2272388d7c9560ad5fe734213f17848c50c3b.png" />
+<img alt="../../_images/6b06931aab7cd2b834407540e34ece5f240555895a9acc0fe275e4e12e4cfccc.png" src="../../_images/6b06931aab7cd2b834407540e34ece5f240555895a9acc0fe275e4e12e4cfccc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -671,14 +675,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x17d021b50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16e70c700&gt;
 </pre></div>
 </div>
-<img alt="../../_images/7ffefe7eeda74c9de273b218f94f54bc1e69590fa09b3108cc72f47a2c2623ad.png" src="../../_images/7ffefe7eeda74c9de273b218f94f54bc1e69590fa09b3108cc72f47a2c2623ad.png" />
+<img alt="../../_images/051d2b9de6ef16534d4115b13f7fa42e024b45ba50d63bcb0555db91af3c831e.png" src="../../_images/051d2b9de6ef16534d4115b13f7fa42e024b45ba50d63bcb0555db91af3c831e.png" />
 </div>
 </div>
-</div>
-<div class="section" id="investigate-limits-and-modulations">
+</section>
+<section id="investigate-limits-and-modulations">
 <h2>Investigate Limits and modulations<a class="headerlink" href="#investigate-limits-and-modulations" title="Permalink to this heading">#</a></h2>
 <p>We have developed a very simple approach (we set all high frequencies to zero). But this is more general!</p>
 <ol class="arabic simple">
@@ -693,8 +697,8 @@ document.write(`
 <li><p>Modulate the FFT with a function (that is chose to make some other cool transform on the FFT (not just zeroing out)), what happens to the IFFT?</p></li>
 <li><p>What other cool stuff can you do?</p></li>
 </ol>
-</div>
-<div class="section" id="real-data">
+</section>
+<section id="real-data">
 <h2>Real data<a class="headerlink" href="#real-data" title="Permalink to this heading">#</a></h2>
 <p>Let’s bring in a audio signal. This will play it. It’s a D Power Chord.</p>
 <div class="cell docutils container">
@@ -706,7 +710,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: playsound in /Users/caballero/anaconda3/envs/teaching/lib/python3.9/site-packages (1.3.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: playsound in /Users/caballero/opt/anaconda3/envs/teaching/lib/python3.10/site-packages (1.3.0)
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -716,7 +720,7 @@ document.write(`
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">playsound</span> <span class="kn">import</span> <span class="n">playsound</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">playsound</span><span class="p">(</span><span class="s1">&#39;data/D_PowerChords_95_SP.wav&#39;</span><span class="p">)</span>
 
-<span class="nn">File ~/anaconda3/envs/teaching/lib/python3.9/site-packages/playsound.py:140,</span> in <span class="ni">_playsoundOSX</span><span class="nt">(sound, block)</span>
+<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/playsound.py:140,</span> in <span class="ni">_playsoundOSX</span><span class="nt">(sound, block)</span>
 <span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Failed to load sound, although url was good... &#39;</span> <span class="o">+</span> <span class="n">sound</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">139</span> <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">140</span>     <span class="k">raise</span> <span class="n">PlaysoundException</span><span class="p">(</span><span class="s1">&#39;Could not load sound with filename, although URL was good... &#39;</span> <span class="o">+</span> <span class="n">sound</span><span class="p">)</span>
@@ -769,8 +773,8 @@ length = 0.8224716553287982s
 <img alt="../../_images/17f237491241e7280fb9e205e721300857100101ca20d358fbcc4d9314151b4a.png" src="../../_images/17f237491241e7280fb9e205e721300857100101ca20d358fbcc4d9314151b4a.png" />
 </div>
 </div>
-</div>
-<div class="section" id="activity">
+</section>
+<section id="activity">
 <h2>Activity<a class="headerlink" href="#activity" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Construct an FFT of this signal</p></li>
@@ -778,8 +782,8 @@ length = 0.8224716553287982s
 <li><p>Reconstruct the signal</p></li>
 <li><p>(Challenge) Write it out as a wave file and let’s hear it!</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

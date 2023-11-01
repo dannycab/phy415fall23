@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>31 Oct 23 - Activity: Signal Deconstruction &#8212; PHY 415 Fall 2023</title>
   
   
@@ -66,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/3_waves/activity-Waves-Signals';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Here Be Dragons (Material not complete)" href="../4_distributions/here_be_dragons.html" />
+    <link rel="next" title="2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction" href="activity-Waves-seriesExpand.html" />
     <link rel="prev" title="30 Oct 2023 - Notes: Deconstructing Waves" href="notes-Waves-Fouriers_Trick.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -221,6 +222,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">31 Oct 23 - Activity: Signal Deconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-Waves-seriesExpand.html">2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes-fft.html">6 Oct 23 - Notes: Fast Fourier Transform</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
 <ul class="nav bd-sidenav">
@@ -236,6 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-4.html">Worked Problem Assignment 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-2.html">Project 2 - PDEs, Laplace’s Equation, and the Method of Relaxation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-5.html">Worked Problem Assignment 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-6.html">Worked Problem Assignment 6</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -501,7 +505,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-activity-signal-deconstruction">
+  <section class="tex2jax_ignore mathjax_ignore" id="oct-23-activity-signal-deconstruction">
 <h1>31 Oct 23 - Activity: Signal Deconstruction<a class="headerlink" href="#oct-23-activity-signal-deconstruction" title="Permalink to this heading">#</a></h1>
 <p>We have started to show that we can take waves of any periodicity and add them together to get new signals. But more common is for us to receive a signal and want to know what waves are in it. This is the process of signal deconstruction. We will be using <span class="math notranslate nohighlight">\(V(t)\)</span> to describe this signal because pretty much everything is a voltage. But now we introduce the toolkit that can help us do this.</p>
 <p>We can build up this idea by starting with a given <span class="math notranslate nohighlight">\(V(t)\)</span> with some base periodicity (<span class="math notranslate nohighlight">\(w_0\)</span> or <span class="math notranslate nohighlight">\(T_0\)</span>), really the longest period or lowest frequency in the signal. We can use a Fourier Series to decompose those signals in terms of harmonics (<span class="math notranslate nohighlight">\(n\;\omega_0\)</span>) of the base frequency. The model of this decomposition is given by the <a class="reference external" href="https://en.wikipedia.org/wiki/Fourier_series#Sine-cosine_form">infinite series</a>:</p>
@@ -509,20 +513,20 @@ document.write(`
 <p>Or</p>
 <p><span class="math notranslate nohighlight">\(f(t) = \dfrac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos\left(\dfrac{2n\pi}{T_0}t\right) + b_n \sin\left(\dfrac{2n\pi}{T_0}t\right)\)</span></p>
 <p>By using the <a class="reference external" href="https://en.wikipedia.org/wiki/Orthogonal_functions">orthogonal nature</a> of <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span> over one period, we can find the unknown coefficients for a given signal <span class="math notranslate nohighlight">\(V(t)\)</span>.</p>
-<div class="section" id="dc-offset">
+<section id="dc-offset">
 <h2>DC Offset<a class="headerlink" href="#dc-offset" title="Permalink to this heading">#</a></h2>
 <p>The first term in the sum is just related to the DC offset, that is the average of the signal over one period. That’s because <span class="math notranslate nohighlight">\(sin\)</span> and <span class="math notranslate nohighlight">\(cos\)</span> don’t shift the average (they have a time average of zero, remember?)</p>
 <p><span class="math notranslate nohighlight">\(\dfrac{a_0}{2} = \dfrac{1}{T_0}\int_{T_0} f(t) dt\)</span></p>
-</div>
-<div class="section" id="periodic-models">
+</section>
+<section id="periodic-models">
 <h2>Periodic Models<a class="headerlink" href="#periodic-models" title="Permalink to this heading">#</a></h2>
 <p>For the periodicity, we use “Fourier’s Trick” to determine the value of the coefficients. <em>Note that you need the signal <span class="math notranslate nohighlight">\(V(t)\)</span> to complete this work.</em> And this isn’t a trick, it’s a well-established method.</p>
 <p><span class="math notranslate nohighlight">\(a_n = \dfrac{2}{T_0}\int_{T_0}V(t)\cos(n\omega_0t)\qquad n\neq0\)</span></p>
 <p><span class="math notranslate nohighlight">\(b_n = \dfrac{2}{T_0}\int_{T_0}V(t)\sin(n\omega_0t)\qquad n\neq0\)</span></p>
 <p>Given this, our approximate <span class="math notranslate nohighlight">\(V(t)\)</span> is given up to the <span class="math notranslate nohighlight">\(N\)</span> term is,</p>
 <p><span class="math notranslate nohighlight">\(V(t) \approx \dfrac{a_0}{2} + \sum_{n=1}^{N} a_n \cos(n\omega_0t) + b_n \sin(n\omega_0t)\)</span></p>
-</div>
-<div class="section" id="example-the-duty-cycle">
+</section>
+<section id="example-the-duty-cycle">
 <h2>Example: The Duty Cycle<a class="headerlink" href="#example-the-duty-cycle" title="Permalink to this heading">#</a></h2>
 <p>There are many signals we could analyze, but one of the common (and more mathematically tractable) ones is the <a class="reference external" href="https://en.wikipedia.org/wiki/Duty_cycle">Duty Cycle</a>. In fact, this signal is in wide use across electrical devices for timed on and off states. Moreover, the behaviors of some neurons and muscle fibers have been shown to approximate duty cycle firing. Synthesizers and electronic music are similar heavy users of <a class="reference external" href="https://en.wikipedia.org/wiki/Pulse-width_modulation">pulse width modulation</a>, which stems from this signal.</p>
 <p>The half-wave (square wave) duty cycle is given by,</p>
@@ -535,8 +539,8 @@ document.write(`
 <li><p>Determine the coefficients <span class="math notranslate nohighlight">\(a_n\)</span>’s and <span class="math notranslate nohighlight">\(b_n\)</span>’s.</p></li>
 <li><p>Write the function <span class="math notranslate nohighlight">\(V(t)\)</span> in terms of the <span class="math notranslate nohighlight">\(a_n\)</span>’s and <span class="math notranslate nohighlight">\(b_n\)</span>’s.</p></li>
 </ol>
-</div>
-<div class="section" id="visualizing-the-duty-cycle">
+</section>
+<section id="visualizing-the-duty-cycle">
 <h2>Visualizing the Duty Cycle<a class="headerlink" href="#visualizing-the-duty-cycle" title="Permalink to this heading">#</a></h2>
 <p>It’s great that we can produce a solution to this problem,</p>
 <div class="math notranslate nohighlight">
@@ -565,8 +569,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="complex-numbers">
+</section>
+<section id="complex-numbers">
 <h2>Complex Numbers<a class="headerlink" href="#complex-numbers" title="Permalink to this heading">#</a></h2>
 <p>One the most useful approaches to representing periodic signals is to use complex numbers. This is because the <a class="reference external" href="https://en.wikipedia.org/wiki/Euler%27s_formula">Euler’s Formula</a> allows us to represent the trigonometric functions as complex exponentials. Euler’s formula is given by,</p>
 <p><span class="math notranslate nohighlight">\(e^{i\theta} = \cos(\theta) + i\sin(\theta)\)</span></p>
@@ -595,7 +599,7 @@ document.write(`
 <li><p>Powers: <span class="math notranslate nohighlight">\(z^n = r^n e^{in\theta}\)</span></p></li>
 <li><p>Roots: <span class="math notranslate nohighlight">\(z^{1/n} = r^{1/n} e^{i\theta/n}\)</span></p></li>
 </ul>
-<div class="section" id="representing-trigonometric-functions">
+<section id="representing-trigonometric-functions">
 <h3>Representing Trigonometric Functions<a class="headerlink" href="#representing-trigonometric-functions" title="Permalink to this heading">#</a></h3>
 <p>We can use Euler’s formula to represent the trigonometric functions as complex exponentials. For example,</p>
 <div class="math notranslate nohighlight">
@@ -618,9 +622,9 @@ document.write(`
 <li><p>Perform the integrals (consider using <code class="docutils literal notranslate"><span class="pre">sympy</span></code>) and find the coefficients <span class="math notranslate nohighlight">\(c_n\)</span>’s.</p></li>
 <li><p>Write the function <span class="math notranslate nohighlight">\(V(t)\)</span> in terms of the <span class="math notranslate nohighlight">\(c_n\)</span>’s. (What about the imaginary part?)</p></li>
 </ol>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -662,11 +666,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../4_distributions/here_be_dragons.html"
+       href="activity-Waves-seriesExpand.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Here Be Dragons (Material not complete)</p>
+        <p class="prev-next-title">2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

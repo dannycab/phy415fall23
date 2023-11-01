@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>30 Nov 23 - Activity: Monte Carlo Integration &#8212; PHY 415 Fall 2023</title>
   
   
@@ -219,6 +220,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-Signals.html">31 Oct 23 - Activity: Signal Deconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-seriesExpand.html">2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-fft.html">6 Oct 23 - Notes: Fast Fourier Transform</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
 <ul class="nav bd-sidenav">
@@ -234,6 +237,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-4.html">Worked Problem Assignment 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-2.html">Project 2 - PDEs, Laplace’s Equation, and the Method of Relaxation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-5.html">Worked Problem Assignment 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-6.html">Worked Problem Assignment 6</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -503,7 +507,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-activity-monte-carlo-integration">
+  <section class="tex2jax_ignore mathjax_ignore" id="nov-23-activity-monte-carlo-integration">
 <h1>30 Nov 23 - Activity: Monte Carlo Integration<a class="headerlink" href="#nov-23-activity-monte-carlo-integration" title="Permalink to this heading">#</a></h1>
 <p>A useful approach to making models of systems is using randomness to find solutions to problems that are stable or static. One such approach is called <a class="reference external" href="https://en.wikipedia.org/wiki/Monte_Carlo_integration">Monte Carlo integration</a> that can be used to find particularly problematic integrals. It’s a useful pedagogical introduction to what we are attempting to do, use <a class="reference external" href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte Carlo approaches</a> to model thermodynamical systems using the <a class="reference external" href="https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm">Metropolis-Hastings algorithm</a>.</p>
 <div class="cell docutils container">
@@ -516,7 +520,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="finding-pi">
+<section id="finding-pi">
 <h2>Finding Pi<a class="headerlink" href="#finding-pi" title="Permalink to this heading">#</a></h2>
 <p>This is a classic use of Monte Carlo integration that illustrates many of the concepts of the technique. Effectively, we can assume there’s a constant (undetermined) that links that the area of a circle and the radius squared.</p>
 <div class="math notranslate nohighlight">
@@ -547,7 +551,7 @@ document.write(`
 <img alt="../../_images/58415c4c03a07f203443ca0469c6b74189077eaaa16a271cc14b52bb207fdf02.png" src="../../_images/58415c4c03a07f203443ca0469c6b74189077eaaa16a271cc14b52bb207fdf02.png" />
 </div>
 </div>
-<div class="section" id="the-drop-algorithm">
+<section id="the-drop-algorithm">
 <h3>The Drop Algorithm<a class="headerlink" href="#the-drop-algorithm" title="Permalink to this heading">#</a></h3>
 <p>The concept behind this is watching rain hit the ground and counting the droplets inside and outside a circle. We can simulate this with random drops in the range from 0 to 1 in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. Let’s start with 500 drops. We plot the drops below.</p>
 <div class="cell docutils container">
@@ -579,7 +583,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/23af1f78669dce3bf7de910c08f1d4d4934a63812b19b0d868c0be7af4c6f90a.png" src="../../_images/23af1f78669dce3bf7de910c08f1d4d4934a63812b19b0d868c0be7af4c6f90a.png" />
+<img alt="../../_images/dd9ab408ffdbca0b15051322e26c973bc92669ad8e585d6f66495374d024e2b2.png" src="../../_images/dd9ab408ffdbca0b15051322e26c973bc92669ad8e585d6f66495374d024e2b2.png" />
 </div>
 </div>
 <p>Notice that some of the drops are outside the curve and some are inside. We can use the formula for a circle of radius 1 to find which are which.</p>
@@ -603,11 +607,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ed1070d8259d9bd8bd9ca0e1c06c030203772b75c11dee960304da306d6feda6.png" src="../../_images/ed1070d8259d9bd8bd9ca0e1c06c030203772b75c11dee960304da306d6feda6.png" />
+<img alt="../../_images/9db3a8a22c3bd474500ccf7a2c82ccaf94498a9be8e46e0b2afcd3b0da26ef13.png" src="../../_images/9db3a8a22c3bd474500ccf7a2c82ccaf94498a9be8e46e0b2afcd3b0da26ef13.png" />
 </div>
 </div>
-</div>
-<div class="section" id="computing-pi">
+</section>
+<section id="computing-pi">
 <h3>Computing Pi<a class="headerlink" href="#computing-pi" title="Permalink to this heading">#</a></h3>
 <p>We assumed our approach would bear out a constant.</p>
 <div class="math notranslate nohighlight">
@@ -624,14 +628,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.152
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.12
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="seeking-convergence">
+</section>
+</section>
+<section id="seeking-convergence">
 <h2>Seeking Convergence<a class="headerlink" href="#seeking-convergence" title="Permalink to this heading">#</a></h2>
 <p>So the estimate was probably not great. But we can make it better by choosing more drops. So rewrite this approach a function where you can send the number of drops in and return the estimate of pi. Then use it to plot this estimate over many choices of N. Show what the value converges to.</p>
 <div class="cell docutils container">
@@ -641,11 +645,11 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="finding-the-values-of-integrals">
+</section>
+<section id="finding-the-values-of-integrals">
 <h2>Finding the values of integrals<a class="headerlink" href="#finding-the-values-of-integrals" title="Permalink to this heading">#</a></h2>
 <p>So that was a cool trick, but the power of this form of Monte Carlo is being able to compute very difficult integrals. It’s not efficient as other integrators, but it’s sometimes the only choice.</p>
-<div class="section" id="integrating-sine">
+<section id="integrating-sine">
 <h3>Integrating sine<a class="headerlink" href="#integrating-sine" title="Permalink to this heading">#</a></h3>
 <p>Using the same approach as before where we take the proportion of drops ‘under the curve’ compared to all drops, find the integral of <span class="math notranslate nohighlight">\(sin(x)\)</span> over one interval.</p>
 <ul class="simple">
@@ -659,8 +663,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="a-pathologically-terrible-integral">
+</section>
+<section id="a-pathologically-terrible-integral">
 <h3>A Pathologically Terrible Integral<a class="headerlink" href="#a-pathologically-terrible-integral" title="Permalink to this heading">#</a></h3>
 <p>Consider the function below over the interval from 0 to 2.</p>
 <div class="math notranslate nohighlight">
@@ -699,9 +703,9 @@ document.write(`
 <img alt="../../_images/3b32d1b0662585372572803be371bd0c84e5a35ab030ed738a9ab0421ebc3cb1.png" src="../../_images/3b32d1b0662585372572803be371bd0c84e5a35ab030ed738a9ab0421ebc3cb1.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="bring-in-monte-carlo">
+</section>
+</section>
+<section id="bring-in-monte-carlo">
 <h2>Bring in Monte Carlo<a class="headerlink" href="#bring-in-monte-carlo" title="Permalink to this heading">#</a></h2>
 <p>Following the same approach estimate the value of the integral for this function and the uncertainty in your estimate.</p>
 <div class="cell docutils container">
@@ -711,8 +715,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

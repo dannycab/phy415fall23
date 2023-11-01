@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Updated Rubric for Worked Problems and Projects &#8212; PHY 415 Fall 2023</title>
   
   
@@ -219,6 +220,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-Signals.html">31 Oct 23 - Activity: Signal Deconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-seriesExpand.html">2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-fft.html">6 Oct 23 - Notes: Fast Fourier Transform</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
 <ul class="nav bd-sidenav">
@@ -234,6 +237,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="worked-problem-4.html">Worked Problem Assignment 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project-2.html">Project 2 - PDEs, Laplace’s Equation, and the Method of Relaxation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="worked-problem-5.html">Worked Problem Assignment 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worked-problem-6.html">Worked Problem Assignment 6</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -446,18 +450,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="updated-rubric-for-worked-problems-and-projects">
+  <section class="tex2jax_ignore mathjax_ignore" id="updated-rubric-for-worked-problems-and-projects">
 <h1>Updated Rubric for Worked Problems and Projects<a class="headerlink" href="#updated-rubric-for-worked-problems-and-projects" title="Permalink to this heading">#</a></h1>
 <p><strong>19 Oct 2023</strong></p>
-<div class="section" id="choosing-and-explaining-an-appropriate-problem-30">
+<section id="choosing-and-explaining-an-appropriate-problem-30">
 <h2>Choosing and Explaining an Appropriate Problem (30%)<a class="headerlink" href="#choosing-and-explaining-an-appropriate-problem-30" title="Permalink to this heading">#</a></h2>
 <p><strong>30 points total</strong> - An appropriate problem is often one one on the border of analytical and numerical methods (or one that can be simplified or extended to be either). If you can solve it completely analytically, then consider how it can be extended for a computing activity. If you have questions or thoughts, please ask Danny, Alia, or Ian.</p>
 <ul class="simple">
 <li><p><strong>15 pts</strong> - Identify a physical system that you are interested in investigating, Describe the physical system in terms of the relevant physics principles and the model that is being used, Explain and justify assumptions or approximations that are made in the model. (e.g., <em>Think the small angle approximation being removed for a pendulum, the numerical results will differ from the analytical ones, but you can still use the small angle approximation to get close</em>)</p></li>
 <li><p><strong>15 pts</strong> - Create a plan / describe a method that you will be using to solve the problem analytically and numerically (usually one from a recent class period); describe how the method works and why it is necessary compared to solving analytically, or why it is no longer trivially solved analytically (e.g, <em>some expressions get very messy analytically, n-body problems, analytically possible but approximations can be made that make the problem easier</em>).</p></li>
 </ul>
-</div>
-<div class="section" id="writing-a-jupyter-notebook-analysis-50">
+</section>
+<section id="writing-a-jupyter-notebook-analysis-50">
 <h2>Writing a Jupyter Notebook Analysis (50%)<a class="headerlink" href="#writing-a-jupyter-notebook-analysis-50" title="Permalink to this heading">#</a></h2>
 <p><strong>50 points total</strong> - It is important that all the analysis appears in a single narrative document. You are explaining an analysis in a way that other people are meant to understand. It is important to be clear and transparent. It is less important to be correct. Why? Because getting an analysis correct the first time is unlikely, but a clear and transparent analysis let’s us find where those issues lie, diagnose them, and correct our science.</p>
 <ul class="simple">
@@ -468,8 +472,8 @@ document.write(`
 </li>
 <li><p><strong>20 pts</strong> - The notebook and analysis is described thoroughly enough to be understood by someone who is looking to learn from this problem, think someone starting this class (e.g., <em>support them with comments, explanations, and necessary derivations; really emphasizing the reproducible process</em>).</p></li>
 </ul>
-</div>
-<div class="section" id="documenting-the-analytical-process-20">
+</section>
+<section id="documenting-the-analytical-process-20">
 <h2>Documenting the Analytical Process (20%)<a class="headerlink" href="#documenting-the-analytical-process-20" title="Permalink to this heading">#</a></h2>
 <p><strong>20 points total</strong> - You conduct the analysis for a reason, you are answering a question. How you present and discuss that analysis is important and is related to the evidence you generated through making models of the system. Think about your graphs, and figures; these lead to predictions and explanations you can make. Present a clear analysis for a particular question (or set of questions) you have formed. This can be done by:</p>
 <ol class="arabic simple">
@@ -482,8 +486,8 @@ document.write(`
 <li><p>“<em>These plots show a pendulum with and without the small angle approximation, The numerical plot without the small angle approximation shows deviation from the purely harmonic motion and has an effective period of 2s compared to 1.5s.</em>”</p></li>
 </ul>
 <p>The second statement is more informative, definitive, and grounded in the analysis that was completed.</p>
-</div>
-<div class="section" id="sample-worked-problems">
+</section>
+<section id="sample-worked-problems">
 <h2>Sample Worked Problems<a class="headerlink" href="#sample-worked-problems" title="Permalink to this heading">#</a></h2>
 <p>A few students were generous in sharing their worked problems as samples. These earned high marks but not the same marks. They are meant to be examples of what a good analysis looks like. They are all a bit different.</p>
 <ul class="simple">
@@ -491,8 +495,8 @@ document.write(`
 <li><p><a class="reference download internal" download="" href="../../_downloads/139ca87dd346f6e7b93beb0d1449365d/sample2.pdf"><span class="xref download myst">Sample Worked Problem 2</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../_downloads/6c93e971926b225177de48cd2079aba7/sample3.pdf"><span class="xref download myst">Sample Worked Problem 3</span></a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

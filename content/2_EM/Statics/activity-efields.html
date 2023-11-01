@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>26 Sep 23 - Activity: Electrostatic Fields &#8212; PHY 415 Fall 2023</title>
   
   
@@ -221,6 +222,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-Signals.html">31 Oct 23 - Activity: Signal Deconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-seriesExpand.html">2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-fft.html">6 Oct 23 - Notes: Fast Fourier Transform</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
 <ul class="nav bd-sidenav">
@@ -236,6 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../9_assignments/worked-problem-4.html">Worked Problem Assignment 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../9_assignments/project-2.html">Project 2 - PDEs, Laplace’s Equation, and the Method of Relaxation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../9_assignments/worked-problem-5.html">Worked Problem Assignment 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../9_assignments/worked-problem-6.html">Worked Problem Assignment 6</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -517,7 +521,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-activity-electrostatic-fields">
+  <section class="tex2jax_ignore mathjax_ignore" id="sep-23-activity-electrostatic-fields">
 <h1>26 Sep 23 - Activity: Electrostatic Fields<a class="headerlink" href="#sep-23-activity-electrostatic-fields" title="Permalink to this heading">#</a></h1>
 <p>As we saw the electric field is described by the 4 Maxwell equations. But, in the electrostatic situation where the charges do not move, we find the electric field is described by the following equations:</p>
 <div class="math notranslate nohighlight">
@@ -525,7 +529,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\nabla \times \mathbf{E} = 0\]</div>
 <p>These linear partial differential equations can be solved analytically for a number of situations. In this activity we will explore the electric field for a number of situations.</p>
-<div class="section" id="the-del-operator">
+<section id="the-del-operator">
 <h2>The del operator<a class="headerlink" href="#the-del-operator" title="Permalink to this heading">#</a></h2>
 <p>The del operator (<span class="math notranslate nohighlight">\(\nabla\)</span>) is a differential vector operator that can act in the same way that vectors do (i.e., through a dot <span class="math notranslate nohighlight">\(\cdot\)</span> or cross <span class="math notranslate nohighlight">\(\times\)</span> product). In addition, it can operate on a scalar function to produce a vector function (i.e., <span class="math notranslate nohighlight">\(\mathbf{E}(x,y,z) = - \nabla V(x,y,z)\)</span>). The operator itself is given by:</p>
 <div class="math notranslate nohighlight">
@@ -552,8 +556,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="coulomb-s-law-and-the-electric-field">
+</section>
+<section id="coulomb-s-law-and-the-electric-field">
 <h2>Coulomb’s Law and the Electric Field<a class="headerlink" href="#coulomb-s-law-and-the-electric-field" title="Permalink to this heading">#</a></h2>
 <p>As you have encountered in the past, a generic expression for the electric field observed at location <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> due to a point charge <span class="math notranslate nohighlight">\(q\)</span> at location <span class="math notranslate nohighlight">\(\mathbf{r}'\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
@@ -565,7 +569,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\mathbf{E} = \sum_i \mathbf{E}_i = \sum_i \dfrac{q_i}{4\pi\epsilon_0} \dfrac{\mathbf{r} - \mathbf{r}_i}{\left|\mathbf{r} - \mathbf{r}_i\right|^3}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{E}_i\)</span> is the electric field due to the ith charge.</p>
-<div class="section" id="visualization-of-the-electric-field">
+<section id="visualization-of-the-electric-field">
 <h3>Visualization of the Electric Field<a class="headerlink" href="#visualization-of-the-electric-field" title="Permalink to this heading">#</a></h3>
 <p>Below we have written a a function that computes the electric field for a point charge at a known location. We use a few different libraries and known functions that we have used in the past for dynamical systems. But we apply them to the electric field.</p>
 <div class="cell docutils container">
@@ -633,11 +637,11 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="a-point-charge">
+</section>
+<section id="a-point-charge">
 <h3>A point charge<a class="headerlink" href="#a-point-charge" title="Permalink to this heading">#</a></h3>
 <p>Below, we plot the electric field in 2D of a single point charge. We are using several different representations of the electric field. Sometimes, some work better than others. The code we wrote, should be able to handle multiple point charges. And you will need to create a list of charges and their locations to investigate the field of multiple charges.</p>
-<div class="section" id="positive-point-charge-at-the-origin">
+<section id="positive-point-charge-at-the-origin">
 <h4>Positive Point Charge at the Origin<a class="headerlink" href="#positive-point-charge-at-the-origin" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -658,8 +662,8 @@ document.write(`
 <img alt="../../../_images/80992f18e765fc0abacaf371de5f05a63b76d54466f9bdf798a0078c029ead68.png" src="../../../_images/80992f18e765fc0abacaf371de5f05a63b76d54466f9bdf798a0078c029ead68.png" />
 </div>
 </div>
-</div>
-<div class="section" id="negative-point-charge-at-the-origin">
+</section>
+<section id="negative-point-charge-at-the-origin">
 <h4>Negative Point Charge at the Origin<a class="headerlink" href="#negative-point-charge-at-the-origin" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -679,9 +683,9 @@ document.write(`
 <img alt="../../../_images/cb74521057912ff1bfa9dace49dd67dd09f8e2bdd76b2cd088ca9e78f3c8ddf5.png" src="../../../_images/cb74521057912ff1bfa9dace49dd67dd09f8e2bdd76b2cd088ca9e78f3c8ddf5.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="the-electric-dipole">
+</section>
+</section>
+<section id="the-electric-dipole">
 <h3>The electric dipole<a class="headerlink" href="#the-electric-dipole" title="Permalink to this heading">#</a></h3>
 <p>Now we can use these functions to place charges where we like and compute the total field. Below, we placed two oppositely signed charges to illustrate the field of an <a class="reference external" href="https://en.wikipedia.org/wiki/Electric_dipole_moment">electric dipole</a>. While not every distribution has an electric dipole moment, many do; especially those in water (as it’s a polar molecule).</p>
 <div class="cell docutils container">
@@ -716,8 +720,8 @@ document.write(`
 <img alt="../../../_images/ffc0f6a352053e588ec9b51209c6ba24907c853e01b335752575449f74b4023d.png" src="../../../_images/ffc0f6a352053e588ec9b51209c6ba24907c853e01b335752575449f74b4023d.png" />
 </div>
 </div>
-</div>
-<div class="section" id="quadrupole">
+</section>
+<section id="quadrupole">
 <h3>Quadrupole<a class="headerlink" href="#quadrupole" title="Permalink to this heading">#</a></h3>
 <p>We will end this game with a list of charges that we can iterate through. This will help you develop more complicated distributions of charges.</p>
 <p>Below, we have a <a class="reference external" href="https://en.wikipedia.org/wiki/Quadrupole">quadrupole</a>. You can change the charges and their locations to see how the field changes. Your activity below is to develop several situations and see how the field changes and consider the symmetry of the field. For this we will make a <a class="reference external" href="https://docs.python.org/3/tutorial/classes.html">Python class</a> for the charges. This will allow us to create a list of charges and iterate through them. This is showing an advantage of using aspects of <a class="reference external" href="https://en.wikipedia.org/wiki/Object-oriented_programming">object oriented programming</a>.</p>
@@ -786,7 +790,7 @@ Charge: -1e-06 C, Location: (-1, -1)
 <li><p>Create a circle of charges (like a ring). Is there any symmetry to this situation? Where is the electric field zero? How close does your calculation get to zero? What makes the calculation better or worse?</p></li>
 <li><p>Create a small locus of charges of different sizes and signs, but make sure the net charge is non-zero. How close do the charges need to be (or how far away do you need to be) for the field to look like a point charge field? What is the symmetry of this situation (or approximately so)? Where is the electric field zero (if at all)?</p></li>
 </ul>
-<div class="section" id="uniform-line-of-charges">
+<section id="uniform-line-of-charges">
 <h4>Uniform line of charges<a class="headerlink" href="#uniform-line-of-charges" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -824,8 +828,8 @@ Charge: -1e-06 C, Location: (-1, -1)
 <img alt="../../../_images/0e618d2a9e6ae477c3a65e19a4b7910b54303c9f0f3259dae37f9b37aa2dfa49.png" src="../../../_images/0e618d2a9e6ae477c3a65e19a4b7910b54303c9f0f3259dae37f9b37aa2dfa49.png" />
 </div>
 </div>
-</div>
-<div class="section" id="sinusoidal-line-of-charges">
+</section>
+<section id="sinusoidal-line-of-charges">
 <h4>Sinusoidal line of charges<a class="headerlink" href="#sinusoidal-line-of-charges" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -865,8 +869,8 @@ Charge: -1e-06 C, Location: (-1, -1)
 <img alt="../../../_images/feaf2fc9e875b955804bf8053620fc997b8e1c102f0c88463ad21a098f5f9415.png" src="../../../_images/feaf2fc9e875b955804bf8053620fc997b8e1c102f0c88463ad21a098f5f9415.png" />
 </div>
 </div>
-</div>
-<div class="section" id="circle-of-charges">
+</section>
+<section id="circle-of-charges">
 <h4>Circle of charges<a class="headerlink" href="#circle-of-charges" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -910,8 +914,8 @@ Charge: -1e-06 C, Location: (-1, -1)
 <img alt="../../../_images/14eb338e6899d693d644500b58c8ba1a89c33d820a31575e94822af722fb2924.png" src="../../../_images/14eb338e6899d693d644500b58c8ba1a89c33d820a31575e94822af722fb2924.png" />
 </div>
 </div>
-</div>
-<div class="section" id="small-locus-of-random-charges">
+</section>
+<section id="small-locus-of-random-charges">
 <h4>Small Locus of Random Charges<a class="headerlink" href="#small-locus-of-random-charges" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -960,22 +964,22 @@ Charge: -1e-06 C, Location: (-1, -1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/d41ef8d3b092123fcdcef46b5155bbd984725d26d09a207ae12f74e2517bd9d1.png" src="../../../_images/d41ef8d3b092123fcdcef46b5155bbd984725d26d09a207ae12f74e2517bd9d1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Charge: -1e-06 C, Location: (0.0009758791139173216, -0.001494516485866439)
-Charge: -1e-06 C, Location: (0.0008926266022348693, 0.00010157395745154837)
-Charge: 1e-06 C, Location: (0.0009278326966808081, -0.0015537697653655745)
-Charge: -1e-06 C, Location: (-0.00023732106597062737, 0.0019433167541310073)
-Charge: -1e-06 C, Location: (-0.001248094111939515, 0.0009497121845395162)
-Charge: -1e-06 C, Location: (-0.0008715164727884624, 0.0005358608336548595)
-Total Charge: -4e-06 C
+<img alt="../../../_images/1dd6e9ce9d3502e11c133d784c512580c8c687b1b2af6b7704a3801f28ecb34b.png" src="../../../_images/1dd6e9ce9d3502e11c133d784c512580c8c687b1b2af6b7704a3801f28ecb34b.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Charge: -1e-06 C, Location: (0.0013261209091990599, -0.0014504059261120923)
+Charge: 1e-06 C, Location: (-0.0018847002290050985, -0.0010256287032615607)
+Charge: 1e-06 C, Location: (-0.001331021300520753, -0.0013158216864940378)
+Charge: 1e-06 C, Location: (-0.00038551220729526534, 0.0012422274414069195)
+Charge: 1e-06 C, Location: (0.001234489236426228, -0.0007317547597788274)
+Charge: 1e-06 C, Location: (0.0007700804904666519, 0.001897350666348822)
+Total Charge: 4e-06 C
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="gauss-s-law">
+</section>
+</section>
+</section>
+<section id="gauss-s-law">
 <h2>Gauss’s Law<a class="headerlink" href="#gauss-s-law" title="Permalink to this heading">#</a></h2>
 <p>Clearly Coulomb’s Law gives us a prescription to solve most problems and serves as the basis for generic approaches to solving these problems. However, we can use the <a class="reference external" href="https://en.wikipedia.org/wiki/Divergence_theorem">divergence theorem</a> with the first of the electrostatic equations above. This will convert this equation into a tool for solving highly symmetric problems.</p>
 <div class="math notranslate nohighlight">
@@ -991,7 +995,7 @@ Total Charge: -4e-06 C
 \[\Phi_E = \int \int \int \dfrac{\rho}{\epsilon_0}\;dV = \dfrac{Q_{enc}}{\epsilon_0}\]</div>
 <p>However, using that measure of the total electric flux to find the field is only possible in highly symmetric situations. For example, if we have a spherical charge distribution <span class="math notranslate nohighlight">\(\rho(r)\)</span>, we can use Gauss’s Law to find the electric field at any point outside the sphere. Below, is a figure of a cylindrical charge distribution. We can use Gauss’s Law to find the electric field at any point outside the cylinder because the charge per unit length is constant.</p>
 <p><img alt="Gaussian Cylinder" src="http://hyperphysics.phy-astr.gsu.edu/hbase/electric/imgele/gaucyl2.png" /></p>
-<div class="section" id="a-charged-cylinder">
+<section id="a-charged-cylinder">
 <h3>A charged cylinder<a class="headerlink" href="#a-charged-cylinder" title="Permalink to this heading">#</a></h3>
 <p><strong>✅ Do this</strong></p>
 <p>Consider a long and thin plastic cylinder with a radius of <span class="math notranslate nohighlight">\(R_0\)</span> and length <span class="math notranslate nohighlight">\(L\)</span>, such that <span class="math notranslate nohighlight">\(L&gt;&gt;R_0\)</span>. The cylinder has a charge distribution that varies with radius <span class="math notranslate nohighlight">\(\rho(r) = cr^2\)</span>, where <span class="math notranslate nohighlight">\(c\)</span> is a positive constant. Find the electric field inside and outside the cylinder using Gauss’s Law.</p>
@@ -1000,8 +1004,8 @@ Total Charge: -4e-06 C
 <li><p>Prove to yourself and your group that you can use Gauss’s Law to find the electric field inside and outside the cylinder (why? what assumptions are you making?)</p></li>
 <li><p>Compute the electric field and graph it’s magnitude <span class="math notranslate nohighlight">\(|\mathbf{E}(r)|\)</span> as a function of <span class="math notranslate nohighlight">\(r\)</span> for <span class="math notranslate nohighlight">\(r \in [0,4R_0]\)</span>.</p></li>
 </ul>
-</div>
-<div class="section" id="invent-a-planar-problem">
+</section>
+<section id="invent-a-planar-problem">
 <h3>Invent a planar problem<a class="headerlink" href="#invent-a-planar-problem" title="Permalink to this heading">#</a></h3>
 <p><strong>✅ Do this</strong></p>
 <p>It is very common to show that the electric field on a planar surface is given by:</p>
@@ -1012,9 +1016,9 @@ Total Charge: -4e-06 C
 <li><p>Invent this problem and sketch it. Note here: <span class="math notranslate nohighlight">\(\rho(\mathbf{r}) = \rho(z)\)</span> will still allow you to use Gauss’s Law.</p></li>
 <li><p>Solve for the electric field using Gauss’s Law inside and outside the thick plane.</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="numerical-superposition-coulomb-s-law">
+</section>
+</section>
+<section id="numerical-superposition-coulomb-s-law">
 <h2>Numerical Superposition - Coulomb’s Law<a class="headerlink" href="#numerical-superposition-coulomb-s-law" title="Permalink to this heading">#</a></h2>
 <p>We gave you code and a class structure that lets you develop solutions to 2D electrostatic problems. In fact, we built a simple numerical integrator that uses superposition in 2D to solve for the electric field. This works because the electric field obeys superposition. So we can add up the electric field due to each charge.</p>
 <div class="math notranslate nohighlight">
@@ -1042,8 +1046,8 @@ Total Charge: -4e-06 C
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
