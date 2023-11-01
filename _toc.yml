@@ -51,7 +51,7 @@ parts:
       - file: content/3_waves/notes-Waves-Fouriers_Trick
       - file: content/3_waves/activity-Waves-Signals
       # - file: content/3_waves/activity-Waves-Signal_Processing
-      # - file: content/3_waves/notes-fft
+      - file: content/3_waves/notes-fft
       # - file: content/3_waves/activity-Waves-Cleaning_Signals
       # - file: content/3_waves/activity-FFT-applications
   - caption: 4 - Randomness and Distributions
@@ -76,6 +76,7 @@ parts:
       - file: content/9_assignments/worked-problem-4.md
       - file: content/9_assignments/project-2.md
       - file: content/9_assignments/worked-problem-5.md
+      - file: content/9_assignments/worked-problem-6.md
   - caption: Appendices
     chapters:
     - file: content/references.ipynb
