@@ -50,7 +50,7 @@ parts:
       - file: content/3_waves/activity-Waves-1D
       - file: content/3_waves/notes-Waves-Fouriers_Trick
       - file: content/3_waves/activity-Waves-Signals
-      # - file: content/3_waves/activity-Waves-Signal_Processing
+      - file: content/3_waves/activity-Waves-seriesExpand
       - file: content/3_waves/notes-fft
       # - file: content/3_waves/activity-Waves-Cleaning_Signals
       # - file: content/3_waves/activity-FFT-applications
