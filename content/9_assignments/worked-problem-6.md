@@ -2,7 +2,7 @@
 
 **Due 10 Nov 23**
 
-We have shown that we can use a Fourier Transform to decompose a function into its frequency components. We've graphed the solutions, and we've 
+We have shown that we can use a Fourier Transform to decompose a function into its frequency components. We've graphed the solutions, and we've seen how we can construct signals with certain properties. In this assignment, you are asked to use these tools to solve a problem of your choosing. Consider a scenario where a signal of some sort is being generated and you want to understand the frequency content of the signal. You can use the tools we have developed to do this.
 
 [**Updated Rubric**](./updated_rubric.md)
 
@@ -22,18 +22,18 @@ After you set things up, please conduct an investigation using the tools we have
 
 ## Assignment
 
-<!-- 1. Choose an oscillatory system with at least 3 oscillators that you can solve with the normal mode approach.
-2. Setup and develop the matrix representation of your problem.
-3. Find the normal modes of the system and explain them.
-4. Plot the normal modes of the system.
-5. Plot the motion of the system for a given set of initial conditions (this might involve numerical integration). -->
+1. Choose a signal or set of signals to investigate (these should be continuous functions of time)
+2. Write a paragraph or two describing the system you are investigating. Explain what you are going to do and why. If you can point us to where things are being done, that's helpful.
+3. Conduct your analysis of the signal (you may do so analytical and/or numerically). If you are using numerical approaches, don't yet use the `fft` function. You should be able to do this with the tools we have developed in class.
+4. Graph the results of your analysis and explain what you have found.
+
 
 ## Looking ahead (earn extra credit)
 
-<!-- If you are looking into these systems and finding them interesting here's two things you can do to earn extra credit.
+If you are looking into these systems and finding them interesting here's two things you can do to earn extra credit.
 
-1. Make this work for $N$ oscillators of your choosing
-1. (challenging) Try to find how the normal modes can describe the motion of the system for a given set of initial conditions. -->
+1. Compare your analysis of several signals and compare their frequency content. What do you notice? 
+2. (challenging) Develop a way to filter out certain frequencies. And then reconstruct the signal. What do you notice? Have you kept the proper phase information?
 
 ## Submitting your work
 
