@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>16 Oct 23 - Notes: Coupled Oscillations &#8212; PHY 415 Fall 2023</title>
   
   
@@ -505,7 +504,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="oct-23-notes-coupled-oscillations">
+  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-notes-coupled-oscillations">
 <h1>16 Oct 23 - Notes: Coupled Oscillations<a class="headerlink" href="#oct-23-notes-coupled-oscillations" title="Permalink to this heading">#</a></h1>
 <p>Single particle dynamics like the SHO and other singular point particle motion (e.g., basic kinematics, charges in fields modeled without interactions) are helpful in building our intuition of how physics <em>should</em> work. We can track the position, velocity, and other dynamical quantities for these singular particles. We can determine how the act on and interact with their surroundings. We can find points of stasis (stable and unstable points); we can find different families of solutions (orbits vs runaway behavior); we can predict the motion of those particles with numerical routines.</p>
 <p>But what happens when we introduce a second particle? And we let it interact with the first particle. We have substantially opened the degrees of freedom (a way to characterize the complexity of our system) that our system has. We will see how these systems become expanded and how their dynamics becomes richer and more interesting.</p>
@@ -517,7 +516,7 @@ document.write(`
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=t-_VPRCtiUg">https://inv.tux.pizza/watch?v=t-_VPRCtiUg</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=t-_VPRCtiUg">https://youtube.com/watch?v=t-_VPRCtiUg</a></p></li>
 </ul>
-<section id="synchronization">
+<div class="section" id="synchronization">
 <h2>Synchronization<a class="headerlink" href="#synchronization" title="Permalink to this heading">#</a></h2>
 <p>Nature exhibits many different kinds of behaviors that we have organized into different concepts (i.e., random, chaotic, deterministic, synchronized). THese behaviors have interesting properties and allow us to bring different and new forms of mathematics and computing to the work; this includes new areas like <a class="reference external" href="https://inv.tux.pizza/watch?v=2Bw5f4vYL98">machine-learning based physics models</a>. As we move from a single object models to multiple objects models, we begin to explore these different conceptual behaviors. <a class="reference external" href="https://www.quantamagazine.org/physicists-discover-exotic-patterns-of-synchronization-20190404/">Synchronization</a> is one that is common and natural to consider in the context of oscillations as you saw from the above video. <a class="reference external" href="https://inv.tux.pizza/watch?v=ZGvtnE1Wy6U">Fireflies</a>, <a class="reference external" href="https://inv.tux.pizza/watch?v=2LPboySOSvo">patterns in the operation of a heart</a>, and <a class="reference external" href="https://inv.tux.pizza/watch?v=5v5eBf2KwF8">coupled metronomes</a> all exhibit this synchronized behavior. But, how is that possible? What physics is going on here? And how can it lead in and out of synchronization like this pendulum setup below?</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=yVkdfJ9PkRQ"><img alt="Synchronized pendulum" src="https://markdown-videos-api.jorgenkh.no/youtube/yVkdfJ9PkRQ?width=720&amp;height=405" /></a></p>
@@ -530,8 +529,8 @@ document.write(`
 <p>Much of this early understanding of synchronization we owe to the Dutch mathematician, <a class="reference external" href="https://en.wikipedia.org/wiki/Christiaan_Huygens">Christiann Huygens</a>, who spent much of his work trying to understand periodic motion. In this work, he observed the oscillation of two pendulum clocks that would eventually oscillate in precisely opposite swings. A great writeup of this history and its implications is <a class="reference external" href="https://www.quantamagazine.org/physicists-discover-exotic-patterns-of-synchronization-20190404/">here</a>. This phenomenon was explored experimentally and theoretically by three physicists at Georgia Tech, Matt Bennet, Mike Schatz (my Phd Advisor!), and Kurt Wiesenfeld. Their paper was written in collaboration with, history and language professor emerita, Heidi Rockwood. It’s a <a class="reference external" href="http://engineering.nyu.edu/mechatronics/Control_Lab/bck/VKapila/Chaotic%20Ref/Hujgens.pdf">fun read</a>.</p>
 <p>We know use this phenomenon to <a class="reference external" href="https://en.wikipedia.org/wiki/Injection_locking#Entrainment">entrain oscillators</a>; this kind of mode locking is really important to science – especially ultra-fast science. Physicists like <a class="reference external" href="https://www.ogilviegroup.org/">Dr. Jennifer Ogilive at the University of Michigan</a> use this phenomenon to image biological materials that undergo very fast transitions.</p>
 </div>
-</section>
-<section id="coupled-oscillations">
+</div>
+<div class="section" id="coupled-oscillations">
 <h2>Coupled Oscillations<a class="headerlink" href="#coupled-oscillations" title="Permalink to this heading">#</a></h2>
 <p>The key to why these phenomena are possible is the increase in the number of <strong>Degrees of Freedom</strong>. You can think of this as the <a class="reference external" href="https://en.wikipedia.org/wiki/Degrees_of_freedom_(mechanics)">ways in which the system can move</a> – really we should try to think of it as the <a class="reference external" href="https://en.wikipedia.org/wiki/Degrees_of_freedom_(physics_and_chemistry)">additional variables in phase space</a> that become available by adding more particles and interactions. We will start with the canonical longitudinal oscillations of two coupled spring oscillators.</p>
 <img src='https://www.entropy.energy/static/resources/coupled-oscillators/two-coupled-gliders-diagram.png' alt='Coupled Oscillator set up. Two oscillators connected by three springs in a horizontal line.' width=800px/>
@@ -575,11 +574,11 @@ document.write(`
 \[\omega_1^2 = \dfrac{k}{m}\]</div>
 <div class="math notranslate nohighlight">
 \[\omega_2^2 = \dfrac{3k}{m}\]</div>
-</section>
-<section id="additional-resources">
+</div>
+<div class="section" id="additional-resources">
 <h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h2>
 <p>This reading is useful preparation for our normal modes discussion.</p>
-<section id="crawford-s-waves-book-secs-1-1-1-5">
+<div class="section" id="crawford-s-waves-book-secs-1-1-1-5">
 <h3>Crawford’s Waves book - Secs. 1.1-1.5<a class="headerlink" href="#crawford-s-waves-book-secs-1-1-1-5" title="Permalink to this heading">#</a></h3>
 <p>This book is a great resource for learning about oscillations and waves. Unfortunately, it is out of print. We will discuss a lot of these examples in class.</p>
 <ul class="simple">
@@ -587,16 +586,16 @@ document.write(`
 <li><p><a class="reference download internal" download="" href="../../_downloads/1bfabd062f6934ad48d2370da07ba6a9/Crawford-Waves-Secs_1.4-1.5.pdf"><span class="xref download myst">Ch 1.4-1.5 - Normal modes and beats</span></a></p></li>
 </ul>
 <p>These readings will introduce the concept of normal modes, which we will discuss with a short lecture and example that you will work. And it will show a phenomenon that we can explore: <a class="reference external" href="https://en.wikipedia.org/wiki/Beat_(acoustics)">Beats</a></p>
-</section>
-<section id="handwritten-notes">
+</div>
+<div class="section" id="handwritten-notes">
 <h3>Handwritten Notes<a class="headerlink" href="#handwritten-notes" title="Permalink to this heading">#</a></h3>
 <p>Here are my handwritten notes on coupled oscillations and normal modes.</p>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../../_downloads/b9f6d0634323e88dd9b23ec8beb2fea2/Notes-Coupled_Oscillations.pdf"><span class="xref download myst">Coupled Oscillations</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../_downloads/1e8a8b4d19c14f517b03bf5e1b89aa76/Notes-Three_Coupled_Oscillators.pdf"><span class="xref download myst">Three coupled oscillator example</span></a></p></li>
 </ul>
-</section>
-<section id="video-resources">
+</div>
+<div class="section" id="video-resources">
 <h3>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this heading">#</a></h3>
 <p>If you are a feeling that you would like a little more on oscillations, beats, and matrices before we have class. Check out this video.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=I0YACDaY-ww"><img alt="Coupled Oscillator Lecture" src="https://markdown-videos-api.jorgenkh.no/youtube/I0YACDaY-ww?width=720&amp;height=405" /></a></p>
@@ -604,9 +603,9 @@ document.write(`
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=I0YACDaY-ww">https://inv.tux.pizza/watch?v=I0YACDaY-ww</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=I0YACDaY-ww">https://youtube.com/watch?v=I0YACDaY-ww</a></p></li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

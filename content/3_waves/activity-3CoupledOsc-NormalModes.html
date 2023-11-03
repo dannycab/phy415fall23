@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>11 Oct 22 - Activity: Normal Modes of 3 Coupled Oscillators &#8212; PHY 415 Fall 2023</title>
   
   
@@ -499,15 +498,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="oct-22-activity-normal-modes-of-3-coupled-oscillators">
+  <div class="tex2jax_ignore mathjax_ignore section" id="oct-22-activity-normal-modes-of-3-coupled-oscillators">
 <h1>11 Oct 22 - Activity: Normal Modes of 3 Coupled Oscillators<a class="headerlink" href="#oct-22-activity-normal-modes-of-3-coupled-oscillators" title="Permalink to this heading">#</a></h1>
 <p>Now that we have discussed and built some facility with Lagrangian dynamics, let’s see how using it makes our study of normal modes much simpler than Newtonian mechanics. We will couple this analysis to solving an eigenvalue problem by guessing the form of the solutions. This technique is very common in theoretical physics with different guesses for the solution forms giving rise to different eigenvalue problems (e.g., <a class="reference external" href="https://en.wikipedia.org/wiki/Bessel_function">Bessel functions for 2D surface problems</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Hermite_polynomials">Hermite polynomials for the Quantum Harmonic Oscillator</a>.</p>
-<section id="three-coupled-oscillators">
+<div class="section" id="three-coupled-oscillators">
 <h2>Three Coupled Oscillators<a class="headerlink" href="#three-coupled-oscillators" title="Permalink to this heading">#</a></h2>
 <p>Consider the setup below consisting of three masses connected by springs to each other. We intend to find the normal modes of the system by denoting each mass’s displacement (<span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span>).</p>
 <p><img alt="3 Coupled Oscillators" src="assets/images/3_coupled_osc.png" /></p>
-</section>
-<section id="finding-the-normal-mode-frequencies">
+</div>
+<div class="section" id="finding-the-normal-mode-frequencies">
 <h2>Finding the Normal Mode Frequencies<a class="headerlink" href="#finding-the-normal-mode-frequencies" title="Permalink to this heading">#</a></h2>
 <p><strong>✅ Do this</strong></p>
 <p>This is not magic as we will see, it follows from our choices of solution. Here’s the steps and what you might notice about them:</p>
@@ -519,8 +518,8 @@ document.write(`
 <li><p>Consider solutions of the form <span class="math notranslate nohighlight">\(Ce^{i{\omega}t}\)</span>, plug that into <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span> to show you get <span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{x} = -\omega^2 \mathbf{x}\)</span>. (We have not done this, we just assumed it works! It’s ok if this is annoying, we only have to show it once.)</p></li>
 <li><p>Find the normal mode frequencies by taking the determinant of <span class="math notranslate nohighlight">\(\mathbf{A} - \mathbf{I}\lambda\)</span>. Note that this produces the following definition: <span class="math notranslate nohighlight">\(\lambda = -\omega^2\)</span> (We have not done this together and we can if it’s confusing.)</p></li>
 </ol>
-</section>
-<section id="finding-the-normal-modes-amplitudes">
+</div>
+<div class="section" id="finding-the-normal-modes-amplitudes">
 <h2>Finding the Normal Modes Amplitudes<a class="headerlink" href="#finding-the-normal-modes-amplitudes" title="Permalink to this heading">#</a></h2>
 <p>Ok, now we need to find the normal mode amplitudes. That is we assumed sinusoidal oscillations, but at what amplitudes? We will show how to do this with one frequency (<span class="math notranslate nohighlight">\(\omega_1\)</span>), and then break up the work of the the other two. These frequencies are:</p>
 <div class="math notranslate nohighlight">
@@ -531,14 +530,14 @@ document.write(`
 <li><p>What does this motion physically look like? What are the masses doing?</p></li>
 <li><p>How does the frequency of oscillation make sense? Why is it higher or lower than <span class="math notranslate nohighlight">\(\omega_A\)</span>?</p></li>
 </ol>
-</section>
-<section id="notes">
+</div>
+<div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_2_Three_Coupled_Oscillators.pdf">Partial Solution to Activity</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

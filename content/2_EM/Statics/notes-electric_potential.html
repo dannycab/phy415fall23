@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3 Oct 23 - Notes: Electric Potential - a scalar field &#8212; PHY 415 Fall 2023</title>
   
   
@@ -519,10 +518,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="oct-23-notes-electric-potential-a-scalar-field">
+  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-notes-electric-potential-a-scalar-field">
 <h1>3 Oct 23 - Notes: Electric Potential - a scalar field<a class="headerlink" href="#oct-23-notes-electric-potential-a-scalar-field" title="Permalink to this heading">#</a></h1>
 <p>We’ve seen that there’s a lot of challenges with solving field problems where the fields are vectors and described by partial differential equations. The electric and magnetic field are vector fields that have a size and direction are every points in space. They are described by a set of 4 partial differential equations, <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell%27s_equations">Maxwell’s Equations</a>. In Cartesian coordinates, these equations are described by 8 coupled partial differential equations.</p>
-<section id="electrostatics">
+<div class="section" id="electrostatics">
 <h2>Electrostatics<a class="headerlink" href="#electrostatics" title="Permalink to this heading">#</a></h2>
 <p>In electrostatic situations, where charges don’t move, we’ve seen that the equations that describe the electric field are simplified to:</p>
 <div class="math notranslate nohighlight">
@@ -533,7 +532,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\vec{E}(x,y,z) = -\nabla V(x,y,z)\]</div>
 <p>We might prefer to work with this scalar field, <span class="math notranslate nohighlight">\(V\)</span>, rather than the vector field, <span class="math notranslate nohighlight">\(\vec{E}\)</span>, because it is a simpler object to work with. There’s a number of tools we can use to find the potential and then we take the gradient to find the electric field.</p>
-<section id="electric-potential">
+<div class="section" id="electric-potential">
 <h3>Electric Potential<a class="headerlink" href="#electric-potential" title="Permalink to this heading">#</a></h3>
 <p>Parth G has a really nice video on the conceptual elements of electric potential, we will concern ourselves with more mathematical aspects as we move forward.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=7rjAtuwxrEA"><img alt="Electric Potential" src="https://markdown-videos-api.jorgenkh.no/youtube/7rjAtuwxrEA?width=720&amp;height=405" /></a></p>
@@ -555,16 +554,16 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\oint \vec{E} \cdot d\vec{l} = 0\]</div>
 <p>which is a direct results of applying Stokes’ Theorem to the curl-less electric field, and indicates that the electric field is conservative.</p>
-</section>
-</section>
-<section id="getting-to-laplace-s-equation">
+</div>
+</div>
+<div class="section" id="getting-to-laplace-s-equation">
 <h2>Getting to Laplace’s Equation<a class="headerlink" href="#getting-to-laplace-s-equation" title="Permalink to this heading">#</a></h2>
 <p>Poisson’s Equation is a description of a scalar potential (e.g., the electric potential) and how it relates to sources of the potential (e.g., charges). This is a <strong>local</strong> description of the field. At every point, the Laplacian can be computed (for well-behaved functions) and it indicates a source or lack of sources. For example, in empty space with no charges, the Laplacian is zero everywhere.</p>
 <p>So if we imagine setting up charges far from the place we are interested in finding the electric potential, we have an equation that is describes that space.</p>
 <div class="math notranslate nohighlight">
 \[\nabla^2 V = 0\]</div>
 <p>This is Laplace’s equation and is a commonly occurring equation in physics. In fact, as we saw here, it shows up anytime we find local situations where the charges are absent. So the idea is that charges are far away setting the potential at the boundaries (hence, calling these <strong><a class="reference external" href="https://en.wikipedia.org/wiki/Boundary_value_problem">boundary value problems</a></strong>). The idea is that the PDE is solved in the region of interest often giving some general solution in the form of an infinite sum. The boundary conditions are then used to determine the coefficients in the solution, giving a unique solution. Because Laplace’s equation is a linear PDE, the superposition principle applies, so we can add solutions together to get new solutions.</p>
-<section id="a-typical-problem">
+<div class="section" id="a-typical-problem">
 <h3>A typical problem<a class="headerlink" href="#a-typical-problem" title="Permalink to this heading">#</a></h3>
 <p>It might seem odd to have an equation that is everywhere equal to zero and somehow suggest it produces non-zero solutions. But remember that it is a PDE that describes the second derivatives of this scalar function,</p>
 <div class="math notranslate nohighlight">
@@ -575,9 +574,9 @@ document.write(`
 <p>Here is a “gutter” where the electric potential for different sides of the gutter are set. Laplace’s equation applies inside the gutter. So the idea is to find a solution that satisfies Laplace’s equation and the boundary conditions. We will develop this solution in class, but the representative results look like this:</p>
 <p><img alt="Typical Laplace's Equation Solution" src="https://www.physics.uoguelph.ca/sites/default/files/uploads/fig10_2_potential-plates.jpg" />
 <em>Image from <a class="reference external" href="https://www.physics.uoguelph.ca/chapter-10-laplaces-equation">University of Guelph</a></em></p>
-</section>
-</section>
-<section id="separation-of-variables">
+</div>
+</div>
+<div class="section" id="separation-of-variables">
 <h2>Separation of Variables<a class="headerlink" href="#separation-of-variables" title="Permalink to this heading">#</a></h2>
 <p>One of the key analytical tools that we have for Laplace’s Equation is the <a class="reference external" href="https://en.wikipedia.org/wiki/Separation_of_variables">separation of variables</a> method of solving PDEs. We posit an ansatz in which the solution is a product of functions of the individual variables. For example, in Cartesian coordinates, we might write:</p>
 <div class="math notranslate nohighlight">
@@ -610,7 +609,7 @@ document.write(`
 <li><p>It is a tool that can produce general solutions to Laplace’s Equation when the Laplacian is separable in the given coordinate system.</p></li>
 <li><p>It cannot be used for some problems (e.g., when the boundary conditions cannot be expressed as <a class="reference external" href="https://en.wikipedia.org/wiki/Neumann_boundary_condition">Neumann</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Dirichlet_boundary_condition">Dirichlet</a> boundary conditions).</p></li>
 </ul>
-<section id="other-coordinate-systems">
+<div class="section" id="other-coordinate-systems">
 <h3>Other Coordinate Systems<a class="headerlink" href="#other-coordinate-systems" title="Permalink to this heading">#</a></h3>
 <p>It turns out the trick of positing a solution that is a product of functions of the individual variables works in other coordinate systems as well. For example, in cylindrical coordinates, we might write:</p>
 <div class="math notranslate nohighlight">
@@ -621,35 +620,35 @@ document.write(`
 <p>It turns out both of these are separable in their respective coordinate systems. We will work through some examples of spherical coordinates in class as it forms the basis of the <a class="reference external" href="https://en.wikipedia.org/wiki/Multipole_expansion">Multipole Expansion</a>, which is a critical mathematical tool with wide applications.</p>
 <p>This idea of funding general solutions to Laplace’s equation in known orthogonal coordinate systems remains incredible common. Experimental setups and theoretical models often have situations where Laplace’s equation is relevant and there is a symmetry that can be exploited to find solutions. Laplace’s equation is separable in 13 coordinate systems. You can find some of the more <a class="reference external" href="https://en.wikipedia.org/wiki/Orthogonal_coordinates#Table_of_three-dimensional_orthogonal_coordinates">exotic equations and coordinate systems here</a>. Check out the <a class="reference external" href="https://en.wikipedia.org/wiki/Prolate_spheroidal_coordinates">Prolate Spheroidal coordinates</a>, which are used in nuclear physics when the nucleus is deformed.</p>
 <p><img alt="Prolate Spheroidal Coordinates" src="https://upload.wikimedia.org/wikipedia/commons/b/be/Prolate_spheroidal_coordinates.png" /></p>
-</section>
-</section>
-<section id="additional-resources">
+</div>
+</div>
+<div class="section" id="additional-resources">
 <h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h2>
-<section id="textbook-chapter">
+<div class="section" id="textbook-chapter">
 <h3>Textbook Chapter<a class="headerlink" href="#textbook-chapter" title="Permalink to this heading">#</a></h3>
 <p>The University of Guelph provides free notes in physics. Here’s the <a class="reference external" href="https://www.physics.uoguelph.ca/chapter-10-laplaces-equation">relevant chapter on Laplace’s Equation</a>. It is also where some of the figures were taken from.</p>
-</section>
-<section id="videos-derivations">
+</div>
+<div class="section" id="videos-derivations">
 <h3>Videos Derivations<a class="headerlink" href="#videos-derivations" title="Permalink to this heading">#</a></h3>
 <p>Steve Brunton at Washington has some really great videos on the derivations associated with PDEs like those above.</p>
-<section id="possion-s-and-laplace-s-equation">
+<div class="section" id="possion-s-and-laplace-s-equation">
 <h4>Possion’s and Laplace’s Equation<a class="headerlink" href="#possion-s-and-laplace-s-equation" title="Permalink to this heading">#</a></h4>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=nmvs0vrBT18"><img alt="Possion's and Laplace's Equation" src="https://markdown-videos-api.jorgenkh.no/youtube/nmvs0vrBT18?width=720&amp;height=405" /></a></p>
 <ul class="simple">
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=nmvs0vrBT18?">https://inv.tux.pizza/watch?v=nmvs0vrBT18?</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=nmvs0vrBT18?">https://youtube.com/watch?v=nmvs0vrBT18?</a></p></li>
 </ul>
-</section>
-<section id="id1">
+</div>
+<div class="section" id="id1">
 <h4>Separation of Variables<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=VjWtMl6vQ3Q"><img alt="Separation of Variables" src="https://markdown-videos-api.jorgenkh.no/youtube/VjWtMl6vQ3Q?width=720&amp;height=405" /></a></p>
 <ul class="simple">
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=VjWtMl6vQ3Q">https://inv.tux.pizza/watch?v=VjWtMl6vQ3Q</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=VjWtMl6vQ3Q">https://youtube.com/watch?v=VjWtMl6vQ3Q</a></p></li>
 </ul>
-</section>
-</section>
-<section id="handwritten-notes">
+</div>
+</div>
+<div class="section" id="handwritten-notes">
 <h3>Handwritten Notes<a class="headerlink" href="#handwritten-notes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../../../_downloads/0e78c01caedebd7213127c206aecc705/Notes-Electric_Potential.pdf"><span class="xref download myst">Electric Potential</span></a></p></li>
@@ -657,9 +656,9 @@ document.write(`
 <li><p><a class="reference download internal" download="" href="../../../_downloads/8cf90c7ec2a74aa6cdf56c58b20972a4/Notes-Separation_of_Variables_Spherical.pdf"><span class="xref download myst">Separation of Variables (Spherical Coordinates)</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../../_downloads/029882bc12153a31cd1c0309e334593f/Notes-Multipole_Expansion.pdf"><span class="xref download myst">Multipole Expansion</span></a></p></li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

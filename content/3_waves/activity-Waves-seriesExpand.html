@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction &#8212; PHY 415 Fall 2023</title>
   
   
@@ -501,7 +500,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="nov-23-activity-automated-signal-deconstruction-reconstruction">
+  <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-activity-automated-signal-deconstruction-reconstruction">
 <h1>2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction<a class="headerlink" href="#nov-23-activity-automated-signal-deconstruction-reconstruction" title="Permalink to this heading">#</a></h1>
 <p>We found that it was possible to use the Fourier transform to decompose the signal into its constituent frequencies. Later we will use this idea to build up the <a class="reference external" href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast Fourier Transform</a> (FFT) algorithm. For now, we will write everything out in full to mirror our analytical work.</p>
 <p>We will start with the same signal as before, but then you will work with other signals to achieve a particular signal decomposition.</p>
@@ -518,7 +517,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[V(t) \approx V_{approx}(t) = \sum_{-N}^{+N} c_n e^{i n \omega_0 t}\]</div>
 <p>where <span class="math notranslate nohighlight">\(N\)</span> is the number of terms we use in the series expansion.</p>
-<section id="analytical-calculation">
+<div class="section" id="analytical-calculation">
 <h2>Analytical Calculation<a class="headerlink" href="#analytical-calculation" title="Permalink to this heading">#</a></h2>
 <p><strong>✅ Do this</strong></p>
 <ol class="arabic simple">
@@ -527,8 +526,8 @@ document.write(`
 <li><p>Perform the integrals (consider using <code class="docutils literal notranslate"><span class="pre">sympy</span></code>) and find the coefficients <span class="math notranslate nohighlight">\(c_n\)</span>’s.</p></li>
 <li><p>Write the function <span class="math notranslate nohighlight">\(V(t)\)</span> in terms of the <span class="math notranslate nohighlight">\(c_n\)</span>’s. (What about the imaginary part?)</p></li>
 </ol>
-</section>
-<section id="automating-the-calculation">
+</div>
+<div class="section" id="automating-the-calculation">
 <h2>Automating the Calculation<a class="headerlink" href="#automating-the-calculation" title="Permalink to this heading">#</a></h2>
 <p>This is a lot of work to do by hand, and we have to perform new integrals every time we want to find this decomposition. We can automate this process using a little code. We have to break the process up into a few steps.</p>
 <ol class="arabic simple">
@@ -592,12 +591,12 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="physics-relationship">
+</div>
+<div class="section" id="physics-relationship">
 <h2>Physics Relationship<a class="headerlink" href="#physics-relationship" title="Permalink to this heading">#</a></h2>
 <p>You might be wondering why we do this kind of deconstruction and what it is used for. It turns out that for many systems this kind of analysis tells you how energy, momentum, and other quantities might be distributed in the system. For example, the analogy to a complex quantum mechanical system might be the various occupied energy states of the system. The known frequencies could correspond to the energy levels of the system. The Fourier coefficients tell you how much of the system is in each energy state. There are many such analogies in physics; and many such transformations in multiple dimensions to extract this information. Fourier is just one of the most common.</p>
-</section>
-<section id="decomposition-matching">
+</div>
+<div class="section" id="decomposition-matching">
 <h2>Decomposition Matching<a class="headerlink" href="#decomposition-matching" title="Permalink to this heading">#</a></h2>
 <p>We want to develop your intuition for this kind of analysis now that you have started to develop the tools to do it. So we will ask you to use your code to perform a few tasks. But these will start from the expected coefficients and ask you to find the signal. This is the reverse of what we have done so far. With your code you should be able to play and adjust the signal to match the coefficients qualitatively.</p>
 <p><strong>✅ Do this</strong></p>
@@ -619,8 +618,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

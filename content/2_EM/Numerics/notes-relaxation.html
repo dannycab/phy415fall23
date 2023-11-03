@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>9 Oct 23 - Notes: Method of Relaxation &#8212; PHY 415 Fall 2023</title>
   
   
@@ -515,7 +514,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="oct-23-notes-method-of-relaxation">
+  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-notes-method-of-relaxation">
 <h1>9 Oct 23 - Notes: Method of Relaxation<a class="headerlink" href="#oct-23-notes-method-of-relaxation" title="Permalink to this heading">#</a></h1>
 <p>We’ve found a number of potential ways to solve Laplace’s equation. All of them have so far been analytical – making use of special functions and introducing basis functions to expand our solutions and develop (potentially infinite) series solutions. As we saw with spherical problems, this is a very powerful method to use, but it is not always possible to find a solution in this way. In some cases you might be able to find general solutions of the form (or in alternative coordinate systems)):</p>
 <div class="math notranslate nohighlight">
@@ -526,7 +525,7 @@ document.write(`
 <li><p>The solution that matches the boundary conditions is unique.</p></li>
 </ol>
 <p>So we can imagine taking a bubble or a sheet of rubber or plastic wrap and stretching it over the region of interest. The shape and height of the edges (barring the gravitational pull) set the shape of the resulting bubble/sheet. Here we leave out gravity as it has a directional pull, which Laplace’s equation does not. The method we propose below is called the <a class="reference external" href="https://en.wikipedia.org/wiki/Relaxation_(iterative_method)">Method of Relaxation</a>. It is a numerical method for solving PDEs where the solution is determined iteratively using the two properties above.</p>
-<section id="the-method-of-relaxation">
+<div class="section" id="the-method-of-relaxation">
 <h2>The Method of Relaxation<a class="headerlink" href="#the-method-of-relaxation" title="Permalink to this heading">#</a></h2>
 <p>The basic approach to the method of relaxation is laid out below:</p>
 <ol class="arabic simple">
@@ -537,8 +536,8 @@ document.write(`
 <li><p>Repeat step 4 until the values of the points stop changing. <em>This is the convergence step.</em></p></li>
 </ol>
 <p>There’s a lot of nuance to these five steps, and we will get into this a bit. Let’s just write this up for the 1D problem.</p>
-</section>
-<section id="the-1-dimensional-case">
+</div>
+<div class="section" id="the-1-dimensional-case">
 <h2>The 1 Dimensional Case<a class="headerlink" href="#the-1-dimensional-case" title="Permalink to this heading">#</a></h2>
 <p>Consider the 1D case of Laplace’s equation:</p>
 <div class="math notranslate nohighlight">
@@ -655,10 +654,10 @@ document.write(`
 <img alt="../../../_images/ebbbf6964b804980cefdf78970d8197dfb7d13f856857b7c7d0d0fc8c0d449f0.png" src="../../../_images/ebbbf6964b804980cefdf78970d8197dfb7d13f856857b7c7d0d0fc8c0d449f0.png" />
 </div>
 </div>
-<section id="experiments">
+<div class="section" id="experiments">
 <h3>Experiments<a class="headerlink" href="#experiments" title="Permalink to this heading">#</a></h3>
 <p>We can change the number of grid points, the number of iterations, and the initial guess to see how the solution changes; in particular, how quickly the solution converges.</p>
-<section id="random-initial-guess">
+<div class="section" id="random-initial-guess">
 <h4>Random Initial Guess<a class="headerlink" href="#random-initial-guess" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -677,14 +676,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The solution converged after 22156 iterations.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The solution converged after 22332 iterations.
 </pre></div>
 </div>
-<img alt="../../../_images/17bc65461de0b5926771ac07923be06779663a52fc26d76904d4510857e458e4.png" src="../../../_images/17bc65461de0b5926771ac07923be06779663a52fc26d76904d4510857e458e4.png" />
+<img alt="../../../_images/1c5c9f056c2fe1cd3237ab009e8819d32dfee6aafc5f67b27c825ae25e6df33d.png" src="../../../_images/1c5c9f056c2fe1cd3237ab009e8819d32dfee6aafc5f67b27c825ae25e6df33d.png" />
 </div>
 </div>
-</section>
-<section id="sinusoidal-initial-guess">
+</div>
+<div class="section" id="sinusoidal-initial-guess">
 <h4>Sinusoidal Initial Guess<a class="headerlink" href="#sinusoidal-initial-guess" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -710,8 +709,8 @@ document.write(`
 <img alt="../../../_images/937c39bd7f7fa854cbf52ce30e0fcfc70c3a41b0918602f1b08e4765e6744b5c.png" src="../../../_images/937c39bd7f7fa854cbf52ce30e0fcfc70c3a41b0918602f1b08e4765e6744b5c.png" />
 </div>
 </div>
-</section>
-<section id="linear-initial-guess">
+</div>
+<div class="section" id="linear-initial-guess">
 <h4>Linear Initial Guess<a class="headerlink" href="#linear-initial-guess" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -737,8 +736,8 @@ document.write(`
 <img alt="../../../_images/a99f724ec784903b8bb03d61d3a6345a32835569d9fb928c0bd31bbd862d5dd9.png" src="../../../_images/a99f724ec784903b8bb03d61d3a6345a32835569d9fb928c0bd31bbd862d5dd9.png" />
 </div>
 </div>
-</section>
-<section id="linear-initial-guess-with-a-touch-of-white-noise">
+</div>
+<div class="section" id="linear-initial-guess-with-a-touch-of-white-noise">
 <h4>Linear Initial Guess with a touch of white noise<a class="headerlink" href="#linear-initial-guess-with-a-touch-of-white-noise" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -759,14 +758,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The solution converged after 12323 iterations.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The solution converged after 10225 iterations.
 </pre></div>
 </div>
-<img alt="../../../_images/b2013f42ade9ae91fcb4904d810c88ceac363f2e417d8638bc59e3f617641fe0.png" src="../../../_images/b2013f42ade9ae91fcb4904d810c88ceac363f2e417d8638bc59e3f617641fe0.png" />
+<img alt="../../../_images/7ab507f0389a8075f58f421886aba4d35adefab324b8029346bb7b181ccbaaf2.png" src="../../../_images/7ab507f0389a8075f58f421886aba4d35adefab324b8029346bb7b181ccbaaf2.png" />
 </div>
 </div>
-</section>
-<section id="random-initial-guess-with-lower-tolerance">
+</div>
+<div class="section" id="random-initial-guess-with-lower-tolerance">
 <h4>Random Initial Guess with lower tolerance<a class="headerlink" href="#random-initial-guess-with-lower-tolerance" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -785,16 +784,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The solution converged after 7288 iterations.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The solution converged after 8811 iterations.
 </pre></div>
 </div>
-<img alt="../../../_images/cd924f89962c4ebf160d7d5fbb26498d661a439cee911a924348779b0a8b73ff.png" src="../../../_images/cd924f89962c4ebf160d7d5fbb26498d661a439cee911a924348779b0a8b73ff.png" />
+<img alt="../../../_images/bae60410cfcc61fe60e6a49a96fab253deae5377432d4a36ea5b091fe096aaea.png" src="../../../_images/bae60410cfcc61fe60e6a49a96fab253deae5377432d4a36ea5b091fe096aaea.png" />
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="relaxation-method-in-2d">
+</div>
+</div>
+</div>
+<div class="section" id="relaxation-method-in-2d">
 <h2>Relaxation Method in 2D<a class="headerlink" href="#relaxation-method-in-2d" title="Permalink to this heading">#</a></h2>
 <p>The two-dimensional case is a bit more complicated but it follows the same basic idea. You will write the code to solve a problem like this, but the underlying mathematics follows from our discretization of the Laplacian. Maxwell’s equations give us Laplace’s equation for potential <span class="math notranslate nohighlight">\(\Phi\)</span> with no source charges:</p>
 <div class="math notranslate nohighlight">
@@ -840,17 +839,17 @@ document.write(`
 <p>It might seem fairly obvious that the 3D version of this is just an extension of the 2D version, and it is. The 3D version is:</p>
 <div class="math notranslate nohighlight">
 \[\Phi_{k+1}(x,y,z) = \frac{1}{6}\left[\Phi_{k}(x+h,y,z) + \Phi_{k}(x-h,y,z) + \Phi_{k}(x,y+h,z) + \Phi_{k}(x,y-h,z) + \Phi_{k}(x,y,z+h) + \Phi_{k}(x,y,z-h) \right]\]</div>
-</section>
-<section id="additional-resources">
+</div>
+<div class="section" id="additional-resources">
 <h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h2>
-<section id="handwritten-notes">
+<div class="section" id="handwritten-notes">
 <h3>Handwritten Notes<a class="headerlink" href="#handwritten-notes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../../../_downloads/2d2447d2a523d019bc4f72a0c34f9221/Notes_Laplaces_Equation.pdf"><span class="xref download myst">Laplace’s Equation</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../../_downloads/5f6bbb8fd91c004e347ef27fa9b8e795/Notes-Method_of_Relaxation.pdf"><span class="xref download myst">Method of Relaxation</span></a></p></li>
 </ul>
-</section>
-<section id="videos">
+</div>
+<div class="section" id="videos">
 <h3>Videos<a class="headerlink" href="#videos" title="Permalink to this heading">#</a></h3>
 <p>These videos from 3Blue1Brown about Partial Differential Equations are really great. But not necessary to grasp what we are doing.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=ly4S0oi3Yz8"><img alt="What is a PDE" src="https://markdown-videos-api.jorgenkh.no/youtube/ly4S0oi3Yz8?width=720&amp;height=405" /></a></p>
@@ -863,9 +862,9 @@ document.write(`
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=ToIXSwZ1pJU">https://inv.tux.pizza/watch?v=ToIXSwZ1pJU</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=ToIXSwZ1pJU">https://youtube.com/watch?v=ToIXSwZ1pJU</a></p></li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling &#8212; PHY 415 Fall 2023</title>
   
   
@@ -497,10 +496,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="dec-23-notes-markov-chain-monte-carlo-modeling">
+  <div class="tex2jax_ignore mathjax_ignore section" id="dec-23-notes-markov-chain-monte-carlo-modeling">
 <h1>4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling<a class="headerlink" href="#dec-23-notes-markov-chain-monte-carlo-modeling" title="Permalink to this heading">#</a></h1>
 <p>One of the principal tools we have at our disposal when it comes to systems with randomness is the Monte Carlo simulation. Monte Carlo is a large class of approaches that all rely on probabilistic outcomes to determine results. In physics, we often use Monte Carlo to find integrals or sums that we are unable to compute by hand.</p>
-<section id="markov-chain-monte-carlo">
+<div class="section" id="markov-chain-monte-carlo">
 <h2>Markov Chain Monte Carlo<a class="headerlink" href="#markov-chain-monte-carlo" title="Permalink to this heading">#</a></h2>
 <p>We often find ourselves using a type of Monte Carlo simulation that makes use of a Markov Chain. This is called the MCMC model. The mathematical foundations of Markov Chains are well beyond the scope of this course, but the principal issue is that we want to describe is how this simulation works. The video below describes the conceptual backing of MCMC and how it was first used in physics in 1953 to develop a model of an ideal gas. We will make a similar model!</p>
 <div class="cell docutils container">
@@ -523,8 +522,8 @@ document.write(`
         ></iframe>
         </div></div>
 </div>
-</section>
-<section id="statistical-mechanics">
+</div>
+<div class="section" id="statistical-mechanics">
 <h2>Statistical Mechanics<a class="headerlink" href="#statistical-mechanics" title="Permalink to this heading">#</a></h2>
 <p>MCMC is used in lots of statistical mechanics problems because they are fundamentally probabilistic by nature. Starting with the “chance” of finding our system in a given state (with known energy, <span class="math notranslate nohighlight">\(E_i\)</span>) at a known temperature (T) given by the Boltzmann factor:</p>
 <div class="math notranslate nohighlight">
@@ -544,8 +543,8 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\langle U \rangle = \sum_s E_s P(s)\]</div>
 <p>When these sums are really hard to compute because there’s lots of states or only a few that contribute substantially (as in the case for large systems), we can use selective sampling, which is the basis for MCMC. We will discuss that conceptually in class before using MCMC.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

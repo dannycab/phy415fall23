@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5 Dec 23 - Activity: Modeling the Ideal Gas &#8212; PHY 415 Fall 2023</title>
   
   
@@ -498,12 +497,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="dec-23-activity-modeling-the-ideal-gas">
+  <div class="tex2jax_ignore mathjax_ignore section" id="dec-23-activity-modeling-the-ideal-gas">
 <h1>5 Dec 23 - Activity: Modeling the Ideal Gas<a class="headerlink" href="#dec-23-activity-modeling-the-ideal-gas" title="Permalink to this heading">#</a></h1>
 <p>As we developed from <a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_4_Markov_Chain.pdf">lecture</a>, we can sample the Boltzmann distribution by constructing a sample of it through a Markov Chain and computing the value of the quantity of interest and adding it up.</p>
 <div class="math notranslate nohighlight">
 \[\sum_{chain} X_i \approx \langle X \rangle\]</div>
-<section id="one-dimensional-gas">
+<div class="section" id="one-dimensional-gas">
 <h2>One Dimensional Gas<a class="headerlink" href="#one-dimensional-gas" title="Permalink to this heading">#</a></h2>
 <p>We will model an ideal gas, but let’s start with a one-dimensional gas made of a bunch of particles in infinite square wells. The energy spectrum for a particle of mass <span class="math notranslate nohighlight">\(m\)</span> in an infinite square well of length <span class="math notranslate nohighlight">\(L\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
@@ -522,8 +521,8 @@ document.write(`
 \[\Delta E_{down} = E(n-1) - E(n) = \dfrac{1}{2}\left((n-1)^2-n^2\right) = \dfrac{-2n+1}{2}\]</div>
 <div class="math notranslate nohighlight">
 \[\Delta E_{up} = E(n+1) - E(n) = \dfrac{1}{2}\left((n+1)^2-n^2\right) = \dfrac{2n+1}{2}\]</div>
-</section>
-<section id="implementation">
+</div>
+<div class="section" id="implementation">
 <h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
 <p>Below is the code that develops a model of a one dimensional gas. It is annotated. Review the code and make note of each piece of the algorithm.</p>
 <p><strong>Complete the following</strong></p>
@@ -602,14 +601,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x115f8b700&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x118fbb340&gt;
 </pre></div>
 </div>
-<img alt="../../_images/2e45401d43bfb0ccb99c1ec5968da0132d3a679ab21790f385d6113151645599.png" src="../../_images/2e45401d43bfb0ccb99c1ec5968da0132d3a679ab21790f385d6113151645599.png" />
+<img alt="../../_images/bc1346406f7ae1385fe5948efdc8ea7df021c795f7c3b0b1c467c35c25855d12.png" src="../../_images/bc1346406f7ae1385fe5948efdc8ea7df021c795f7c3b0b1c467c35c25855d12.png" />
 </div>
 </div>
-</section>
-<section id="the-ideal-gas">
+</div>
+<div class="section" id="the-ideal-gas">
 <h2>The Ideal Gas<a class="headerlink" href="#the-ideal-gas" title="Permalink to this heading">#</a></h2>
 <p>The code above can be used for an ideal gas. There are some changes you have to make because an ideal gas in three dimensions has an energy spectrum like this:</p>
 <div class="math notranslate nohighlight">
@@ -627,8 +626,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
