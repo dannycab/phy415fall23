@@ -221,6 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="activity-Waves-Signals.html">31 Oct 23 - Activity: Signal Deconstruction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-Waves-seriesExpand.html">2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-fft.html">6 Oct 23 - Notes: Fast Fourier Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-Waves-Introduction_to_FFT.html">6 Nov 23 - Activity: The Fast Fourier Transform</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
 <ul class="nav bd-sidenav">
@@ -559,7 +560,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/26f1a2661c7ce8821070fc744e14ead827202c9a0509f5d32f4b4e4d92405603.png" src="../../_images/26f1a2661c7ce8821070fc744e14ead827202c9a0509f5d32f4b4e4d92405603.png" />
+<img alt="../../_images/6b6c0f50e2a7c4d55336bde3d03b6a0dc874bea601e50c8f799565f16ae3a29b.png" src="../../_images/6b6c0f50e2a7c4d55336bde3d03b6a0dc874bea601e50c8f799565f16ae3a29b.png" />
 </div>
 </div>
 <p>Let’s perform the FFT and look at it.</p>
@@ -577,7 +578,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8aba13294962eabba5ac9e2ba07b1525424f96f89fafe426eaaf4ae2d5c5078f.png" src="../../_images/8aba13294962eabba5ac9e2ba07b1525424f96f89fafe426eaaf4ae2d5c5078f.png" />
+<img alt="../../_images/d32fa93019291351ff881b75530eec72cd1c320448699237ac1989801e5339d9.png" src="../../_images/d32fa93019291351ff881b75530eec72cd1c320448699237ac1989801e5339d9.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -595,7 +596,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1000.0, 0.0, 1.0)
 </pre></div>
 </div>
-<img alt="../../_images/7eaaa8a6fdcfe8055197a2ed876c2114d252144e68bd277be74fb7782b7e8f2d.png" src="../../_images/7eaaa8a6fdcfe8055197a2ed876c2114d252144e68bd277be74fb7782b7e8f2d.png" />
+<img alt="../../_images/8808f554210fdd4c88f951dacc91b1d2fcf6f1a0245078e640d1a31d139b0428.png" src="../../_images/8808f554210fdd4c88f951dacc91b1d2fcf6f1a0245078e640d1a31d139b0428.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -613,7 +614,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 500.0, 0.0, 0.6)
 </pre></div>
 </div>
-<img alt="../../_images/771937c925f74a36e55c837d605e741a4a9393d0b40f5e0b37d20f87940f8b86.png" src="../../_images/771937c925f74a36e55c837d605e741a4a9393d0b40f5e0b37d20f87940f8b86.png" />
+<img alt="../../_images/08f421b1cf05e499a2e7cce5c05b4e9e279b4cc2fd0ebc551f56efc3834e0a7a.png" src="../../_images/08f421b1cf05e499a2e7cce5c05b4e9e279b4cc2fd0ebc551f56efc3834e0a7a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -631,7 +632,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(500.0, 25000.0, 0.0, 0.02)
 </pre></div>
 </div>
-<img alt="../../_images/acbf72e4e26693d8c14c169659df76395af3cfa6fc8e6e37f40e0236036ccaf5.png" src="../../_images/acbf72e4e26693d8c14c169659df76395af3cfa6fc8e6e37f40e0236036ccaf5.png" />
+<img alt="../../_images/dcfb9f23dab08423aa4cf0adc74a495845fff474e9550ce672010f9e4f97f1f1.png" src="../../_images/dcfb9f23dab08423aa4cf0adc74a495845fff474e9550ce672010f9e4f97f1f1.png" />
 </div>
 </div>
 <p>Looks like a lot of noise at high frequencies. Let’s get rid of it. Remember there’s negative frequencies! Those are important to recovering everything.</p>
@@ -650,7 +651,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-1000.0, 1000.0, 0.0, 1.0)
 </pre></div>
 </div>
-<img alt="../../_images/b7ed3ce636d8efbc6ab96219e065a26698992daab2e6ae4f644fe57e58cd7e83.png" src="../../_images/b7ed3ce636d8efbc6ab96219e065a26698992daab2e6ae4f644fe57e58cd7e83.png" />
+<img alt="../../_images/f7c8736fbc448a5dc85a33a047fe256fac978f23fdecffd779f1692dfabcf92f.png" src="../../_images/f7c8736fbc448a5dc85a33a047fe256fac978f23fdecffd779f1692dfabcf92f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -674,10 +675,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x17c803040&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x17ad6bd90&gt;
 </pre></div>
 </div>
-<img alt="../../_images/fadbea85d80823b7d222fc464bdb2b5bb6a8c39e53e52f10d90991abcb5a96e1.png" src="../../_images/fadbea85d80823b7d222fc464bdb2b5bb6a8c39e53e52f10d90991abcb5a96e1.png" />
+<img alt="../../_images/d831e4e14a779df8bed25ff20278c0d8df616d3dec44b02658632980bebb1da3.png" src="../../_images/d831e4e14a779df8bed25ff20278c0d8df616d3dec44b02658632980bebb1da3.png" />
 </div>
 </div>
 </div>
