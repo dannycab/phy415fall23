@@ -53,6 +53,8 @@ parts:
       - file: content/3_waves/activity-Waves-seriesExpand
       - file: content/3_waves/notes-fft
       - file: content/3_waves/activity-Waves-Introduction_to_FFT
+      - file: content/3_waves/activity-Waves-Applying_the_FFT
+      - file: content/3_waves/notes-Using-FFTs
       # - file: content/3_waves/activity-FFT-applications
   - caption: 4 - Randomness and Distributions
     chapters:
@@ -77,6 +79,7 @@ parts:
       - file: content/9_assignments/project-2.md
       - file: content/9_assignments/worked-problem-5.md
       - file: content/9_assignments/worked-problem-6.md
+      - file: content/9_assignments/project-3.md
   - caption: Appendices
     chapters:
     - file: content/references.ipynb
