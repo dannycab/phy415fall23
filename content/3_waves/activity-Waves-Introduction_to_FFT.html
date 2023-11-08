@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/3_waves/activity-Waves-Introduction_to_FFT';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Here Be Dragons (Material not complete)" href="../4_distributions/here_be_dragons.html" />
+    <link rel="next" title="9 Nov 23 - Activity: Applying The Fast Fourier Transform" href="activity-Waves-Applying_the_FFT.html" />
     <link rel="prev" title="6 Oct 23 - Notes: Fast Fourier Transform" href="notes-fft.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -224,6 +224,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="activity-Waves-seriesExpand.html">2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-fft.html">6 Oct 23 - Notes: Fast Fourier Transform</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">7 Nov 23 - Activity: The Fast Fourier Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-Waves-Applying_the_FFT.html">9 Nov 23 - Activity: Applying The Fast Fourier Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes-Using-FFTs.html">13 Nov 23 - Notes: Applications of FFTs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
 <ul class="nav bd-sidenav">
@@ -240,6 +242,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-2.html">Project 2 - PDEs, Laplace’s Equation, and the Method of Relaxation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-5.html">Worked Problem Assignment 5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-6.html">Worked Problem Assignment 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-3.html">Project 3 - Waves and Fourier Analysis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -491,18 +494,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-fourier-components">Find the Fourier Components</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-discrete-fourier-transform">The Discrete Fourier Transform</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enter-the-discrete-fourier-transform">Enter the Discrete Fourier Transform</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fast-fourier-transform">The Fast Fourier Transform</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fft-in-scipy">The FFT in <code class="docutils literal notranslate"><span class="pre">scipy</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-and-plotting-fourier-coefficients">Computing and plotting Fourier Coefficients</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-power-spectrum">The Power Spectrum</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investigating-the-fft">Investigating the FFT</a></li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -628,7 +619,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0960569fb7623b41cb44f3fe0eca97dd7b95cb3706cbc50defc141e8b0efee3a.png" src="../../_images/0960569fb7623b41cb44f3fe0eca97dd7b95cb3706cbc50defc141e8b0efee3a.png" />
+<img alt="../../_images/c81eeed84091d3be4995f4a067da3a4fd32b088aa4689e533a2fe921366a1c8d.png" src="../../_images/c81eeed84091d3be4995f4a067da3a4fd32b088aa4689e533a2fe921366a1c8d.png" />
 </div>
 </div>
 </div>
@@ -644,190 +635,6 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="the-discrete-fourier-transform">
-<h2>The Discrete Fourier Transform<a class="headerlink" href="#the-discrete-fourier-transform" title="Permalink to this heading">#</a></h2>
-<p>One of the issues about the decomposition we have done is that it assumes the signal is periodic. In practice, we often have signals that are not periodic. For example, consider the signal below, which is a wave packet that is not periodic. This signal is still of interest to us and can often contain useful physics. But the techniques we have used so far will not work for this signal.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the wave packet parameters</span>
-<span class="n">k0</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># central wavenumber</span>
-<span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># initial position</span>
-<span class="n">spread</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># spread of the packet</span>
-
-<span class="c1"># Create a space vector</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-
-<span class="c1"># Define the wave packet function</span>
-<span class="k">def</span> <span class="nf">wave_packet</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k0</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">spread</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span> <span class="o">/</span> <span class="n">spread</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k0</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
-
-<span class="c1"># Calculate the wave packet</span>
-<span class="n">psi</span> <span class="o">=</span> <span class="n">wave_packet</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k0</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">spread</span><span class="p">)</span>
-
-<span class="c1"># Plot the wave packet</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">psi</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Wave Packet&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Position&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/6058d65ec20235a72fb551bc206cbeba4bde183a33093f111958211d56e70bcd.png" src="../../_images/6058d65ec20235a72fb551bc206cbeba4bde183a33093f111958211d56e70bcd.png" />
-</div>
-</div>
-<div class="section" id="enter-the-discrete-fourier-transform">
-<h3>Enter the Discrete Fourier Transform<a class="headerlink" href="#enter-the-discrete-fourier-transform" title="Permalink to this heading">#</a></h3>
-<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Discrete_Fourier_transform">Discrete Fourier Transform (DFT)</a> is a way to decompose a signal into a sum of sinusoids, but it does not require the signal to be periodic. You can think of it as a discretization of the processes we developed earlier. The expansion of the signal is still as it was before, but we understand it represents a finite number of samples of the signal:</p>
-<div class="math notranslate nohighlight">
-\[V(t) = \sum_{n=0}^{N-1} c_n e^{i n \omega t}.\]</div>
-<p>However, we now understand that the signal is only defined at discrete times <span class="math notranslate nohighlight">\(t_n = n \Delta t\)</span> where <span class="math notranslate nohighlight">\(\Delta t\)</span> is the time between samples. We can then write the Fourier coefficients as:</p>
-<div class="math notranslate nohighlight">
-\[c_n \approx \frac{1}{T_0} \sum_{k=0}^{N-1} V(t_k)e^{-i n \omega t_k} \Delta t\]</div>
-<p>where <span class="math notranslate nohighlight">\(V(t_k)\)</span> is the value of the signal at time <span class="math notranslate nohighlight">\(t_k\)</span> and <span class="math notranslate nohighlight">\(T_0 = N \Delta t\)</span> is the total time of the signal.</p>
-</div>
-<div class="section" id="assumptions">
-<h3>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this heading">#</a></h3>
-<p>In doing this, we are not creating a tool that will always work. We note a few important assumptions and caveats:</p>
-<ol class="arabic simple">
-<li><p><strong>Periodicity</strong>: The DFT assumes that the input signal is periodic and that the period is exactly the length of the sample window. This means that the finite sequence of data points provided to the DFT is one period of a periodic signal that repeats indefinitely.</p></li>
-<li><p><strong>Discrete Samples</strong>: The signal being transformed is assumed to be sampled at discrete intervals. The DFT operates on these discrete samples and does not account for any data between the samples.</p></li>
-<li><p><strong>Finite Duration</strong>: The DFT is designed to handle signals of finite duration. The signal is assumed to have a finite number of samples, which is the number of points in the DFT.</p></li>
-<li><p><strong>Equally-Spaced Samples</strong>: The samples are assumed to be evenly spaced in time (or space, depending on the context of the signal). This uniform spacing is critical because non-uniformly spaced samples would require a different transform, such as the Non-uniform Discrete Fourier Transform (NDFT).</p></li>
-</ol>
-</div>
-</div>
-<div class="section" id="the-fast-fourier-transform">
-<h2>The Fast Fourier Transform<a class="headerlink" href="#the-fast-fourier-transform" title="Permalink to this heading">#</a></h2>
-<p>While we can use the DFT directly, the FFT is more efficient and has become the standard way to perform these analyses. The code to have <code class="docutils literal notranslate"><span class="pre">scipy</span></code> perform the FFT is pretty simple. But there’s many things to understand about the FFT and a variety of ways to produce spurious and incoherent results. Let’s use the simple signal we have above to make go through an analysis.</p>
-<div class="section" id="the-fft-in-scipy">
-<h3>The FFT in <code class="docutils literal notranslate"><span class="pre">scipy</span></code><a class="headerlink" href="#the-fft-in-scipy" title="Permalink to this heading">#</a></h3>
-<p>We start by importing the libraries. Then we need to:</p>
-<ol class="arabic simple">
-<li><p>Define the time array</p></li>
-<li><p>Define the signal</p></li>
-<li><p>Perform the FFT using <code class="docutils literal notranslate"><span class="pre">scipy.fft</span></code></p></li>
-<li><p>Plot the coefficients</p></li>
-<li><p>Plot the power spectrum</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.fftpack</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">fftfreq</span>
-
-<span class="c1"># Set the sample rate and time</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.0005</span>  <span class="c1"># Sampling frequency</span>
-<span class="n">T0</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># Signal period</span>
-<span class="n">T</span> <span class="o">=</span> <span class="mf">3.0</span><span class="o">*</span><span class="n">T0</span>  <span class="c1"># Sample time length</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>  <span class="c1"># Time points</span>
-
-<span class="n">fsimple</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">Asimple</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="n">simple</span> <span class="o">=</span> <span class="n">simple_signal</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Asimple</span><span class="p">,</span> <span class="n">fsimple</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">simple</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Simple Signal&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/c6cada3171679b559488da767d539c7829546f91e0b04740b0a3d69c305532af.png" src="../../_images/c6cada3171679b559488da767d539c7829546f91e0b04740b0a3d69c305532af.png" />
-</div>
-</div>
-</div>
-<div class="section" id="computing-and-plotting-fourier-coefficients">
-<h3>Computing and plotting Fourier Coefficients<a class="headerlink" href="#computing-and-plotting-fourier-coefficients" title="Permalink to this heading">#</a></h3>
-<p>We now use <code class="docutils literal notranslate"><span class="pre">fft</span></code> to calculate the Fourier transform of the signal and <code class="docutils literal notranslate"><span class="pre">fftfreq</span></code> to calculate the frequencies associated with the transform. This is a standard way to do this analysis, but the most common mistakes involve the frequencies. Because it is a real signal, we don’t worry about the negative frequencies, they are duplicate information.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_cycle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>  <span class="c1"># Time points</span>
-<span class="n">simple</span> <span class="o">=</span> <span class="n">simple_signal</span><span class="p">(</span><span class="n">t_cycle</span><span class="p">,</span> <span class="n">Asimple</span><span class="p">,</span> <span class="n">fsimple</span><span class="p">)</span>
-
-<span class="n">transformed_simple</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">simple</span><span class="p">)</span>
-<span class="n">freqs</span> <span class="o">=</span> <span class="n">fftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">simple</span><span class="p">),</span> <span class="n">dt</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">transformed_simple</span><span class="p">),</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Simple Signal FFT&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (Hz)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/ab106cacdf71a401a9055edcf25d78532f84e8ce77ad90be4fefe70ffd19b617.png" src="../../_images/ab106cacdf71a401a9055edcf25d78532f84e8ce77ad90be4fefe70ffd19b617.png" />
-</div>
-</div>
-</div>
-<div class="section" id="the-power-spectrum">
-<h3>The Power Spectrum<a class="headerlink" href="#the-power-spectrum" title="Permalink to this heading">#</a></h3>
-<p>It is far more common to plot these kinds of diagrams in terms of their normalized power spectrum. Here we really only care about the relative strengths of the peaks and not their values. We want to know how much more of something there is and not as much about how much exactly. This lets us build conceptual intuition for these spectra.</p>
-<p>So instead of plotting the Fourier coefficients, we plot the power spectrum, which is the square of the Fourier coefficients. We can add up all the contributions from each frequency to get the total power in the signal and use that to normalize our plot.</p>
-<p><strong>✅ Do this</strong></p>
-<ol class="arabic simple">
-<li><p>Write a function to calculate the power spectrum of a signal.</p></li>
-<li><p>Plot the power spectrum of the signal.</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="investigating-the-fft">
-<h3>Investigating the FFT<a class="headerlink" href="#investigating-the-fft" title="Permalink to this heading">#</a></h3>
-<p>Now that you have developed some code and some conceptual understanding of the FFT process, let’s investigate some of the more nuanced aspects.</p>
-<p><strong>✅ Do this</strong></p>
-<ol class="arabic simple">
-<li><p>Complete the power spectrum analysis for the other signals we developed.</p></li>
-<li><p>Investigate what happens when you change frequencies, amplitudes, and noise levels. Make sure to find when:</p>
-<ul class="simple">
-<li><p>Your signal is not fine grained enough for the analysis (low sampling rate)</p></li>
-<li><p>Your signals have multiple frequencies that are close together (competing frequencies)</p></li>
-<li><p>Your signal has frequencies that are not integer multiples of the sampling rate (aliasing)</p></li>
-</ul>
-</li>
-<li><p>Develop a power spectrum for a signal that:</p>
-<ul class="simple">
-<li><p>Has only low frequency components</p></li>
-<li><p>Has only high frequency components</p></li>
-<li><p>Has a beating pattern</p></li>
-<li><p>is a square wave</p></li>
-<li><p>is a sawtooth wave</p></li>
-<li><p>the wave packet above</p></li>
-</ul>
-</li>
-</ol>
-<p>Be able to answer the questions for each signal:</p>
-<ul class="simple">
-<li><p>What frequencies are present in the signal?</p></li>
-<li><p>What is the relative strength of each frequency?</p></li>
-<li><p>How does that tell you about the signal?</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
 </pre></div>
 </div>
 </div>
@@ -876,11 +683,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../4_distributions/here_be_dragons.html"
+       href="activity-Waves-Applying_the_FFT.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Here Be Dragons (Material not complete)</p>
+        <p class="prev-next-title">9 Nov 23 - Activity: Applying The Fast Fourier Transform</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -902,18 +709,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-the-fourier-coefficients">Extracting the Fourier coefficients</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-signals">Test Signals</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-fourier-components">Find the Fourier Components</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-discrete-fourier-transform">The Discrete Fourier Transform</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enter-the-discrete-fourier-transform">Enter the Discrete Fourier Transform</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fast-fourier-transform">The Fast Fourier Transform</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fft-in-scipy">The FFT in <code class="docutils literal notranslate"><span class="pre">scipy</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-and-plotting-fourier-coefficients">Computing and plotting Fourier Coefficients</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-power-spectrum">The Power Spectrum</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investigating-the-fft">Investigating the FFT</a></li>
 </ul>
 </li>
 </ul>

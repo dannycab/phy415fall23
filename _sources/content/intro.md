@@ -7,14 +7,15 @@ To get a sense of the course, please read all the pages associated with our syll
  
 ## Updates
 
-`````{admonition} Last updated: 3 Nov 2023
+`````{admonition} Last updated: 8 Nov 2023
 :class: tip
 
 ### Site updates
-* Readings for Week 10 ([Fast Fourier Transforms](./3_waves/notes-fft.ipynb)) is posted.
+* Readings for Week 11 ([Applications of the Fast Fourier Transform](./3_waves/notes-Using-FFTs.ipynb)) is posted.
 
 ### Upcoming Deadlines
 * The [sixth worked problem](./9_assignments/worked-problem-6.md) is due 10 Nov 2023.
+* The [third project](./9_assignments/project-3.md) is due 17 Nov 2023.
 
 `````
 

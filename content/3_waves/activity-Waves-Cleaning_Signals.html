@@ -222,6 +222,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="activity-Waves-seriesExpand.html">2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-fft.html">6 Oct 23 - Notes: Fast Fourier Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-Waves-Introduction_to_FFT.html">7 Nov 23 - Activity: The Fast Fourier Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-Waves-Applying_the_FFT.html">9 Nov 23 - Activity: Applying The Fast Fourier Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes-Using-FFTs.html">13 Nov 23 - Notes: Applications of FFTs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
 <ul class="nav bd-sidenav">
@@ -238,6 +240,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-2.html">Project 2 - PDEs, Laplace’s Equation, and the Method of Relaxation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-5.html">Worked Problem Assignment 5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-6.html">Worked Problem Assignment 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-3.html">Project 3 - Waves and Fourier Analysis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -560,7 +563,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/53b8456c60ec5724d2cdc5f6dfca7a208ab1dff803f20c58c443134110061503.png" src="../../_images/53b8456c60ec5724d2cdc5f6dfca7a208ab1dff803f20c58c443134110061503.png" />
+<img alt="../../_images/7fe7ef3341103bd1f50215649cc9ab95c237c4e9d68b32964b8e85ff1fd0775c.png" src="../../_images/7fe7ef3341103bd1f50215649cc9ab95c237c4e9d68b32964b8e85ff1fd0775c.png" />
 </div>
 </div>
 <p>Let’s perform the FFT and look at it.</p>
@@ -578,7 +581,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/89cbb911052d59ead5ee592f0d7279b0ce1230a9b43015c538e647d8988714aa.png" src="../../_images/89cbb911052d59ead5ee592f0d7279b0ce1230a9b43015c538e647d8988714aa.png" />
+<img alt="../../_images/bb51550934c73e2887cd51912d9d9f3afc69274a79f4984af6cca61f1a3f9047.png" src="../../_images/bb51550934c73e2887cd51912d9d9f3afc69274a79f4984af6cca61f1a3f9047.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -596,7 +599,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1000.0, 0.0, 1.0)
 </pre></div>
 </div>
-<img alt="../../_images/eb099f7c7a8a028dea700f88018176f75bb2045750d6762b7871eeca8b1be1e9.png" src="../../_images/eb099f7c7a8a028dea700f88018176f75bb2045750d6762b7871eeca8b1be1e9.png" />
+<img alt="../../_images/4bc6ed1df05d269c37458c9abc309b83bf87a484fc4adaa1561155002080c674.png" src="../../_images/4bc6ed1df05d269c37458c9abc309b83bf87a484fc4adaa1561155002080c674.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -614,7 +617,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 500.0, 0.0, 0.6)
 </pre></div>
 </div>
-<img alt="../../_images/8ae56a7a800ae860fafbcba420a3557eb4cfca4801daf29a8116f319bcf7993f.png" src="../../_images/8ae56a7a800ae860fafbcba420a3557eb4cfca4801daf29a8116f319bcf7993f.png" />
+<img alt="../../_images/32a50f786fc4a5fcf758d0777147902187d453f0d846275d715ff76ca846dff1.png" src="../../_images/32a50f786fc4a5fcf758d0777147902187d453f0d846275d715ff76ca846dff1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -632,7 +635,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(500.0, 25000.0, 0.0, 0.02)
 </pre></div>
 </div>
-<img alt="../../_images/223bed369bea9ef9d21fe475c2db345958af53f15203e5281c8c892d679c43ae.png" src="../../_images/223bed369bea9ef9d21fe475c2db345958af53f15203e5281c8c892d679c43ae.png" />
+<img alt="../../_images/8b8815ac06b639537dea9fb1a19b8d3cad082d96897d1b7d0f9a5a3f51f07452.png" src="../../_images/8b8815ac06b639537dea9fb1a19b8d3cad082d96897d1b7d0f9a5a3f51f07452.png" />
 </div>
 </div>
 <p>Looks like a lot of noise at high frequencies. Let’s get rid of it. Remember there’s negative frequencies! Those are important to recovering everything.</p>
@@ -651,7 +654,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-1000.0, 1000.0, 0.0, 1.0)
 </pre></div>
 </div>
-<img alt="../../_images/f9ab27ae52fc385f12d715ba29d6bec5fe2d4c577754bb9cf80363da101d8b77.png" src="../../_images/f9ab27ae52fc385f12d715ba29d6bec5fe2d4c577754bb9cf80363da101d8b77.png" />
+<img alt="../../_images/324c6d4a9fb0a6a3ecd269f25a7c042296526a748058ae706f74efb9fb53e886.png" src="../../_images/324c6d4a9fb0a6a3ecd269f25a7c042296526a748058ae706f74efb9fb53e886.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -675,10 +678,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x175917040&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x18dfa40a0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/b5faa3627a88d75234feb53acc7cba741d49fa5c23310dff0ceccd39b4cdc611.png" src="../../_images/b5faa3627a88d75234feb53acc7cba741d49fa5c23310dff0ceccd39b4cdc611.png" />
+<img alt="../../_images/3e261a8336c6d176abcd1e93c5cba531fb3423796d96191452307a95a9019d08.png" src="../../_images/3e261a8336c6d176abcd1e93c5cba531fb3423796d96191452307a95a9019d08.png" />
 </div>
 </div>
 </div>
