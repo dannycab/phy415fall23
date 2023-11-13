@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>9 Nov 23 - Activity: Applying the FFT to data &#8212; PHY 415 Fall 2023</title>
+    <title>14 &amp; 16 Nov 23 - Using the FFT with Real Data &#8212; PHY 415 Fall 2023</title>
   
   
   
@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/3_waves/activity-FFT-applications';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Here Be Dragons (Material not complete)" href="../4_distributions/here_be_dragons.html" />
+    <link rel="prev" title="13 Nov 23 - Notes: Applications of FFTs" href="notes-Using-FFTs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -208,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../2_EM/Numerics/activity-relaxation_2d.html">12 Oct 23 - Activity: Method of Relaxation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillations</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notes-coupled_oscillations.html">16 Oct 23 - Notes: Coupled Oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-waves_intro.html">16 Oct 23 - Notes: Introduction to Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-CoupledOsc-NormalModes.html">17 Oct 23 - Activity: Normal Modes</a></li>
@@ -222,6 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="activity-Waves-Introduction_to_FFT.html">7 Nov 23 - Activity: The Fast Fourier Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-Waves-Applying_the_FFT.html">9 Nov 23 - Activity: Applying The Fast Fourier Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-Using-FFTs.html">13 Nov 23 - Notes: Applications of FFTs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14 &amp; 16 Nov 23 - Using the FFT with Real Data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
 <ul class="nav bd-sidenav">
@@ -475,7 +478,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>9 Nov 23 - Activity: Applying the FFT to data</h1>
+    <h1>14 & 16 Nov 23 - Using the FFT with Real Data</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -485,8 +488,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-files">Data Files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-to-answer">Questions to answer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transit-data">Transit Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-files">Data Files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audio-signals-effects">Audio Signals &amp; Effects</a></li>
 </ul>
             </nav>
         </div>
@@ -498,23 +504,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-activity-applying-the-fft-to-data">
-<h1>9 Nov 23 - Activity: Applying the FFT to data<a class="headerlink" href="#nov-23-activity-applying-the-fft-to-data" title="Permalink to this heading">#</a></h1>
-<p>Y’all have learned the main process for using an FFT on a 1D signal, so let’s use it in a scenario that would occur in a lab. You work in a lab that is observing light curves to determine if there are transiting objects near a star and, if so, what is their period. Using the brightness of the star itself, we can determine it’s mass and then it’s a quick analysis to get the mass of the transiting objects (Thanks, Newton!).</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-using-the-fft-with-real-data">
+<h1>14 &amp; 16 Nov 23 - Using the FFT with Real Data<a class="headerlink" href="#nov-23-using-the-fft-with-real-data" title="Permalink to this heading">#</a></h1>
+<p>Y’all have learned the main process for using an FFT on a 1D signal, so let’s use it in the context of some real world data. We’ll give you different kind of data that you can choose to work with: Transit light curve data and audio signals. Take a look at both datasets and start working on whichever one you’d like first.</p>
+<div class="section" id="transit-data">
+<h2>Transit Data<a class="headerlink" href="#transit-data" title="Permalink to this heading">#</a></h2>
+<p>You work in a lab that is observing light curves to determine if there are transiting objects near a star and, if so, what is their period. Using the brightness of the star itself, we can determine it’s mass and then it’s a quick analysis to get the mass of the transiting objects (Thanks, Newton!).</p>
 <p>In this activity, you have three data files that describe the CCD voltage on a sensor as a function of time. The observations were taken over a 48 hour period. You will need to read in the data, determine the sampling frequency, and then develop an FFT model to look into the frequency components.</p>
 <img src="https://images.newscientist.com/wp-content/uploads/2019/09/26122246/c0471894-rejuvenated_gas_giant_planet_illustration-spl.jpg" width=600px>
 <div class="section" id="data-files">
-<h2>Data Files<a class="headerlink" href="#data-files" title="Permalink to this heading">#</a></h2>
+<h3>Data Files<a class="headerlink" href="#data-files" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://raw.githubusercontent.com/dannycab/phy415msu/main/MMIPbook/assets/data/FFT/obs1.csv">Observation 1</a></p></li>
 <li><p><a class="reference external" href="https://raw.githubusercontent.com/dannycab/phy415msu/main/MMIPbook/assets/data/FFT/obs2.csv">Observation 2</a></p></li>
 <li><p><a class="reference external" href="https://raw.githubusercontent.com/dannycab/phy415msu/main/MMIPbook/assets/data/FFT/obs3.csv">Observation 3</a></p></li>
 </ul>
 <p>The first data file is known to contain data from the observation of 2 transiting objects. Your lab mate misnamed the other two files, so it’s not clear if they are the same set of observations or not.</p>
-<p>Start with observation 1.</p>
-</div>
-<div class="section" id="questions-to-answer">
-<h2>Questions to answer<a class="headerlink" href="#questions-to-answer" title="Permalink to this heading">#</a></h2>
+<p>Start with observation 1. You can use <code class="docutils literal notranslate"><span class="pre">pd.read</span></code> from the pandas library to read in the data.</p>
+<p><strong>✅ Questions to answer</strong></p>
 <p>For observation 1,</p>
 <ol class="arabic simple">
 <li><p>What does the FFT look like? Can you describe where the real observavtions might be in the plot?</p></li>
@@ -525,6 +532,48 @@ document.write(`
 <ol class="arabic simple">
 <li><p>Which one (or both or neither) observations are those of observation 1?</p></li>
 <li><p>If there’s a file with new observations, can you learn the same things as above?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="audio-signals-effects">
+<h2>Audio Signals &amp; Effects<a class="headerlink" href="#audio-signals-effects" title="Permalink to this heading">#</a></h2>
+<p>A lot of audio processing boils down to taking the FFT of some audio signal, doing something to that frequency spectrum, the using the inverse FFT to get a new signal back with some effects on it. Here’s some musical data to practice this:</p>
+<p>Data:</p>
+<ul class="simple">
+<li><p>Signal 1: <a class="reference external" href="https://raw.githubusercontent.com/valentine-alia/phy415fall23/main/content/assets/note.wav">a single note played on a guitar</a></p></li>
+<li><p>Signal 2: <a class="reference external" href="https://raw.githubusercontent.com/valentine-alia/phy415fall23/main/content/assets/chord.wav">a chord played on a guitar</a></p></li>
+<li><p>Signal 3: <a class="reference external" href="https://raw.githubusercontent.com/valentine-alia/phy415fall23/main/content/assets/riff.wav">metal riff without distortion</a></p></li>
+<li><p>Signal 4: <a class="reference external" href="https://raw.githubusercontent.com/valentine-alia/phy415fall23/main/content/assets/track.wav">a full track</a></p></li>
+</ul>
+<p>For some code to help you read-in and listen to the audio, refer to <a class="reference external" href="https://dannycaballero.info/phy415fall23/content/3_waves/notes-Using-FFTs.html">yesterday’s notes</a></p>
+<p><strong>✅ Questions to answer</strong></p>
+<p>For signal 1:</p>
+<ol class="arabic simple">
+<li><p>What does the fourier transform of the signal look like? Does it have a lot of peaks?</p></li>
+<li><p>What note is being played?</p></li>
+</ol>
+<p>For signal 2:</p>
+<ol class="arabic simple">
+<li><p>What chord is being played (i.e. what are the individual notes?)</p></li>
+<li><p>After taking the FFT of the data, try to get rid of the frequency components of the highest note in the chord then take the IFFT to see what the new signal sounds like. What do you notice?</p></li>
+<li><p>Repeat 2. but for the lowest note.</p></li>
+</ol>
+<p>For signal 3:</p>
+<ol class="arabic simple">
+<li><p>Without distortion, this metal riff sounds… kindof lame to be honest. Try adding distortion to the signal.</p></li>
+</ol>
+<p>For signal 4:</p>
+<ol class="arabic simple">
+<li><p>Oftentimes in audio enginnering its useful to use an “equalizer” to boost or lessen certain frequencies in an audio signal to give it a different sound. Try cutting out all the frequencies above some threshold and see what it sounds like then.</p></li>
+<li><p>Try to isolate the synth bass from the rest of the signal. Is it possible to get a perfect separation?</p></li>
+<li><p>At the begging of the track, you can hear that there is some effect on the guitars. Can you use the FFT to figure out what this effect is doing?</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -566,6 +615,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="notes-Using-FFTs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">13 Nov 23 - Notes: Applications of FFTs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../4_distributions/here_be_dragons.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Here Be Dragons (Material not complete)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -581,8 +648,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-files">Data Files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-to-answer">Questions to answer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transit-data">Transit Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-files">Data Files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audio-signals-effects">Audio Signals &amp; Effects</a></li>
 </ul>
   </nav></div>
 
