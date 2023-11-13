@@ -55,7 +55,7 @@ parts:
       - file: content/3_waves/activity-Waves-Introduction_to_FFT
       - file: content/3_waves/activity-Waves-Applying_the_FFT
       - file: content/3_waves/notes-Using-FFTs
-      # - file: content/3_waves/activity-FFT-applications
+      - file: content/3_waves/activity-FFT-applications
   - caption: 4 - Randomness and Distributions
     chapters:
       - file: content/4_distributions/here_be_dragons
