@@ -10,7 +10,7 @@ Remember that a worked problem means the scale of a detailed (e.g., parts a-h) h
 
 ## Starting your Analysis
 
-You will need to orient us to your problem as there are many potential electrostatic situations. You will need to develop an analytical tractable situation that can also be explored using the numerical methods we have developed. You will need to do the following: 
+You will need to orient us to your problem as there are many potential signals. You will need to develop an analytical tractable situation that can also be explored using the numerical methods we have developed. You will need to do the following: 
 
 1. Write a paragraph or two describing the system you are investigating. Make sure to explain the parameters and variables. 
 2. Explain what you are going to do and why. If you can point us to where things are being done, that's helpful.

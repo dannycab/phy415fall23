@@ -61,9 +61,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/4_distributions/notes-randomness';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="21 Nov 23 - Activity: Introduction to Random Processes" href="activity-radioactive_decay.html" />
+    <link rel="prev" title="14 &amp; 16 Nov 23 - Using the FFT with Real Data" href="../3_waves/activity-FFT-applications.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -225,8 +229,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-FFT-applications.html">14 &amp; 16 Nov 23 - Using the FFT with Real Data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="here_be_dragons.html">Here Be Dragons (Material not complete)</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">20 Nov 23 - Notes: Random Processes</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="activity-radioactive_decay.html">21 Nov 23 - Activity: Introduction to Random Processes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -240,6 +246,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-5.html">Worked Problem Assignment 5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-6.html">Worked Problem Assignment 6</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-3.html">Project 3 - Waves and Fourier Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-7.html">Worked Problem Assignment 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-4.html">Project 4 - Probabilistic Modeling</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -463,7 +471,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -479,6 +489,34 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">20 Nov 23 - Notes: Random Processes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entropy">Entropy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video">Video</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-randomness">Modeling Randomness</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Video</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coin-flipping-model">Coin Flipping Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microstates">Microstates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#macrostates">Macrostates</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -490,7 +528,301 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-notes-random-processes">
 <h1>20 Nov 23 - Notes: Random Processes<a class="headerlink" href="#nov-23-notes-random-processes" title="Permalink to this heading">#</a></h1>
-<p>Coming soon…</p>
+<p>Until now, all of our work has been with <a class="reference external" href="https://en.wikipedia.org/wiki/Deterministic_system">deterministic systems</a>. That is, we have a set of equations that allow us to describe the future of the system in space and time with certainty. Some differential equations are deterministic and all the ones that we have worked on so far are. Our analysis of ordinary differential equations, partial differential equations, and the wave equation have all been drawn from deterministic systems. We obtain equations or results that we can predict with (up to numerical) certainty.</p>
+<p>However, many processes in nature are not deterministic. These processes are stochastic, probabilistic, or <a class="reference external" href="https://en.wikipedia.org/wiki/Randomness">random</a>. We use these terms interchangeably, but ultimately the all describe a system with probabilistic states. These can be things like <a class="reference external" href="https://en.wikipedia.org/wiki/Ideal_gas">the ideal gas in statistical mechanics</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Hydrogen_atom">the hydrogen atom in quantum mechanics</a>. But this work applies in contexts like the <a class="reference external" href="https://bsj.berkeley.edu/how-scientists-are-using-statistical-physics-to-predict-the-stock-market/">stock market</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Numerical_weather_prediction">weather</a>, <a class="reference external" href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.104.014132">the spread of disease</a>, and even <a class="reference external" href="https://en.wikipedia.org/wiki/Information_theory">information theory</a>.</p>
+<div class="section" id="entropy">
+<h2>Entropy<a class="headerlink" href="#entropy" title="Permalink to this heading">#</a></h2>
+<p>We will start with the concept of <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy">entropy</a>, which serves as a major organizing idea for many statistical physics models and results. For example, conservation of energy tells us that the same amount of energy is needed for a ball to change its height (moving up or down), but the concept of increasing entropy indicates the ball won’t spontaneously jump off the table.</p>
+<div class="section" id="video">
+<h3>Video<a class="headerlink" href="#video" title="Permalink to this heading">#</a></h3>
+<p>Later, we will develop a mathematical definition of entropy, when we introduce <a class="reference external" href="https://en.wikipedia.org/wiki/Combinatorics">counting statistics</a>. The result, developed by <a class="reference external" href="https://en.wikipedia.org/wiki/Ludwig_Boltzmann">Ludwig Boltzmann</a>, is quoted below:</p>
+<div class="math notranslate nohighlight">
+\[S = k \ln(\Omega)\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Boltzmann_constant">Boltzmann constant</a> and <span class="math notranslate nohighlight">\(\Omega\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Multiplicity_(statistical_mechanics)">“multiplicity”</a> of the system. The video below from <a class="reference external" href="https://www.youtube.com/channel/UCHnyfMqiRRG1u-2MsSQLbXA">Veritasium</a> provides a nice introduction to the concept of entropy.</p>
+<p><a class="reference external" href="https://inv.tux.pizza/watch?v=DxL2HoqLbyA"><img alt="Entropy" src="https://markdown-videos-api.jorgenkh.no/youtube/DxL2HoqLbyA?width=720&amp;height=405" /></a></p>
+<ul class="simple">
+<li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=DxL2HoqLbyA">https://inv.tux.pizza/watch?v=DxL2HoqLbyA</a></p></li>
+<li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=DxL2HoqLbyA">https://youtube.com/watch?v=DxL2HoqLbyA</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="modeling-randomness">
+<h2>Modeling Randomness<a class="headerlink" href="#modeling-randomness" title="Permalink to this heading">#</a></h2>
+<p>Underlying much of what we will study is the concept of randomness. <a class="reference external" href="https://en.wikipedia.org/wiki/Randomness">Randomness</a> is a field of study across many disciplines. Modeling randomness is a fundamentally different way of approaching physics for several reasons:</p>
+<ol class="arabic simple">
+<li><p>we often have to construct models that describe the probability of a system being in a particular state,</p></li>
+<li><p>we have to run those models for many iterations, and then,</p></li>
+<li><p>we have to analyze the results of those models.</p></li>
+</ol>
+<p>Because the concept of a <a class="reference external" href="https://en.wikipedia.org/wiki/Random_variable">random variable</a> underlies everything we do, we will start with an exploration of probability and counting. In physics, those random variables correspond to the state of a system and the probability of that system being in that state. The probabilities of occupying certain states tends to be a function of energy as we will see.</p>
+<p>To begin, we will start with the concepts of <a class="reference external" href="https://en.wikipedia.org/wiki/Microstate_(statistical_mechanics)">microstates and macrostates</a>. A microstate is a particular state of a system. For example, if we have ten coins that are different colors (distinguishable) and they have a certain pattern of heads and tails - that is a microstate. A macrostate is a collection of those microstates that are indistinguishable. So, now remove the color of the coins when counting (e.g., 4 heads and 6 tails) that is a macrostate. But it is important to note that that a macrostate is a collection of microstates, but that might be one microstate, or many.</p>
+<ul class="simple">
+<li><p>Microstate - tracks individual constituent states as if they were unique</p></li>
+<li><p>Macrostate - a group of microstates that share something</p></li>
+</ul>
+<div class="section" id="id1">
+<h3>Video<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>In this needs to be a bit more concrete, here’s a short example with 3 coins, which we will simulate for N coins below.</p>
+<p><a class="reference external" href="https://inv.tux.pizza/watch?v=9rYvq6kbUUA"><img alt="Microstates and Macrostates" src="https://markdown-videos-api.jorgenkh.no/youtube/9rYvq6kbUUA?width=720&amp;height=405" /></a></p>
+<ul class="simple">
+<li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=9rYvq6kbUUA">https://inv.tux.pizza/watch?v=9rYvq6kbUUA</a></p></li>
+<li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=9rYvq6kbUUA">https://youtube.com/watch?v=9rYvq6kbUUA</a></p></li>
+</ul>
+</div>
+<div class="section" id="coin-flipping-model">
+<h3>Coin Flipping Model<a class="headerlink" href="#coin-flipping-model" title="Permalink to this heading">#</a></h3>
+<p>To demonstrate the concept of microstates and macrostates, we will start with a simple model of flipping coins. The coins are distinguishable, so we can track them individually. We note those different coins by the order of the array. Below, we have written a couple functions that flip a coin <code class="docutils literal notranslate"><span class="pre">flip_coin()</span></code> and simulate flipping several coins and for a number of times. We import a few relevant libraries including <code class="docutils literal notranslate"><span class="pre">random</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> for plotting. We will use <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> for plotting because it has a nice <code class="docutils literal notranslate"><span class="pre">histplot</span></code> function that we will use to plot the results of our coin flips.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">flip_coin</span><span class="p">(</span><span class="n">prob</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulate a single coin flip.</span>
+<span class="sd">    default a fair coin.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">prob</span> <span class="k">else</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">flip_coins</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">prob</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulate a series of coin flips.</span>
+<span class="sd">    default a fair coin.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">flip_coin</span><span class="p">(</span><span class="n">prob</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">coins</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see by calling <code class="docutils literal notranslate"><span class="pre">flip_coins(N)</span></code>, we get a array of <code class="docutils literal notranslate"><span class="pre">N</span></code> coins that are either heads (1) or tails (0).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flip_coins</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 0, 0, 1, 0, 0, 1, 1, 0]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="microstates">
+<h3>Microstates<a class="headerlink" href="#microstates" title="Permalink to this heading">#</a></h3>
+<p>We can run a short simulation of flipping 10 coins 3 times to see the different potential microstates. We show the code to run the simulation, but have hidden the visualization code for now. It is not important to understand the visualization code, but it is important to understand the visualization. The purple squares are heads (1) and the yellow squares are tails (0). The rows are the different coins and the columns are the different flips.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_coins</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">num_trials</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># Simulate flipping num_coins coins num_trials times.</span>
+<span class="c1"># Each row is a trial.</span>
+<span class="c1"># Each column is a coin.</span>
+<span class="n">flips</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">flip_coins</span><span class="p">(</span><span class="n">num_coins</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_trials</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flips</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 0 0 1 1 1 1 0 0 1]
+ [1 1 0 1 1 1 1 1 1 1]
+ [1 0 0 0 0 1 1 1 0 0]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a figure and axis</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">num_trials</span><span class="p">))</span>
+
+<span class="c1"># Iterate over trials and coins</span>
+<span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_trials</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">coin</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_coins</span><span class="p">):</span>
+        <span class="c1"># Get the result of the coin flip</span>
+        <span class="n">flip</span> <span class="o">=</span> <span class="n">flips</span><span class="p">[</span><span class="n">trial</span><span class="p">,</span> <span class="n">coin</span><span class="p">]</span>
+        
+        <span class="c1"># Determine the color based on the result</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;purple&#39;</span> <span class="k">if</span> <span class="n">flip</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="s1">&#39;yellow&#39;</span>
+        
+        <span class="c1"># Add a patch to the plot</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="n">coin</span><span class="p">,</span> <span class="n">trial</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">))</span>
+
+<span class="c1"># Set axis limits and labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_coins</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_trials</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_trials</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_trials</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_coins</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">num_coins</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Trials&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Coins (purple = heads, yellow = tails)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/062db7ba29c65b3a251aa9949c125103461ad1a341bcf8768116a514b7afa82b.png" src="../../_images/062db7ba29c65b3a251aa9949c125103461ad1a341bcf8768116a514b7afa82b.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="macrostates">
+<h1>Macrostates<a class="headerlink" href="#macrostates" title="Permalink to this heading">#</a></h1>
+<p>To illustrate the macrostates, we will run simulations for 10 coins for various numbers of flips. Because the number of heads (H) and the number of tails (T) are equal to 10:</p>
+<div class="math notranslate nohighlight">
+\[H+T = 10\]</div>
+<p>It’s sufficient to use the number of heads (H) as the macrostate. We can use this to develop a distribution of the macrostates and thus the probabilities for different macrostates. We will use the <code class="docutils literal notranslate"><span class="pre">histplot</span></code> function from <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> to plot the distribution of the macrostates. We wrote a couple functions to simulate the coin flips and plot the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_trials</span><span class="p">(</span><span class="n">trials</span><span class="p">,</span> <span class="n">coins</span><span class="p">):</span>
+    <span class="c1"># Simulate flipping coins for each trial</span>
+    <span class="n">heads</span> <span class="o">=</span> <span class="p">[</span><span class="n">flip_coins</span><span class="p">(</span><span class="n">coins</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">trials</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">heads</span>
+
+<span class="k">def</span> <span class="nf">plot_histogram</span><span class="p">(</span><span class="n">heads</span><span class="p">,</span> <span class="n">trials</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">coins</span><span class="p">):</span>
+    <span class="c1"># Plot histogram</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">heads</span><span class="p">,</span> 
+                 <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">coins</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> 
+                 <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> 
+                 <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">trials</span><span class="si">}</span><span class="s1"> Trials&#39;</span><span class="p">,</span> 
+                 <span class="n">element</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">,</span> 
+                 <span class="n">color</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span>
+                 <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Number of Heads&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that as we add more trials, the distribution gets more filled out, and is becoming more symmetric. This distribution looks Gaussian after a large number of trials. This is the case for a large number of trials because each event is identical and independent. This is the <a class="reference external" href="https://en.wikipedia.org/wiki/Central_limit_theorem">central limit theorem</a> in action.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the number of trials and flips</span>
+<span class="n">trial_sets</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span>
+<span class="n">coins</span> <span class="o">=</span> <span class="mi">10</span> 
+
+<span class="c1"># Create a figure and axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Set the seaborn style</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">trials</span> <span class="ow">in</span> <span class="n">trial_sets</span><span class="p">:</span>
+    
+    <span class="n">index</span> <span class="o">=</span> <span class="n">trial_sets</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">trials</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span> <span class="c1"># Set the subplot index</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">trial_sets</span><span class="p">)</span> <span class="c1"># Set the number of subplots</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># Set the number of rows</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+    
+    <span class="n">heads</span> <span class="o">=</span> <span class="n">simulate_trials</span><span class="p">(</span><span class="n">trials</span><span class="p">,</span> <span class="n">coins</span><span class="p">)</span>
+    <span class="n">plot_histogram</span><span class="p">(</span><span class="n">heads</span><span class="p">,</span> <span class="n">trials</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">coins</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/2d0dc553f906c05b4bc2af24abd7e73ed3e7a3b92333eb74695bb1f978e40c4e.png" src="../../_images/2d0dc553f906c05b4bc2af24abd7e73ed3e7a3b92333eb74695bb1f978e40c4e.png" />
+</div>
+</div>
+<p>This is useful, but the important part of this kind of modeling is to determine the probablities of the macrostates. We can compute those by simply determining the number of times a particular macrostate occurs and dividing by the total number of trials. We wrote two functions to compute and plot these.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_probabilities</span><span class="p">(</span><span class="n">trials</span><span class="p">,</span> <span class="n">coins</span><span class="p">):</span>
+    <span class="c1"># Simulate flipping coins for each trial</span>
+    <span class="n">heads</span> <span class="o">=</span> <span class="p">[</span><span class="n">flip_coins</span><span class="p">(</span><span class="n">coins</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">trials</span><span class="p">)]</span>
+    
+    <span class="c1"># Calculate empirical probabilities</span>
+    <span class="n">values</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">heads</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">probabilities</span> <span class="o">=</span> <span class="n">counts</span> <span class="o">/</span> <span class="n">trials</span>
+    
+    <span class="k">return</span> <span class="n">values</span><span class="p">,</span> <span class="n">probabilities</span>
+
+<span class="k">def</span> <span class="nf">plot_probabilities</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">probabilities</span><span class="p">,</span> <span class="n">trials</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="c1"># Define marker types</span>
+    <span class="n">markers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">]</span>
+    
+    <span class="c1"># Plot empirical probabilities</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">probabilities</span><span class="p">,</span> 
+               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">trials</span><span class="si">}</span><span class="s1"> Trials&#39;</span><span class="p">,</span> 
+               <span class="n">color</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span>
+               <span class="n">marker</span><span class="o">=</span><span class="n">markers</span><span class="p">[</span><span class="n">index</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">markers</span><span class="p">)],</span> <span class="c1"># Use different marker for each set of trials</span>
+               <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># Set marker size</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Set the seaborn style</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a single subplot</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">trials</span> <span class="ow">in</span> <span class="n">trial_sets</span><span class="p">:</span>
+    
+    <span class="n">index</span> <span class="o">=</span> <span class="n">trial_sets</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">trials</span><span class="p">)</span> <span class="c1"># Set the subplot index</span>
+    
+    <span class="n">values</span><span class="p">,</span> <span class="n">probabilities</span> <span class="o">=</span> <span class="n">calculate_probabilities</span><span class="p">(</span><span class="n">trials</span><span class="p">,</span> <span class="n">coins</span><span class="p">)</span>
+    <span class="n">plot_probabilities</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">probabilities</span><span class="p">,</span> <span class="n">trials</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+
+<span class="c1"># Set x-ticks to be centered on the markers</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">coins</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Number of Heads&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Empirical Probability&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/352e3d8f6612f1fd50b4ee9c9aae1d322ed2d3e7b4faf737a2bde11e65e8dd27.png" src="../../_images/352e3d8f6612f1fd50b4ee9c9aae1d322ed2d3e7b4faf737a2bde11e65e8dd27.png" />
+</div>
+</div>
+<p>It’s quite easy to see form here that more trials leads to more stable and concrete probabilities for each state.</p>
+<div class="section" id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h2>
+<div class="section" id="videos">
+<h3>Videos<a class="headerlink" href="#videos" title="Permalink to this heading">#</a></h3>
+<p>Here’s an interesting application of the models of Poisson process and Queueing</p>
+<p><a class="reference external" href="https://inv.tux.pizza/watch?v=rBIQmwaoZfs"><img alt="Queuing theory and Poisson process" src="https://markdown-videos-api.jorgenkh.no/youtube/rBIQmwaoZfs?width=720&amp;height=405" /></a></p>
+<ul class="simple">
+<li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=rBIQmwaoZfs">https://inv.tux.pizza/watch?v=rBIQmwaoZfs</a></p></li>
+<li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=rBIQmwaoZfs">https://youtube.com/watch?v=rBIQmwaoZfs</a></p></li>
+</ul>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -502,16 +834,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "teaching"
         },
         kernelOptions: {
-            name: "python3",
+            name: "teaching",
             path: "./content/4_distributions"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'teaching'</script>
 
                 </article>
               
@@ -523,12 +855,64 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../3_waves/activity-FFT-applications.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">14 &amp; 16 Nov 23 - Using the FFT with Real Data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="activity-radioactive_decay.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">21 Nov 23 - Activity: Introduction to Random Processes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">20 Nov 23 - Notes: Random Processes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entropy">Entropy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video">Video</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-randomness">Modeling Randomness</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Video</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coin-flipping-model">Coin Flipping Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microstates">Microstates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#macrostates">Macrostates</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#videos">Videos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
