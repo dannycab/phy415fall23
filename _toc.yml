@@ -80,6 +80,8 @@ parts:
       - file: content/9_assignments/worked-problem-5.md
       - file: content/9_assignments/worked-problem-6.md
       - file: content/9_assignments/project-3.md
+      - file: content/9_assignments/worked-problem-7.md
+      - file: content/9_assignments/project-4.md
   - caption: Appendices
     chapters:
     - file: content/references.ipynb

@@ -7,15 +7,15 @@ To get a sense of the course, please read all the pages associated with our syll
  
 ## Updates
 
-`````{admonition} Last updated: 8 Nov 2023
+`````{admonition} Last updated: 15 Nov 2023
 :class: tip
 
 ### Site updates
-* Readings for Week 11 ([Applications of the Fast Fourier Transform](./3_waves/notes-Using-FFTs.ipynb)) is posted.
+* Readings for Week 12 ([Introduction to Randomness](./4_distributions/notes-randomness.ipynb)) is posted.
 
 ### Upcoming Deadlines
-* The [sixth worked problem](./9_assignments/worked-problem-6.md) is due 10 Nov 2023.
-* The [third project](./9_assignments/project-3.md) is due 17 Nov 2023.
+* The [last worked problem](./9_assignments/worked-problem-7.md) is due 1 Dec 2023.
+* The [last project](./9_assignments/project-4.md) is due 14 Dec 2023.
 
 `````
 

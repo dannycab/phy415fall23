@@ -1,8 +1,8 @@
-# Worked Problem Assignment 6
+# Worked Problem Assignment 7
 
-**Due 10 Nov 23**
+**Due 1 Dec 23**
 
-We have shown that we can use a Fourier Transform to decompose a function into its frequency components. We've graphed the solutions, and we've seen how we can construct signals with certain properties. In this assignment, you are asked to use these tools to solve a problem of your choosing. Consider a scenario where a signal of some sort is being generated and you want to understand the frequency content of the signal. You can use the tools we have developed to do this.
+We have started to use probability and counting statistics to understand the behavior of systems. In this worked problem, you will explore a system of your choosing. 
 
 [**Updated Rubric**](./updated_rubric.md)
 
@@ -10,7 +10,7 @@ Remember that a worked problem means the scale of a detailed (e.g., parts a-h) h
 
 ## Starting your Analysis
 
-You will need to orient us to your problem as there are many potential electrostatic situations. You will need to develop an analytical tractable situation that can also be explored using the numerical methods we have developed. You will need to do the following: 
+You will need to orient us to your problem as there are many potential statistical models. You will need to develop an analytical tractable situation that can also be explored using the numerical methods we have developed. You will need to do the following: 
 
 1. Write a paragraph or two describing the system you are investigating. Make sure to explain the parameters and variables. 
 2. Explain what you are going to do and why. If you can point us to where things are being done, that's helpful.
@@ -22,18 +22,18 @@ After you set things up, please conduct an investigation using the tools we have
 
 ## Assignment
 
-1. Choose a signal or set of signals to investigate (these should be continuous functions of time)
+1. Choose a statistical model associated with a physical system
 2. Write a paragraph or two describing the system you are investigating. Explain what you are going to do and why. If you can point us to where things are being done, that's helpful.
-3. Conduct your analysis of the signal (you may do so analytical and/or numerically). If you are using numerical approaches, don't yet use the `fft` function. You should be able to do this with the tools we have developed in class.
-4. Graph the results of your analysis and explain what you have found.
+3. Conduct your analysis of that system and present equations and plots that help you understand the system.
+4. Graph any results and explain what you have found.
 
 
 ## Looking ahead (earn extra credit)
 
 If you are looking into these systems and finding them interesting here's two things you can do to earn extra credit.
 
-1. Compare your analysis of several signals and compare their frequency content. What do you notice? 
-2. (challenging) Develop a way to filter out certain frequencies. And then reconstruct the signal. What do you notice? Have you kept the proper phase information?
+1. Investigate a statistical mechanics or quantum mechanical model.
+2. Run a number of simulations with a variety of parameters and compare the results. What do you notice?
 
 ## Submitting your work
 

@@ -1,35 +1,32 @@
-# Project 3 - Waves and Fourier Analysis
+# Project 4 - Probabilistic Modeling
 
-**Due 17 Nov 23**
+**Due 14 Dec 23**
 
 [**Updated Rubric**](./updated_rubric.md)
 
-Project 3 will focus on the topic of waves and Fourier analysis. You will need to do an analysis of some data of your choosing. You may start this work during the class week of 10/13 after we go through some initial work.
+Project 4 emphasizes probabilistic models. We've done work with counting statistics (flipping coins and rolling die). We've modeled radioactive decay and decay chains. We've developed Monte Carlo simulations to do integrals and to model different systems. In this project, you are free to choose a particular probabilistic model and apply it to a new physics situation of your choosing. You may be creative in your choice of model and situation, but you must be able to justify your choices. 
+
+*You also have now done 3 of these projects, so you should be able to decide for yourself what you want to use from this course module.*
 
 ## What do you need to do?
 
-Think about the ways that an FFT can be used. How we can extract frequency information, clean signals, and more. You can use the FFT to explore any data you want. You can use this project to explore any data you want. It only needs to be 1D data, but you have to provide a full analysis and explanation of what you are doing.
+Think about different systems you have seen or read about that have probabilistic individual outcomes but are part of a collection (a multiple particle system). For example, as we saw the random decay of an atom can be modeled this way to say something about the decay of a sample. It might not seem obvious, but a leaf breaking off a tree in a light breeze can be modeled as a probabilistic process. You might also consider using a Monte Carlo simulation to model a system. We've used them to perform integrals, but also to show the behavior of spins in a magnetic field. Monte Carlo simulations have wide applicability.
 
-For this third project, we have a list of tasks that you have engaged with in class:
+- Choose a physical system that can be modeled using a probabilistic model
+    - Describe the physical system and how your probabilistic model can be used to explore it.
+    - Develop a series of questions that you can answer using your model
+- Develop a investigation that answers those questions using analytical and numerical approaches
+    - Set up and perform the analysis
+    - Ensure you present your results in a way that is clear 
 
-* Describe the physical system and an FFT can be used to explore it.
-    - what are we modeling? or what data was used?
-    - what assumptions and limitations are baked into it
-* Develop a numerical investigation using an FFT
-    - Set up and perform an FFT on the data
-    - Ensure you have no run into common issues we've seen
-* Produce visualizations of you work
-    - Make graphs (e.g., of the power spectrum, the reconstructed signals )that are labeled and titled appropriately for your claims
-    - Add mathematics to the notebook is you see fit ($LaTeX$, handwritten, typed are all ok)
-* Document your work
-    - We should be able to run your notebooks and get exactly what you want us to
-    - Comment everything 
 
 ## Earning extra credit for more explorations
 
-- Filter your data in the frequency domain and reconstruct the signal
-- Explore the effects of performing the FFT poorly (e.g., not enough points, not enough data, etc.)
-- Perform a project with a 2D FFT
+Monte Carlo simulations take a long time to run, so most of these are not required. If you want to explore these, you can earn extra credit.
+
+- Explore parameter effects on your model
+- Explore the effects of performing the Monte Carlo poorly (e.g., not enough points, not enough data, etc.)
+- Perform a project with a 2D Monte Carlo simulation
 
 ## Submitting your work
 
