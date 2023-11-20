@@ -62,9 +62,10 @@ parts:
       #   sections:
       - file: content/4_distributions/notes-randomness
       - file: content/4_distributions/activity-radioactive_decay
-      # - file: content/4_distributions/notes-monte_carlo_simulations
-      # - file: content/4_distributions/activity-thermal_contact
-      # - file: content/4_distributions/activity-mc_integration
+      - file: content/4_distributions/notes-counting_and_combinatorics
+      - file: content/4_distributions/notes-monte_carlo_simulations
+      - file: content/4_distributions/activity-thermal_contact
+      - file: content/4_distributions/activity-mc_integration
       # - file: content/4_distributions/notes-mcmc
       # - file: content/4_distributions/activity-metropolis
       # - file: content/4_distributions/activity-ising_model
