@@ -1,0 +1,863 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>27 Nov 23 - Notes: Counting and Combinatorics &#8212; PHY 415 Fall 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/4_distributions/notes-counting_and_combinatorics';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="27 Nov 23 - Notes: Monte Carlo Simulations" href="notes-monte_carlo_simulations.html" />
+    <link rel="prev" title="21 Nov 23 - Activity: Introduction to Random Processes" href="activity-radioactive_decay.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Mathematical Modeling in Physics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">0 - Intro and Syllabus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../0_course/0_syllabus.html">Syllabus and Overview of PHY 415</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/1_goals.html">Course Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/2_design.html">Course Design</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../0_course/3_assessments.html">Assessments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/4_rubric.html">Project Rubrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/5_calendar.html">Calendar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/6_environment.html">Classroom Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/7_resources.html">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0_course/8_worked_problems.html">Worked Problems</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">1 - Mechanics and ODEs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/modeling/activity-what_is_a_model.html">29 Aug 23 - Activity: What is a Model?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/sho/notes-SHO.html">29 Aug 23 - Notes: Simple Harmonic Oscillator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/notes_frames.html">31 Aug 23 - Notes: Frames and Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-frames.html">31 Aug 23 - Activity: Frames and Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/notes-lagrangian-dynamics.html">5 Sept 23 - Notes: Lagrangian Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_1.html">5 Sep 23 - Activity: Calculus of Variations and Lagrangian Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/notes-numerical_integration_1d.html">7 Sept 23 - Notes: Numerical Integration in 1D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2 - E&amp;M and PDEs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/notes-em_intro.html">26 Sept 23 - Notes: Maxwell’s Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/notes-static_fields.html">26 Sept 23 - Notes: Static Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/activity-efields.html">26 Sep 23 - Activity: Electrostatic Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/activity-superposition.html">28 Sep 23 - Activity: Superposition of Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/notes-electric_potential.html">3 Oct 23 - Notes: Electric Potential - a scalar field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/activity-sep_var.html">3 Oct 23 - Activity: PDEs and Separation of Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/activity-sep_var_spherical.html">5 Oct 23 - Activity: Solving PDEs in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Numerics/notes-relaxation.html">9 Oct 23 - Notes: Method of Relaxation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Statics/activity-sep_var_spherical_examples.html">10 Oct 23 - Activity: Matching Boundary Conditions and Plotting the Potential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_EM/Numerics/activity-relaxation_2d.html">12 Oct 23 - Activity: Method of Relaxation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-coupled_oscillations.html">16 Oct 23 - Notes: Coupled Oscillations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-waves_intro.html">16 Oct 23 - Notes: Introduction to Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-CoupledOsc-NormalModes.html">17 Oct 23 - Activity: Normal Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-CoupledOsc-NumericalNormalModes.html">19 Oct 23 - Activity: Normal Modes of N Coupled Oscillators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-solve_the_wave_eq.html">25 Oct 23 - Notes: Solutions to The Wave Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-Signals.html">31 Oct 23 - Activity: Signal Deconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-seriesExpand.html">2 Nov 23 - Activity: Automated Signal Deconstruction &amp; Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-fft.html">6 Oct 23 - Notes: Fast Fourier Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-Introduction_to_FFT.html">7 Nov 23 - Activity: The Fast Fourier Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-Waves-Applying_the_FFT.html">9 Nov 23 - Activity: Applying The Fast Fourier Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/notes-Using-FFTs.html">13 Nov 23 - Notes: Applications of FFTs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-FFT-applications.html">14 &amp; 16 Nov 23 - Using the FFT with Real Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notes-randomness.html">20 Nov 23 - Notes: Random Processes</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="activity-radioactive_decay.html">21 Nov 23 - Activity: Introduction to Random Processes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">27 Nov 23 - Notes: Counting and Combinatorics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/updated_rubric.html">Updated Rubric for Worked Problems and Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-1.html">Worked Problem Assignment 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-2.html">Worked Problem Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-1.html">Project 1 - Classical Mechanics and ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-3.html">Worked Problem Assignment 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-4.html">Worked Problem Assignment 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-2.html">Project 2 - PDEs, Laplace’s Equation, and the Method of Relaxation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-5.html">Worked Problem Assignment 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-6.html">Worked Problem Assignment 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-3.html">Project 3 - Waves and Fourier Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/worked-problem-7.html">Worked Problem Assignment 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9_assignments/project-4.html">Project 4 - Probabilistic Modeling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Works Cited</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415fall23&urlpath=lab/tree/phy415fall23/content/4_distributions/notes-counting_and_combinatorics.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com""/github/dannycab/phy415fall23/blob/master/content/4_distributions/notes-counting_and_combinatorics.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dannycab/phy415fall23" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dannycab/phy415fall23/issues/new?title=Issue%20on%20page%20%2Fcontent/4_distributions/notes-counting_and_combinatorics.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/4_distributions/notes-counting_and_combinatorics.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>27 Nov 23 - Notes: Counting and Combinatorics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-mechanics-and-combinatorics">Statistical Mechanics and Combinatorics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentals-of-combinatorics-and-counting">Fundamentals of Combinatorics and Counting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permutations-distinguishable-counting">Permutations (Distinguishable Counting)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-subset-distinguishable-counting">Choosing a subset (Distinguishable Counting)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-video">Lecture Video</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinations-indistinguishable-counting">Combinations (Indistinguishable Counting)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-einstein-counting-formula">Derivation of the Einstein Counting Formula</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Lecture Video</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-einstein-model-of-a-small-solid">Example: The Einstein Model of a small solid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-the-entropy">What about the entropy?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-notes-counting-and-combinatorics">
+<h1>27 Nov 23 - Notes: Counting and Combinatorics<a class="headerlink" href="#nov-23-notes-counting-and-combinatorics" title="Permalink to this heading">#</a></h1>
+<p>As we discussed, <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy">entropy</a> is a fundamental concept that quantifies the degree of disorder or randomness in a system. It was initially introduced in the mid-19th century in the field of <a class="reference external" href="https://en.wikipedia.org/wiki/Thermodynamics">thermodynamics</a> by Rudolf Clausius, entropy was a measure of the unavailability of a system’s energy to do work.</p>
+<div class="section" id="statistical-mechanics-and-combinatorics">
+<h2>Statistical Mechanics and Combinatorics<a class="headerlink" href="#statistical-mechanics-and-combinatorics" title="Permalink to this heading">#</a></h2>
+<p>In <a class="reference external" href="https://en.wikipedia.org/wiki/Statistical_mechanics">statistical mechanics</a>, developed by Ludwig Boltzmann and J. Willard Gibbs, entropy was redefined as a measure of uncertainty or information about a system. This brings in the concept of entropy as a measure of the number of possible microstates (specific arrangements of particles) corresponding to a macrostate (the observable state of the system). As it goes, the more microstates there are, the higher the entropy, and hence, the greater the disorder. This is an over-simplification of what is a fundamentally complex and interesting set of processes. This interpretation does bridge thermodynamics with statistical mechanics, offering a deeper understanding of temperature, pressure, and phase transitions in terms of atomic or molecular behavior as we will see with <a class="reference external" href="https://en.wikipedia.org/wiki/Ideal_gas_law">the ideal gas law</a> and the <a class="reference external" href="https://en.wikipedia.org/wiki/Ising_model">Ising model</a>.</p>
+<p>As we transition from a conceptual understanding of entropy to its mathematical formulation, combinatorics plays a crucial role. <a class="reference external" href="https://en.wikipedia.org/wiki/Combinatorics">Combinatorics</a> is the branch of mathematics dealing with combinations and arrangements of objects, becomes essential in quantifying the number of microstates in a system. For instance, the concept of permutations and combinations helps in counting the possible arrangements of particles under given constraints, which is fundamental in calculating entropy.</p>
+<p>In statistical mechanics, the number of microstates (<span class="math notranslate nohighlight">\(\Omega\)</span>) is directly used in Boltzmann’s entropy formula,
+$<span class="math notranslate nohighlight">\(S = k \log(\Omega),\)</span><span class="math notranslate nohighlight">\(
+where \)</span>k$ is Boltzmann’s constant. This formula encapsulates the idea that entropy is a measure of the logarithm of the number of ways in which a system can be arranged. The combinatorial approach in statistical mechanics provides a quantitative method to explore how microscopic properties (like the positions and velocities of particles) lead to macroscopic phenomena (like temperature and pressure) through the lens of entropy.</p>
+</div>
+<div class="section" id="fundamentals-of-combinatorics-and-counting">
+<h2>Fundamentals of Combinatorics and Counting<a class="headerlink" href="#fundamentals-of-combinatorics-and-counting" title="Permalink to this heading">#</a></h2>
+<p>We have to learn to count microstates and do that efficiently. These calculations will underlie a lot of the fundamentals to the statistical mechanics we will be doing. We will start with the basics of counting and combinatorics, which will be the foundation for understanding entropy and statistical mechanics. We will separate this into permutations (where the objects are distinguishable) and combinations (where the objects are indistinguishable).</p>
+<div class="section" id="permutations-distinguishable-counting">
+<h3>Permutations (Distinguishable Counting)<a class="headerlink" href="#permutations-distinguishable-counting" title="Permalink to this heading">#</a></h3>
+<p>Permutations are arrangements of objects where the order matters. You have to be able to tell the difference between every object. For example, you might be wanting to determine the ways you can arrange 5 balls that are all different colors. <em>We get this is contrived, but it’s helpful to illustrate</em> Well, there are five ways to pick the first ball, four ways to pick the second ball, three ways to pick the third ball, two ways to pick the fourth ball, and one way to pick the fifth ball. This gives us a total of 120 ways to arrange 5 balls. We can summarize this with <span class="math notranslate nohighlight">\(\Omega\)</span> = number of ways,</p>
+<div class="math notranslate nohighlight">
+\[\Omega(n) = n!\]</div>
+<p>This <a class="reference external" href="https://en.wikipedia.org/wiki/Factorial">factorial</a> function is the product of all positive integers up to <span class="math notranslate nohighlight">\(n\)</span>. For example, <span class="math notranslate nohighlight">\(5! = 5 \times 4 \times 3 \times 2 \times 1 = 120\)</span>.</p>
+</div>
+<div class="section" id="choosing-a-subset-distinguishable-counting">
+<h3>Choosing a subset (Distinguishable Counting)<a class="headerlink" href="#choosing-a-subset-distinguishable-counting" title="Permalink to this heading">#</a></h3>
+<p>What if you are trying to choose a subset of these distinguishable objects? For example, you want to find the number of ways you can pick 3 of these objects out. Well there’s five ways to pick the first object, four ways to pick the second object, and three ways to pick the third object. This gives us a total of 60 distinct ways to pick 3 items from 5 objects where the order matters.</p>
+<p>But can we better quantify that process. If we have <span class="math notranslate nohighlight">\(n\)</span> objects and we want to choose <span class="math notranslate nohighlight">\(k\)</span> objects, we can write this as,</p>
+<div class="math notranslate nohighlight">
+\[\Omega(n,k) = \frac{n!}{(n-k)!}\]</div>
+<p>Let’s see that this works for our choices. We can make a table for all the potential choices of <span class="math notranslate nohighlight">\(k\)</span>. For <span class="math notranslate nohighlight">\(n=5\)</span> objects, we can pick <span class="math notranslate nohighlight">\(k\)</span> of them in <span class="math notranslate nohighlight">\(Omega(5,k)\)</span> ways.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>k</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\Omega(5,k)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>60</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>120</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>120</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Note that these numbers can get really big and cause issues with overflow.</em> Sometimes you have to be careful how you form your calculations or store your numerical variables.</p>
+<div class="section" id="lecture-video">
+<h4>Lecture Video<a class="headerlink" href="#lecture-video" title="Permalink to this heading">#</a></h4>
+<p><a class="reference external" href="https://inv.tux.pizza/channel/UC5KbWmC93TBhinPLqh5j2kg">Johnathan Gardner</a> has a nice set of videos on Thermodynamics and Statistical Mechanics. Below is short one on counting and combinatorics.</p>
+<p><a class="reference external" href="https://inv.tux.pizza/watch?v=tEQFftB1Pao"><img alt="Permutations and Combinations" src="https://markdown-videos-api.jorgenkh.no/youtube/tEQFftB1Pao?width=720&amp;height=405" /></a></p>
+<ul class="simple">
+<li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=tEQFftB1Pao">https://inv.tux.pizza/watch?v=tEQFftB1Pao</a></p></li>
+<li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=tEQFftB1Pao">https://youtube.com/watch?v=tEQFftB1Pao</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="combinations-indistinguishable-counting">
+<h3>Combinations (Indistinguishable Counting)<a class="headerlink" href="#combinations-indistinguishable-counting" title="Permalink to this heading">#</a></h3>
+<p>In statistical mechanics, our work is typically different from simple permutations. We are often interested in the arrangement of some important quantity (like energy) over the different bodies (atoms, molecules, etc) in the system. Here you can think of having a bunch of balls, each corresponding to an energy quantum. What we want to do is arrange those quanta over different bodies, put each ball into a bin.</p>
+<p>For example, for the <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_harmonic_oscillator">quantum harmonic oscillator</a>, we have a bunch of energy quanta that we want to arrange over the different energy levels. We don’t care about the order of the energy quanta, just the number of quanta in each energy level. This is where combinations come in. For a system with 3 atoms, we don’t care which atom is in which state, just that we know which states the collections of atoms are in. So</p>
+<p>Because ultimately, it’s the combination of how the energy are distributed that determine the system’s state. it’s not how each quanta are distributed on each atom, molecule, or body. Let’s do an example. Suppose we have <span class="math notranslate nohighlight">\(q=5\)</span> quanta of energy to distribute amongst <span class="math notranslate nohighlight">\(N=2\)</span> oscillators (think of them as atoms being put into a particular energy state). We can write down all the possible states if we use the pair of numbers (<span class="math notranslate nohighlight">\(N_1\)</span>, <span class="math notranslate nohighlight">\(N_2\)</span>) to denote the number of quanta in each oscillator. For example, (3, 2) means that oscillator 1 has 3 quanta of energy and oscillator 2 has 2 quanta of energy. We could write down all the possible states and count them up, but that’s definitely not efficient, nor do we care about the order of the quanta.</p>
+</div>
+<div class="section" id="derivation-of-the-einstein-counting-formula">
+<h3>Derivation of the Einstein Counting Formula<a class="headerlink" href="#derivation-of-the-einstein-counting-formula" title="Permalink to this heading">#</a></h3>
+<p>The problem we set up is a classic one in statistical physics. It was originally attributed to Einstein. In fact the concept of an <a class="reference external" href="https://en.wikipedia.org/wiki/Einstein_solid">Einstein solid</a> continues to be used. It is a model of a solid based on two assumptions:</p>
+<ol class="arabic simple">
+<li><p>Each atom in the solid is an independent 3D quantum harmonic oscillator.</p></li>
+<li><p>All atoms oscillate with the same frequency.</p></li>
+</ol>
+<p>The first assumption is a good one. The second one is not. But it’s a good approximation for many solids. If we model the quanta as stars and the oscillators as lines. Where the lines separate the stars into bins.  This is the so called [Stars and bars model](<a class="reference external" href="https://en.wikipedia.org/wiki/Stars_and_bars_(combinatorics)">https://en.wikipedia.org/wiki/Stars_and_bars_(combinatorics)</a>. We avoid that language because in the US because it associated with a Southern hate group. In any event, here’s an image to make sense of the model:</p>
+<p><img alt="Cookies given to friends" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Colored_circle_starsbars_1.svg/566px-Colored_circle_starsbars_1.svg.png" /></p>
+<p>We can show that the total number of symbols we have is <span class="math notranslate nohighlight">\(q+N-1\)</span>, wwe get the <span class="math notranslate nohighlight">\(N-1\)</span> because we need one less line to make a two bins. We can then write down the number of ways to arrange the symbols as,</p>
+<div class="math notranslate nohighlight">
+\[\Omega(q,N) = \frac{(q+N-1)!}{q!(N-1)!}\]</div>
+<p>where the denominator is the number of ways to arrange the <span class="math notranslate nohighlight">\(q\)</span> quanta (stars) and the <span class="math notranslate nohighlight">\(N-1\)</span> lines (or <span class="math notranslate nohighlight">\(N\)</span> oscillators) separately. We can apply this model to a solid to compute the number of potential microstates for a given macrostate.</p>
+<div class="section" id="id1">
+<h4>Lecture Video<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<p>The video below does precisely that.</p>
+<p><a class="reference external" href="https://inv.tux.pizza/watch?v=71fk3n88t48"><img alt="The Einstein Model of a Solid" src="https://markdown-videos-api.jorgenkh.no/youtube/71fk3n88t48?width=720&amp;height=405" /></a></p>
+<ul class="simple">
+<li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=71fk3n88t48">https://inv.tux.pizza/watch?v=71fk3n88t48</a></p></li>
+<li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=71fk3n88t48">https://youtube.com/watch?v=71fk3n88t48</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="example-the-einstein-model-of-a-small-solid">
+<h3>Example: The Einstein Model of a small solid<a class="headerlink" href="#example-the-einstein-model-of-a-small-solid" title="Permalink to this heading">#</a></h3>
+<p>Consider an Einstein solid consisting of 5 atoms, 15 oscillators. Let’s allow ourselves to have 20 quantum of energy to distribute amongst the oscillators. How many microstates are there for this system? We can use the formula above to calculate this. But better yet, let’s use Python to calculate and display the results.</p>
+<p>Here <span class="math notranslate nohighlight">\(N=15\)</span>, but <span class="math notranslate nohighlight">\(q\)</span> is anywhere from 0 to 20. So we will need to loop through and calculate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span>
+
+<span class="k">def</span> <span class="nf">calculate_microstates</span><span class="p">(</span><span class="n">quanta</span><span class="p">,</span> <span class="n">oscillators</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the number of microstates for an Einstein solid.</span>
+<span class="sd">    quanta: Number of quanta of energy.</span>
+<span class="sd">    oscillators: Number of oscillators.</span>
+<span class="sd">    returns the number of microstates.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">factorial</span><span class="p">(</span><span class="n">quanta</span> <span class="o">+</span> <span class="n">oscillators</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">quanta</span><span class="p">)</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">oscillators</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Number of quanta and oscillators</span>
+<span class="n">quanta</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">oscillators</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="c1"># Calculate the number of microstates for a range of quanta values</span>
+<span class="n">quanta_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">quanta</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">num_microstates</span> <span class="o">=</span> <span class="p">[</span><span class="n">calculate_microstates</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">oscillators</span><span class="p">)</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">quanta_values</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a figure with two subplots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Plot the number of microstates in normal scale</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">quanta_values</span><span class="p">,</span> <span class="n">num_microstates</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Number of Quanta&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Microstates&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Microstates (Normal Scale)&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">quanta_values</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="c1"># Plot the number of microstates in log scale</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">quanta_values</span><span class="p">,</span> <span class="n">num_microstates</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Number of Quanta&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Microstates (Log Scale)&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Microstates (Log Scale)&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">quanta_values</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="c1"># Adjust layout for better visualization</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/5ea80e7b50ade4a62e6b8eb0be6648e27ab76c42cd5a0c17f1d2618515bc06ad.png" src="../../_images/5ea80e7b50ade4a62e6b8eb0be6648e27ab76c42cd5a0c17f1d2618515bc06ad.png" />
+</div>
+</div>
+</div>
+<div class="section" id="what-about-the-entropy">
+<h3>What about the entropy?<a class="headerlink" href="#what-about-the-entropy" title="Permalink to this heading">#</a></h3>
+<p>We can compute it using the formula above, but for our purposes, we will just use the logarithm of the number of microstates.</p>
+<div class="math notranslate nohighlight">
+\[S/k = \log(\Omega)\]</div>
+<p>Notice that our log scale graph above looks exactly like the entropy graph. The number of microstates is a measure of the entropy.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entropy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">num_microstates</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">quanta_values</span><span class="p">,</span> <span class="n">entropy</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Number of Quanta&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Entropy (unitless)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">quanta_values</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/ecfc4c987732af5e724e7a3a8aadc7933d6a7de492d1ae8d5a0ae627d88e48b7.png" src="../../_images/ecfc4c987732af5e724e7a3a8aadc7933d6a7de492d1ae8d5a0ae627d88e48b7.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h2>
+<p>If you want more details on combinatorics, please review this longer lecture.</p>
+<p><a class="reference external" href="https://inv.tux.pizza/watch?v=6oV3pKLgW2I"><img alt="Counting and Combinatorics Lecture" src="https://markdown-videos-api.jorgenkh.no/youtube/6oV3pKLgW2I?width=720&amp;height=405" /></a></p>
+<ul class="simple">
+<li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=6oV3pKLgW2I">https://inv.tux.pizza/watch?v=6oV3pKLgW2I</a></p></li>
+<li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=6oV3pKLgW2I">https://youtube.com/watch?v=6oV3pKLgW2I</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "teaching"
+        },
+        kernelOptions: {
+            name: "teaching",
+            path: "./content/4_distributions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'teaching'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="activity-radioactive_decay.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">21 Nov 23 - Activity: Introduction to Random Processes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="notes-monte_carlo_simulations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">27 Nov 23 - Notes: Monte Carlo Simulations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-mechanics-and-combinatorics">Statistical Mechanics and Combinatorics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentals-of-combinatorics-and-counting">Fundamentals of Combinatorics and Counting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permutations-distinguishable-counting">Permutations (Distinguishable Counting)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-subset-distinguishable-counting">Choosing a subset (Distinguishable Counting)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-video">Lecture Video</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinations-indistinguishable-counting">Combinations (Indistinguishable Counting)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-einstein-counting-formula">Derivation of the Einstein Counting Formula</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Lecture Video</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-einstein-model-of-a-small-solid">Example: The Einstein Model of a small solid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-about-the-entropy">What about the entropy?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Danny Caballero, Alia Valentine
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

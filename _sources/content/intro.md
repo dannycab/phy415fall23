@@ -7,11 +7,13 @@ To get a sense of the course, please read all the pages associated with our syll
  
 ## Updates
 
-`````{admonition} Last updated: 15 Nov 2023
+`````{admonition} Last updated: 20 Nov 2023
 :class: tip
 
 ### Site updates
-* Readings for Week 12 ([Introduction to Randomness](./4_distributions/notes-randomness.ipynb)) is posted.
+* Readings for Week 13 are posted.
+    * [Counting and Combinatorics](./4_distributions/notes-counting_and_combinatorics.ipynb)
+    * [Monte Carlo simulations](./4_distributions/notes-monte_carlo_simulations.ipynb)
 
 ### Upcoming Deadlines
 * The [last worked problem](./9_assignments/worked-problem-7.md) is due 1 Dec 2023.

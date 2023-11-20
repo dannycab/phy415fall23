@@ -233,6 +233,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">20 Nov 23 - Notes: Random Processes</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="activity-radioactive_decay.html">21 Nov 23 - Activity: Introduction to Random Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes-counting_and_combinatorics.html">27 Nov 23 - Notes: Counting and Combinatorics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -605,7 +609,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 0, 0, 1, 0, 0, 1, 1, 0]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 1, 0, 1, 1, 1, 1, 1, 0]
 </pre></div>
 </div>
 </div>
@@ -628,9 +632,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 0 0 1 1 1 1 0 0 1]
- [1 1 0 1 1 1 1 1 1 1]
- [1 0 0 0 0 1 1 1 0 0]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 1 1 1 0 1 0 1 1 0]
+ [1 0 1 0 0 0 1 1 0 0]
+ [0 0 1 0 1 1 1 0 1 1]]
 </pre></div>
 </div>
 </div>
@@ -672,7 +676,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/062db7ba29c65b3a251aa9949c125103461ad1a341bcf8768116a514b7afa82b.png" src="../../_images/062db7ba29c65b3a251aa9949c125103461ad1a341bcf8768116a514b7afa82b.png" />
+<img alt="../../_images/f45bb5e21467b063b4c6715d0c34dade85021f244e0562aa0c67dc34b0ee1987.png" src="../../_images/f45bb5e21467b063b4c6715d0c34dade85021f244e0562aa0c67dc34b0ee1987.png" />
 </div>
 </div>
 </div>
@@ -742,7 +746,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/2d0dc553f906c05b4bc2af24abd7e73ed3e7a3b92333eb74695bb1f978e40c4e.png" src="../../_images/2d0dc553f906c05b4bc2af24abd7e73ed3e7a3b92333eb74695bb1f978e40c4e.png" />
+<img alt="../../_images/0a83eb7a3fa439e7443fec1507882d5c1f6e1effdf9cc3c5573456d26f9d0b7b.png" src="../../_images/0a83eb7a3fa439e7443fec1507882d5c1f6e1effdf9cc3c5573456d26f9d0b7b.png" />
 </div>
 </div>
 <p>This is useful, but the important part of this kind of modeling is to determine the probablities of the macrostates. We can compute those by simply determining the number of times a particular macrostate occurs and dividing by the total number of trials. We wrote two functions to compute and plot these.</p>
@@ -807,7 +811,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/352e3d8f6612f1fd50b4ee9c9aae1d322ed2d3e7b4faf737a2bde11e65e8dd27.png" src="../../_images/352e3d8f6612f1fd50b4ee9c9aae1d322ed2d3e7b4faf737a2bde11e65e8dd27.png" />
+<img alt="../../_images/0f288216fc076903dbfa6f335f364bc25c909ed58f174b7ef3e66c2cd08ef2c1.png" src="../../_images/0f288216fc076903dbfa6f335f364bc25c909ed58f174b7ef3e66c2cd08ef2c1.png" />
 </div>
 </div>
 <p>It’s quite easy to see form here that more trials leads to more stable and concrete probabilities for each state.</p>
