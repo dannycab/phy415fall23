@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Project 4 - Probabilistic Modeling &#8212; PHY 415 Fall 2023</title>
   
   
@@ -192,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity_vanderpol.html">14 Sept 23 - Conducting a complete analysis of an ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
 </ul>
@@ -235,6 +236,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/notes-mcmc.html">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-metropolis.html">5 Dec 23 - Activity: Modeling the Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-ising_model.html">7 Dec 23 - Activity: The Ising Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="current nav bd-sidenav">
@@ -461,13 +465,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="project-4-probabilistic-modeling">
+  <section class="tex2jax_ignore mathjax_ignore" id="project-4-probabilistic-modeling">
 <h1>Project 4 - Probabilistic Modeling<a class="headerlink" href="#project-4-probabilistic-modeling" title="Permalink to this heading">#</a></h1>
 <p><strong>Due 14 Dec 23</strong></p>
 <p><a class="reference internal" href="updated_rubric.html"><span class="doc std std-doc"><strong>Updated Rubric</strong></span></a></p>
 <p>Project 4 emphasizes probabilistic models. We’ve done work with counting statistics (flipping coins and rolling die). We’ve modeled radioactive decay and decay chains. We’ve developed Monte Carlo simulations to do integrals and to model different systems. In this project, you are free to choose a particular probabilistic model and apply it to a new physics situation of your choosing. You may be creative in your choice of model and situation, but you must be able to justify your choices.</p>
 <p><em>You also have now done 3 of these projects, so you should be able to decide for yourself what you want to use from this course module.</em></p>
-<div class="section" id="what-do-you-need-to-do">
+<section id="what-do-you-need-to-do">
 <h2>What do you need to do?<a class="headerlink" href="#what-do-you-need-to-do" title="Permalink to this heading">#</a></h2>
 <p>Think about different systems you have seen or read about that have probabilistic individual outcomes but are part of a collection (a multiple particle system). For example, as we saw the random decay of an atom can be modeled this way to say something about the decay of a sample. It might not seem obvious, but a leaf breaking off a tree in a light breeze can be modeled as a probabilistic process. You might also consider using a Monte Carlo simulation to model a system. We’ve used them to perform integrals, but also to show the behavior of spins in a magnetic field. Monte Carlo simulations have wide applicability.</p>
 <ul class="simple">
@@ -484,8 +488,8 @@ document.write(`
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="earning-extra-credit-for-more-explorations">
+</section>
+<section id="earning-extra-credit-for-more-explorations">
 <h2>Earning extra credit for more explorations<a class="headerlink" href="#earning-extra-credit-for-more-explorations" title="Permalink to this heading">#</a></h2>
 <p>Monte Carlo simulations take a long time to run, so most of these are not required. If you want to explore these, you can earn extra credit.</p>
 <ul class="simple">
@@ -493,12 +497,12 @@ document.write(`
 <li><p>Explore the effects of performing the Monte Carlo poorly (e.g., not enough points, not enough data, etc.)</p></li>
 <li><p>Perform a project with a 2D Monte Carlo simulation</p></li>
 </ul>
-</div>
-<div class="section" id="submitting-your-work">
+</section>
+<section id="submitting-your-work">
 <h2>Submitting your work<a class="headerlink" href="#submitting-your-work" title="Permalink to this heading">#</a></h2>
 <p>You will upload your work to D2L. It should be a single PDF of your work. If you also write code, please submit the associated files as well. If you do all of this in a Jupyter notebook, please export the notebook as a PDF and submit the notebook and PDF file. If you have any questions, please ask. We want you to enjoy working on these problems.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

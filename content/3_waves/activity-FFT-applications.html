@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>14 &amp; 16 Nov 23 - Using the FFT with Real Data &#8212; PHY 415 Fall 2023</title>
   
   
@@ -192,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity_vanderpol.html">14 Sept 23 - Conducting a complete analysis of an ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
 </ul>
@@ -235,6 +236,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/notes-mcmc.html">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-metropolis.html">5 Dec 23 - Activity: Modeling the Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-ising_model.html">7 Dec 23 - Activity: The Ising Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -512,15 +516,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-using-the-fft-with-real-data">
+  <section class="tex2jax_ignore mathjax_ignore" id="nov-23-using-the-fft-with-real-data">
 <h1>14 &amp; 16 Nov 23 - Using the FFT with Real Data<a class="headerlink" href="#nov-23-using-the-fft-with-real-data" title="Permalink to this heading">#</a></h1>
 <p>Y’all have learned the main process for using an FFT on a 1D signal, so let’s use it in the context of some real world data. We’ll give you different kind of data that you can choose to work with: Transit light curve data and audio signals. Take a look at both datasets and start working on whichever one you’d like first.</p>
-<div class="section" id="transit-data">
+<section id="transit-data">
 <h2>Transit Data<a class="headerlink" href="#transit-data" title="Permalink to this heading">#</a></h2>
 <p>You work in a lab that is observing light curves to determine if there are transiting objects near a star and, if so, what is their period. Using the brightness of the star itself, we can determine it’s mass and then it’s a quick analysis to get the mass of the transiting objects (Thanks, Newton!).</p>
 <p>In this activity, you have three data files that describe the CCD voltage on a sensor as a function of time. The observations were taken over a 48 hour period. You will need to read in the data, determine the sampling frequency, and then develop an FFT model to look into the frequency components.</p>
 <img src="https://images.newscientist.com/wp-content/uploads/2019/09/26122246/c0471894-rejuvenated_gas_giant_planet_illustration-spl.jpg" width=600px>
-<div class="section" id="data-files">
+<section id="data-files">
 <h3>Data Files<a class="headerlink" href="#data-files" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://raw.githubusercontent.com/dannycab/phy415msu/main/MMIPbook/assets/data/FFT/obs1.csv">Observation 1</a></p></li>
@@ -548,9 +552,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="audio-signals-effects">
+</section>
+</section>
+<section id="audio-signals-effects">
 <h2>Audio Signals &amp; Effects<a class="headerlink" href="#audio-signals-effects" title="Permalink to this heading">#</a></h2>
 <p>A lot of audio processing boils down to taking the FFT of some audio signal, doing something to that frequency spectrum, the using the inverse FFT to get a new signal back with some effects on it. Here’s some musical data to practice this:</p>
 <p>Data:</p>
@@ -590,8 +594,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

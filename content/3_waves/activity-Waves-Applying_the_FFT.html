@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>9 Nov 23 - Activity: Applying The Fast Fourier Transform &#8212; PHY 415 Fall 2023</title>
   
   
@@ -194,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity_vanderpol.html">14 Sept 23 - Conducting a complete analysis of an ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
 </ul>
@@ -237,6 +238,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/notes-mcmc.html">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-metropolis.html">5 Dec 23 - Activity: Modeling the Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-ising_model.html">7 Dec 23 - Activity: The Ising Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -525,7 +529,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-activity-applying-the-fast-fourier-transform">
+  <section class="tex2jax_ignore mathjax_ignore" id="nov-23-activity-applying-the-fast-fourier-transform">
 <h1>9 Nov 23 - Activity: Applying The Fast Fourier Transform<a class="headerlink" href="#nov-23-activity-applying-the-fast-fourier-transform" title="Permalink to this heading">#</a></h1>
 <p>We were able to find the complex expansion coefficients for a signal using a Fourier series. However, this method is only applicable to periodic signals. Here we will introduce the Discrete Fourier Transform (DFT) and the Fast Fourier Transform (FFT) which can be used to find the complex expansion coefficients for any signal. The DFT is the discrete analog to our expansion approach, the FFT improves the algorithmic efficiency of the DFT, which we won’t describe.</p>
 <p>Let’s remind ourselves of the Fourier series expansion for a periodic signal <span class="math notranslate nohighlight">\(x(t)\)</span> with some period <span class="math notranslate nohighlight">\(T_0\)</span>.</p>
@@ -538,7 +542,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="a-sinusoidal-signal-with-a-dc-offset">
+<section id="a-sinusoidal-signal-with-a-dc-offset">
 <h2>A sinusoidal signal with a DC offset<a class="headerlink" href="#a-sinusoidal-signal-with-a-dc-offset" title="Permalink to this heading">#</a></h2>
 <p>In this example we will use a sinusoidal signal with a DC offset. The signal is defined as:</p>
 <div class="math notranslate nohighlight">
@@ -591,8 +595,8 @@ document.write(`
 <img alt="../../_images/7a9be0cd8ebc5203c38a874519e0247b168137ad97622e6b94a2d9172a7fb08f.png" src="../../_images/7a9be0cd8ebc5203c38a874519e0247b168137ad97622e6b94a2d9172a7fb08f.png" />
 </div>
 </div>
-</div>
-<div class="section" id="extracting-the-fourier-coefficients">
+</section>
+<section id="extracting-the-fourier-coefficients">
 <h2>Extracting the Fourier coefficients<a class="headerlink" href="#extracting-the-fourier-coefficients" title="Permalink to this heading">#</a></h2>
 <p>Let’s extract the Fourier coefficients. We defined the base peridicity <span class="math notranslate nohighlight">\(T_0\)</span> in the code above. If it was not changed it was 0.5 seconds. We will use this to define the base frequency of the signal <span class="math notranslate nohighlight">\(f_0 = 1/T_0 = 1/0.5 = 2\)</span> Hz. We have two more parts of the signal from frequencies <span class="math notranslate nohighlight">\(f_1 = 4\)</span> Hz and <span class="math notranslate nohighlight">\(f_2 = 6\)</span> Hz. We will use the Fourier series expansion to find the complex expansion coefficients <span class="math notranslate nohighlight">\(c_n\)</span>.</p>
 <div class="cell docutils container">
@@ -653,7 +657,7 @@ document.write(`
 <img alt="../../_images/458a382847fcecee2c119ba02354557196e7e36a17097a1498d5904638596493.png" src="../../_images/458a382847fcecee2c119ba02354557196e7e36a17097a1498d5904638596493.png" />
 </div>
 </div>
-<div class="section" id="where-are-the-coefficients">
+<section id="where-are-the-coefficients">
 <h3>Where are the coefficients?<a class="headerlink" href="#where-are-the-coefficients" title="Permalink to this heading">#</a></h3>
 <p>We get both positive and negative frequencies. But notice that if we add the amplitudes of the matched positive and negative amplitudes, we get the value of the coefficients in our constructed signal. This is because the signal is real, so the coefficients are conjugate symmetric. We can use this to plot the coefficients in a more intuitive way. Notice the DC part of the signal is NOT conjugate symmetric, so we don’t add it to the negative frequency part.</p>
 <div class="cell tag_hide-input docutils container">
@@ -688,9 +692,9 @@ document.write(`
 <img alt="../../_images/7469f8e016d9da28d9b6266827836bfe93544dde8cafac3c4c53a92ac59aca98.png" src="../../_images/7469f8e016d9da28d9b6266827836bfe93544dde8cafac3c4c53a92ac59aca98.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="the-discrete-fourier-transform">
+</section>
+</section>
+<section id="the-discrete-fourier-transform">
 <h2>The Discrete Fourier Transform<a class="headerlink" href="#the-discrete-fourier-transform" title="Permalink to this heading">#</a></h2>
 <p>One of the issues about the decomposition we have done is that it assumes the signal is periodic. In practice, we often have signals that are not periodic. For example, consider the signal below, which is a wave packet that is not periodic. This signal is still of interest to us and can often contain useful physics. But the techniques we have used so far will not work for this signal.</p>
 <div class="cell tag_hide-input docutils container">
@@ -731,7 +735,7 @@ document.write(`
 <img alt="../../_images/6058d65ec20235a72fb551bc206cbeba4bde183a33093f111958211d56e70bcd.png" src="../../_images/6058d65ec20235a72fb551bc206cbeba4bde183a33093f111958211d56e70bcd.png" />
 </div>
 </div>
-<div class="section" id="enter-the-discrete-fourier-transform">
+<section id="enter-the-discrete-fourier-transform">
 <h3>Enter the Discrete Fourier Transform<a class="headerlink" href="#enter-the-discrete-fourier-transform" title="Permalink to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Discrete_Fourier_transform">Discrete Fourier Transform (DFT)</a> is a way to decompose a signal into a sum of sinusoids, but it does not require the signal to be periodic. You can think of it as a discretization of the processes we developed earlier. The expansion of the signal is still as it was before, but we understand it represents a finite number of samples of the signal:</p>
 <div class="math notranslate nohighlight">
@@ -740,8 +744,8 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[c_n \approx \frac{1}{T_0} \sum_{k=0}^{N-1} V(t_k)e^{-i n \omega t_k} \Delta t\]</div>
 <p>where <span class="math notranslate nohighlight">\(V(t_k)\)</span> is the value of the signal at time <span class="math notranslate nohighlight">\(t_k\)</span> and <span class="math notranslate nohighlight">\(T_0 = N \Delta t\)</span> is the total time of the signal.</p>
-</div>
-<div class="section" id="assumptions">
+</section>
+<section id="assumptions">
 <h3>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this heading">#</a></h3>
 <p>In doing this, we are not creating a tool that will always work. We note a few important assumptions and caveats:</p>
 <ol class="arabic simple">
@@ -750,12 +754,12 @@ document.write(`
 <li><p><strong>Finite Duration</strong>: The DFT is designed to handle signals of finite duration. The signal is assumed to have a finite number of samples, which is the number of points in the DFT.</p></li>
 <li><p><strong>Equally-Spaced Samples</strong>: The samples are assumed to be evenly spaced in time (or space, depending on the context of the signal). This uniform spacing is critical because non-uniformly spaced samples would require a different transform, such as the Non-uniform Discrete Fourier Transform (NDFT).</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="the-fast-fourier-transform">
+</section>
+</section>
+<section id="the-fast-fourier-transform">
 <h2>The Fast Fourier Transform<a class="headerlink" href="#the-fast-fourier-transform" title="Permalink to this heading">#</a></h2>
 <p>While we can use the DFT directly, the FFT is more efficient and has become the standard way to perform these analyses. The code to have <code class="docutils literal notranslate"><span class="pre">numpy.fft</span></code> perform the FFT is pretty simple. But there’s many things to understand about the FFT and a variety of ways to produce spurious and incoherent results. Let’s use the simple signal we have above to make go through an analysis.</p>
-<div class="section" id="the-fft-in-numpy-fft">
+<section id="the-fft-in-numpy-fft">
 <h3>The FFT in <code class="docutils literal notranslate"><span class="pre">numpy.fft</span></code><a class="headerlink" href="#the-fft-in-numpy-fft" title="Permalink to this heading">#</a></h3>
 <p>We start by importing the libraries. Then we need to:</p>
 <ol class="arabic simple">
@@ -791,8 +795,8 @@ document.write(`
 <img alt="../../_images/5c8a9007b0dfc303d7b01e44e6e45a6d09dd641110a176522844b47da03d03fe.png" src="../../_images/5c8a9007b0dfc303d7b01e44e6e45a6d09dd641110a176522844b47da03d03fe.png" />
 </div>
 </div>
-</div>
-<div class="section" id="computing-and-plotting-fourier-coefficients">
+</section>
+<section id="computing-and-plotting-fourier-coefficients">
 <h3>Computing and plotting Fourier Coefficients<a class="headerlink" href="#computing-and-plotting-fourier-coefficients" title="Permalink to this heading">#</a></h3>
 <p>We now use <code class="docutils literal notranslate"><span class="pre">fft</span></code> to calculate the Fourier transform of the signal and <code class="docutils literal notranslate"><span class="pre">fftfreq</span></code> to calculate the frequencies associated with the transform. This is a standard way to do this analysis, but the most common mistakes involve the frequencies. Because it is a real signal, we don’t worry about the negative frequencies, they are duplicate information. The amplitudes of the non DC frequencies are doubled like before to illustrate the Fourier coefficients.</p>
 <div class="cell docutils container">
@@ -884,8 +888,8 @@ document.write(`
 <img alt="../../_images/4d6537f2667f6bd04b1668fc3eab03728ef87b586c5f8304610a66d1ae11862e.png" src="../../_images/4d6537f2667f6bd04b1668fc3eab03728ef87b586c5f8304610a66d1ae11862e.png" />
 </div>
 </div>
-</div>
-<div class="section" id="investigating-the-fft">
+</section>
+<section id="investigating-the-fft">
 <h3>Investigating the FFT<a class="headerlink" href="#investigating-the-fft" title="Permalink to this heading">#</a></h3>
 <p>Now that you have developed some code and some conceptual understanding of the FFT process, let’s investigate some of the more nuanced aspects.</p>
 <p><strong>✅ Do this</strong></p>
@@ -907,9 +911,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

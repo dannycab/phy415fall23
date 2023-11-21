@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>21 Nov 23 - Activity: Introduction to Random Processes &#8212; PHY 415 Fall 2023</title>
   
   
@@ -194,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity_vanderpol.html">14 Sept 23 - Conducting a complete analysis of an ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
 </ul>
@@ -237,6 +238,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes-mcmc.html">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-metropolis.html">5 Dec 23 - Activity: Modeling the Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-ising_model.html">7 Dec 23 - Activity: The Ising Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -498,8 +502,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-random-library">The Random Library</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seeding-the-number-generator">Seeding the number generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-random-library">The Random Library</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seeding-the-number-generator">Seeding the number generator</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-uniform-distribution">Creating a uniform distribution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-biased-die">Make a biased die</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#micro-vs-macro-states">Micro vs Macro states</a></li>
@@ -522,7 +528,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-activity-introduction-to-random-processes">
+  <section class="tex2jax_ignore mathjax_ignore" id="nov-23-activity-introduction-to-random-processes">
 <h1>21 Nov 23 - Activity: Introduction to Random Processes<a class="headerlink" href="#nov-23-activity-introduction-to-random-processes" title="Permalink to this heading">#</a></h1>
 <p>So far we have focused on mostly deterministic systems. These are systems that are typically described by regular ODEs and PDEs; think the SHO or the Wave Equation. In these systems, the game is to analytically determine or estimate the trajectory, field, or wave given the set of equations that describe it. But many processes in nature are random or have a random element ot them.</p>
 <p>How do we model the decay of nuclear isotopes? The gas atoms in a container? Even things like when your bus will arrive.</p>
@@ -537,13 +543,12 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="the-random-library">
+<section id="the-random-library">
 <h2>The Random Library<a class="headerlink" href="#the-random-library" title="Permalink to this heading">#</a></h2>
 <p>If you have not used <code class="docutils literal notranslate"><span class="pre">random</span></code>, please read this section because it has some implementation things that are useful.</p>
 <p>Random numbers generated by a computer are not random, so it’s important to know how to use them. They aren’t truly random because a computer must generate them with an algorithm and thus we can potentially determine every number we’d receive if we knew the algorithm. There’s tons of research into how to generate good random numbers and there’s precious few ways. The main way right now is the <a class="reference external" href="https://en.wikipedia.org/wiki/Mersenne_Twister">Mersenne Twister method</a>. Testing the quality of a random number generator is beyond the scope of this class, but a useful exercise if you are doing research into random processes.</p>
-</div>
-<div class="section" id="seeding-the-number-generator">
-<h2>Seeding the number generator<a class="headerlink" href="#seeding-the-number-generator" title="Permalink to this heading">#</a></h2>
+<section id="seeding-the-number-generator">
+<h3>Seeding the number generator<a class="headerlink" href="#seeding-the-number-generator" title="Permalink to this heading">#</a></h3>
 <p>But because it’s an algorithm, we can control the sequence of random numbers we get. That is we can tell the random number generator to create random numbers for us in the same way. This helps because we can use them and test them over and over before running a full simulation. See below on how to generate random integers. Re-run to observe what happens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -565,7 +570,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 8
 b = 2
 c = 3
 d = 2
@@ -573,8 +578,9 @@ d = 2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="creating-a-uniform-distribution">
+</section>
+</section>
+<section id="creating-a-uniform-distribution">
 <h2>Creating a uniform distribution<a class="headerlink" href="#creating-a-uniform-distribution" title="Permalink to this heading">#</a></h2>
 <p>One of the simplest distributions to generate is one that you are likely most familiar with - a fair die or pair of dice. In the case of a single fair die, each outcome is equally likely and distinct from each other. That is rolling a one and rolling a six are different, distinct outcomes - and we can say that for each outcome.</p>
 <p>Below, write a short piece of code (maybe as a function), that rolls one N-sided die as many times as you like and returns all the outcomes. <strong>Be careful using rand.seed() here because you can just an array of all the same numbers!</strong></p>
@@ -587,7 +593,7 @@ d = 2
 </div>
 </div>
 </div>
-<div class="section" id="make-a-biased-die">
+<section id="make-a-biased-die">
 <h3>Make a biased die<a class="headerlink" href="#make-a-biased-die" title="Permalink to this heading">#</a></h3>
 <p>Adjust your program so that you get even numbered rolls twice as frequently as odd rolls. This is the basis for baking in a probability function into our models. So do try to this. <strong>Make a histogram of the results of the biased die</strong></p>
 <div class="cell docutils container">
@@ -597,8 +603,8 @@ d = 2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="micro-vs-macro-states">
+</section>
+<section id="micro-vs-macro-states">
 <h3>Micro vs Macro states<a class="headerlink" href="#micro-vs-macro-states" title="Permalink to this heading">#</a></h3>
 <p>In many random processes, the results are not distinct. Think about rolling two dice (colors are green and white) instead. How many ways can you get a sum of 2 vs a sum of 6? The state of the two dice where we indicate the number of each die can be called a “microstate”. The state of the sum can be called a “macrostate.”</p>
 <p>So as an example consider the macrostate with a sum of 4. This can be constructed of out 3 potential microstates. First the green die could have a 1 and the white one a 3, the green could have a 2 and the white a 2, and then the green could have a 3 and the white a 1. But the result I care about is not the individual die, but the sum. Regardless I get 4.</p>
@@ -615,9 +621,9 @@ d = 2
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="poisson-processes">
+</section>
+</section>
+<section id="poisson-processes">
 <h2>Poisson Processes<a class="headerlink" href="#poisson-processes" title="Permalink to this heading">#</a></h2>
 <p>Many events in physics can be represented by a <a class="reference external" href="https://en.wikipedia.org/wiki/Poisson_distribution">Poisson Distribution</a>, which results from events that have the following properties:</p>
 <ul class="simple">
@@ -626,7 +632,7 @@ d = 2
 <li><p>Two events cannot occur at exactly the same instant; instead, at each very small sub-interval, either exactly one event occurs, or no event occurs.</p></li>
 </ul>
 <p>Oftentimes, it’s the average rate (think lifetime of an isotope) that we think about as helping us decide. If it’s true that the rate is roughly constant and the events are independent, then this modeling can work reasonably well. So an event can be random, but the average result should be relatively simple (e.g., a single average decay time), then we can consider the events Poisson distributed.</p>
-<div class="section" id="decay-of-an-isotope">
+<section id="decay-of-an-isotope">
 <h3>Decay of an isotope<a class="headerlink" href="#decay-of-an-isotope" title="Permalink to this heading">#</a></h3>
 <p>Consider a collection of <span class="math notranslate nohighlight">\(^{208}Tl\)</span> that decays into <span class="math notranslate nohighlight">\(^{208}Pb\)</span> with a half-life of 3.053 minutes. Note that any one atom decays randomly at a random time, but on average, we see that <span class="math notranslate nohighlight">\(1/e\)</span> atoms decay in 3.053 minutes (this is characteristic of a Poisson Process).</p>
 <p>The number of atoms <span class="math notranslate nohighlight">\(N\)</span> that will remain in our sample (that is still be Thallium 208) will fall off exponentially over time (we could observe that from data):</p>
@@ -683,8 +689,8 @@ d = 2
 <img alt="../../_images/bfb8cde7d0a6adf3189035ac60d20cc080794cbd122f362f350ad161dc9ffb7f.png" src="../../_images/bfb8cde7d0a6adf3189035ac60d20cc080794cbd122f362f350ad161dc9ffb7f.png" />
 </div>
 </div>
-</div>
-<div class="section" id="decay-chains">
+</section>
+<section id="decay-chains">
 <h3>Decay Chains<a class="headerlink" href="#decay-chains" title="Permalink to this heading">#</a></h3>
 <p>Here’s the big project for today! It is less often the case that decays happen like above. Many times there are [Decay Channels] where the atoms decay over time into different elements with different probabilities. Consider the Bismuth 213 decay to Bismuth 209. It decays in two channels:</p>
 <div class="math notranslate nohighlight">
@@ -692,7 +698,7 @@ d = 2
 <div class="math notranslate nohighlight">
 \[^{213}Bi \rightarrow  ^{209}Pb \rightarrow  ^{209}Bi\]</div>
 <p>The first channel happens to about 2.09% of atoms. So we will ignore it for now. Let’s focus on the two step decay to Lead.</p>
-<p>Rewrite the model above to account for both decays, which have lifetimes of 46 minutes and 3.3 minutes respectively.</p>
+<p>Rewrite the model above to account for both decays, which have lifetimes of 46 minutes (<span class="math notranslate nohighlight">\(^{213}Bi \rightarrow ^{209}Pb\)</span>) and 3.3 hours (<span class="math notranslate nohighlight">\(^{209}Pb \rightarrow  ^{209}Bi\)</span>) respectively.</p>
 <p><strong>Plot the number of all three atoms as a function of time</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -701,10 +707,11 @@ d = 2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="a-challenge">
+</section>
+<section id="a-challenge">
 <h3>A Challenge<a class="headerlink" href="#a-challenge" title="Permalink to this heading">#</a></h3>
 <p>Model the entire decay including the random but clearly biased split between Lead 209 and Thallium 209, which has a halflife of 2.2 minutes.</p>
+<p><em>Note: We are not including the transition between Bismuth 213 and Polonium 209, which is a very short lived isotope.</em></p>
 <p><strong>Plot the number of all four atoms as a function of time</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -713,9 +720,9 @@ d = 2
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -726,16 +733,16 @@ d = 2
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "teaching"
         },
         kernelOptions: {
-            name: "python3",
+            name: "teaching",
             path: "./content/4_distributions"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'teaching'</script>
 
                 </article>
               
@@ -780,8 +787,10 @@ d = 2
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-random-library">The Random Library</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seeding-the-number-generator">Seeding the number generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-random-library">The Random Library</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seeding-the-number-generator">Seeding the number generator</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-uniform-distribution">Creating a uniform distribution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-biased-die">Make a biased die</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#micro-vs-macro-states">Micro vs Macro states</a></li>

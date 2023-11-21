@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact &#8212; PHY 415 Fall 2023</title>
   
   
@@ -194,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity_vanderpol.html">14 Sept 23 - Conducting a complete analysis of an ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
 </ul>
@@ -237,6 +238,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes-mcmc.html">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-metropolis.html">5 Dec 23 - Activity: Modeling the Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-ising_model.html">7 Dec 23 - Activity: The Ising Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -511,17 +515,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-activity-model-of-two-bodies-in-thermal-contact">
+  <section class="tex2jax_ignore mathjax_ignore" id="nov-23-activity-model-of-two-bodies-in-thermal-contact">
 <h1>28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact<a class="headerlink" href="#nov-23-activity-model-of-two-bodies-in-thermal-contact" title="Permalink to this heading">#</a></h1>
 <p>We’ve developed an equation for the number of ways we can arrange a small amount of quanta on a small number of oscillators. The formula we developed for arranging <span class="math notranslate nohighlight">\(q\)</span> on <span class="math notranslate nohighlight">\(N\)</span> oscillators is given below:</p>
 <div class="math notranslate nohighlight">
 \[\Omega = \dfrac{(q+N-1)!}{q!(N-1)!}\]</div>
 <p>These calculations are only tractable with pencil and paper when the number of quanta and oscillators is low. For even a few hundred oscillators and quanta the calculations can only be done on a computer. In fact, we will see with this model how we can easily blow out our computational tools as well.</p>
-<div class="section" id="microstates-and-macrostates">
+<section id="microstates-and-macrostates">
 <h2>Microstates and Macrostates<a class="headerlink" href="#microstates-and-macrostates" title="Permalink to this heading">#</a></h2>
 <p>Remember that a particular arrangement of quanta on oscillators is a microstate. That is, atom 1 has 3 oscillators with 1 quanta each on oscillator 1 and oscillator 2. But another microstate with quanta each on oscillator 2 and 3 would be the same energy macrostate for atom 1. We typically use energy for our marker for macrostates, but this doesn’t have to be the case because micro and macrostate ideas apply well beyond thermal physics to information theory, data science, networks, and general probability theory.</p>
-</div>
-<div class="section" id="the-setup">
+</section>
+<section id="the-setup">
 <h2>The setup<a class="headerlink" href="#the-setup" title="Permalink to this heading">#</a></h2>
 <p>Consider two blocks of material made of simple atomic oscillators that can take on quanta of energy. One block has 200 such atoms, and the other block has 300 such atoms. There are 400 quanta of energy that can be distributed between the two.</p>
 <p>Before we computed the number of ways for a pair of systems, showing that multiplying the ways was how to find the total number. Here we consider the number of total atoms as given, so the number of ways is a function of the number of energy quanta distributed on atom 1 (<span class="math notranslate nohighlight">\(q_1\)</span>) and the total available (<span class="math notranslate nohighlight">\(q_{tot}\)</span>).</p>
@@ -546,8 +550,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

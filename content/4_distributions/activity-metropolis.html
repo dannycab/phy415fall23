@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>5 Dec 23 - Activity: Modeling the Ideal Gas &#8212; PHY 415 Fall 2023</title>
   
   
@@ -66,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/4_distributions/activity-metropolis';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7 Dec 23 - Activity: The Ising Model" href="activity-ising_model.html" />
+    <link rel="prev" title="4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling" href="notes-mcmc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -192,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity_vanderpol.html">14 Sept 23 - Conducting a complete analysis of an ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
 </ul>
@@ -227,7 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-FFT-applications.html">14 &amp; 16 Nov 23 - Using the FFT with Real Data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notes-randomness.html">20 Nov 23 - Notes: Random Processes</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="activity-radioactive_decay.html">21 Nov 23 - Activity: Introduction to Random Processes</a></li>
@@ -235,6 +238,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes-mcmc.html">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5 Dec 23 - Activity: Modeling the Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-ising_model.html">7 Dec 23 - Activity: The Ising Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -510,12 +516,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="dec-23-activity-modeling-the-ideal-gas">
+  <section class="tex2jax_ignore mathjax_ignore" id="dec-23-activity-modeling-the-ideal-gas">
 <h1>5 Dec 23 - Activity: Modeling the Ideal Gas<a class="headerlink" href="#dec-23-activity-modeling-the-ideal-gas" title="Permalink to this heading">#</a></h1>
 <p>As we developed from <a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_4_Markov_Chain.pdf">lecture</a>, we can sample the Boltzmann distribution by constructing a sample of it through a Markov Chain and computing the value of the quantity of interest and adding it up.</p>
 <div class="math notranslate nohighlight">
 \[\sum_{chain} X_i \approx \langle X \rangle\]</div>
-<div class="section" id="one-dimensional-gas">
+<section id="one-dimensional-gas">
 <h2>One Dimensional Gas<a class="headerlink" href="#one-dimensional-gas" title="Permalink to this heading">#</a></h2>
 <p>We will model an ideal gas, but let’s start with a one-dimensional gas made of a bunch of particles in infinite square wells. The energy spectrum for a particle of mass <span class="math notranslate nohighlight">\(m\)</span> in an infinite square well of length <span class="math notranslate nohighlight">\(L\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
@@ -534,8 +540,8 @@ document.write(`
 \[\Delta E_{down} = E(n-1) - E(n) = \dfrac{1}{2}\left((n-1)^2-n^2\right) = \dfrac{-2n+1}{2}\]</div>
 <div class="math notranslate nohighlight">
 \[\Delta E_{up} = E(n+1) - E(n) = \dfrac{1}{2}\left((n+1)^2-n^2\right) = \dfrac{2n+1}{2}\]</div>
-</div>
-<div class="section" id="implementation">
+</section>
+<section id="implementation">
 <h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
 <p>Below is the code that develops a model of a one dimensional gas. It is annotated. Review the code and make note of each piece of the algorithm.</p>
 <p><strong>Complete the following</strong></p>
@@ -614,14 +620,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1330b10a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1197f35e0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/9b3d8ca8a78b590300805247c8fe48c5d52dc1123bb53c118e7a21d73327ff76.png" src="../../_images/9b3d8ca8a78b590300805247c8fe48c5d52dc1123bb53c118e7a21d73327ff76.png" />
+<img alt="../../_images/1e605d1924bc65e4222a3609efe52f3914a24694c022bfc691f8a1d5b9080530.png" src="../../_images/1e605d1924bc65e4222a3609efe52f3914a24694c022bfc691f8a1d5b9080530.png" />
 </div>
 </div>
-</div>
-<div class="section" id="the-ideal-gas">
+</section>
+<section id="the-ideal-gas">
 <h2>The Ideal Gas<a class="headerlink" href="#the-ideal-gas" title="Permalink to this heading">#</a></h2>
 <p>The code above can be used for an ideal gas. There are some changes you have to make because an ideal gas in three dimensions has an energy spectrum like this:</p>
 <div class="math notranslate nohighlight">
@@ -639,8 +645,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -672,6 +678,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="notes-mcmc.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="activity-ising_model.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">7 Dec 23 - Activity: The Ising Model</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling &#8212; PHY 415 Fall 2023</title>
   
   
@@ -66,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/4_distributions/notes-mcmc';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5 Dec 23 - Activity: Modeling the Ideal Gas" href="activity-metropolis.html" />
+    <link rel="prev" title="30 Nov 23 - Activity: Monte Carlo Integration" href="activity-mc_integration.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -192,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity_vanderpol.html">14 Sept 23 - Conducting a complete analysis of an ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
 </ul>
@@ -227,7 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../3_waves/activity-FFT-applications.html">14 &amp; 16 Nov 23 - Using the FFT with Real Data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notes-randomness.html">20 Nov 23 - Notes: Random Processes</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="activity-radioactive_decay.html">21 Nov 23 - Activity: Introduction to Random Processes</a></li>
@@ -235,6 +238,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-metropolis.html">5 Dec 23 - Activity: Modeling the Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-ising_model.html">7 Dec 23 - Activity: The Ising Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -498,6 +504,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov-chain-monte-carlo">Markov Chain Monte Carlo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-mechanics">Statistical Mechanics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handwritten-notes">Handwritten Notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-videos">Lecture Videos</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -509,34 +520,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="dec-23-notes-markov-chain-monte-carlo-modeling">
+  <section class="tex2jax_ignore mathjax_ignore" id="dec-23-notes-markov-chain-monte-carlo-modeling">
 <h1>4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling<a class="headerlink" href="#dec-23-notes-markov-chain-monte-carlo-modeling" title="Permalink to this heading">#</a></h1>
 <p>One of the principal tools we have at our disposal when it comes to systems with randomness is the Monte Carlo simulation. Monte Carlo is a large class of approaches that all rely on probabilistic outcomes to determine results. In physics, we often use Monte Carlo to find integrals or sums that we are unable to compute by hand.</p>
-<div class="section" id="markov-chain-monte-carlo">
+<section id="markov-chain-monte-carlo">
 <h2>Markov Chain Monte Carlo<a class="headerlink" href="#markov-chain-monte-carlo" title="Permalink to this heading">#</a></h2>
 <p>We often find ourselves using a type of Monte Carlo simulation that makes use of a Markov Chain. This is called the MCMC model. The mathematical foundations of Markov Chains are well beyond the scope of this course, but the principal issue is that we want to describe is how this simulation works. The video below describes the conceptual backing of MCMC and how it was first used in physics in 1953 to develop a model of an ideal gas. We will make a similar model!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;12eZWG0Z5gY&quot;</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
-<span class="c1">## If embed doesn&#39;t work just click to go to YouTube</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-        <iframe
-            width="800"
-            height="600"
-            src="https://www.youtube.com/embed/12eZWG0Z5gY"
-            frameborder="0"
-            allowfullscreen
-            
-        ></iframe>
-        </div></div>
-</div>
-</div>
-<div class="section" id="statistical-mechanics">
+<p><a class="reference external" href="https://inv.tux.pizza/watch?v=12eZWG0Z5gY"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/12eZWG0Z5gY?width=720&amp;height=405" /></a></p>
+<ul class="simple">
+<li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=12eZWG0Z5gY">https://inv.tux.pizza/watch?v=12eZWG0Z5gY</a></p></li>
+<li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=12eZWG0Z5gY">https://youtube.com/watch?v=12eZWG0Z5gY</a></p></li>
+</ul>
+</section>
+<section id="statistical-mechanics">
 <h2>Statistical Mechanics<a class="headerlink" href="#statistical-mechanics" title="Permalink to this heading">#</a></h2>
 <p>MCMC is used in lots of statistical mechanics problems because they are fundamentally probabilistic by nature. Starting with the “chance” of finding our system in a given state (with known energy, <span class="math notranslate nohighlight">\(E_i\)</span>) at a known temperature (T) given by the Boltzmann factor:</p>
 <div class="math notranslate nohighlight">
@@ -547,17 +543,38 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\(Z\)</span> is the partition function, a constant for a given temperature that normalizes our calculation. It is a sum over all states:</p>
 <div class="math notranslate nohighlight">
 \[Z = \sum_s e^{-E_s/{k_b T}}\]</div>
-<p>Our analysis relied on the development of a statistical theory of mechanics, and we illustrated it with an ideal gas. Notes appear below:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_4_Intro_to_Stat_Mech.pdf">Introduction to Stat. Mech.</a></p></li>
-<li><p><a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_4_Ideal_Gas_Model.pdf">The Ideal Gas</a></p></li>
-</ul>
+<p>Our analysis relied on the development of a statistical theory of mechanics, and we illustrated it with an ideal gas.</p>
 <p>Because <span class="math notranslate nohighlight">\(P(S)\)</span> is a probability we can use it find average values (expectation values) of a thermodynamic system. We did this for energy using the thermodynamic relations in the notes. But we can also use statistical properties to find the same. For example, finding the expected internal energy of a system, <span class="math notranslate nohighlight">\(\langle U \rangle\)</span>, just involves adding up all the possible energy states multiplied by their probabilities!</p>
 <div class="math notranslate nohighlight">
 \[\langle U \rangle = \sum_s E_s P(s)\]</div>
 <p>When these sums are really hard to compute because there’s lots of states or only a few that contribute substantially (as in the case for large systems), we can use selective sampling, which is the basis for MCMC. We will discuss that conceptually in class before using MCMC.</p>
-</div>
-</div>
+</section>
+<section id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h2>
+<section id="handwritten-notes">
+<h3>Handwritten Notes<a class="headerlink" href="#handwritten-notes" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/bbbca704dac6caef834a2d28fdf1094a/Notes-Intro_to_Stat_Mech.pdf"><span class="xref download myst">Introduction to Stat. Mech.</span></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/e5f44681ca887cc6efe547ecf29f9ab0/Notes-Markov_Chain.pdf"><span class="xref download myst">Markvov Chain Monte Carlo</span></a></p></li>
+</ul>
+</section>
+<section id="lecture-videos">
+<h3>Lecture Videos<a class="headerlink" href="#lecture-videos" title="Permalink to this heading">#</a></h3>
+<p><strong>MCMC for Data Science</strong></p>
+<p><a class="reference external" href="https://inv.tux.pizza/watch?v=yApmR-c_hKU"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/yApmR-c_hKU?width=720&amp;height=405" /></a></p>
+<ul class="simple">
+<li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=yApmR-c_hKU">https://inv.tux.pizza/watch?v=yApmR-c_hKU</a></p></li>
+<li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=yApmR-c_hKU">https://youtube.com/watch?v=yApmR-c_hKU</a></p></li>
+</ul>
+<p><strong>Details on the MCMC Algorithm</strong></p>
+<p><a class="reference external" href="https://inv.tux.pizza/watch?v=rZk2FqX2XnY"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/rZk2FqX2XnY?width=720&amp;height=405" /></a></p>
+<ul class="simple">
+<li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=rZk2FqX2XnY">https://inv.tux.pizza/watch?v=rZk2FqX2XnY</a></p></li>
+<li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=rZk2FqX2XnY">https://youtube.com/watch?v=rZk2FqX2XnY</a></p></li>
+</ul>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -589,6 +606,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="activity-mc_integration.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">30 Nov 23 - Activity: Monte Carlo Integration</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="activity-metropolis.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">5 Dec 23 - Activity: Modeling the Ideal Gas</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -606,6 +641,11 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markov-chain-monte-carlo">Markov Chain Monte Carlo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-mechanics">Statistical Mechanics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handwritten-notes">Handwritten Notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-videos">Lecture Videos</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>7 Nov 23 - Activity: The Fast Fourier Transform &#8212; PHY 415 Fall 2023</title>
   
   
@@ -194,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity_vanderpol.html">14 Sept 23 - Conducting a complete analysis of an ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
 </ul>
@@ -237,6 +238,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/notes-mcmc.html">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-metropolis.html">5 Dec 23 - Activity: Modeling the Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-ising_model.html">7 Dec 23 - Activity: The Ising Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -514,7 +518,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-activity-the-fast-fourier-transform">
+  <section class="tex2jax_ignore mathjax_ignore" id="nov-23-activity-the-fast-fourier-transform">
 <h1>7 Nov 23 - Activity: The Fast Fourier Transform<a class="headerlink" href="#nov-23-activity-the-fast-fourier-transform" title="Permalink to this heading">#</a></h1>
 <p>We have shown how to decompose a signal using a Fourier series decomposition:</p>
 <div class="math notranslate nohighlight">
@@ -522,10 +526,10 @@ document.write(`
 <p>where we find the Fourier coefficients <span class="math notranslate nohighlight">\(c_n\)</span> by integrating over the period of the signal (performing a Fourier transform of the signal):</p>
 <div class="math notranslate nohighlight">
 \[c_n = \frac{1}{T} \int_0^T V(t) e^{-i n \omega t} dt\]</div>
-<div class="section" id="extracting-the-fourier-coefficients">
+<section id="extracting-the-fourier-coefficients">
 <h2>Extracting the Fourier coefficients<a class="headerlink" href="#extracting-the-fourier-coefficients" title="Permalink to this heading">#</a></h2>
 <p>We wrote some code earlier to perform the Fourier transform of a signal and obtain the coefficients. We will see how to do that using the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> library later, but let’s produce these results first without it. We are going to prepare several test signals, but you will need to make more.</p>
-<div class="section" id="test-signals">
+<section id="test-signals">
 <h3>Test Signals<a class="headerlink" href="#test-signals" title="Permalink to this heading">#</a></h3>
 <p>The test signals we are going to use are:</p>
 <ul class="simple">
@@ -628,11 +632,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9867632349f6ee66eef1eb13c51c82df780d7ee2bad0e015debfbcc5b617a2b6.png" src="../../_images/9867632349f6ee66eef1eb13c51c82df780d7ee2bad0e015debfbcc5b617a2b6.png" />
+<img alt="../../_images/aea577644bfd21523cbdbf2bc349fbfa91fed531f117605d930e3e427b7fe5b5.png" src="../../_images/aea577644bfd21523cbdbf2bc349fbfa91fed531f117605d930e3e427b7fe5b5.png" />
 </div>
 </div>
-</div>
-<div class="section" id="find-the-fourier-components">
+</section>
+<section id="find-the-fourier-components">
 <h3>Find the Fourier Components<a class="headerlink" href="#find-the-fourier-components" title="Permalink to this heading">#</a></h3>
 <p><strong>✅ Do this</strong></p>
 <ul class="simple">
@@ -648,9 +652,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

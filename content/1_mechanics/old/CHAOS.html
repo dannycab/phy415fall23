@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>19 Sep 23 - CHAOS &#8212; PHY 415 Fall 2023</title>
   
   
@@ -209,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../2_EM/Statics/activity-sep_var_spherical_examples.html">10 Oct 23 - Activity: Matching Boundary Conditions and Plotting the Potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../2_EM/Numerics/activity-relaxation_2d.html">12 Oct 23 - Activity: Method of Relaxation</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillations</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3 - Waves and Oscillationsmake v</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-coupled_oscillations.html">16 Oct 23 - Notes: Coupled Oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-waves_intro.html">16 Oct 23 - Notes: Introduction to Waves</a></li>
@@ -218,24 +219,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-solve_the_wave_eq.html">25 Oct 23 - Notes: Solutions to The Wave Equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-1D.html">26 Oct 2023 - Activity: 1-Dimensional Travelling Waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-Waves-Fouriers_Trick.html">30 Oct 2023 - Notes: Deconstructing Waves</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-Signals.html">01 Nov 2022 - Signal Deconstruction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-Signal_Processing.html">03 Nov 2022 - Signal Processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../3_waves/notes-fft.html">Notes: Fast Fourier Transform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../3_waves/activity-Waves-Cleaning_Signals.html">8 Nov 22 - The Inverse Fourier Transform</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">4 - Randomness and Distributions</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../4_distributions/here_be_dragons.html">Here Be Dragons (Material not complete)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/notes-randomness.html">20 Nov 23 - Notes: Random Processes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/activity-radioactive_decay.html">21 Nov 23 - Activity: Introduction to Random Processes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/notes-monte_carlo_simulations.html">27 Nov 2023 - Reading: Monte Carlo Simulations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/notes-mcmc.html">4 Dec 2023 - Markov Chain Monte Carlo Modeling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/activity-metropolis.html">5 Dec 2023 - Activity: Modeling the Ideal Gas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../4_distributions/activity-ising_model.html">7 Dec 2023 - Activity: The Ising Model</a></li>
-</ul>
-</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -509,12 +492,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-chaos">
+  <section class="tex2jax_ignore mathjax_ignore" id="sep-23-chaos">
 <h1>19 Sep 23 - CHAOS<a class="headerlink" href="#sep-23-chaos" title="Permalink to this heading">#</a></h1>
 <p>Over the last couple weeks we’ve been looking into a lot of 2 dimensional autonomous (the differential equations don’t depend on time) systems of differential equations.
 Another thing we’ve noticed is that initial conditions in these systems tend to either blast off to infinity, form a closed loop, or are drawn to attracting fixed point(s) or limit cycle(s). In the case of attracting fixed points or limit cycles, many different initial conditions can be drawn to the same fixed point or limit cycle. In fact, we saw that it is possible for <strong>every</strong> initial condition to be drawn to the same limit cycle for the Van der Pol oscillator. This means that trajectories that are initially far apart eventually become close together.</p>
 <p>This seems all well and good, but when we step up to 3 dimensional autonomous systems (or as we’ll see later, non-autonomous 2D ones), some more interesting behavior starts to emerge. Trajectories that start out very close to each other can diverge from each other, while still not diverging to infinity. And it turns out that these sorts of <strong>chaotic</strong> systems arise surprisingly often in systems we’re interested in in physics. The classic example of this is the double pendulum. Its also been shown that the solar system is chaotic for large time scales, and countless other systems exhibit this property.</p>
-<div class="section" id="definition-of-chaos">
+<section id="definition-of-chaos">
 <h2>Definition of Chaos<a class="headerlink" href="#definition-of-chaos" title="Permalink to this heading">#</a></h2>
 <p>Here we’ll follow Strogats’s definition of chaos, which is:</p>
 <p><em><strong>Chaos</strong></em> <em>is aperiodic long-term behavior in a deterministic system that exhibits sensitive dependence on initial conditions.</em></p>
@@ -524,8 +507,8 @@ Another thing we’ve noticed is that initial conditions in these systems tend t
 <li><p><strong>Sensitive dependence on initial conditions</strong> means that nearby trajectories separate exponentially fast.</p></li>
 </ol>
 <p>Let’s investigate this phenomenon for a particular system.</p>
-</div>
-<div class="section" id="halvorsen-attractor">
+</section>
+<section id="halvorsen-attractor">
 <h2>Halvorsen Attractor<a class="headerlink" href="#halvorsen-attractor" title="Permalink to this heading">#</a></h2>
 <p>One system we can start looking at is given by the <strong>Halvorsen Equations:</strong></p>
 <div class="math notranslate nohighlight">
@@ -602,8 +585,8 @@ Another thing we’ve noticed is that initial conditions in these systems tend t
 <img alt="../../../_images/4509348069a01275a59cea2618d14a2cfdb572eff02b35cdf1cb521803a7d457.png" src="../../../_images/4509348069a01275a59cea2618d14a2cfdb572eff02b35cdf1cb521803a7d457.png" />
 </div>
 </div>
-</div>
-<div class="section" id="lyapunov-exponents">
+</section>
+<section id="lyapunov-exponents">
 <h2>Lyapunov Exponents<a class="headerlink" href="#lyapunov-exponents" title="Permalink to this heading">#</a></h2>
 <p>One of our criteria for a system to be chaotic was that nearby trajectories must separate exponentially fast. Let’s see if this holds true for this system:</p>
 <p><strong>✅ Do this</strong></p>
@@ -645,8 +628,8 @@ t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\rig
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="driven-damped-pendulum">
+</section>
+<section id="driven-damped-pendulum">
 <h2>Driven Damped Pendulum<a class="headerlink" href="#driven-damped-pendulum" title="Permalink to this heading">#</a></h2>
 <p>Now let’s turn our attention to a more physics-y chaotic system, the Driven Damped Pendulum (DDP). This system is similar to the large angle pendulum that we’ve studied before, but it has a damping term <span class="math notranslate nohighlight">\(-2\beta\dot{\theta}\)</span>, as well as a driving time-dependent torque <span class="math notranslate nohighlight">\(\gamma \omega_0^2\cos(\omega t)\)</span> . The full equation after sufficient non-dimensionalization looks like this (note: <span class="math notranslate nohighlight">\(\omega_0 \neq \omega\)</span>):</p>
 <div class="math notranslate nohighlight">
@@ -716,8 +699,8 @@ t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\rig
 </ul>
 </li>
 </ol>
-</div>
-<div class="section" id="poincare-section">
+</section>
+<section id="poincare-section">
 <h2>Poincaré Section<a class="headerlink" href="#poincare-section" title="Permalink to this heading">#</a></h2>
 <p>To get a better sense of what’s actually going on here, and to maybe have a hope of actually seeing if this thing has an attractor, we can use what is called a <strong>Poincaré section</strong>. The idea behind a Poincaré section is as follows: since the force term of this system is periodic, we should only look at points in phase space where the force term is at the same point in its cycle. Doing this reveals the breautiful fractal cross section of an attractor.</p>
 <p><strong>✅ Do this</strong></p>
@@ -780,8 +763,8 @@ t_{\text{horizon}} \sim O\left(\frac{1}{\lambda}\log{\frac{a}{||\delta_0||}}\rig
 </ul>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

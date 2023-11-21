@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>7 Nov 23 - Activity: The Inverse Fourier Transform &#8212; PHY 415 Fall 2023</title>
   
   
@@ -511,7 +512,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-activity-the-inverse-fourier-transform">
+  <section class="tex2jax_ignore mathjax_ignore" id="nov-23-activity-the-inverse-fourier-transform">
 <h1>7 Nov 23 - Activity: The Inverse Fourier Transform<a class="headerlink" href="#nov-23-activity-the-inverse-fourier-transform" title="Permalink to this heading">#</a></h1>
 <p>We used the Fourier Transform to find all the frequency compeonents of a signal.</p>
 <div class="math notranslate nohighlight">
@@ -539,7 +540,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="cleaning-a-spectrum">
+<section id="cleaning-a-spectrum">
 <h2>Cleaning a spectrum<a class="headerlink" href="#cleaning-a-spectrum" title="Permalink to this heading">#</a></h2>
 <p>Let’s start with a constructed spectrum before we analyze real data. Check out the signal below. This could be thought of a transiting planet eclipsing a local star, a voltage measurement from a defect in a STM sample, really anything. There’s lots of signals that look like this!</p>
 <div class="cell docutils container">
@@ -572,7 +573,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c1fde493b57fece68fa39ec1ba6d9fde989c574682d7ab5e462bd18977a5be41.png" src="../../_images/c1fde493b57fece68fa39ec1ba6d9fde989c574682d7ab5e462bd18977a5be41.png" />
+<img alt="../../_images/10f997078389e260d578dbac23f712df70c7a8f753b1888db1eff9375f21c229.png" src="../../_images/10f997078389e260d578dbac23f712df70c7a8f753b1888db1eff9375f21c229.png" />
 </div>
 </div>
 <p>Let’s perform the FFT and look at it.</p>
@@ -590,7 +591,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3a1ad040bcd4042a736753d7f552ee74cbbada792d1cc81f29f47f28b422ce95.png" src="../../_images/3a1ad040bcd4042a736753d7f552ee74cbbada792d1cc81f29f47f28b422ce95.png" />
+<img alt="../../_images/9c4d29f8854b93e0e4bff690486cd939c33939921006b045abe5a8b3fc247a3c.png" src="../../_images/9c4d29f8854b93e0e4bff690486cd939c33939921006b045abe5a8b3fc247a3c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -608,7 +609,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1000.0, 0.0, 1.0)
 </pre></div>
 </div>
-<img alt="../../_images/12c81e1b063813954d413cc51c644423f034c4ded322419c041aa92c09ae1ac4.png" src="../../_images/12c81e1b063813954d413cc51c644423f034c4ded322419c041aa92c09ae1ac4.png" />
+<img alt="../../_images/622adb9dd714831e8bb7b34d71320c2d43debd7a2aa18e90e78bd9463c4ca11a.png" src="../../_images/622adb9dd714831e8bb7b34d71320c2d43debd7a2aa18e90e78bd9463c4ca11a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -626,7 +627,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 500.0, 0.0, 0.6)
 </pre></div>
 </div>
-<img alt="../../_images/d0b97d8f8d5f549fc2ac944cd122941342efab77e1fe18790fef405122dd2987.png" src="../../_images/d0b97d8f8d5f549fc2ac944cd122941342efab77e1fe18790fef405122dd2987.png" />
+<img alt="../../_images/b884185e3d244094a5ead756c0c793ce2082d985b075f156b0c56df755ad4cf4.png" src="../../_images/b884185e3d244094a5ead756c0c793ce2082d985b075f156b0c56df755ad4cf4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -644,7 +645,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(500.0, 25000.0, 0.0, 0.02)
 </pre></div>
 </div>
-<img alt="../../_images/a51de5b92486cf197e0d9985aac019df96639d81114730a4826df361bb1eb660.png" src="../../_images/a51de5b92486cf197e0d9985aac019df96639d81114730a4826df361bb1eb660.png" />
+<img alt="../../_images/48fe3e697d024732d4935cd3b1c44adcc5ff8c1a9558206e34f38a06c3695b59.png" src="../../_images/48fe3e697d024732d4935cd3b1c44adcc5ff8c1a9558206e34f38a06c3695b59.png" />
 </div>
 </div>
 <p>Looks like a lot of noise at high frequencies. Let’s get rid of it. Remember there’s negative frequencies! Those are important to recovering everything.</p>
@@ -663,7 +664,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-1000.0, 1000.0, 0.0, 1.0)
 </pre></div>
 </div>
-<img alt="../../_images/65447b98a5f1d8924fddfc4111219d7266a9cb6dfcf50898772ff87e188ecd34.png" src="../../_images/65447b98a5f1d8924fddfc4111219d7266a9cb6dfcf50898772ff87e188ecd34.png" />
+<img alt="../../_images/df3c53c1f81894e6778bf6b10259632ffaeac9596291cbd5e4641501057dc864.png" src="../../_images/df3c53c1f81894e6778bf6b10259632ffaeac9596291cbd5e4641501057dc864.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -687,14 +688,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x18fd1bbe0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16c40e860&gt;
 </pre></div>
 </div>
-<img alt="../../_images/2a76c6a828ebf05d5cdc9531a6ab22458b8d9e23c84f7ac09de8fa0d81e9d4ea.png" src="../../_images/2a76c6a828ebf05d5cdc9531a6ab22458b8d9e23c84f7ac09de8fa0d81e9d4ea.png" />
+<img alt="../../_images/719d447a282bc6d8cb30d1299b6e5f9834c32aa9a03883de5a9065b7e85cac5f.png" src="../../_images/719d447a282bc6d8cb30d1299b6e5f9834c32aa9a03883de5a9065b7e85cac5f.png" />
 </div>
 </div>
-</div>
-<div class="section" id="investigate-limits-and-modulations">
+</section>
+<section id="investigate-limits-and-modulations">
 <h2>Investigate Limits and modulations<a class="headerlink" href="#investigate-limits-and-modulations" title="Permalink to this heading">#</a></h2>
 <p>We have developed a very simple approach (we set all high frequencies to zero). But this is more general!</p>
 <ol class="arabic simple">
@@ -709,8 +710,8 @@ document.write(`
 <li><p>Modulate the FFT with a function (that is chose to make some other cool transform on the FFT (not just zeroing out)), what happens to the IFFT?</p></li>
 <li><p>What other cool stuff can you do?</p></li>
 </ol>
-</div>
-<div class="section" id="real-data">
+</section>
+<section id="real-data">
 <h2>Real data<a class="headerlink" href="#real-data" title="Permalink to this heading">#</a></h2>
 <p>Let’s bring in a audio signal. This will play it. It’s a D Power Chord.</p>
 <div class="cell docutils container">
@@ -722,7 +723,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: playsound in /Users/caballero/anaconda3/envs/teaching/lib/python3.9/site-packages (1.3.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: playsound in /Users/caballero/opt/anaconda3/envs/teaching/lib/python3.10/site-packages (1.3.0)
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -732,7 +733,7 @@ document.write(`
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">playsound</span> <span class="kn">import</span> <span class="n">playsound</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">playsound</span><span class="p">(</span><span class="s1">&#39;data/D_PowerChords_95_SP.wav&#39;</span><span class="p">)</span>
 
-<span class="nn">File ~/anaconda3/envs/teaching/lib/python3.9/site-packages/playsound.py:140,</span> in <span class="ni">_playsoundOSX</span><span class="nt">(sound, block)</span>
+<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/playsound.py:140,</span> in <span class="ni">_playsoundOSX</span><span class="nt">(sound, block)</span>
 <span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Failed to load sound, although url was good... &#39;</span> <span class="o">+</span> <span class="n">sound</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">139</span> <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">140</span>     <span class="k">raise</span> <span class="n">PlaysoundException</span><span class="p">(</span><span class="s1">&#39;Could not load sound with filename, although URL was good... &#39;</span> <span class="o">+</span> <span class="n">sound</span><span class="p">)</span>
@@ -785,8 +786,8 @@ length = 0.8224716553287982s
 <img alt="../../_images/17f237491241e7280fb9e205e721300857100101ca20d358fbcc4d9314151b4a.png" src="../../_images/17f237491241e7280fb9e205e721300857100101ca20d358fbcc4d9314151b4a.png" />
 </div>
 </div>
-</div>
-<div class="section" id="activity">
+</section>
+<section id="activity">
 <h2>Activity<a class="headerlink" href="#activity" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Construct an FFT of this signal</p></li>
@@ -794,8 +795,8 @@ length = 0.8224716553287982s
 <li><p>Reconstruct the signal</p></li>
 <li><p>(Challenge) Write it out as a wave file and let’s hear it!</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>29 Aug 23 - Notes: Simple Harmonic Oscillator &#8212; PHY 415 Fall 2023</title>
   
   
@@ -194,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/activity_vanderpol.html">14 Sept 23 - Conducting a complete analysis of an ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
 </ul>
@@ -237,6 +238,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../4_distributions/notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../4_distributions/activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../4_distributions/activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../4_distributions/notes-mcmc.html">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../4_distributions/activity-metropolis.html">5 Dec 23 - Activity: Modeling the Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../4_distributions/activity-ising_model.html">7 Dec 23 - Activity: The Ising Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -522,9 +526,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="aug-23-notes-simple-harmonic-oscillator">
+  <section class="tex2jax_ignore mathjax_ignore" id="aug-23-notes-simple-harmonic-oscillator">
 <h1>29 Aug 23 - Notes: Simple Harmonic Oscillator<a class="headerlink" href="#aug-23-notes-simple-harmonic-oscillator" title="Permalink to this heading">#</a></h1>
-<div class="section" id="a-linear-restoring-force">
+<section id="a-linear-restoring-force">
 <h2>A Linear Restoring Force<a class="headerlink" href="#a-linear-restoring-force" title="Permalink to this heading">#</a></h2>
 <p>The SHO model, as we will see, is the root of many more sophisticated models in physics – across many subdisciplines. There’s a reason for this. The SHO is a simple model that captures the essence of many physical systems. It is a mathematical model for a “linear restoring force”. Such a force gives rise to local stability, that is, a tendency for the system to return to a stable equilibrium position. The richness of this statement is not entirely clear, but we will see that it is a very powerful idea, that is related to to energy minimization, and the idea of a potential energy function.</p>
 <p>A linear restoring force is simply one in which the size of the force is in direct proportion to some displacement and is directed opposite to the displacement. For example, a coiled spring exerts (rooughly) a linear restoring force. If you pull on a spring, the spring exerts a force on your hand that is proportional to the distance you pull the spring. It is directed opposite to the direction you pull.</p>
@@ -535,14 +539,14 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\vec{F}_{\rm spring} = -k \Delta \vec{x}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Delta \vec{x}\)</span> is the displacement vector from the equilibrium position.</p>
-</div>
-<div class="section" id="the-sho-mathematical-model">
+</section>
+<section id="the-sho-mathematical-model">
 <h2>The SHO mathematical model<a class="headerlink" href="#the-sho-mathematical-model" title="Permalink to this heading">#</a></h2>
 <p>We have seen that the canonical one-dimensional harmonic oscillator is described with the following <strong>2nd order linear</strong> differential equation:</p>
 <div class="math notranslate nohighlight">
 \[m\ddot{s} = -k{s}\]</div>
 <p>where <span class="math notranslate nohighlight">\(s\)</span> represents the distance from the oscillator’s equilibrium position. It’s important to note that this model for a linear restoring force gives rise to at <strong>second order</strong> differential equation. As you will see, there would be no ability for cycles or recurrent behavior without two dimensions (the two dimensions here are the position, <span class="math notranslate nohighlight">\(s\)</span>, and velocity of the oscillator, <span class="math notranslate nohighlight">\(\dot{s}\)</span>). It is also important that the differential equation is <strong>linear</strong>.</p>
-<div class="section" id="linearity-of-differential-equations">
+<section id="linearity-of-differential-equations">
 <h3>Linearity of differential equations<a class="headerlink" href="#linearity-of-differential-equations" title="Permalink to this heading">#</a></h3>
 <p>This is something that is easy to confuse because we use the term <strong>linear</strong> in different ways at different times. In many cases this prompts us to think of a line, so that we might think the only linear differential equations are ones where the variable of interest (in this case the position of the oscillator) appears only <em>linearly</em> in the equation.</p>
 <div class="admonition warning">
@@ -561,8 +565,8 @@ document.write(`
 \[\sum_{i=0}^N a_i(t)\dfrac{d^ix}{dt} = f(t)\]</div>
 <p>where <span class="math notranslate nohighlight">\(\dfrac{d^ix}{dt}\)</span> is the <span class="math notranslate nohighlight">\(i\)</span>th derivative of <span class="math notranslate nohighlight">\(x\)</span> (e.g., <span class="math notranslate nohighlight">\(i=0\)</span>, <span class="math notranslate nohighlight">\(\dfrac{d^0x}{dt}=x\)</span>; <span class="math notranslate nohighlight">\(i=1\)</span>, <span class="math notranslate nohighlight">\(\dfrac{d^1x}{dt}=\dfrac{dx}{dt}\)</span>) The coefficients are allowed to depend explicitly on time (i.e., <span class="math notranslate nohighlight">\(a_i(t)\)</span>; you have probably seen <em>constant coefficients</em> in the past (where <span class="math notranslate nohighlight">\(\dfrac{da_i(t)}{dt}=0\)</span>, i.e., <span class="math notranslate nohighlight">\(a_i(t) =\)</span> constant). In addition, as you can explore later, the system can be driven by a function that depends only on time (e.g., some forcing function, <span class="math notranslate nohighlight">\(f(t)\)</span>).</p>
 </div>
-</div>
-<div class="section" id="why-does-linearity-matter">
+</section>
+<section id="why-does-linearity-matter">
 <h3>Why does linearity matter?<a class="headerlink" href="#why-does-linearity-matter" title="Permalink to this heading">#</a></h3>
 <p>Because much of nature can be modeled with linear differential equations (or approximately so) and linear differential equations have really nice solution properties. *The solutions to linear differential equations are <strong>holonomic functions</strong>. This is just a fancy word for functions you know like polynomials, sine, cosine, exponentiale, and some special functions (e.g., Airy, Bessel, hypergeometric). But these solutions are really important because they are smooth as are their derivatives, so they have really nice properties.</p>
 <p>In many cases, we can lean on strong properties derived from linearity:</p>
@@ -575,8 +579,8 @@ document.write(`
 <p>This theorem is typically called the Cauchy theorem (or the uniqueness theorem) for <a class="reference external" href="https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy">Augustin Louis-Cachy</a>, a French mathematician who contributed much to the field of complex analysis. However, Cauchy only proved this theorem in a special case.  A Russian Mathematician, <a class="reference external" href="https://en.wikipedia.org/wiki/Sofya_Kovalevskaya">Sofya Kovalevskaya</a>, who was the first woman to earn a PhD in Mathematics (earned 1874, University of Göttingen), proved the theorem, in general, in her dissertation.</p>
 <p><strong>So, it is really the “Kovalevskaya-Cauchy” theorem.</strong></p>
 </div>
-</div>
-<div class="section" id="general-solution-to-the-sho">
+</section>
+<section id="general-solution-to-the-sho">
 <h3>General Solution to the SHO<a class="headerlink" href="#general-solution-to-the-sho" title="Permalink to this heading">#</a></h3>
 <p>We can start with the differential equation:</p>
 <div class="math notranslate nohighlight">
@@ -610,8 +614,8 @@ Hint<div class="sd-summary-down docutils">
 <p class="sd-card-text">Can you think of other functions that when you take two derivatives, you get the same function back with a sign change?</p>
 <p class="sd-card-text">What if the function were complex (recall: <span class="math notranslate nohighlight">\(i^2 = -1\)</span>)?</p>
 </div>
-</details></div>
-<div class="section" id="particular-solutions">
+</details></section>
+<section id="particular-solutions">
 <h3>Particular Solutions<a class="headerlink" href="#particular-solutions" title="Permalink to this heading">#</a></h3>
 <p>Let’s pick two general solutions. Notice that both have two unknown constants. We can use the initial conditions to determine the values of these constants, and thus our particular solutions.</p>
 <div class="math notranslate nohighlight">
@@ -619,7 +623,7 @@ Hint<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \[x(t) = C\sin(\omega t + \phi_C)\]</div>
 <p>To determine a particular solution is to solve for the <strong>trajectory</strong> of the system given a set of initial conditions. You can think about a falling object, but any physical system that is evolving in time will have a trajectory in the general sense of various changing observable quantities. We will revisit this idea later once we make the connection to <a class="reference external" href="https://en.wikipedia.org/wiki/Dynamical_system">Dynamical Systems</a>.</p>
-<div class="section" id="find-a-particular-solution">
+<section id="find-a-particular-solution">
 <h4>Find a particular solution<a class="headerlink" href="#find-a-particular-solution" title="Permalink to this heading">#</a></h4>
 <p>For an SHO (<span class="math notranslate nohighlight">\(\omega=\omega_0 = 1\)</span>) that is pulled to a point <span class="math notranslate nohighlight">\(x_0\)</span> and let go at <span class="math notranslate nohighlight">\(t=0\)</span>, let’s find the particular solutions using both general forms (they will give us this).</p>
 <div class="math notranslate nohighlight">
@@ -658,10 +662,10 @@ Hint<div class="sd-summary-down docutils">
 <img alt="../../../_images/9d695c11b571432fbb266b7e8544afbd999deaff907b0b995512dac3a1c80595.png" src="../../../_images/9d695c11b571432fbb266b7e8544afbd999deaff907b0b995512dac3a1c80595.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="resources">
+</section>
+</section>
+</section>
+<section id="resources">
 <h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
 <p>Here are scans of four sections of four books (that you can look over at my office, or find elsewhere) that are useful for our study of the SHO and will help you with your project ideas and plans.</p>
 <p><em>Sorry for the potato quality, and apparently the orientations, which I corrected but github refuses to keep the same orientation.  I will do better next class and try to fix these later.</em></p>
@@ -688,15 +692,15 @@ Hint<div class="sd-summary-down docutils">
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="handwritten-notes">
+</section>
+<section id="handwritten-notes">
 <h2>Handwritten Notes<a class="headerlink" href="#handwritten-notes" title="Permalink to this heading">#</a></h2>
 <p>Below, I have worked up some additional notes that describe the conceptual and procedural aspects of what we did today. Think: derivations and examples for learning from for your project. They are linked below:</p>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../../../_downloads/87e553721c9a91f58c1f8a3e20eb3346/Notes-SHO.pdf"><span class="xref download myst">The SHO</span></a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

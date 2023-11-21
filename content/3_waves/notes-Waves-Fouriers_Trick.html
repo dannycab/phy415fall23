@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>30 Oct 2023 - Notes: Deconstructing Waves &#8212; PHY 415 Fall 2023</title>
   
   
@@ -194,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity_vanderpol.html">14 Sept 23 - Conducting a complete analysis of an ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
 </ul>
@@ -237,6 +238,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/notes-mcmc.html">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-metropolis.html">5 Dec 23 - Activity: Modeling the Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-ising_model.html">7 Dec 23 - Activity: The Ising Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -522,7 +526,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="oct-2023-notes-deconstructing-waves">
+  <section class="tex2jax_ignore mathjax_ignore" id="oct-2023-notes-deconstructing-waves">
 <h1>30 Oct 2023 - Notes: Deconstructing Waves<a class="headerlink" href="#oct-2023-notes-deconstructing-waves" title="Permalink to this heading">#</a></h1>
 <p>While we observe waves in many places, it’s the case that we don’t often have the luxury of constructing them as we want. In fact, much of the science we do relies on measurements of voltage or current to represent the dynamics of the system.</p>
 <ul class="simple">
@@ -532,7 +536,7 @@ document.write(`
 <li><p>AYO exoplanets? Light curves are really just measures of voltage across a CCD.</p></li>
 </ul>
 <p>The point is that you will almost always be dealing with signals that are proxies for the actual thing you care about. So let’s construct some and deconstruct them.</p>
-<div class="section" id="the-cosmic-microwave-background">
+<section id="the-cosmic-microwave-background">
 <h2>The Cosmic Microwave Background<a class="headerlink" href="#the-cosmic-microwave-background" title="Permalink to this heading">#</a></h2>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Cosmic_microwave_background">Cosmic Microwave Background</a> is the oldest light in the universe. It’s the light that was emitted when the universe cooled enough for electrons to bind to protons and form neutral hydrogen. This happened about 380,000 years after the Big Bang. This signal came in the form of a noise that was found in every observation we seemed to make. The kind of work we are starting (signal deconstruction) underlies much of the analysis used to unpack the CMB, and to continue understanding it. There’s a great video from Fermilab about the CMB.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=AYFDN2DSVgc"><img alt="CMB" src="https://markdown-videos-api.jorgenkh.no/youtube/AYFDN2DSVgc?width=720&amp;height=405" /></a></p>
@@ -540,8 +544,8 @@ document.write(`
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=AYFDN2DSVgc">https://inv.tux.pizza/watch?v=AYFDN2DSVgc</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=AYFDN2DSVgc">https://youtube.com/watch?v=AYFDN2DSVgc</a></p></li>
 </ul>
-</div>
-<div class="section" id="constructing-waves">
+</section>
+<section id="constructing-waves">
 <h2>Constructing Waves<a class="headerlink" href="#constructing-waves" title="Permalink to this heading">#</a></h2>
 <p>Below is a little code that will generate superposed waves. We will use this to generate some intuition about how waves add together, which will help us deconstruct them.</p>
 <div class="cell docutils container">
@@ -589,7 +593,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x135215460&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10edab550&gt;
 </pre></div>
 </div>
 <img alt="../../_images/cd7da08e3760b6efaa2d3886ba61aa9969f27899c6f4973a872ef19337e10af1.png" src="../../_images/cd7da08e3760b6efaa2d3886ba61aa9969f27899c6f4973a872ef19337e10af1.png" />
@@ -605,8 +609,8 @@ document.write(`
 <li><p>Does it seem easier to see how you can deconstruct a superposed wave if the frequencies are close together or far apart?</p></li>
 <li><p>What about the amplitudes? Does it matter if one is really big and one is really small? If they are comparable?</p></li>
 </ol>
-</div>
-<div class="section" id="dealing-with-real-signals">
+</section>
+<section id="dealing-with-real-signals">
 <h2>Dealing with “Real” Signals<a class="headerlink" href="#dealing-with-real-signals" title="Permalink to this heading">#</a></h2>
 <p>Ok, but can we find these frequencies given a signal? Or rather, how might we find the signal we need? We can use a little mathematics from Fourier. The <a class="reference external" href="https://en.wikipedia.org/wiki/Fourier_transform">Fourier transform</a> is a mathematical tool that allows us to deconstruct a signal into its constituent frequencies. There’s an excellent introduction to it from 3Blue1Brown.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=spUNpyF58BY"><img alt="Fourier Transform" src="https://markdown-videos-api.jorgenkh.no/youtube/spUNpyF58BY?width=720&amp;height=405" /></a></p>
@@ -640,14 +644,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x19263a4f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16b7ac910&gt;
 </pre></div>
 </div>
 <img alt="../../_images/7dcc31feb0413b05a82155ed54e1e039f4a43e8293a142578b6f9c18cb0fa563.png" src="../../_images/7dcc31feb0413b05a82155ed54e1e039f4a43e8293a142578b6f9c18cb0fa563.png" />
 </div>
 </div>
-</div>
-<div class="section" id="decomposing-signals">
+</section>
+<section id="decomposing-signals">
 <h2>Decomposing Signals<a class="headerlink" href="#decomposing-signals" title="Permalink to this heading">#</a></h2>
 <p>Consider the Fourier Expansion of your choosing:</p>
 <div class="math notranslate nohighlight">
@@ -662,7 +666,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(f(t) = 2\sin(\omega_0 t+\pi/2) + 3\cos(2*\omega_0t)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(f(t) = 1\)</span> from 0 to <span class="math notranslate nohighlight">\(T_0/2\)</span> and 0 from <span class="math notranslate nohighlight">\(T_0/2\)</span> to <span class="math notranslate nohighlight">\(T_0\)</span> repeating….</p></li>
 </ol>
-<div class="section" id="pick-off-the-coefficients">
+<section id="pick-off-the-coefficients">
 <h3>Pick off the coefficients<a class="headerlink" href="#pick-off-the-coefficients" title="Permalink to this heading">#</a></h3>
 <p>For the first two cases, we can pick off the coefficients because they match the model</p>
 <div class="math notranslate nohighlight">
@@ -677,31 +681,31 @@ document.write(`
 \[f(t) = 2\sin(\omega_0 t+\pi/2) + 3\cos(2*\omega_0t) = 2\cos(\omega_0 t) + 3\cos(2*\omega_0t)\]</div>
 <p>And thus: <span class="math notranslate nohighlight">\(b_1 = 2\)</span> and <span class="math notranslate nohighlight">\(b_2=3\)</span> and everything else vanishes.</p>
 <p>Can we do the integrals and get the same results? Sure. But it’s a lot more work.</p>
-</div>
-<div class="section" id="what-about-the-last-one">
+</section>
+<section id="what-about-the-last-one">
 <h3>What about the last one?<a class="headerlink" href="#what-about-the-last-one" title="Permalink to this heading">#</a></h3>
 <p>That function is a classic “square wave”, or <a class="reference external" href="https://en.wikipedia.org/wiki/Duty_cycle">half duty cycle</a>. It’s a function that is 1 for half the period and 0 for the other half. It’s a function that is used in digital electronics to encode information. That function we have to solve by integrating. The handwritten notes show how. The more general duty cycle function is shown below.</p>
 <p><img alt="Duty cycle gif" src="https://upload.wikimedia.org/wikipedia/commons/0/02/PWM_duty_cycle_with_label.gif" /></p>
-</div>
-</div>
-<div class="section" id="resources">
+</section>
+</section>
+<section id="resources">
 <h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
-<div class="section" id="handwritten-notes">
+<section id="handwritten-notes">
 <h3>Handwritten notes<a class="headerlink" href="#handwritten-notes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../../_downloads/f283bb7839c604c3a38269ed1ff06179/Notes-Fourier_Example.pdf"><span class="xref download myst">Introduction to Signal Analysis</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="additional-videos">
+</section>
+<section id="additional-videos">
 <h3>Additional Videos<a class="headerlink" href="#additional-videos" title="Permalink to this heading">#</a></h3>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=mgXSevZmjPc"><img alt="Fourier Series" src="https://markdown-videos-api.jorgenkh.no/youtube/mgXSevZmjPc?width=720&amp;height=405" /></a></p>
 <ul class="simple">
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=mgXSevZmjPc">https://inv.tux.pizza/watch?v=mgXSevZmjPc</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=mgXSevZmjPc">https://youtube.com/watch?v=mgXSevZmjPc</a></p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

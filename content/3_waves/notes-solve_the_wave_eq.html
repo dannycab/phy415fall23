@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>25 Oct 23 - Notes: Solutions to The Wave Equation &#8212; PHY 415 Fall 2023</title>
   
   
@@ -194,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity_vanderpol.html">14 Sept 23 - Conducting a complete analysis of an ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
 </ul>
@@ -237,6 +238,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/notes-mcmc.html">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-metropolis.html">5 Dec 23 - Activity: Modeling the Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-ising_model.html">7 Dec 23 - Activity: The Ising Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -516,7 +520,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="oct-23-notes-solutions-to-the-wave-equation">
+  <section class="tex2jax_ignore mathjax_ignore" id="oct-23-notes-solutions-to-the-wave-equation">
 <h1>25 Oct 23 - Notes: Solutions to The Wave Equation<a class="headerlink" href="#oct-23-notes-solutions-to-the-wave-equation" title="Permalink to this heading">#</a></h1>
 <p>The wave equation is a partial differential equation that describes how waves propagate (they are fundamentally a disturbance of a medium) in space and time. The general wave equations is:</p>
 <div class="math notranslate nohighlight">
@@ -531,14 +535,14 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\(\square\)</span> is defined as:</p>
 <div class="math notranslate nohighlight">
 \[\square = \frac{\partial^2}{\partial x^2} - \frac{1}{v^2} \frac{\partial^2}{\partial t^2}\]</div>
-<div class="section" id="traveling-waves">
+<section id="traveling-waves">
 <h2>Traveling Waves<a class="headerlink" href="#traveling-waves" title="Permalink to this heading">#</a></h2>
 <p>Through this operator and proposed change of variables: <span class="math notranslate nohighlight">\(\eta = x - vt\)</span> (movement to the right) and <span class="math notranslate nohighlight">\(\xi = x + vt\)</span> (movement to the left) <a class="reference external" href="https://inv.tux.pizza/watch?v=Sc21aPg2RyE">we can show that the general solution</a> to the 1D wave equation are just functions of those variables:</p>
 <div class="math notranslate nohighlight">
 \[u(x,t) = f(\eta) + g(\xi) = f(x-vt) + g(x+vt)\]</div>
 <p>where <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are arbitrary functions. This is a very powerful result; the solution to the wave equation is a function of a given shape (<span class="math notranslate nohighlight">\(f(x)\)</span> or <span class="math notranslate nohighlight">\(g(x)\)</span>) that travels to the right and/or left; if both, they superpose in space and time. We will use a special case of these solutions <a class="reference external" href="https://en.wikipedia.org/wiki/Sinusoidal_plane_wave">sinusoidal traveling waves</a> as they demonstrate the key features of waves; but also behave nicely (in the mathematical sense) in the context of the wave equation.</p>
-</div>
-<div class="section" id="sinusoidal-traveling-waves">
+</section>
+<section id="sinusoidal-traveling-waves">
 <h2>Sinusoidal Traveling Waves<a class="headerlink" href="#sinusoidal-traveling-waves" title="Permalink to this heading">#</a></h2>
 <p>A sinusoidal traveling wave is a infinite wave that has a sinusoidal shape (<span class="math notranslate nohighlight">\(\sin\)</span> or <span class="math notranslate nohighlight">\(\cos\)</span>). It is a solution to the wave equation (notice it is not a separable solution):</p>
 <div class="math notranslate nohighlight">
@@ -569,8 +573,8 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[-k^2 = -\frac{\omega^2}{v^2} \rightarrow v = \pm \frac{\omega}{k}\]</div>
 <p>Left or right sinusoidal traveling waves solve the wave equation as long as the speed of the wave is related to the frequency and wave number as indicated.</p>
-</div>
-<div class="section" id="diffraction">
+</section>
+<section id="diffraction">
 <h2>Diffraction<a class="headerlink" href="#diffraction" title="Permalink to this heading">#</a></h2>
 <p>A critical result of superposition is the interference of waves. For example two waves in a pool below interfere to produce a wave that travels outward.</p>
 <p><img alt="Interference" src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Two_sources_interference.gif" /></p>
@@ -580,7 +584,7 @@ document.write(`
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=TqTWSSBcV_4">https://inv.tux.pizza/watch?v=TqTWSSBcV_4</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=TqTWSSBcV_4">https://youtube.com/watch?v=TqTWSSBcV_4</a></p></li>
 </ul>
-<div class="section" id="single-photo-diffraction">
+<section id="single-photo-diffraction">
 <h3>Single Photo Diffraction<a class="headerlink" href="#single-photo-diffraction" title="Permalink to this heading">#</a></h3>
 <p>One of the most intersting things we have found in recent years is single particle diffraction. In fact, this was observed <a class="reference external" href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.97.154101">macroscopically in pilot wave hydrodynamics</a> by a French research group. We have found that interference patterns can build up in single photo experiments. The video below shows a set up that demonstrates this.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=GzbKb59my3U"><img alt="Single Particle Diffraction" src="https://markdown-videos-api.jorgenkh.no/youtube/GzbKb59my3U?width=720&amp;height=405" /></a></p>
@@ -588,9 +592,9 @@ document.write(`
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=GzbKb59my3U">https://inv.tux.pizza/watch?v=GzbKb59my3U</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=GzbKb59my3U">https://youtube.com/watch?v=GzbKb59my3U</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="resources">
+</section>
+</section>
+<section id="resources">
 <h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
 <p>Much of what we are discussing about waves appears in the following sets of notes:</p>
 <ul class="simple">
@@ -599,8 +603,8 @@ document.write(`
 <li><p><a class="reference download internal" download="" href="../../_downloads/19a8b436452ab49d2d2633e05a00354f/Notes-Wavefunctions.pdf"><span class="xref download myst">The Wavefunction</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../_downloads/2e338b1a49eb73cd39acb528d7b8dcaa/Notes-Infinite_Square_Well.pdf"><span class="xref download myst">The 1D Infinite Square Well</span></a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

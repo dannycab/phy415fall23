@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>02 Nov 23 - Signal Processing &#8212; PHY 415 Fall 2023</title>
   
   
@@ -522,7 +523,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-signal-processing">
+  <section class="tex2jax_ignore mathjax_ignore" id="nov-23-signal-processing">
 <h1>02 Nov 23 - Signal Processing<a class="headerlink" href="#nov-23-signal-processing" title="Permalink to this heading">#</a></h1>
 <p>One of the major activities in physics and astronomy that consumes much of our working hours is processing signals. Like we discussed, most instruments and tools give us a <span class="math notranslate nohighlight">\(V(t)\)</span> over some finite period of time. How do we extract information from the signal and make conclusions about that results? One of the most useful tools for extracting information from time series data (data where there’s some temporal aspect to it) is the Fast Fourier Transform (FFT). We introduced it a bit last class, but this time we will systematically investigate its usage and what we try to interpret from the results. We will also do some filtering and signal recovery (inverse FFT).</p>
 <p>The specifics of how an FFT works and how it is different from a Fourier Series analysis is important. We will touch on this after you have more experience with what it does.</p>
@@ -538,7 +539,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="starting-the-fft">
+<section id="starting-the-fft">
 <h2>Starting the FFT<a class="headerlink" href="#starting-the-fft" title="Permalink to this heading">#</a></h2>
 <p>We will do the first FFT in the code below for a single frequency sinusoidal function. In this example, we know what the FFT should produce (a single peak at the given <span class="math notranslate nohighlight">\(w_A\)</span>).</p>
 <p><span class="math notranslate nohighlight">\(V(t) = A\sin(\omega_At) = A\sin(2\pi f_A t)\)</span></p>
@@ -586,7 +587,7 @@ document.write(`
 <img alt="../../_images/15707bfaa700fcc2b46731d996282439bc698ed7da738576d5d0ee1843adf652.png" src="../../_images/15707bfaa700fcc2b46731d996282439bc698ed7da738576d5d0ee1843adf652.png" />
 </div>
 </div>
-<div class="section" id="questions">
+<section id="questions">
 <h3>Questions<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h3>
 <p>Here’s some investigations to perform with the code above:</p>
 <ol class="arabic simple">
@@ -598,9 +599,9 @@ document.write(`
 <li><p>Add a phase to the signal. What happens to the FFT?</p></li>
 <li><p>Add a DC offset (a constant value). What happens to the FFT?</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="multi-frequency-signal">
+</section>
+</section>
+<section id="multi-frequency-signal">
 <h2>Multi-Frequency signal<a class="headerlink" href="#multi-frequency-signal" title="Permalink to this heading">#</a></h2>
 <p>Let’s unpack what happens when there’s multiple frequencies in the signal. Consider some linear combination that looks like:</p>
 <div class="math notranslate nohighlight">
@@ -652,7 +653,7 @@ document.write(`
 <img alt="../../_images/1a70f099eb3241b8f1fcec32d9a8dbdc4b41895b487b7ddeaead3d1f65f38d28.png" src="../../_images/1a70f099eb3241b8f1fcec32d9a8dbdc4b41895b487b7ddeaead3d1f65f38d28.png" />
 </div>
 </div>
-<div class="section" id="id1">
+<section id="id1">
 <h3>Questions<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>Here’s some investigations to perform with the code above:</p>
 <ol class="arabic simple">
@@ -668,9 +669,9 @@ document.write(`
 </li>
 <li><p>Add a DC offset (a constant value). What happens to the FFT?</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="noise">
+</section>
+</section>
+<section id="noise">
 <h2>Noise<a class="headerlink" href="#noise" title="Permalink to this heading">#</a></h2>
 <p>Let’s add some noise to our signal. We never get anything clean from our instruments, sometimes we don’t get a damn thing. But electronic noise, pickup noise, instrument noise, and other sources plague our search for a clear data set. Let’s look at noise itself first. SciPy offers us a whole library of random things. Let’s just use Gaussian noise.</p>
 <p>Gaussian noise is drawn from a random Gaussian distribution. You have two parameters with this kind of noise: <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>. These are where the center of Gaussian is located (<span class="math notranslate nohighlight">\(\mu\)</span>) and how spread out it is <span class="math notranslate nohighlight">\(\sigma\)</span>. The spread is in units of standard deviation, so <span class="math notranslate nohighlight">\(\sigma = 1\)</span> is a lot of noise. Below we use “zero centered” noise, <span class="math notranslate nohighlight">\(\mu=0\)</span> and plot it. We perform an FFT to see what we get.</p>
@@ -712,11 +713,11 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 300.0, -0.1, 1.1)
 </pre></div>
 </div>
-<img alt="../../_images/db0f30143df3c2a52a44c6464a6453abcd47bea73bcfe137005295b294ca3676.png" src="../../_images/db0f30143df3c2a52a44c6464a6453abcd47bea73bcfe137005295b294ca3676.png" />
-<img alt="../../_images/ed388aaf9702209ebca3a6df226ae199bc7a411657cfe6c3075033728c41a0b8.png" src="../../_images/ed388aaf9702209ebca3a6df226ae199bc7a411657cfe6c3075033728c41a0b8.png" />
+<img alt="../../_images/1536dd9bd58f257a7dfda193891385d74ce50ccbb679f5893a7940a4d65e59a4.png" src="../../_images/1536dd9bd58f257a7dfda193891385d74ce50ccbb679f5893a7940a4d65e59a4.png" />
+<img alt="../../_images/b86d31186cb987f1744df24f1e193ce24314150f4b8ffb24e812dfe3951cb2ec.png" src="../../_images/b86d31186cb987f1744df24f1e193ce24314150f4b8ffb24e812dfe3951cb2ec.png" />
 </div>
 </div>
-<div class="section" id="id2">
+<section id="id2">
 <h3>Questions<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>Here’s some investigations to perform with the code above:</p>
 <ol class="arabic simple">
@@ -727,9 +728,9 @@ document.write(`
 <li><p>What happens if you mess up the normalization <code class="docutils literal notranslate"><span class="pre">2/(N*A))*fft(V)</span></code>? How can we determine this is the correct normalization?</p></li>
 <li><p>Overall, what do you notice about the FFT of noise?</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="add-noise-to-your-single-frequency-signal">
+</section>
+</section>
+<section id="add-noise-to-your-single-frequency-signal">
 <h2>Add noise to your single frequency signal<a class="headerlink" href="#add-noise-to-your-single-frequency-signal" title="Permalink to this heading">#</a></h2>
 <p>Ok, now you looked a single frequencies, multiple frequencies (albeit integer values), and noise.</p>
 <ol class="arabic simple">
@@ -744,8 +745,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="add-noise-to-your-multi-frequency-signal">
+</section>
+<section id="add-noise-to-your-multi-frequency-signal">
 <h2>Add noise to your multi-frequency signal<a class="headerlink" href="#add-noise-to-your-multi-frequency-signal" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Create a multi-frequency signal (integer <span class="math notranslate nohighlight">\(w_0\)</span>) and add noise to it.</p></li>
@@ -759,8 +760,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="any-signal-noise">
+</section>
+<section id="any-signal-noise">
 <h2>Any signal + noise<a class="headerlink" href="#any-signal-noise" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Create a signal  of your choosing (not sinusoial) and add noise to it (later is fine).</p></li>
@@ -774,8 +775,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

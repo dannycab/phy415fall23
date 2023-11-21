@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>20 Nov 23 - Notes: Random Processes &#8212; PHY 415 Fall 2023</title>
   
   
@@ -194,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity_vanderpol.html">14 Sept 23 - Conducting a complete analysis of an ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
 </ul>
@@ -237,6 +238,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes-mcmc.html">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-metropolis.html">5 Dec 23 - Activity: Modeling the Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-ising_model.html">7 Dec 23 - Activity: The Ising Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -530,14 +534,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="nov-23-notes-random-processes">
+  <section class="tex2jax_ignore mathjax_ignore" id="nov-23-notes-random-processes">
 <h1>20 Nov 23 - Notes: Random Processes<a class="headerlink" href="#nov-23-notes-random-processes" title="Permalink to this heading">#</a></h1>
 <p>Until now, all of our work has been with <a class="reference external" href="https://en.wikipedia.org/wiki/Deterministic_system">deterministic systems</a>. That is, we have a set of equations that allow us to describe the future of the system in space and time with certainty. Some differential equations are deterministic and all the ones that we have worked on so far are. Our analysis of ordinary differential equations, partial differential equations, and the wave equation have all been drawn from deterministic systems. We obtain equations or results that we can predict with (up to numerical) certainty.</p>
 <p>However, many processes in nature are not deterministic. These processes are stochastic, probabilistic, or <a class="reference external" href="https://en.wikipedia.org/wiki/Randomness">random</a>. We use these terms interchangeably, but ultimately the all describe a system with probabilistic states. These can be things like <a class="reference external" href="https://en.wikipedia.org/wiki/Ideal_gas">the ideal gas in statistical mechanics</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Hydrogen_atom">the hydrogen atom in quantum mechanics</a>. But this work applies in contexts like the <a class="reference external" href="https://bsj.berkeley.edu/how-scientists-are-using-statistical-physics-to-predict-the-stock-market/">stock market</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Numerical_weather_prediction">weather</a>, <a class="reference external" href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.104.014132">the spread of disease</a>, and even <a class="reference external" href="https://en.wikipedia.org/wiki/Information_theory">information theory</a>.</p>
-<div class="section" id="entropy">
+<section id="entropy">
 <h2>Entropy<a class="headerlink" href="#entropy" title="Permalink to this heading">#</a></h2>
 <p>We will start with the concept of <a class="reference external" href="https://en.wikipedia.org/wiki/Entropy">entropy</a>, which serves as a major organizing idea for many statistical physics models and results. For example, conservation of energy tells us that the same amount of energy is needed for a ball to change its height (moving up or down), but the concept of increasing entropy indicates the ball won’t spontaneously jump off the table.</p>
-<div class="section" id="video">
+<section id="video">
 <h3>Video<a class="headerlink" href="#video" title="Permalink to this heading">#</a></h3>
 <p>Later, we will develop a mathematical definition of entropy, when we introduce <a class="reference external" href="https://en.wikipedia.org/wiki/Combinatorics">counting statistics</a>. The result, developed by <a class="reference external" href="https://en.wikipedia.org/wiki/Ludwig_Boltzmann">Ludwig Boltzmann</a>, is quoted below:</p>
 <div class="math notranslate nohighlight">
@@ -548,9 +552,9 @@ document.write(`
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=DxL2HoqLbyA">https://inv.tux.pizza/watch?v=DxL2HoqLbyA</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=DxL2HoqLbyA">https://youtube.com/watch?v=DxL2HoqLbyA</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="modeling-randomness">
+</section>
+</section>
+<section id="modeling-randomness">
 <h2>Modeling Randomness<a class="headerlink" href="#modeling-randomness" title="Permalink to this heading">#</a></h2>
 <p>Underlying much of what we will study is the concept of randomness. <a class="reference external" href="https://en.wikipedia.org/wiki/Randomness">Randomness</a> is a field of study across many disciplines. Modeling randomness is a fundamentally different way of approaching physics for several reasons:</p>
 <ol class="arabic simple">
@@ -564,7 +568,7 @@ document.write(`
 <li><p>Microstate - tracks individual constituent states as if they were unique</p></li>
 <li><p>Macrostate - a group of microstates that share something</p></li>
 </ul>
-<div class="section" id="id1">
+<section id="id1">
 <h3>Video<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>In this needs to be a bit more concrete, here’s a short example with 3 coins, which we will simulate for N coins below.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=9rYvq6kbUUA"><img alt="Microstates and Macrostates" src="https://markdown-videos-api.jorgenkh.no/youtube/9rYvq6kbUUA?width=720&amp;height=405" /></a></p>
@@ -572,8 +576,8 @@ document.write(`
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=9rYvq6kbUUA">https://inv.tux.pizza/watch?v=9rYvq6kbUUA</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=9rYvq6kbUUA">https://youtube.com/watch?v=9rYvq6kbUUA</a></p></li>
 </ul>
-</div>
-<div class="section" id="coin-flipping-model">
+</section>
+<section id="coin-flipping-model">
 <h3>Coin Flipping Model<a class="headerlink" href="#coin-flipping-model" title="Permalink to this heading">#</a></h3>
 <p>To demonstrate the concept of microstates and macrostates, we will start with a simple model of flipping coins. The coins are distinguishable, so we can track them individually. We note those different coins by the order of the array. Below, we have written a couple functions that flip a coin <code class="docutils literal notranslate"><span class="pre">flip_coin()</span></code> and simulate flipping several coins and for a number of times. We import a few relevant libraries including <code class="docutils literal notranslate"><span class="pre">random</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> for plotting. We will use <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> for plotting because it has a nice <code class="docutils literal notranslate"><span class="pre">histplot</span></code> function that we will use to plot the results of our coin flips.</p>
 <div class="cell docutils container">
@@ -609,13 +613,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 1, 0, 1, 1, 1, 1, 1, 0]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 1, 1, 1, 0, 0, 0, 1, 0]
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="microstates">
+</section>
+<section id="microstates">
 <h3>Microstates<a class="headerlink" href="#microstates" title="Permalink to this heading">#</a></h3>
 <p>We can run a short simulation of flipping 10 coins 3 times to see the different potential microstates. We show the code to run the simulation, but have hidden the visualization code for now. It is not important to understand the visualization code, but it is important to understand the visualization. The purple squares are heads (1) and the yellow squares are tails (0). The rows are the different coins and the columns are the different flips.</p>
 <div class="cell docutils container">
@@ -632,9 +636,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 1 1 1 0 1 0 1 1 0]
- [1 0 1 0 0 0 1 1 0 0]
- [0 0 1 0 1 1 1 0 1 1]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 1 1 0 0 1 0 1 1 1]
+ [0 0 1 0 1 0 0 0 1 1]
+ [0 0 1 0 0 1 0 1 1 0]]
 </pre></div>
 </div>
 </div>
@@ -676,13 +680,13 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/f45bb5e21467b063b4c6715d0c34dade85021f244e0562aa0c67dc34b0ee1987.png" src="../../_images/f45bb5e21467b063b4c6715d0c34dade85021f244e0562aa0c67dc34b0ee1987.png" />
+<img alt="../../_images/c7a33686da7962db3e7e81b7e259d44410ae293d518d313b929b891fca27f611.png" src="../../_images/c7a33686da7962db3e7e81b7e259d44410ae293d518d313b929b891fca27f611.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="macrostates">
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="macrostates">
 <h1>Macrostates<a class="headerlink" href="#macrostates" title="Permalink to this heading">#</a></h1>
 <p>To illustrate the macrostates, we will run simulations for 10 coins for various numbers of flips. Because the number of heads (H) and the number of tails (T) are equal to 10:</p>
 <div class="math notranslate nohighlight">
@@ -746,7 +750,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/0a83eb7a3fa439e7443fec1507882d5c1f6e1effdf9cc3c5573456d26f9d0b7b.png" src="../../_images/0a83eb7a3fa439e7443fec1507882d5c1f6e1effdf9cc3c5573456d26f9d0b7b.png" />
+<img alt="../../_images/9e70fafb655d0586aed39b29fb26c5c78061862aa8e5b4602cdc1a2e7e2df0f0.png" src="../../_images/9e70fafb655d0586aed39b29fb26c5c78061862aa8e5b4602cdc1a2e7e2df0f0.png" />
 </div>
 </div>
 <p>This is useful, but the important part of this kind of modeling is to determine the probablities of the macrostates. We can compute those by simply determining the number of times a particular macrostate occurs and dividing by the total number of trials. We wrote two functions to compute and plot these.</p>
@@ -811,13 +815,13 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/0f288216fc076903dbfa6f335f364bc25c909ed58f174b7ef3e66c2cd08ef2c1.png" src="../../_images/0f288216fc076903dbfa6f335f364bc25c909ed58f174b7ef3e66c2cd08ef2c1.png" />
+<img alt="../../_images/979f6c07f6eb8f835849081b8bc63eade9504cb080dfc3325539e31d2ea72a3b.png" src="../../_images/979f6c07f6eb8f835849081b8bc63eade9504cb080dfc3325539e31d2ea72a3b.png" />
 </div>
 </div>
 <p>It’s quite easy to see form here that more trials leads to more stable and concrete probabilities for each state.</p>
-<div class="section" id="additional-resources">
+<section id="additional-resources">
 <h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h2>
-<div class="section" id="videos">
+<section id="videos">
 <h3>Videos<a class="headerlink" href="#videos" title="Permalink to this heading">#</a></h3>
 <p>Here’s an interesting application of the models of Poisson process and Queueing</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=rBIQmwaoZfs"><img alt="Queuing theory and Poisson process" src="https://markdown-videos-api.jorgenkh.no/youtube/rBIQmwaoZfs?width=720&amp;height=405" /></a></p>
@@ -825,9 +829,9 @@ document.write(`
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=rBIQmwaoZfs">https://inv.tux.pizza/watch?v=rBIQmwaoZfs</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=rBIQmwaoZfs">https://youtube.com/watch?v=rBIQmwaoZfs</a></p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

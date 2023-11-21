@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Course Objectives &#8212; PHY 415 Fall 2023</title>
   
   
@@ -192,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity_vanderpol.html">14 Sept 23 - Conducting a complete analysis of an ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_mechanics/dynamical_systems/activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
 </ul>
@@ -235,6 +236,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/notes-mcmc.html">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-metropolis.html">5 Dec 23 - Activity: Modeling the Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_distributions/activity-ising_model.html">7 Dec 23 - Activity: The Ising Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -463,7 +467,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="course-objectives">
+  <section class="tex2jax_ignore mathjax_ignore" id="course-objectives">
 <h1>Course Objectives<a class="headerlink" href="#course-objectives" title="Permalink to this heading">#</a></h1>
 <p>This course emphasizes making models of physical phenomenon and how we use various tools at our disposal to investigate those models. Hence, we have learning objectives for making models of these systems and for learning specific tools.</p>
 <div class="tip admonition">
@@ -478,7 +482,7 @@ document.write(`
 </ul>
 </div>
 <p>Each of these learning objectives contributes to your development as a physicist. I recognize that these are <strong>big</strong> ideas to think about. What I mean is that the objectives above are quite broad and you might be able to see a little about what or why they are included. But, below, I added more detail about each one along with a smaller scale list of objectives that you will engage with. Throughout our course, you will have opportunities to demonstrate these objectives in your work. <em>My aim is to make what you are assessed on in this course something you are interested in, so these objectives reflect that.</em></p>
-<div class="section" id="investigate-physical-systems">
+<section id="investigate-physical-systems">
 <h2>Investigate physical systems<a class="headerlink" href="#investigate-physical-systems" title="Permalink to this heading">#</a></h2>
 <p>Clearly, one of our central goals is learning how to make models of physical systems. This means learning about and developing fluency with a wide variety of mathematical and computational tools. In this courses, we will make extensive use of <a class="reference external" href="http://anaconda.org">Jupyter notebooks</a> for homework and projects. In fact, what you are reading is a set of Jupyter notebooks! Below, you will see the list of objectives for this principal objective.</p>
 <div class="tip admonition">
@@ -491,8 +495,8 @@ document.write(`
 <li><p>provide coherent explanations for their investigations buttressed by physical, mathematical, and/or computational knowledge and principles</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="construct-and-document-a-reproducible-process">
+</section>
+<section id="construct-and-document-a-reproducible-process">
 <h2>Construct and document a reproducible process<a class="headerlink" href="#construct-and-document-a-reproducible-process" title="Permalink to this heading">#</a></h2>
 <p>A critical element of physics work is making sure that with the same setup and approach, others can reproduce the work you have done. This provides validity to your work and evidences how we develop collective understanding of physics. Physics is a social enterprise and the ensuring the reproducibility of work supports that enterprise. Below are the learning objectives for this principal objective.</p>
 <div class="tip admonition">
@@ -504,8 +508,8 @@ document.write(`
 <li><p>provide an explanation for why certain work or results are not (or should not be) reproducible</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="use-analytical-computational-and-graphical-approaches">
+</section>
+<section id="use-analytical-computational-and-graphical-approaches">
 <h2>Use analytical, computational, and graphical approaches<a class="headerlink" href="#use-analytical-computational-and-graphical-approaches" title="Permalink to this heading">#</a></h2>
 <p>The main approaches that we use to make models are mathematical, computational, and graphical. In this class, we will aim to leverage the benefits of each to learn more about the physical systems that we are investigating. Indeed, much of the “knowledge” that you are going to develop will be about specific analytical, computational, or graphical approaches to investigate physical systems. Below are the learning objectives for this principal objective.</p>
 <div class="tip admonition">
@@ -517,8 +521,8 @@ document.write(`
 <li><p>Explain how those approaches lead to different results or conclusions</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="provide-evidence-of-the-quality-of-their-work">
+</section>
+<section id="provide-evidence-of-the-quality-of-their-work">
 <h2>Provide evidence of the quality of their work<a class="headerlink" href="#provide-evidence-of-the-quality-of-their-work" title="Permalink to this heading">#</a></h2>
 <p>The definition of the quality of a piece of science is a collective decision by the scientific community. In established communities, like physics, there are commonly-accepted ways of defining the quality of work (norms, customs, and rules all play a role). But that is not to mean those ways can’t change; papers describing quantum physics and relativity brushed up hard against this issue of quality and were both dismissed and celebrated. Newer disciplines are still establishing those norms and rules. And in some cases, disciplines are pushing back against Western norms of quality. In our class, we will collectively decide what we mean by ‘’high quality’’ work. Below are the learning objectives for this principal objective.</p>
 <div class="tip admonition">
@@ -530,8 +534,8 @@ document.write(`
 <li><p>provide suggestions (or act on suggestions) to improve the quality of their work</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="collaborate-effectively">
+</section>
+<section id="collaborate-effectively">
 <h2>Collaborate effectively<a class="headerlink" href="#collaborate-effectively" title="Permalink to this heading">#</a></h2>
 <p>Physics is a social enterprise that relies on effective and productive collaborations. Very little (if any) science is done alone; the scale of science is too grand for individuals to effectively work – everyone needs a team. In this spirit, in this classroom, we deeply encourage collaboration. We will try to develop effective collaboration through your work on projects and our in-class activities. Below are the learning objectives for this principal objective.</p>
 <div class="tip admonition">
@@ -543,8 +547,8 @@ document.write(`
 <li><p>Develop personally effective strategies for collaboration</p></li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

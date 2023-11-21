@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>19 Sep 23 - Notes: Heading towards Chaos &#8212; PHY 415 Fall 2023</title>
   
   
@@ -67,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="19 Sep 23 - The Duffing Oscillator" href="activity-duffing.html" />
-    <link rel="prev" title="14 Sept 23 - Activity: Conducting a complete analysis of an ODE" href="activity-vanderpol.html" />
+    <link rel="prev" title="14 Sept 23 - Conducting a complete analysis of an ODE" href="activity_vanderpol.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -194,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity_vanderpol.html">14 Sept 23 - Conducting a complete analysis of an ODE</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">19 Sep 23 - Notes: Heading towards Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
 </ul>
@@ -237,6 +238,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../4_distributions/notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../4_distributions/activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../4_distributions/activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../4_distributions/notes-mcmc.html">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../4_distributions/activity-metropolis.html">5 Dec 23 - Activity: Modeling the Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../4_distributions/activity-ising_model.html">7 Dec 23 - Activity: The Ising Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -524,7 +528,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sep-23-notes-heading-towards-chaos">
+  <section class="tex2jax_ignore mathjax_ignore" id="sep-23-notes-heading-towards-chaos">
 <h1>19 Sep 23 - Notes: Heading towards Chaos<a class="headerlink" href="#sep-23-notes-heading-towards-chaos" title="Permalink to this heading">#</a></h1>
 <p>One of the principal motivations for our work thus far has been to get to analyze systems that show suprising and complex behavior. In mechanics, you might have heard of those kinds of behviors as chaotic or exhibiting chaos. It turns out the chaos is a specific kind of behavior that we can find. To motivate us, let’s remind ourselves of how cool nature can be.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=fDek6cYijxI"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/fDek6cYijxI?width=720&amp;height=405" /></a></p>
@@ -532,7 +536,7 @@ document.write(`
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=fDek6cYijxI">https://inv.tux.pizza/watch?v=fDek6cYijxI</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=fDek6cYijxI">https://youtube.com/watch?v=fDek6cYijxI</a></p></li>
 </ul>
-<div class="section" id="reminders-of-the-large-angle-pendulum">
+<section id="reminders-of-the-large-angle-pendulum">
 <h2>Reminders of the Large Angle Pendulum<a class="headerlink" href="#reminders-of-the-large-angle-pendulum" title="Permalink to this heading">#</a></h2>
 <p>Last time we investigated the phase portrait of the large angle pendulum, we we could arrive at by re-writing the differential equation</p>
 <div class="math notranslate nohighlight">
@@ -545,7 +549,7 @@ document.write(`
 \dot{\theta} = \omega \hspace{0.5in}\text{and}\hspace{0.5in} \dot{\omega} = -\frac{g}{L}\sin(\theta)
 \]</div>
 <p>By setting both of these equations equal to zero simultaneously, we also argued that this system has (<a class="reference external" href="https://faculty.math.illinois.edu/~kapovich/417-16/card.pdf">countably</a>) infinite fixed points at <span class="math notranslate nohighlight">\((n\pi, 0)\)</span> for  <span class="math notranslate nohighlight">\(n\in \mathbb{Z}\)</span> in <span class="math notranslate nohighlight">\((\theta,\omega)\)</span> phase space.</p>
-<div class="section" id="linearization-and-the-jacobian">
+<section id="linearization-and-the-jacobian">
 <h3>Linearization and the Jacobian<a class="headerlink" href="#linearization-and-the-jacobian" title="Permalink to this heading">#</a></h3>
 <p>Now we turn to the challenge of characterizing these fixed points with the linearization of the system (see the end of tuesday’s activity for some more notes on this). Recall that we can do this by finding the eigenvalues of the Jacobian Matrix of the system at its fixed point. For the system <span class="math notranslate nohighlight">\(\dot{x} = f(x,y)\)</span>, <span class="math notranslate nohighlight">\(\dot{y} = g(x,y)\)</span> the jacobian matrix looks like this:</p>
 <div class="math notranslate nohighlight">
@@ -555,9 +559,9 @@ A = \begin{bmatrix} \frac{\partial f}{\partial x} &amp; \frac{\partial f}{\parti
 <p><strong>✅ Try this</strong></p>
 <p>Calculate the general Jacobian matrix <span class="math notranslate nohighlight">\(A\)</span> for this system, then calculate what it is at the fixed point <span class="math notranslate nohighlight">\((0,0)\)</span>.</p>
 <p>We have the Jacobian at <span class="math notranslate nohighlight">\((0,0)\)</span> now but we still need to find its eigenvalues. Let’s remind ourselves about eigenvalues and eigenvectors.</p>
-</div>
-</div>
-<div class="section" id="eigenvalues">
+</section>
+</section>
+<section id="eigenvalues">
 <h2>Eigenvalues<a class="headerlink" href="#eigenvalues" title="Permalink to this heading">#</a></h2>
 <p>Eigenvalues and the closely related Eigenvectors are indispensible in physics, math, and computational science. These ideas for the basis (pun somewhat intened) for countless problems, from the <a class="reference external" href="https://phys.libretexts.org/Bookshelves/Nuclear_and_Particle_Physics/Introduction_to_Applied_Nuclear_Physics_(Cappellaro)/02%3A_Introduction_to_Quantum_Mechanics/2.04%3A_Energy_Eigenvalue_Problem">energy eigenvalue equation</a> that is the foundation of quantum mechanics, to the stability of complex nonlinear systems, to Normal Modes of oscillators. <em>Eigenproblems</em> show up all over in physics.</p>
 <p>A brief tangent: Once some scientists were using an eigenvalue driven algorithm called principal component analysis to study the genes of people that live in Europe. They found that these eigenvalues/vectors reproduced a map of Europe with surprising accuracy (<a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2735096/">link</a>). So these tools are extremely, and often unreasonably powerful.</p>
@@ -567,7 +571,7 @@ A = \begin{bmatrix} \frac{\partial f}{\partial x} &amp; \frac{\partial f}{\parti
 A\mathbf{v} = \lambda \mathbf{v}
 \]</div>
 <p>Where <span class="math notranslate nohighlight">\(A\)</span> is a linear operator of the vector space that <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> lives in. In finite-dimensional vector spaces, rhese linear operators are always matrices. There is a bit of physical intuition behind this equation: An eigenvector of <span class="math notranslate nohighlight">\(A\)</span> is a vector that only gets stretched or squished by <span class="math notranslate nohighlight">\(\lambda\)</span> when <span class="math notranslate nohighlight">\(A\)</span> acts on <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>.</p>
-<div class="section" id="video-from-3blue1brown">
+<section id="video-from-3blue1brown">
 <h3>Video from 3Blue1Brown<a class="headerlink" href="#video-from-3blue1brown" title="Permalink to this heading">#</a></h3>
 <p>Grant Sanderson makes a lot of great videos on mathematics and statistics. This one about eigenvalues and eigenvectors is particularly good.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=PFDu9oVAE-g"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/PFDu9oVAE-g?width=720&amp;height=405" /></a></p>
@@ -575,8 +579,8 @@ A\mathbf{v} = \lambda \mathbf{v}
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=PFDu9oVAE-g">https://inv.tux.pizza/watch?v=PFDu9oVAE-g</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=PFDu9oVAE-g">https://youtube.com/watch?v=PFDu9oVAE-g</a></p></li>
 </ul>
-</div>
-<div class="section" id="finding-eigenvalues">
+</section>
+<section id="finding-eigenvalues">
 <h3>Finding Eigenvalues<a class="headerlink" href="#finding-eigenvalues" title="Permalink to this heading">#</a></h3>
 <p>To actually find the eigenvalues of a matrix, you solve the <strong>characteristic polynomial</strong> of the matrix, which you obtain by solving the equation:</p>
 <div class="math notranslate nohighlight">
@@ -594,11 +598,11 @@ A\mathbf{v} = \lambda \mathbf{v}
 <li><p>Both eigenvalues pure imaginary: Center</p></li>
 </ul>
 <p>Note: You can actually learn quite a bit more from this analysis, see Strogatz chapter 6. In fact, these eigenvalues can tell us about the nature of the local trajectories.</p>
-</div>
-</div>
-<div class="section" id="additional-resources">
+</section>
+</section>
+<section id="additional-resources">
 <h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h2>
-<div class="section" id="stability-and-eigenvalues-of-a-linearized-system">
+<section id="stability-and-eigenvalues-of-a-linearized-system">
 <h3>Stability and Eigenvalues of a linearized system<a class="headerlink" href="#stability-and-eigenvalues-of-a-linearized-system" title="Permalink to this heading">#</a></h3>
 <p>Steve Brunton at UW does dynamical systems research and has a great video that demonstrates how we make meaning of those eigenvalues.</p>
 <p><a class="reference external" href="https://inv.tux.pizza/watch?v=XXjoh8L1HkE"><img alt="" src="https://markdown-videos-api.jorgenkh.no/youtube/XXjoh8L1HkE?width=720&amp;height=405" /></a></p>
@@ -606,8 +610,8 @@ A\mathbf{v} = \lambda \mathbf{v}
 <li><p>Non-Commercial Link: <a class="reference external" href="https://inv.tux.pizza/watch?v=XXjoh8L1HkE">https://inv.tux.pizza/watch?v=XXjoh8L1HkE</a></p></li>
 <li><p>Commercial Link: <a class="reference external" href="https://youtube.com/watch?v=XXjoh8L1HkE">https://youtube.com/watch?v=XXjoh8L1HkE</a></p></li>
 </ul>
-</div>
-<div class="section" id="eigenvalues-computationally">
+</section>
+<section id="eigenvalues-computationally">
 <h3>Eigenvalues, Computationally<a class="headerlink" href="#eigenvalues-computationally" title="Permalink to this heading">#</a></h3>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">np.linalg.eig()</span></code> to find the eigenvalues (and normalized eigenvectors) of a matrix which we represent as numpy array. Below is some doe that does this (note the imaginary unit is represented as <span class="math notranslate nohighlight">\(j\)</span> in python):</p>
 <div class="cell docutils container">
@@ -628,16 +632,16 @@ A\mathbf{v} = \lambda \mathbf{v}
 </div>
 </div>
 <p>This can be super handy when you just need to do some quick characterization from the eigenvalues of a matrix. However, be warned - since you only get numerical answers you can lose quite a bit of the nuance that comes from if you had calculated these. We’ll see how that can be an issue later in the semester when we tackle normal modes.</p>
-</div>
-<div class="section" id="handwritten-notes">
+</section>
+<section id="handwritten-notes">
 <h3>Handwritten Notes<a class="headerlink" href="#handwritten-notes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="../../../_downloads/0be16bb295f034ca1f447e2e3fde17ab/Notes-Linearization_ODEs.pdf"><span class="xref download myst">Linearization of ODEs</span></a></p></li>
 <li><p><a class="reference download internal" download="" href="../../../_downloads/d4ffaf4c0d950b83e7c3128abbb7616b/Notes-Linearization_Example.pdf"><span class="xref download myst">Linearization example</span></a></p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -670,12 +674,12 @@ A\mathbf{v} = \lambda \mathbf{v}
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="activity-vanderpol.html"
+       href="activity_vanderpol.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</p>
+        <p class="prev-next-title">14 Sept 23 - Conducting a complete analysis of an ODE</p>
       </div>
     </a>
     <a class="right-next"

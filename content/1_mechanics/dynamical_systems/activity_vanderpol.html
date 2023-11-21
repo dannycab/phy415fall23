@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>14 Sept 23 - Conducting a complete analysis of an ODE &#8212; PHY 415 Fall 2023</title>
   
   
@@ -66,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/1_mechanics/dynamical_systems/activity_vanderpol';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="19 Sep 23 - Notes: Heading towards Chaos" href="notes-linearization_odes.html" />
+    <link rel="prev" title="12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits" href="activity-phase_space.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,7 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">1 - Mechanics and ODEs</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../modeling/activity-what_is_a_model.html">29 Aug 23 - Activity: What is a Model?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sho/notes-SHO.html">29 Aug 23 - Notes: Simple Harmonic Oscillator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lagrangian/notes_frames.html">31 Aug 23 - Notes: Frames and Coordinates</a></li>
@@ -192,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../lagrangian/activity-lagrange_2.html">7 Sep 23 - Activity: Numerical Integration and More Lagrangians</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-phase_space.html">12 Sept 23 - Notes: Dynamical Systems and Phase Space</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-phase_space.html">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity-vanderpol.html">14 Sept 23 - Activity: Conducting a complete analysis of an ODE</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14 Sept 23 - Conducting a complete analysis of an ODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes-linearization_odes.html">19 Sep 23 - Notes: Heading towards Chaos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="activity-duffing.html">19 Sep 23 - The Duffing Oscillator</a></li>
 </ul>
@@ -235,6 +238,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../4_distributions/notes-monte_carlo_simulations.html">27 Nov 23 - Notes: Monte Carlo Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../4_distributions/activity-thermal_contact.html">28 Nov 23 - Activity: Model of Two Bodies in Thermal Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../4_distributions/activity-mc_integration.html">30 Nov 23 - Activity: Monte Carlo Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../4_distributions/notes-mcmc.html">4 Dec 23 - Notes: Markov Chain Monte Carlo Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../4_distributions/activity-metropolis.html">5 Dec 23 - Activity: Modeling the Ideal Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../4_distributions/activity-ising_model.html">7 Dec 23 - Activity: The Ising Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -508,7 +514,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="sept-23-conducting-a-complete-analysis-of-an-ode">
+  <section class="tex2jax_ignore mathjax_ignore" id="sept-23-conducting-a-complete-analysis-of-an-ode">
 <h1>14 Sept 23 - Conducting a complete analysis of an ODE<a class="headerlink" href="#sept-23-conducting-a-complete-analysis-of-an-ode" title="Permalink to this heading">#</a></h1>
 <p>We’ve built up all the tools that we use to investigate ODEs. Now we are going to practice with an oscillator that exhibits really interesting dynamics: the <a class="reference external" href="https://en.wikipedia.org/wiki/Van_der_Pol_oscillator">Van der Pol oscillator</a>. This equation originates from nonlinear circuits in early radios, but has now also been used in neuroscience and geology. It is given by the differential equation:</p>
 <div class="math notranslate nohighlight">
@@ -586,7 +592,7 @@ document.write(`
 </div>
 <p><strong>✅ Do this</strong></p>
 <p>Based on the phase space diagram, what do you expect actual trajectories to look like in <span class="math notranslate nohighlight">\(x\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> space? Use the numerically integrated trajectories to plot that.</p>
-<div class="section" id="limit-cycles">
+<section id="limit-cycles">
 <h2>Limit Cycles<a class="headerlink" href="#limit-cycles" title="Permalink to this heading">#</a></h2>
 <p>The new behavior we’ve seen from this equation is what’s called a <strong>limit cycle</strong>, where the system is attracted/reppeled from a closed curve instead of a fixed point(s). There’s a lot of really great math here that’s a bit beyond what we can cover in class, but it would be a great thing to look into for a project!</p>
 <p><strong>✅ Do this</strong></p>
@@ -596,8 +602,8 @@ document.write(`
 <li><p>Add an <span class="math notranslate nohighlight">\(A\sin(t)\)</span> driving force term to the differential equation and numerically integrate. What do these trajectories look like in <span class="math notranslate nohighlight">\(x\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> and in phase space?</p></li>
 <li><p>Examine the energetics of this system. Is energy conserved or does it have some interesting behavior? Why?</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -629,6 +635,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="activity-phase_space.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">12 Sep 23 - Activity: The Dynamical Systems Approach and Phase Portraits</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="notes-linearization_odes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">19 Sep 23 - Notes: Heading towards Chaos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

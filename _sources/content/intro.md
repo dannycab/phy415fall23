@@ -10,12 +10,14 @@ To get a sense of the course, please read all the pages associated with our syll
 `````{admonition} Last updated: 20 Nov 2023
 :class: tip
 
-### Site updates
+**Site updates**
+
 * Readings for Week 13 are posted.
     * [Counting and Combinatorics](./4_distributions/notes-counting_and_combinatorics.ipynb)
     * [Monte Carlo simulations](./4_distributions/notes-monte_carlo_simulations.ipynb)
 
-### Upcoming Deadlines
+**Upcoming Deadlines**
+
 * The [last worked problem](./9_assignments/worked-problem-7.md) is due 1 Dec 2023.
 * The [last project](./9_assignments/project-4.md) is due 14 Dec 2023.
 

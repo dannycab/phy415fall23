@@ -15,7 +15,7 @@ This is not to say that you are on your own. Here's what you can expect from us:
   * timely and detailed feedback to help you along
   * a commitment to an inclusive classroom
 
-[Statement on the use of Generative AI tools](./6_environment.html#use-of-generative-ai-tools)
+[**Statement on the use of Generative AI tools**](https://dannycaballero.info/phy415fall23/content/0_course/6_environment.html#use-of-generative-ai-tools)
 
 ## Contact Information
 
@@ -40,7 +40,7 @@ This is not to say that you are on your own. Here's what you can expect from us:
 -   Office hrs: 3:00pm-5:00pm Fridays in the Strosacker Help Room. *If I'm not in Stroscaker, I'm in 1310 BPS; just come in.* Feel free to email me if you want to set up a time. I too enjoy visiting and talking with you about math and physics.
 
 ## Grading
-Details about [course activities are here](design.md) and [information regarding assessment is here](assessments.md). Your grade will be comprised of completing weekly discussion questions, seven of eight worked problems, and three of four projects that you will complete in the form of a Jupyter notebook (a "computational essay", which we will discuss later). 
+Details about [course activities are here](2_design.md) and [information regarding assessment is here](3_assessments.md). Your grade will be comprised of completing weekly discussion questions, seven of eight worked problems, and three of four projects that you will complete in the form of a Jupyter notebook (a "computational essay", which we will discuss later). 
 
 Your grade is comprised of the following:
 
@@ -51,7 +51,7 @@ Your grade is comprised of the following:
 | Three of Four Projects (see below)        |        60%       |
 | **Total**                                 |       **100%**   |
 
-Your grade on each project is split between completion (50%) and quality (50%). We will collectively define "quality" in class, but we have provided [a preliminary rubric](rubric.md) for us to work from for the first project. Your final grade will be scaled based on your best performances; there will be slightly more projects than what comprises your grade.  *The intent here is to to allow you space to explore a model or project that you really enjoy, and to reward you for doing that.* How your project grade is calculated appears below.
+Your grade on each project is split between completion (50%) and quality (50%). We will collectively define "quality" in class, but we have provided [a preliminary rubric](4_rubric.md) for us to work from for the first project. Your final grade will be scaled based on your best performances; there will be slightly more projects than what comprises your grade.  *The intent here is to to allow you space to explore a model or project that you really enjoy, and to reward you for doing that.* How your project grade is calculated appears below.
 
 | Activity                                  | Percent of Grade |
 |-------------------------------------------|-----------------:|
