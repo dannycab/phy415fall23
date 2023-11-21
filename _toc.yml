@@ -25,7 +25,7 @@ parts:
     - file: content/1_mechanics/lagrangian/activity-lagrange_2
     - file: content/1_mechanics/dynamical_systems/notes-phase_space
     - file: content/1_mechanics/dynamical_systems/activity-phase_space
-    - file: content/1_mechanics/dynamical_systems/activity-vanderpol
+    - file: content/1_mechanics/dynamical_systems/activity_vanderpol
     - file: content/1_mechanics/dynamical_systems/notes-linearization_odes
     - file: content/1_mechanics/dynamical_systems/activity-duffing
   - caption: 2 - E&M and PDEs
@@ -66,9 +66,9 @@ parts:
       - file: content/4_distributions/notes-monte_carlo_simulations
       - file: content/4_distributions/activity-thermal_contact
       - file: content/4_distributions/activity-mc_integration
-      # - file: content/4_distributions/notes-mcmc
-      # - file: content/4_distributions/activity-metropolis
-      # - file: content/4_distributions/activity-ising_model
+      - file: content/4_distributions/notes-mcmc
+      - file: content/4_distributions/activity-metropolis
+      - file: content/4_distributions/activity-ising_model
   - caption: Assignments
     chapters:
       - file: content/9_assignments/updated_rubric.md
