@@ -1,0 +1,60 @@
+Traceback (most recent call last):
+  File "/Users/caballero/anaconda3/envs/teaching/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/caballero/anaconda3/envs/teaching/lib/python3.12/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/caballero/anaconda3/envs/teaching/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/caballero/anaconda3/envs/teaching/lib/python3.12/asyncio/base_events.py", line 664, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/caballero/anaconda3/envs/teaching/lib/python3.12/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/Users/caballero/anaconda3/envs/teaching/lib/python3.12/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/caballero/anaconda3/envs/teaching/lib/python3.12/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import matplotlib.pyplot as plt
+import numpy as np
+import ipywidgets as widgets
+from IPython.display import display
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[1], line 3[0m
+[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[0;32m----> 3[0m [38;5;28;01mimport[39;00m [38;5;21;01mipywidgets[39;00m [38;5;28;01mas[39;00m [38;5;21;01mwidgets[39;00m
+[1;32m      4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mIPython[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdisplay[39;00m [38;5;28;01mimport[39;00m display
+
+File [0;32m~/anaconda3/envs/teaching/lib/python3.12/site-packages/ipywidgets/__init__.py:25[0m
+[1;32m     23[0m [38;5;28;01mfrom[39;00m [38;5;21;01mIPython[39;00m [38;5;28;01mimport[39;00m get_ipython
+[1;32m     24[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m_version[39;00m [38;5;28;01mimport[39;00m version_info, __version__, __protocol_version__, __jupyter_widgets_controls_version__, __jupyter_widgets_base_version__
+[0;32m---> 25[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mwidgets[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+[1;32m     26[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtraitlets[39;00m [38;5;28;01mimport[39;00m link, dlink
+[1;32m     29[0m [38;5;28;01mdef[39;00m [38;5;21mload_ipython_extension[39m(ip):
+
+File [0;32m~/anaconda3/envs/teaching/lib/python3.12/site-packages/ipywidgets/widgets/__init__.py:4[0m
+[1;32m      1[0m [38;5;66;03m# Copyright (c) Jupyter Development Team.[39;00m
+[1;32m      2[0m [38;5;66;03m# Distributed under the terms of the Modified BSD License.[39;00m
+[0;32m----> 4[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mwidget[39;00m [38;5;28;01mimport[39;00m Widget, CallbackDispatcher, register, widget_serialization
+[1;32m      5[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mdomwidget[39;00m [38;5;28;01mimport[39;00m DOMWidget
+[1;32m      6[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mvaluewidget[39;00m [38;5;28;01mimport[39;00m ValueWidget
+
+File [0;32m~/anaconda3/envs/teaching/lib/python3.12/site-packages/ipywidgets/widgets/widget.py:22[0m
+[1;32m     18[0m [38;5;28;01mfrom[39;00m [38;5;21;01mipykernel[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcomm[39;00m [38;5;28;01mimport[39;00m Comm
+[1;32m     19[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtraitlets[39;00m [38;5;28;01mimport[39;00m (
+[1;32m     20[0m     HasTraits, Unicode, Dict, Instance, List, Int, Set, Bytes, observe, default, Container,
+[1;32m     21[0m     Undefined)
+[0;32m---> 22[0m [38;5;28;01mfrom[39;00m [38;5;21;01mipython_genutils[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpy3compat[39;00m [38;5;28;01mimport[39;00m string_types, PY3
+[1;32m     23[0m [38;5;28;01mfrom[39;00m [38;5;21;01mIPython[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdisplay[39;00m [38;5;28;01mimport[39;00m display
+[1;32m     24[0m [38;5;28;01mfrom[39;00m [38;5;21;01mjson[39;00m [38;5;28;01mimport[39;00m loads [38;5;28;01mas[39;00m jsonloads, dumps [38;5;28;01mas[39;00m jsondumps
+
+[0;31mModuleNotFoundError[0m: No module named 'ipython_genutils'
+
