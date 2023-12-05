@@ -67,8 +67,8 @@ parts:
       - file: content/4_distributions/activity-thermal_contact
       - file: content/4_distributions/activity-mc_integration
       - file: content/4_distributions/notes-mcmc
-      - file: content/4_distributions/activity-metropolis
-      - file: content/4_distributions/activity-ising_model
+      - file: content/4_distributions/activity-zombies
+      #- file: content/4_distributions/activity-ising_model
   - caption: Assignments
     chapters:
       - file: content/9_assignments/updated_rubric.md
